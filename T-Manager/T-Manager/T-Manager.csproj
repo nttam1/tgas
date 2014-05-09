@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1BE69E1-8FDC-45B3-A287-005598E7CEF6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>T_Manager</RootNamespace>
+    <AssemblyName>T-Manager</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInstance.cs" />
+    <Compile Include="DATASET\DataSetReport.cs">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DATASET\DataSetReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FHangHoa.Designer.cs">
+      <DependentUpon>FHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FKho.Designer.cs">
+      <DependentUpon>FKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FNCC.Designer.cs">
+      <DependentUpon>FNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FNguonVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FNguonVay.Designer.cs">
+      <DependentUpon>FNguonVay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FTaiKhoan.Designer.cs">
+      <DependentUpon>FTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FXe.Designer.cs">
+      <DependentUpon>FXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FChi.Designer.cs">
+      <DependentUpon>FChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FChoVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FChoVay.Designer.cs">
+      <DependentUpon>FChoVay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FKhachHang.Designer.cs">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMain.Designer.cs">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FNhanVien.Designer.cs">
+      <DependentUpon>FNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FNhapHang.Designer.cs">
+      <DependentUpon>FNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FThuNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FThuNo.Designer.cs">
+      <DependentUpon>FThuNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FTraNoNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTraNoNCC.Designer.cs">
+      <DependentUpon>FTraNoNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FTraNoVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTraNoVay.Designer.cs">
+      <DependentUpon>FTraNoVay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FVay.Designer.cs">
+      <DependentUpon>FVay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FXuatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FXuatHang.Designer.cs">
+      <DependentUpon>FXuatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT\CrystalReportCongNoKhachHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportCongNoKhachHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORT\FCongNoKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\FCongNoKH.Designer.cs">
+      <DependentUpon>FCongNoKH.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Data\FHangHoa.resx">
+      <DependentUpon>FHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FKho.resx">
+      <DependentUpon>FKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FNCC.resx">
+      <DependentUpon>FNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FNguonVay.resx">
+      <DependentUpon>FNguonVay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FTaiKhoan.resx">
+      <DependentUpon>FTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FXe.resx">
+      <DependentUpon>FXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FChi.resx">
+      <DependentUpon>FChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FChoVay.resx">
+      <DependentUpon>FChoVay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FKhachHang.resx">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMain.resx">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FNhanVien.resx">
+      <DependentUpon>FNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FNhapHang.resx">
+      <DependentUpon>FNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FThuNo.resx">
+      <DependentUpon>FThuNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTraNoNCC.resx">
+      <DependentUpon>FTraNoNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTraNoVay.resx">
+      <DependentUpon>FTraNoVay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FVay.resx">
+      <DependentUpon>FVay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FXuatHang.resx">
+      <DependentUpon>FXuatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\CrystalReportCongNoKhachHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportCongNoKhachHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\FCongNoKH.resx">
+      <DependentUpon>FCongNoKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Data.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Data.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DATASET\DataSetReport.xsc">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\DataSetReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DATASET\DataSetReport.xss">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\T_Manager.DATASET.DataSetCNKH.datasource" />
+    <None Include="Properties\DataSources\XUAT_HANG.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

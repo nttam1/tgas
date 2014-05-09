@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tgasModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="tgasModelStoreContainer">
+    <EntitySet Name="CHI_KHAC" EntityType="tgasModel.Store.CHI_KHAC" store:Type="Tables" />
+    <EntitySet Name="CHI_LUONG" EntityType="tgasModel.Store.CHI_LUONG" store:Type="Tables" />
+    <EntitySet Name="CHI_TIEU_DUNG_NOI_BO" EntityType="tgasModel.Store.CHI_TIEU_DUNG_NOI_BO" store:Type="Tables" />
+    <EntitySet Name="CHO_VAY" EntityType="tgasModel.Store.CHO_VAY" store:Type="Tables" />
+    <EntitySet Name="HANG_HOA" EntityType="tgasModel.Store.HANG_HOA" store:Type="Tables" />
+    <EntitySet Name="KHACH_HANG" EntityType="tgasModel.Store.KHACH_HANG" store:Type="Tables" />
+    <EntitySet Name="KHO" EntityType="tgasModel.Store.KHO" store:Type="Tables" />
+    <EntitySet Name="NGUON_NO" EntityType="tgasModel.Store.NGUON_NO" store:Type="Tables" />
+    <EntitySet Name="NGUON_VAY" EntityType="tgasModel.Store.NGUON_VAY" store:Type="Tables" />
+    <EntitySet Name="NHA_CUNG_CAP" EntityType="tgasModel.Store.NHA_CUNG_CAP" store:Type="Tables" />
+    <EntitySet Name="NHAN_VIEN" EntityType="tgasModel.Store.NHAN_VIEN" store:Type="Tables" />
+    <EntitySet Name="NHAP_HANG" EntityType="tgasModel.Store.NHAP_HANG" store:Type="Tables" />
+    <EntitySet Name="THU_NO" EntityType="tgasModel.Store.THU_NO" store:Type="Tables" />
+    <EntitySet Name="TRA_NO_NCC" EntityType="tgasModel.Store.TRA_NO_NCC" store:Type="Tables" />
+    <EntitySet Name="TRA_NO_VAY" EntityType="tgasModel.Store.TRA_NO_VAY" store:Type="Tables" />
+    <EntitySet Name="VAY" EntityType="tgasModel.Store.VAY" store:Type="Tables" />
+    <EntitySet Name="XE" EntityType="tgasModel.Store.XE" store:Type="Tables" />
+    <EntitySet Name="XUAT_HANG" EntityType="tgasModel.Store.XUAT_HANG" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="CHI_KHAC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MAKHO" Type="integer" Nullable="false" />
+    <Property Name="NOI_DUNG" Type="nvarchar" Nullable="false" />
+    <Property Name="TONG_TIEN" Type="integer" Nullable="false" />
+    <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CHI_LUONG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MAKHO" Type="integer" Nullable="false" />
+    <Property Name="MANV" Type="integer" Nullable="false" />
+    <Property Name="LUONG_THANG" Type="integer" Nullable="false" />
+    <Property Name="NGAY_CHI" Type="datetime" Nullable="false" />
+    <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+    <Property Name="TONG_TIEN" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CHI_TIEU_DUNG_NOI_BO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MAKHO" Type="integer" Nullable="false" />
+    <Property Name="MAHH" Type="integer" Nullable="false" />
+    <Property Name="MAXE" Type="integer" Nullable="false" />
+    <Property Name="SO_LUONG" Type="integer" Nullable="false" />
+    <Property Name="DON_GIA_BAN" Type="integer" Nullable="false" />
+    <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CHO_VAY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MAKHO" Type="integer" Nullable="false" />
+    <Property Name="MA_NGUON_NO" Type="integer" Nullable="false" />
+    <Property Name="TONG_TIEN" Type="integer" Nullable="false" />
+    <Property Name="LAI_SUAT" Type="float" Nullable="false" />
+    <Property Name="NGAY_CHO_VAY" Type="datetime" Nullable="false" />
+    <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HANG_HOA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" />
+    <Property Name="UNIT" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KHACH_HANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KHO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" />
+    <Property Name="TYPE" Type="integer" Nullable="false" />
+    <Property Name="CODE" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="NGUON_NO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NGUON_VAY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NHA_CUNG_CAP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NHAN_VIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" />
+    <Property Name="MAKHO" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NHAP_HANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MAKHO" Type="integer" Nullable="false" />
+    <Property Name="MANCC" Type="integer" Nullable="false" />
+    <Property Name="MAHH" Type="integer" Nullable="false" />
+    <Property Name="SO_LUONG" Type="integer" Nullable="false" />
+    <Property Name="SL_CON_LAI" Type="integer" Nullable="false" />
+    <Property Name="DON_GIA_MUA" Type="integer" Nullable="false" />
+    <Property Name="NGAY_NHAP" Type="datetime" Nullable="false" />
+    <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="THU_NO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MAKH" Type="integer" Nullable="false" />
+    <Property Name="MAKHO" Type="integer" Nullable="false" />
+    <Property Name="TIEN_GOC" Type="integer" Nullable="false" />
+    <Property Name="TIEN_LAI" Type="integer" Nullable="false" />
+    <Property Name="NGAY_TRA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TRA_NO_NCC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MANCC" Type="integer" Nullable="false" />
+    <Property Name="TONG_TIEN" Type="integer" Nullable="false" />
+    <Property Name="NGAY_TRA" Type="datetime" Nullable="false" />
+    <Property Name="MAKHO" Type="integer" Nullable="false" />
+    <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TRA_NO_VAY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MA_NGUON_VAY" Type="integer" Nullable="false" />
+    <Property Name="MAKHO" Type="integer" Nullable="false" />
+    <Property Name="TIEN_GOC" Type="integer" Nullable="false" />
+    <Property Name="TIEN_LAI" Type="integer" Nullable="false" />
+    <Property Name="NGAY_TRA" Type="datetime" Nullable="false" />
+    <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VAY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MA_NGUON_VAY" Type="integer" Nullable="false" />
+    <Property Name="TONG_TIEN" Type="integer" Nullable="false" />
+    <Property Name="LAI_SUAT" Type="float" Nullable="false" />
+    <Property Name="NGAY_VAY" Type="datetime" Nullable="false" />
+    <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="XE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BIEN_SO" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="XUAT_HANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MAKHO" Type="integer" Nullable="false" />
+    <Property Name="MAHH" Type="integer" Nullable="false" />
+    <Property Name="MAKH" Type="integer" Nullable="false" />
+    <Property Name="SO_LUONG" Type="integer" Nullable="false" />
+    <Property Name="DON_GIA_BAN" Type="integer" Nullable="false" />
+    <Property Name="THANH_TOAN_XUAT" Type="integer" Nullable="false" />
+    <Property Name="LAI_SUAT" Type="float" Nullable="false" />
+    <Property Name="TRA_TRUOC" Type="integer" Nullable="false" />
+    <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+    <Property Name="NGAY_XUAT" Type="datetime" />
+    <Property Name="DUA_TRUOC" Type="integer" />
+  </EntityType>
+</Schema>

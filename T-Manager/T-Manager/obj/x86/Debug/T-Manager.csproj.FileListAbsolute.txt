@@ -1,0 +1,52 @@
+c:\users\tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\bin\Debug\T-Manager.exe.config
+c:\users\tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\bin\Debug\T-Manager.exe
+c:\users\tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\bin\Debug\T-Manager.pdb
+c:\users\tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Properties.Resources.resources
+c:\users\tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csproj.GenerateResource.Cache
+c:\users\tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T-Manager.exe
+c:\users\tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T-Manager.pdb
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csprojResolveAssemblyReference.cache
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FKhachHang.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FMain.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FNhapHang.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FXuatHang.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FChi.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FNhanVien.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FChoVay.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FThuNo.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FVay.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FTraNoVay.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FTraNoNCC.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FKho.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FNguonVay.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FXe.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FNCC.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FTaiKhoan.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FHangHoa.resources
+C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FCongNoKH.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe.config
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.exe
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.pdb
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.pdb
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csprojResolveAssemblyReference.cache
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FHangHoa.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FKho.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FNCC.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FNguonVay.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FTaiKhoan.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FXe.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FChi.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FChoVay.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FKhachHang.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FMain.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FNhanVien.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FNhapHang.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FThuNo.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FTraNoNCC.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FTraNoVay.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FVay.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Properties.Resources.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FXuatHang.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FCongNoKH.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csproj.GenerateResource.Cache
