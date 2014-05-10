@@ -6,8 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Data.SQLite;
+using System.Data.Entity;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+using System.Data.Objects;
 
 namespace T_Manager.REPORT
 {
@@ -29,7 +31,7 @@ namespace T_Manager.REPORT
                              join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
                              select new
                              {
-                                 DATE = (DateTime)xh.NGAY_XUAT,
+                                 DATE = xh.NGAY_XUAT.Value,
                                  KHO = kho.NAME,
                                  HANGHOA = hh.NAME,
                                  SOLUONG = xh.SO_LUONG,
@@ -37,7 +39,8 @@ namespace T_Manager.REPORT
                                  THANHTIEN = xh.SO_LUONG * xh.DON_GIA_BAN,
                                  THANHTOAN = xh.TRA_TRUOC,
                                  CONNO = xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC,
-                                 KHACHHANG = kh.NAME
+                                 KHACHHANG = kh.NAME,
+                                 LAISUAT = xh.LAI_SUAT
                              });
             CrystalReportCongNoKhachHang rpt = new CrystalReportCongNoKhachHang();
             rpt.SetDataSource(bs);

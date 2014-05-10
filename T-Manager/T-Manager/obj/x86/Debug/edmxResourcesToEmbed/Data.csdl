@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="tgasModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+<Schema Namespace="tgasModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
   <EntityContainer Name="tgasEntities">
     <EntitySet Name="CHI_KHAC" EntityType="tgasModel.CHI_KHAC" />
     <EntitySet Name="CHI_LUONG" EntityType="tgasModel.CHI_LUONG" />
@@ -70,7 +70,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
     <Property Name="UNIT" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
   </EntityType>
@@ -78,14 +78,14 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="KHO">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
     <Property Name="TYPE" Type="Int64" Nullable="false" />
     <Property Name="CODE" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
@@ -101,21 +101,21 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="NHA_CUNG_CAP">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="NHAN_VIEN">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
     <Property Type="Int64" Name="MAKHO" Nullable="false" />
   </EntityType>
@@ -123,7 +123,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MAKHO" Type="Int64" Nullable="false" />
     <Property Name="MANCC" Type="Int64" Nullable="false" />
     <Property Name="MAHH" Type="Int64" Nullable="false" />
@@ -137,7 +137,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_NGUON_VAY" Type="Int64" Nullable="false" />
     <Property Name="TONG_TIEN" Type="Int64" Nullable="false" />
     <Property Name="LAI_SUAT" Type="Double" Nullable="false" />
@@ -148,7 +148,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MAKHO" Type="Int64" Nullable="false" />
     <Property Name="MAHH" Type="Int64" Nullable="false" />
     <Property Name="MAKH" Type="Int64" Nullable="false" />
@@ -165,14 +165,14 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="String" Name="BIEN_SO" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="THU_NO">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="Int64" Name="MAKH" Nullable="false" />
     <Property Type="Int64" Name="MAKHO" Nullable="false" />
     <Property Type="Int64" Name="TIEN_GOC" Nullable="false" />
@@ -183,7 +183,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="Int64" Name="MA_NGUON_VAY" Nullable="false" />
     <Property Type="Int64" Name="MAKHO" Nullable="false" />
     <Property Type="Int64" Name="TIEN_GOC" Nullable="false" />
@@ -195,7 +195,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="Int64" Name="MANCC" Nullable="false" />
     <Property Type="Int64" Name="TONG_TIEN" Nullable="false" />
     <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />

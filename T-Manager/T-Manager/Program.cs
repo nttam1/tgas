@@ -15,7 +15,6 @@ namespace T_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FNhanVien());
             Application.Run(new FMain());
         }
     }
