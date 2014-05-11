@@ -186,6 +186,7 @@
     <Compile Include="FVay.Designer.cs">
       <DependentUpon>FVay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modal\MKhachHang.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FXuatHang.cs">
@@ -206,6 +207,7 @@
     <Compile Include="REPORT\FCongNoKH.Designer.cs">
       <DependentUpon>FCongNoKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility.cs" />
     <EmbeddedResource Include="Data\FHangHoa.resx">
       <DependentUpon>FHangHoa.cs</DependentUpon>
     </EmbeddedResource>

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using T_Manager.Modal;
 
 namespace T_Manager
 {
@@ -34,7 +35,7 @@ namespace T_Manager
                 {
                     c.KeyPress +=new KeyPressEventHandler(c_KeyPress);
                 }
-            }
+            }        
         }
         private void c_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -44,10 +45,12 @@ namespace T_Manager
         private BindingSource bs = new BindingSource();
         private void comboBoxKHACHHANG_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Int32 kho = -1;
+            Int32 kh = -1;
             try
             {
-                var kh = Int32.Parse(comboBoxKHACHHANG.SelectedValue.ToString());
-                var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
+                kh = Int32.Parse(comboBoxKHACHHANG.SelectedValue.ToString());
+                kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
                 bs.DataSource = DataInstance.Instance().DBContext().THU_NO.Where(u => u.MAKHO == kho)
                     .Where(u => u.MAKH == kh);
                 dataGridViewTHUNO.DataSource = bs;
@@ -62,6 +65,19 @@ namespace T_Manager
             catch (Exception ex)
             {
 
+            }
+
+            try
+            {
+                MKhachHang mKH = new MKhachHang(kh);
+                /* Hien thi tong no, tong lai */
+                TONGNO_LB.Text = Utility.StringToVND(mKH.NoHienTai().ToString());
+                TONGLAI_LB.Text = Utility.StringToVND(mKH.LaiHienTai().ToString());
+            }
+            catch (Exception ex)
+            {
+                TONGNO_LB.Text = "0 VND";
+                TONGLAI_LB.Text = "0 VND";
             }
 
         }
@@ -105,6 +121,31 @@ namespace T_Manager
             {
                 buttonADD_Click(sender, e);
             }
+        }
+
+        private void textBoxTIENLAI_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxTIENGOC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TONGNO_LB_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

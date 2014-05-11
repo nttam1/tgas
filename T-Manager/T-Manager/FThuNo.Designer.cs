@@ -40,6 +40,10 @@
             this.comboBoxKHO = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewTHUNO = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TONGLAI_LB = new System.Windows.Forms.TextBox();
+            this.TONGNO_LB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTHUNO)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +59,7 @@
             // 
             // buttonADD
             // 
-            this.buttonADD.Location = new System.Drawing.Point(608, 152);
+            this.buttonADD.Location = new System.Drawing.Point(477, 219);
             this.buttonADD.Name = "buttonADD";
             this.buttonADD.Size = new System.Drawing.Size(75, 23);
             this.buttonADD.TabIndex = 17;
@@ -65,38 +69,42 @@
             // 
             // textBoxTIENLAI
             // 
-            this.textBoxTIENLAI.Location = new System.Drawing.Point(436, 155);
+            this.textBoxTIENLAI.Location = new System.Drawing.Point(226, 221);
             this.textBoxTIENLAI.Name = "textBoxTIENLAI";
-            this.textBoxTIENLAI.Size = new System.Drawing.Size(146, 20);
+            this.textBoxTIENLAI.Size = new System.Drawing.Size(208, 20);
             this.textBoxTIENLAI.TabIndex = 16;
+            this.textBoxTIENLAI.TextChanged += new System.EventHandler(this.textBoxTIENLAI_TextChanged);
             this.textBoxTIENLAI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTIENLAI_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(433, 128);
+            this.label4.Location = new System.Drawing.Point(223, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 15;
             this.label4.Text = "TIỀN LÃI";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBoxTIENGOC
             // 
-            this.textBoxTIENGOC.Location = new System.Drawing.Point(241, 155);
+            this.textBoxTIENGOC.Location = new System.Drawing.Point(13, 221);
             this.textBoxTIENGOC.Name = "textBoxTIENGOC";
-            this.textBoxTIENGOC.Size = new System.Drawing.Size(166, 20);
+            this.textBoxTIENGOC.Size = new System.Drawing.Size(197, 20);
             this.textBoxTIENGOC.TabIndex = 14;
+            this.textBoxTIENGOC.TextChanged += new System.EventHandler(this.textBoxTIENGOC_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(238, 128);
+            this.label3.Location = new System.Drawing.Point(10, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 13;
             this.label3.Text = "TIỀN GỐC";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // comboBoxKHACHHANG
             // 
@@ -142,7 +150,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 192);
+            this.label6.Location = new System.Drawing.Point(-1, 246);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(272, 13);
             this.label6.TabIndex = 18;
@@ -151,16 +159,59 @@
             // dataGridViewTHUNO
             // 
             this.dataGridViewTHUNO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTHUNO.Location = new System.Drawing.Point(5, 208);
+            this.dataGridViewTHUNO.Location = new System.Drawing.Point(2, 265);
             this.dataGridViewTHUNO.Name = "dataGridViewTHUNO";
             this.dataGridViewTHUNO.Size = new System.Drawing.Size(709, 219);
             this.dataGridViewTHUNO.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(241, 129);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "TỔNG NỢ HIỆN TẠI";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(446, 129);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(106, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "TỔNG LÃI HIỆN TẠI";
+            // 
+            // TONGLAI_LB
+            // 
+            this.TONGLAI_LB.Location = new System.Drawing.Point(449, 157);
+            this.TONGLAI_LB.Name = "TONGLAI_LB";
+            this.TONGLAI_LB.ReadOnly = true;
+            this.TONGLAI_LB.Size = new System.Drawing.Size(158, 20);
+            this.TONGLAI_LB.TabIndex = 23;
+            this.TONGLAI_LB.Text = "0";
+            this.TONGLAI_LB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // TONGNO_LB
+            // 
+            this.TONGNO_LB.Location = new System.Drawing.Point(244, 157);
+            this.TONGNO_LB.Name = "TONGNO_LB";
+            this.TONGNO_LB.ReadOnly = true;
+            this.TONGNO_LB.Size = new System.Drawing.Size(158, 20);
+            this.TONGNO_LB.TabIndex = 22;
+            this.TONGNO_LB.Text = "0";
+            this.TONGNO_LB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TONGNO_LB.TextChanged += new System.EventHandler(this.TONGNO_LB_TextChanged);
             // 
             // FThuNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 439);
+            this.ClientSize = new System.Drawing.Size(723, 496);
+            this.Controls.Add(this.TONGLAI_LB);
+            this.Controls.Add(this.TONGNO_LB);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridViewTHUNO);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonADD);
@@ -200,5 +251,9 @@
         private System.Windows.Forms.ComboBox comboBoxKHO;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridViewTHUNO;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox TONGLAI_LB;
+        private System.Windows.Forms.TextBox TONGNO_LB;
     }
 }
