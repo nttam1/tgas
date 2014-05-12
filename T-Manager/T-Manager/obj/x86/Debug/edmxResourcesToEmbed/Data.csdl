@@ -159,7 +159,6 @@
     <Property Name="TRA_TRUOC" Type="Int64" Nullable="false" />
     <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
     <Property Name="NGAY_XUAT" Type="DateTime" />
-    <Property Type="Int64" Name="DUA_TRUOC" />
   </EntityType>
   <EntityType Name="XE">
     <Key>
@@ -178,6 +177,7 @@
     <Property Type="Int64" Name="TIEN_GOC" Nullable="false" />
     <Property Type="Int64" Name="TIEN_LAI" Nullable="false" />
     <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
+    <Property Type="String" Name="NOI_DUNG" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="TRA_NO_VAY">
     <Key>

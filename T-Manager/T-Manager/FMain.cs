@@ -127,5 +127,11 @@ namespace T_Manager
             REPORT.FCongNoKH f = new REPORT.FCongNoKH();
             f.ShowDialog();
         }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            REPORT.FTongHopCongNo f = new REPORT.FTongHopCongNo();
+            f.ShowDialog();
+        }
     }
 }

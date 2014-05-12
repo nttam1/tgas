@@ -147,5 +147,34 @@ namespace T_Manager
         {
 
         }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
+                var tongtien = Int32.Parse(textBoxTONGTIEN.Text);
+                var noidung = richTextBoxNOIDUNG.Text;
+                DataInstance.Instance().DBContext().AddToTHU_NO(new THU_NO()
+               {
+                   MAKHO = kho,
+                   TIEN_GOC = tongtien,
+                   NOI_DUNG = noidung,
+                   NGAY_TRA = DateTime.Now
+               });
+                DataInstance.Instance().DBContext().SaveChanges();
+                textBoxTONGTIEN.Text = "";
+                richTextBoxNOIDUNG.Text = "";
+                textBoxTONGTIEN.Select();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 }

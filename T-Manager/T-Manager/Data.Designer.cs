@@ -2435,6 +2435,30 @@ namespace T_Manager
         private global::System.DateTime _NGAY_TRA;
         partial void OnNGAY_TRAChanging(global::System.DateTime value);
         partial void OnNGAY_TRAChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String NOI_DUNG
+        {
+            get
+            {
+                return _NOI_DUNG;
+            }
+            set
+            {
+                OnNOI_DUNGChanging(value);
+                ReportPropertyChanging("NOI_DUNG");
+                _NOI_DUNG = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("NOI_DUNG");
+                OnNOI_DUNGChanged();
+            }
+        }
+        private global::System.String _NOI_DUNG;
+        partial void OnNOI_DUNGChanging(global::System.String value);
+        partial void OnNOI_DUNGChanged();
 
         #endregion
 
@@ -3420,30 +3444,6 @@ namespace T_Manager
         private Nullable<global::System.DateTime> _NGAY_XUAT;
         partial void OnNGAY_XUATChanging(Nullable<global::System.DateTime> value);
         partial void OnNGAY_XUATChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int64> DUA_TRUOC
-        {
-            get
-            {
-                return _DUA_TRUOC;
-            }
-            set
-            {
-                OnDUA_TRUOCChanging(value);
-                ReportPropertyChanging("DUA_TRUOC");
-                _DUA_TRUOC = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("DUA_TRUOC");
-                OnDUA_TRUOCChanged();
-            }
-        }
-        private Nullable<global::System.Int64> _DUA_TRUOC;
-        partial void OnDUA_TRUOCChanging(Nullable<global::System.Int64> value);
-        partial void OnDUA_TRUOCChanged();
 
         #endregion
 

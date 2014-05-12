@@ -141,7 +141,6 @@
     <EntitySetMapping Name="XUAT_HANG">
       <EntityTypeMapping TypeName="tgasModel.XUAT_HANG">
         <MappingFragment StoreEntitySet="XUAT_HANG">
-          <ScalarProperty Name="DUA_TRUOC" ColumnName="DUA_TRUOC" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
           <ScalarProperty Name="MAHH" ColumnName="MAHH" />
@@ -167,6 +166,7 @@
     <EntitySetMapping Name="THU_NO">
       <EntityTypeMapping TypeName="tgasModel.THU_NO">
         <MappingFragment StoreEntitySet="THU_NO">
+          <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
           <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
           <ScalarProperty Name="TIEN_LAI" ColumnName="TIEN_LAI" />
           <ScalarProperty Name="TIEN_GOC" ColumnName="TIEN_GOC" />

@@ -4,26 +4,26 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="tgasModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="tgasModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="tgasModelStoreContainer">
-          <EntitySet Name="CHI_KHAC" EntityType="tgasModel.Store.CHI_KHAC" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="CHI_LUONG" EntityType="tgasModel.Store.CHI_LUONG" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="CHI_TIEU_DUNG_NOI_BO" EntityType="tgasModel.Store.CHI_TIEU_DUNG_NOI_BO" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="CHO_VAY" EntityType="tgasModel.Store.CHO_VAY" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="HANG_HOA" EntityType="tgasModel.Store.HANG_HOA" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="KHACH_HANG" EntityType="tgasModel.Store.KHACH_HANG" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="KHO" EntityType="tgasModel.Store.KHO" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="NGUON_NO" EntityType="tgasModel.Store.NGUON_NO" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="NGUON_VAY" EntityType="tgasModel.Store.NGUON_VAY" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="NHA_CUNG_CAP" EntityType="tgasModel.Store.NHA_CUNG_CAP" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="NHAN_VIEN" EntityType="tgasModel.Store.NHAN_VIEN" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="NHAP_HANG" EntityType="tgasModel.Store.NHAP_HANG" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="THU_NO" EntityType="tgasModel.Store.THU_NO" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="TRA_NO_NCC" EntityType="tgasModel.Store.TRA_NO_NCC" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="TRA_NO_VAY" EntityType="tgasModel.Store.TRA_NO_VAY" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="VAY" EntityType="tgasModel.Store.VAY" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="XE" EntityType="tgasModel.Store.XE" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="XUAT_HANG" EntityType="tgasModel.Store.XUAT_HANG" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="CHI_KHAC" EntityType="tgasModel.Store.CHI_KHAC" store:Type="Tables" />
+          <EntitySet Name="CHI_LUONG" EntityType="tgasModel.Store.CHI_LUONG" store:Type="Tables" />
+          <EntitySet Name="CHI_TIEU_DUNG_NOI_BO" EntityType="tgasModel.Store.CHI_TIEU_DUNG_NOI_BO" store:Type="Tables" />
+          <EntitySet Name="CHO_VAY" EntityType="tgasModel.Store.CHO_VAY" store:Type="Tables" />
+          <EntitySet Name="HANG_HOA" EntityType="tgasModel.Store.HANG_HOA" store:Type="Tables" />
+          <EntitySet Name="KHACH_HANG" EntityType="tgasModel.Store.KHACH_HANG" store:Type="Tables" />
+          <EntitySet Name="KHO" EntityType="tgasModel.Store.KHO" store:Type="Tables" />
+          <EntitySet Name="NGUON_NO" EntityType="tgasModel.Store.NGUON_NO" store:Type="Tables" />
+          <EntitySet Name="NGUON_VAY" EntityType="tgasModel.Store.NGUON_VAY" store:Type="Tables" />
+          <EntitySet Name="NHA_CUNG_CAP" EntityType="tgasModel.Store.NHA_CUNG_CAP" store:Type="Tables" />
+          <EntitySet Name="NHAN_VIEN" EntityType="tgasModel.Store.NHAN_VIEN" store:Type="Tables" />
+          <EntitySet Name="NHAP_HANG" EntityType="tgasModel.Store.NHAP_HANG" store:Type="Tables" />
+          <EntitySet Name="THU_NO" EntityType="tgasModel.Store.THU_NO" store:Type="Tables" />
+          <EntitySet Name="TRA_NO_NCC" EntityType="tgasModel.Store.TRA_NO_NCC" store:Type="Tables" />
+          <EntitySet Name="TRA_NO_VAY" EntityType="tgasModel.Store.TRA_NO_VAY" store:Type="Tables" />
+          <EntitySet Name="VAY" EntityType="tgasModel.Store.VAY" store:Type="Tables" />
+          <EntitySet Name="XE" EntityType="tgasModel.Store.XE" store:Type="Tables" />
+          <EntitySet Name="XUAT_HANG" EntityType="tgasModel.Store.XUAT_HANG" store:Type="Tables" />
         </EntityContainer>
         <EntityType Name="CHI_KHAC">
           <Key>
@@ -143,10 +143,11 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="MAKH" Type="integer" Nullable="false" />
+          <Property Name="MAKH" Type="integer" />
           <Property Name="MAKHO" Type="integer" Nullable="false" />
           <Property Name="TIEN_GOC" Type="integer" Nullable="false" />
           <Property Name="TIEN_LAI" Type="integer" Nullable="false" />
+          <Property Name="NOI_DUNG" Type="nvarchar" />
           <Property Name="NGAY_TRA" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="TRA_NO_NCC">
@@ -205,7 +206,6 @@
           <Property Name="TRA_TRUOC" Type="integer" Nullable="false" />
           <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
           <Property Name="NGAY_XUAT" Type="datetime" />
-          <Property Name="DUA_TRUOC" Type="integer" />
         </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -370,7 +370,6 @@
           <Property Name="TRA_TRUOC" Type="Int64" Nullable="false" />
           <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
           <Property Name="NGAY_XUAT" Type="DateTime" />
-          <Property Type="Int64" Name="DUA_TRUOC" />
         </EntityType>
         <EntityType Name="XE">
           <Key>
@@ -389,6 +388,7 @@
           <Property Type="Int64" Name="TIEN_GOC" Nullable="false" />
           <Property Type="Int64" Name="TIEN_LAI" Nullable="false" />
           <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
+          <Property Type="String" Name="NOI_DUNG" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TRA_NO_VAY">
           <Key>
@@ -559,7 +559,6 @@
           <EntitySetMapping Name="XUAT_HANG">
             <EntityTypeMapping TypeName="tgasModel.XUAT_HANG">
               <MappingFragment StoreEntitySet="XUAT_HANG">
-                <ScalarProperty Name="DUA_TRUOC" ColumnName="DUA_TRUOC" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
                 <ScalarProperty Name="MAHH" ColumnName="MAHH" />
@@ -585,6 +584,7 @@
           <EntitySetMapping Name="THU_NO">
             <EntityTypeMapping TypeName="tgasModel.THU_NO">
               <MappingFragment StoreEntitySet="THU_NO">
+                <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
                 <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
                 <ScalarProperty Name="TIEN_LAI" ColumnName="TIEN_LAI" />
                 <ScalarProperty Name="TIEN_GOC" ColumnName="TIEN_GOC" />
@@ -653,7 +653,7 @@
         <EntityTypeShape EntityType="tgasModel.NHAN_VIEN" Width="1.5" PointX="8.75" PointY="0.75" Height="1.4033821614583353" IsExpanded="true" />
         <EntityTypeShape EntityType="tgasModel.NHAP_HANG" Width="1.5" PointX="8.75" PointY="3.75" Height="2.7494921875000031" IsExpanded="true" />
         <EntityTypeShape EntityType="tgasModel.VAY" Width="1.5" PointX="8.75" PointY="7.75" Height="2.1725878906250031" IsExpanded="true" />
-        <EntityTypeShape EntityType="tgasModel.XUAT_HANG" Width="1.5" PointX="4.75" PointY="9.75" Height="3.1340950520833388" IsExpanded="true" />
+        <EntityTypeShape EntityType="tgasModel.XUAT_HANG" Width="1.5" PointX="4.75" PointY="9.75" Height="3.1340950520833335" IsExpanded="true" />
         <EntityTypeShape EntityType="tgasModel.XE" Width="1.5" PointX="0.75" PointY="10.75" Height="1.4033821614583388" />
         <EntityTypeShape EntityType="tgasModel.THU_NO" Width="1.5" PointX="7.375" PointY="10.75" Height="2.1725878906250031" />
         <EntityTypeShape EntityType="tgasModel.TRA_NO_VAY" Width="1.5" PointX="9.375" PointY="10.75" Height="2.3648893229166674" />

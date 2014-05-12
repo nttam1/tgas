@@ -48,6 +48,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -250,6 +251,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button17);
             this.groupBox3.Controls.Add(this.button16);
             this.groupBox3.Location = new System.Drawing.Point(12, 226);
             this.groupBox3.Name = "groupBox3";
@@ -267,6 +269,16 @@
             this.button16.Text = "CÔNG NỢ KHÁCH HÀNG";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(6, 48);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(171, 23);
+            this.button17.TabIndex = 1;
+            this.button17.Text = "TỔNG HỢP CÔNG NỢ";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // FMain
             // 
@@ -311,6 +323,7 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
     }
 }
 
