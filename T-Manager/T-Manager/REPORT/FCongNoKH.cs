@@ -24,11 +24,28 @@ namespace T_Manager.REPORT
 
         private void FCongNoKH_Load(object sender, EventArgs e)
         {
+            button1_Click(sender, e);
+        }
+
+        private void comboBoxKHACHHANG_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportViewerKH_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             BindingSource bs = new BindingSource();
             bs.DataSource = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
                              join hh in DataInstance.Instance().DBContext().HANG_HOA on xh.MAHH equals hh.ID
                              join kho in DataInstance.Instance().DBContext().KHOes on xh.MAKHO equals kho.ID
                              join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
+                             where xh.NGAY_XUAT >= dateTimePicker1.Value
+                             where xh.NGAY_XUAT <= dateTimePicker2.Value
                              select new
                              {
                                  DATE = xh.NGAY_XUAT.Value,
@@ -42,19 +59,41 @@ namespace T_Manager.REPORT
                                  KHACHHANG = kh.NAME,
                                  LAISUAT = xh.LAI_SUAT
                              });
+            //crystalReportViewer1.RefreshReport();
             CrystalReportCongNoKhachHang rpt = new CrystalReportCongNoKhachHang();
             rpt.SetDataSource(bs);
+            rpt.SetParameterValue("FROM", dateTimePicker1.Value);
+            rpt.SetParameterValue("TO", dateTimePicker2.Value);
             crystalReportViewer1.ReportSource = rpt;
-
-            crystalReportViewer1.RefreshReport();
         }
 
-        private void comboBoxKHACHHANG_SelectedIndexChanged(object sender, EventArgs e)
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void reportViewerKH_Load(object sender, EventArgs e)
+        private void FCongNoKH_Resize(object sender, EventArgs e)
+        {
+            crystalReportViewer1.Height = this.Height - 20 - groupBox1.Height;
+            crystalReportViewer1.Width = this.Width;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
