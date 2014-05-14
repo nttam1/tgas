@@ -19,7 +19,7 @@ namespace T_Manager
 
         private void FThuNo_Load(object sender, EventArgs e)
         {
-            comboBoxKHO.DataSource = DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE == 0);
+            comboBoxKHO.DataSource = DataInstance.Instance().DBContext().KHOes;
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
 

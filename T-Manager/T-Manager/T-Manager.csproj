@@ -195,6 +195,12 @@
     <Compile Include="FXuatHang.Designer.cs">
       <DependentUpon>FXuatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="REPORT\CrystalReportCHITIETNONCC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportCHITIETNONCC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\CrystalReportCongNoKhachHang.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -207,6 +213,18 @@
       <DependentUpon>CrystalReportTONGHOPCONGNO.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REPORT\CrystalReportTONGHOPNONCC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportTONGHOPNONCC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORT\FChiTietNoNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\FChiTietNoNCC.Designer.cs">
+      <DependentUpon>FChiTietNoNCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="REPORT\FCongNoKH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +236,12 @@
     </Compile>
     <Compile Include="REPORT\FTongHopCongNo.Designer.cs">
       <DependentUpon>FTongHopCongNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT\FTongHopNoNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\FTongHopNoNCC.Designer.cs">
+      <DependentUpon>FTongHopNoNCC.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility.cs" />
     <EmbeddedResource Include="Data\FHangHoa.resx">
@@ -281,6 +305,10 @@
     <EmbeddedResource Include="FXuatHang.resx">
       <DependentUpon>FXuatHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\CrystalReportCHITIETNONCC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportCHITIETNONCC.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\CrystalReportCongNoKhachHang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportCongNoKhachHang.cs</LastGenOutput>
@@ -289,11 +317,21 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportTONGHOPCONGNO.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\CrystalReportTONGHOPNONCC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportTONGHOPNONCC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\FChiTietNoNCC.resx">
+      <DependentUpon>FChiTietNoNCC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FCongNoKH.resx">
       <DependentUpon>FCongNoKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FTongHopCongNo.resx">
       <DependentUpon>FTongHopCongNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\FTongHopNoNCC.resx">
+      <DependentUpon>FTongHopNoNCC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config" />
     <EntityDeploy Include="Data.edmx">

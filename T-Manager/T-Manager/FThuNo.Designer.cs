@@ -85,7 +85,7 @@
             this.comboBoxKHO.FormattingEnabled = true;
             this.comboBoxKHO.Location = new System.Drawing.Point(333, 71);
             this.comboBoxKHO.Name = "comboBoxKHO";
-            this.comboBoxKHO.Size = new System.Drawing.Size(144, 37);
+            this.comboBoxKHO.Size = new System.Drawing.Size(205, 37);
             this.comboBoxKHO.TabIndex = 9;
             this.comboBoxKHO.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHO_SelectedIndexChanged);
             // 

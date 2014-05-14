@@ -133,5 +133,18 @@ namespace T_Manager
             REPORT.FTongHopCongNo f = new REPORT.FTongHopCongNo();
             f.ShowDialog();
         }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+
+            REPORT.FChiTietNoNCC f = new REPORT.FChiTietNoNCC();
+            f.ShowDialog();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            REPORT.FTongHopNoNCC f = new REPORT.FTongHopNoNCC();
+            f.ShowDialog();
+        }
     }
 }
