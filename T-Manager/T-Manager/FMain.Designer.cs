@@ -47,10 +47,11 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button19 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -253,6 +254,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button20);
             this.groupBox3.Controls.Add(this.button19);
             this.groupBox3.Controls.Add(this.button18);
             this.groupBox3.Controls.Add(this.button17);
@@ -263,6 +265,16 @@
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "BÁO CÁO";
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(6, 106);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(171, 23);
+            this.button19.TabIndex = 3;
+            this.button19.Text = "TỔNG HỢP NỢ NHÀ CUNG CẤP";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button18
             // 
@@ -294,15 +306,15 @@
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
-            // button19
+            // button20
             // 
-            this.button19.Location = new System.Drawing.Point(6, 106);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(171, 23);
-            this.button19.TabIndex = 3;
-            this.button19.Text = "TỔNG HỢP NỢ NHÀ CUNG CẤP";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
+            this.button20.Location = new System.Drawing.Point(194, 19);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(171, 23);
+            this.button20.TabIndex = 4;
+            this.button20.Text = "CHI TIẾT NỢ VAY";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // FMain
             // 
@@ -350,6 +362,7 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
     }
 }
 

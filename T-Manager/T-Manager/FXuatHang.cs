@@ -39,9 +39,24 @@ namespace T_Manager
                 else
                 {
                     dbContext.AddToXUAT_HANG(ele);
+                    /* TRỪ SỐ LƯỢNG HÀNG ĐÃ XUẤT VÀO NHẬP HÀNG */
+                    long _SoLuong = ele.SO_LUONG;
+                    foreach (var row in dbContext.NHAP_HANG
+                        .Where(u => u.MAKHO == ele.MAKHO)
+                        .Where(u => u.MAHH == ele.MAHH)
+                        .OrderBy(u => u.NGAY_NHAP))
+                    {
+                        var sub_SL = row.SL_CON_LAI;
+                        row.SL_CON_LAI = _SoLuong >= row.SL_CON_LAI ? 0 : row.SL_CON_LAI - _SoLuong;
+                        _SoLuong = _SoLuong >= sub_SL ? _SoLuong - sub_SL : 0;
+                        if (_SoLuong == 0)
+                        {
+                            break;
+                        }
+                    }
                     dbContext.SaveChanges();
                     textBoxDONGIA.SelectAll();
-                    dataGridView1.Rows.Add(comboBoxKho.Text, comboBoxKHACH_HANG.Text, comboBoxHANGHOA.Text, ele.DON_GIA_BAN, ele.SO_LUONG, ele.TRA_TRUOC,ele.LAI_SUAT, ele.NGAY_XUAT);
+                    dataGridView1.Rows.Add(comboBoxKho.Text, comboBoxKHACH_HANG.Text, comboBoxHANGHOA.Text, ele.DON_GIA_BAN, ele.SO_LUONG, ele.TRA_TRUOC, ele.LAI_SUAT, ele.NGAY_XUAT);
                 }
             }
             catch (Exception ex)

@@ -357,7 +357,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxHANGHOA);
             this.Controls.Add(this.buttonCLEAR);
-            this.Controls.Add(this.buttonADD);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -369,6 +368,7 @@
             this.Controls.Add(this.comboBoxKHACH_HANG);
             this.Controls.Add(this.comboBoxKho);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonADD);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

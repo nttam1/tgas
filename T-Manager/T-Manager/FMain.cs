@@ -146,5 +146,11 @@ namespace T_Manager
             REPORT.FTongHopNoNCC f = new REPORT.FTongHopNoNCC();
             f.ShowDialog();
         }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            REPORT.FChiTietNoVay f = new REPORT.FChiTietNoVay();
+            f.ShowDialog();
+        }
     }
 }

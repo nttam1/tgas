@@ -201,6 +201,12 @@
       <DependentUpon>CrystalReportCHITIETNONCC.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REPORT\CrystalReportCHITIETNOVAY.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportCHITIETNOVAY.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\CrystalReportCongNoKhachHang.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -224,6 +230,12 @@
     </Compile>
     <Compile Include="REPORT\FChiTietNoNCC.Designer.cs">
       <DependentUpon>FChiTietNoNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT\FChiTietNoVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\FChiTietNoVay.Designer.cs">
+      <DependentUpon>FChiTietNoVay.cs</DependentUpon>
     </Compile>
     <Compile Include="REPORT\FCongNoKH.cs">
       <SubType>Form</SubType>
@@ -309,6 +321,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportCHITIETNONCC.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\CrystalReportCHITIETNOVAY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportCHITIETNOVAY.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\CrystalReportCongNoKhachHang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportCongNoKhachHang.cs</LastGenOutput>
@@ -323,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FChiTietNoNCC.resx">
       <DependentUpon>FChiTietNoNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\FChiTietNoVay.resx">
+      <DependentUpon>FChiTietNoVay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FCongNoKH.resx">
       <DependentUpon>FCongNoKH.cs</DependentUpon>
