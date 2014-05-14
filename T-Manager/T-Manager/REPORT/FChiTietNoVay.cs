@@ -48,6 +48,7 @@ namespace T_Manager.REPORT
             rpt.SetParameterValue("NV", comboBoxNCC.Text);
             rpt.SetParameterValue("FROM", _from);
             rpt.SetParameterValue("TO", _to);
+            rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
             crystalReportViewer1.ReportSource = rpt;
         }
     }

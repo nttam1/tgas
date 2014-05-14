@@ -79,6 +79,8 @@ namespace T_Manager
             comboBoxHANGHOA.DataSource = dbContext.HANG_HOA;
             comboBoxHANGHOA.DisplayMember = "NAME";
             comboBoxHANGHOA.ValueMember = "ID";
+
+            comboBoxHANGHOA_SelectedIndexChanged(sender, e);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -95,7 +97,7 @@ namespace T_Manager
 
         private void comboBoxHANGHOA_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string hh_id = ((ComboBox)sender).SelectedValue.ToString();
+            string hh_id = comboBoxHANGHOA.SelectedValue.ToString();
             try
             {
                 long value = long.Parse(hh_id);

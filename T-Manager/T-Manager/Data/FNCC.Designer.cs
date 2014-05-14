@@ -84,7 +84,7 @@
             this.MinimizeBox = false;
             this.Name = "FNCC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FNCC";
+            this.Text = "NHÀ CUNG CẤP";
             this.Load += new System.EventHandler(this.FNCC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

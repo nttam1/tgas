@@ -44,6 +44,7 @@ namespace T_Manager.REPORT
             rpt.SetParameterValue("NCC", comboBoxNCC.Text);
             rpt.SetParameterValue("FROM", _from);
             rpt.SetParameterValue("TO", _to);
+            rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
             crystalReportViewer1.ReportSource = rpt;
         }
 
@@ -52,6 +53,8 @@ namespace T_Manager.REPORT
             comboBoxNCC.DataSource = DataInstance.Instance().DBContext().NHA_CUNG_CAP;
             comboBoxNCC.DisplayMember = "NAME";
             comboBoxNCC.ValueMember = "ID";
+
+            dateTimePicker1.Value = dateTimePicker1.Value.AddMonths(-1);
         }
     }
 }

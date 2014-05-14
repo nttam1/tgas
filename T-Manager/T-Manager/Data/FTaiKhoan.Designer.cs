@@ -99,8 +99,11 @@
             this.Controls.Add(this.textBoxSO);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FTaiKhoan";
-            this.Text = "FTaiKhoan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "TÀI KHOẢN NGÂN HÀNG";
             this.Load += new System.EventHandler(this.FTaiKhoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

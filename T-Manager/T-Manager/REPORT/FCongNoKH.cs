@@ -19,12 +19,16 @@ namespace T_Manager.REPORT
         {
             InitializeComponent();
         }
-        
+
 
 
         private void FCongNoKH_Load(object sender, EventArgs e)
         {
-            button1_Click(sender, e);
+            comboBox1.DataSource = DataInstance.Instance().DBContext().KHACH_HANG;
+            comboBox1.DisplayMember = "NAME";
+            comboBox1.ValueMember = "ID";
+
+            dateTimePicker1.Value = dateTimePicker1.Value.AddMonths(-1);
         }
 
         private void comboBoxKHACHHANG_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,12 +44,14 @@ namespace T_Manager.REPORT
         private void button1_Click(object sender, EventArgs e)
         {
             BindingSource bs = new BindingSource();
+            long MAKH = long.Parse(comboBox1.SelectedValue.ToString());
             bs.DataSource = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
                              join hh in DataInstance.Instance().DBContext().HANG_HOA on xh.MAHH equals hh.ID
                              join kho in DataInstance.Instance().DBContext().KHOes on xh.MAKHO equals kho.ID
                              join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
                              where xh.NGAY_XUAT >= dateTimePicker1.Value
                              where xh.NGAY_XUAT <= dateTimePicker2.Value
+                             where xh.MAKH == MAKH
                              select new
                              {
                                  DATE = xh.NGAY_XUAT.Value,
@@ -59,11 +65,12 @@ namespace T_Manager.REPORT
                                  KHACHHANG = kh.NAME,
                                  LAISUAT = xh.LAI_SUAT
                              });
-            //crystalReportViewer1.RefreshReport();
             CrystalReportCongNoKhachHang rpt = new CrystalReportCongNoKhachHang();
             rpt.SetDataSource(bs);
+            rpt.SetParameterValue("KH", comboBox1.Text);
             rpt.SetParameterValue("FROM", dateTimePicker1.Value);
             rpt.SetParameterValue("TO", dateTimePicker2.Value);
+            rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
             crystalReportViewer1.ReportSource = rpt;
         }
 

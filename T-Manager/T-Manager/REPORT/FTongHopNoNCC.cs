@@ -38,7 +38,13 @@ namespace T_Manager.REPORT
             rpt.SetDataSource(bs);
             rpt.SetParameterValue("FROM", _from);
             rpt.SetParameterValue("TO", _to);
+            rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
             crystalReportViewer1.ReportSource = rpt;
+        }
+
+        private void FTongHopNoNCC_Load(object sender, EventArgs e)
+        {
+            dateTimePicker1.Value = dateTimePicker1.Value.AddMonths(-1);
         }
     }
 }

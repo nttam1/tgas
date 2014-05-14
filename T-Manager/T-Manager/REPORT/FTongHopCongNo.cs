@@ -42,6 +42,7 @@ namespace T_Manager.REPORT
             rpt.SetParameterValue("KHO", comboBoxKHO.Text);
             rpt.SetParameterValue("FROM", _from);
             rpt.SetParameterValue("TO", _to);
+            rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
             crystalReportViewer1.ReportSource = rpt;
         }
 
@@ -50,6 +51,8 @@ namespace T_Manager.REPORT
             comboBoxKHO.DataSource = DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE == 0);
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
+
+            dateTimePicker1.Value = dateTimePicker1.Value.AddMonths(-1);
         }
     }
 }

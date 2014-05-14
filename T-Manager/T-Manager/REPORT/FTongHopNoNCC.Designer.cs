@@ -122,6 +122,7 @@
             this.Name = "FTongHopNoNCC";
             this.Text = "TỔNG HỢP NỢ NHÀ CUNG CẤP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FTongHopNoNCC_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
