@@ -50,7 +50,7 @@ namespace T_Manager.REPORT
 
         private void FChiTietNoNCC_Load(object sender, EventArgs e)
         {
-            comboBoxNCC.DataSource = DataInstance.Instance().DBContext().NHA_CUNG_CAP;
+            comboBoxNCC.DataSource = T_Manager.Modal.MNcc.Get();//DataInstance.Instance().DBContext().NHA_CUNG_CAP;
             comboBoxNCC.DisplayMember = "NAME";
             comboBoxNCC.ValueMember = "ID";
 

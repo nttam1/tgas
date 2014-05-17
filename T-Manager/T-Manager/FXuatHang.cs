@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using T_Manager.Modal;
 
 namespace T_Manager
 {
@@ -26,7 +27,7 @@ namespace T_Manager
                 ele.MAKHO = Convert.ToInt32(comboBoxKho.SelectedValue.ToString());
                 ele.MAKH = Convert.ToInt32(comboBoxKHACH_HANG.SelectedValue.ToString());
                 ele.NGAY_XUAT = dateTimePickerNGAYBAN.Value;
-                ele.CREATED_AT = dateTimePickerNGAYBAN.Value;
+                ele.CREATED_AT = DateTime.Now;
                 ele.SO_LUONG = Convert.ToInt32(textBoxSOLUONG.Text);
                 ele.DON_GIA_BAN = Convert.ToInt32(textBoxDONGIA.Text);
                 ele.TRA_TRUOC = Convert.ToInt32(textBoxDUATRUOC.Text);
@@ -40,20 +41,7 @@ namespace T_Manager
                 {
                     dbContext.AddToXUAT_HANG(ele);
                     /* TRỪ SỐ LƯỢNG HÀNG ĐÃ XUẤT VÀO NHẬP HÀNG */
-                    long _SoLuong = ele.SO_LUONG;
-                    foreach (var row in dbContext.NHAP_HANG
-                        .Where(u => u.MAKHO == ele.MAKHO)
-                        .Where(u => u.MAHH == ele.MAHH)
-                        .OrderBy(u => u.NGAY_NHAP))
-                    {
-                        var sub_SL = row.SL_CON_LAI;
-                        row.SL_CON_LAI = _SoLuong >= row.SL_CON_LAI ? 0 : row.SL_CON_LAI - _SoLuong;
-                        _SoLuong = _SoLuong >= sub_SL ? _SoLuong - sub_SL : 0;
-                        if (_SoLuong == 0)
-                        {
-                            break;
-                        }
-                    }
+                    MXuatHang.Update(ele.SO_LUONG, ele);
                     dbContext.SaveChanges();
                     textBoxDONGIA.SelectAll();
                     dataGridView1.Rows.Add(comboBoxKho.Text, comboBoxKHACH_HANG.Text, comboBoxHANGHOA.Text, ele.DON_GIA_BAN, ele.SO_LUONG, ele.TRA_TRUOC, ele.LAI_SUAT, ele.NGAY_XUAT);

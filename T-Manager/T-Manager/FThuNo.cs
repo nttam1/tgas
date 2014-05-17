@@ -57,6 +57,8 @@ namespace T_Manager
                 dataGridViewTHUNO.Columns[0].Visible = false;
                 dataGridViewTHUNO.Columns[1].Visible = false;
                 dataGridViewTHUNO.Columns[2].Visible = false;
+                dataGridViewTHUNO.Columns[6].Visible = false;
+                dataGridViewTHUNO.Columns[7].Visible = false;
                 dataGridViewTHUNO.Columns[3].HeaderText = "Tiền gốc";
                 dataGridViewTHUNO.Columns[4].HeaderText = "Tiền lãi";
                 dataGridViewTHUNO.Columns[5].HeaderText = "Ngày trả";
@@ -101,7 +103,8 @@ namespace T_Manager
                     MAKHO = kho,
                     TIEN_GOC = goc,
                     TIEN_LAI = lai,
-                    NGAY_TRA = DateTime.Now
+                    NGAY_TRA = DateTime.Now,
+                    CREATED_AT = DateTime.Now
                 });
                 bs.EndEdit();
                 bs.ResetBindings(false);
@@ -165,7 +168,8 @@ namespace T_Manager
                    MAKHO = kho,
                    TIEN_GOC = tongtien,
                    NOI_DUNG = noidung,
-                   NGAY_TRA = DateTime.Now
+                   NGAY_TRA = DateTime.Now,
+                   CREATED_AT = DateTime.Now
                });
                 DataInstance.Instance().DBContext().SaveChanges();
                 textBoxTONGTIEN.Text = "";

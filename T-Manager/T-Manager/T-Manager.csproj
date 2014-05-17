@@ -188,6 +188,10 @@
       <DependentUpon>FVay.cs</DependentUpon>
     </Compile>
     <Compile Include="Modal\MKhachHang.cs" />
+    <Compile Include="Modal\MKho.cs" />
+    <Compile Include="Modal\MNcc.cs" />
+    <Compile Include="Modal\MNhapHang.cs" />
+    <Compile Include="Modal\MXuatHang.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FXuatHang.cs">

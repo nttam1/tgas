@@ -24,7 +24,7 @@ namespace T_Manager
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
 
-            comboBoxNCC.DataSource = DataInstance.Instance().DBContext().NHA_CUNG_CAP;
+            comboBoxNCC.DataSource = T_Manager.Modal.MNcc.Get() ;//DataInstance.Instance().DBContext().NHA_CUNG_CAP;
             comboBoxNCC.DisplayMember = "NAME";
             comboBoxNCC.ValueMember = "ID";
 

@@ -524,7 +524,8 @@ namespace T_Manager
         /// <param name="nOI_DUNG">Initial value of the NOI_DUNG property.</param>
         /// <param name="tONG_TIEN">Initial value of the TONG_TIEN property.</param>
         /// <param name="cREATED_AT">Initial value of the CREATED_AT property.</param>
-        public static CHI_KHAC CreateCHI_KHAC(global::System.Int64 id, global::System.Int64 mAKHO, global::System.String nOI_DUNG, global::System.Int64 tONG_TIEN, global::System.DateTime cREATED_AT)
+        /// <param name="nGAY_CHI">Initial value of the NGAY_CHI property.</param>
+        public static CHI_KHAC CreateCHI_KHAC(global::System.Int64 id, global::System.Int64 mAKHO, global::System.String nOI_DUNG, global::System.Int64 tONG_TIEN, global::System.DateTime cREATED_AT, global::System.DateTime nGAY_CHI)
         {
             CHI_KHAC cHI_KHAC = new CHI_KHAC();
             cHI_KHAC.ID = id;
@@ -532,6 +533,7 @@ namespace T_Manager
             cHI_KHAC.NOI_DUNG = nOI_DUNG;
             cHI_KHAC.TONG_TIEN = tONG_TIEN;
             cHI_KHAC.CREATED_AT = cREATED_AT;
+            cHI_KHAC.NGAY_CHI = nGAY_CHI;
             return cHI_KHAC;
         }
 
@@ -661,6 +663,30 @@ namespace T_Manager
         private global::System.DateTime _CREATED_AT;
         partial void OnCREATED_ATChanging(global::System.DateTime value);
         partial void OnCREATED_ATChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime NGAY_CHI
+        {
+            get
+            {
+                return _NGAY_CHI;
+            }
+            set
+            {
+                OnNGAY_CHIChanging(value);
+                ReportPropertyChanging("NGAY_CHI");
+                _NGAY_CHI = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NGAY_CHI");
+                OnNGAY_CHIChanged();
+            }
+        }
+        private global::System.DateTime _NGAY_CHI;
+        partial void OnNGAY_CHIChanging(global::System.DateTime value);
+        partial void OnNGAY_CHIChanged();
 
         #endregion
 
@@ -900,7 +926,8 @@ namespace T_Manager
         /// <param name="dON_GIA_BAN">Initial value of the DON_GIA_BAN property.</param>
         /// <param name="cREATED_AT">Initial value of the CREATED_AT property.</param>
         /// <param name="mAXE">Initial value of the MAXE property.</param>
-        public static CHI_TIEU_DUNG_NOI_BO CreateCHI_TIEU_DUNG_NOI_BO(global::System.Int64 id, global::System.Int64 mAKHO, global::System.Int64 mAHH, global::System.Int64 sO_LUONG, global::System.Int64 dON_GIA_BAN, global::System.DateTime cREATED_AT, global::System.Int64 mAXE)
+        /// <param name="nGAY_CHI">Initial value of the NGAY_CHI property.</param>
+        public static CHI_TIEU_DUNG_NOI_BO CreateCHI_TIEU_DUNG_NOI_BO(global::System.Int64 id, global::System.Int64 mAKHO, global::System.Int64 mAHH, global::System.Int64 sO_LUONG, global::System.Int64 dON_GIA_BAN, global::System.DateTime cREATED_AT, global::System.Int64 mAXE, global::System.DateTime nGAY_CHI)
         {
             CHI_TIEU_DUNG_NOI_BO cHI_TIEU_DUNG_NOI_BO = new CHI_TIEU_DUNG_NOI_BO();
             cHI_TIEU_DUNG_NOI_BO.ID = id;
@@ -910,6 +937,7 @@ namespace T_Manager
             cHI_TIEU_DUNG_NOI_BO.DON_GIA_BAN = dON_GIA_BAN;
             cHI_TIEU_DUNG_NOI_BO.CREATED_AT = cREATED_AT;
             cHI_TIEU_DUNG_NOI_BO.MAXE = mAXE;
+            cHI_TIEU_DUNG_NOI_BO.NGAY_CHI = nGAY_CHI;
             return cHI_TIEU_DUNG_NOI_BO;
         }
 
@@ -1087,6 +1115,30 @@ namespace T_Manager
         private global::System.Int64 _MAXE;
         partial void OnMAXEChanging(global::System.Int64 value);
         partial void OnMAXEChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime NGAY_CHI
+        {
+            get
+            {
+                return _NGAY_CHI;
+            }
+            set
+            {
+                OnNGAY_CHIChanging(value);
+                ReportPropertyChanging("NGAY_CHI");
+                _NGAY_CHI = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NGAY_CHI");
+                OnNGAY_CHIChanged();
+            }
+        }
+        private global::System.DateTime _NGAY_CHI;
+        partial void OnNGAY_CHIChanging(global::System.DateTime value);
+        partial void OnNGAY_CHIChanged();
 
         #endregion
 
@@ -1300,6 +1352,54 @@ namespace T_Manager
         private global::System.DateTime _CREATED_AT;
         partial void OnCREATED_ATChanging(global::System.DateTime value);
         partial void OnCREATED_ATChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> DA_TRA
+        {
+            get
+            {
+                return _DA_TRA;
+            }
+            set
+            {
+                OnDA_TRAChanging(value);
+                ReportPropertyChanging("DA_TRA");
+                _DA_TRA = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DA_TRA");
+                OnDA_TRAChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _DA_TRA;
+        partial void OnDA_TRAChanging(Nullable<global::System.Int64> value);
+        partial void OnDA_TRAChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> NGAY_TRA
+        {
+            get
+            {
+                return _NGAY_TRA;
+            }
+            set
+            {
+                OnNGAY_TRAChanging(value);
+                ReportPropertyChanging("NGAY_TRA");
+                _NGAY_TRA = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NGAY_TRA");
+                OnNGAY_TRAChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _NGAY_TRA;
+        partial void OnNGAY_TRAChanging(Nullable<global::System.DateTime> value);
+        partial void OnNGAY_TRAChanged();
 
         #endregion
 
@@ -2459,6 +2559,30 @@ namespace T_Manager
         private global::System.String _NOI_DUNG;
         partial void OnNOI_DUNGChanging(global::System.String value);
         partial void OnNOI_DUNGChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CREATED_AT
+        {
+            get
+            {
+                return _CREATED_AT;
+            }
+            set
+            {
+                OnCREATED_ATChanging(value);
+                ReportPropertyChanging("CREATED_AT");
+                _CREATED_AT = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CREATED_AT");
+                OnCREATED_ATChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CREATED_AT;
+        partial void OnCREATED_ATChanging(Nullable<global::System.DateTime> value);
+        partial void OnCREATED_ATChanged();
 
         #endregion
 
@@ -3444,6 +3568,54 @@ namespace T_Manager
         private Nullable<global::System.DateTime> _NGAY_XUAT;
         partial void OnNGAY_XUATChanging(Nullable<global::System.DateTime> value);
         partial void OnNGAY_XUATChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> DA_TRA
+        {
+            get
+            {
+                return _DA_TRA;
+            }
+            set
+            {
+                OnDA_TRAChanging(value);
+                ReportPropertyChanging("DA_TRA");
+                _DA_TRA = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DA_TRA");
+                OnDA_TRAChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _DA_TRA;
+        partial void OnDA_TRAChanging(Nullable<global::System.Int64> value);
+        partial void OnDA_TRAChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> NGAY_TRA
+        {
+            get
+            {
+                return _NGAY_TRA;
+            }
+            set
+            {
+                OnNGAY_TRAChanging(value);
+                ReportPropertyChanging("NGAY_TRA");
+                _NGAY_TRA = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NGAY_TRA");
+                OnNGAY_TRAChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _NGAY_TRA;
+        partial void OnNGAY_TRAChanging(Nullable<global::System.DateTime> value);
+        partial void OnNGAY_TRAChanged();
 
         #endregion
 

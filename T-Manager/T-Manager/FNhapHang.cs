@@ -22,11 +22,11 @@ namespace T_Manager
 
         private void NhapHang_Load(object sender, EventArgs e)
         {
-            comboBoxKho.DataSource = dbContext.KHOes.Where(u => u.TYPE == 0);
+            comboBoxKho.DataSource = T_Manager.Modal.MKho.Get(0);//dbContext.KHOes.Where(u => u.TYPE == 0);
             comboBoxKho.DisplayMember = "NAME";
             comboBoxKho.ValueMember = "ID";
 
-            comboBoxNCC.DataSource = dbContext.NHA_CUNG_CAP;
+            comboBoxNCC.DataSource = T_Manager.Modal.MNcc.Get();//dbContext.NHA_CUNG_CAP;
             comboBoxNCC.DisplayMember = "NAME";
             comboBoxNCC.ValueMember = "ID";
 
@@ -96,7 +96,7 @@ namespace T_Manager
                 ele.MAKHO = Convert.ToInt32(comboBoxKho.SelectedValue.ToString());
                 ele.MANCC = Convert.ToInt32(comboBoxNCC.SelectedValue.ToString());
                 ele.NGAY_NHAP = dateTimePickerNGAYNHAP.Value;
-                ele.CREATED_AT = dateTimePickerNGAYNHAP.Value;
+                ele.CREATED_AT = DateTime.Now;
                 ele.SO_LUONG = Convert.ToInt32(textBoxSOLUONG.Text);
                 ele.SL_CON_LAI = Convert.ToInt32(textBoxSOLUONG.Text);
                 ele.DON_GIA_MUA = Convert.ToInt32(textBoxDONGIA.Text);

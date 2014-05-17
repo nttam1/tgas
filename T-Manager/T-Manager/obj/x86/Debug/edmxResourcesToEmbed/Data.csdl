@@ -29,6 +29,7 @@
     <Property Name="NOI_DUNG" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
     <Property Name="TONG_TIEN" Type="Int64" Nullable="false" />
     <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
+    <Property Type="DateTime" Name="NGAY_CHI" Nullable="false" />
   </EntityType>
   <EntityType Name="CHI_LUONG">
     <Key>
@@ -53,6 +54,7 @@
     <Property Name="DON_GIA_BAN" Type="Int64" Nullable="false" />
     <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
     <Property Type="Int64" Name="MAXE" Nullable="false" />
+    <Property Type="DateTime" Name="NGAY_CHI" Nullable="false" />
   </EntityType>
   <EntityType Name="CHO_VAY">
     <Key>
@@ -65,6 +67,8 @@
     <Property Name="LAI_SUAT" Type="Double" Nullable="false" />
     <Property Name="NGAY_CHO_VAY" Type="DateTime" Nullable="false" />
     <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
+    <Property Type="Int64" Name="DA_TRA" />
+    <Property Type="DateTime" Name="NGAY_TRA" />
   </EntityType>
   <EntityType Name="HANG_HOA">
     <Key>
@@ -159,6 +163,8 @@
     <Property Name="TRA_TRUOC" Type="Int64" Nullable="false" />
     <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
     <Property Name="NGAY_XUAT" Type="DateTime" />
+    <Property Type="Int64" Name="DA_TRA" />
+    <Property Type="DateTime" Name="NGAY_TRA" />
   </EntityType>
   <EntityType Name="XE">
     <Key>
@@ -178,6 +184,7 @@
     <Property Type="Int64" Name="TIEN_LAI" Nullable="false" />
     <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
     <Property Type="String" Name="NOI_DUNG" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CREATED_AT" />
   </EntityType>
   <EntityType Name="TRA_NO_VAY">
     <Key>

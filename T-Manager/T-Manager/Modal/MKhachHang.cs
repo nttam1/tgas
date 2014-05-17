@@ -16,9 +16,19 @@ namespace T_Manager.Modal
 
         public double TongNo()
         {
-            return NoHienTai() + LaiHienTai();
+            return TongNoHH() + TongNoVay() - TongThu();
+        }
+        public double NoHienTai()
+        {
+            return 0;
+        }
+        public double LaiHienTai()
+        {
+            return 0;
         }
 
+
+        #region Thu Nợ
         public double ThuNo()
         {
             try
@@ -63,6 +73,14 @@ namespace T_Manager.Modal
                 return 0;
             }
         }
+        #endregion
+
+        #region Nợ Xuất Hàng
+        public double TongNoHH()
+        {
+            return NoHHHienTai() + LaiHHHienTai();
+        }
+
 
         public double No()
         {
@@ -103,14 +121,33 @@ namespace T_Manager.Modal
             }
         }
 
-        public double NoHienTai()
+        public double NoHHHienTai()
         {
             return No() - ThuNo();
         }
 
-        public double LaiHienTai()
+        public double LaiHHHienTai()
         {
             return Lai() - ThuLai();
         }
+        #endregion
+
+        #region Nợ Vay
+        public double NoVayHienTai()
+        {
+            return 0;
+        }
+
+        public double LaiVayHienTai()
+        {
+            return 0;
+        }
+
+        public double TongNoVay()
+        {
+            return NoVayHienTai() + LaiVayHienTai();
+        }
+
+        #endregion
     }
 }

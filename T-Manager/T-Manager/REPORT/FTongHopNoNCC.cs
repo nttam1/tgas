@@ -25,6 +25,7 @@ namespace T_Manager.REPORT
             bs.DataSource = (from nh in DataInstance.Instance().DBContext().NHAP_HANG
                              join ncc in DataInstance.Instance().DBContext().NHA_CUNG_CAP on nh.MANCC equals ncc.ID
                              join hh in DataInstance.Instance().DBContext().HANG_HOA on nh.MAHH equals hh.ID
+                             /* Khac ton kho */
                              where nh.NGAY_NHAP >= _from
                              where nh.NGAY_NHAP <= _to
                              select new

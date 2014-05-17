@@ -34,6 +34,7 @@
           <Property Name="NOI_DUNG" Type="nvarchar" Nullable="false" />
           <Property Name="TONG_TIEN" Type="integer" Nullable="false" />
           <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+          <Property Name="NGAY_CHI" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="CHI_LUONG">
           <Key>
@@ -58,6 +59,7 @@
           <Property Name="SO_LUONG" Type="integer" Nullable="false" />
           <Property Name="DON_GIA_BAN" Type="integer" Nullable="false" />
           <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+          <Property Name="NGAY_CHI" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="CHO_VAY">
           <Key>
@@ -70,6 +72,8 @@
           <Property Name="LAI_SUAT" Type="float" Nullable="false" />
           <Property Name="NGAY_CHO_VAY" Type="datetime" Nullable="false" />
           <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+          <Property Name="DA_TRA" Type="integer" />
+          <Property Name="NGAY_TRA" Type="datetime" />
         </EntityType>
         <EntityType Name="HANG_HOA">
           <Key>
@@ -149,6 +153,7 @@
           <Property Name="TIEN_LAI" Type="integer" Nullable="false" />
           <Property Name="NOI_DUNG" Type="nvarchar" />
           <Property Name="NGAY_TRA" Type="datetime" Nullable="false" />
+          <Property Name="CREATED_AT" Type="datetime" />
         </EntityType>
         <EntityType Name="TRA_NO_NCC">
           <Key>
@@ -206,6 +211,8 @@
           <Property Name="TRA_TRUOC" Type="integer" Nullable="false" />
           <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
           <Property Name="NGAY_XUAT" Type="datetime" />
+          <Property Name="DA_TRA" Type="integer" />
+          <Property Name="NGAY_TRA" Type="datetime" />
         </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -240,6 +247,7 @@
           <Property Name="NOI_DUNG" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
           <Property Name="TONG_TIEN" Type="Int64" Nullable="false" />
           <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
+          <Property Type="DateTime" Name="NGAY_CHI" Nullable="false" />
         </EntityType>
         <EntityType Name="CHI_LUONG">
           <Key>
@@ -264,6 +272,7 @@
           <Property Name="DON_GIA_BAN" Type="Int64" Nullable="false" />
           <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
           <Property Type="Int64" Name="MAXE" Nullable="false" />
+          <Property Type="DateTime" Name="NGAY_CHI" Nullable="false" />
         </EntityType>
         <EntityType Name="CHO_VAY">
           <Key>
@@ -276,6 +285,8 @@
           <Property Name="LAI_SUAT" Type="Double" Nullable="false" />
           <Property Name="NGAY_CHO_VAY" Type="DateTime" Nullable="false" />
           <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
+          <Property Type="Int64" Name="DA_TRA" />
+          <Property Type="DateTime" Name="NGAY_TRA" />
         </EntityType>
         <EntityType Name="HANG_HOA">
           <Key>
@@ -370,6 +381,8 @@
           <Property Name="TRA_TRUOC" Type="Int64" Nullable="false" />
           <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
           <Property Name="NGAY_XUAT" Type="DateTime" />
+          <Property Type="Int64" Name="DA_TRA" />
+          <Property Type="DateTime" Name="NGAY_TRA" />
         </EntityType>
         <EntityType Name="XE">
           <Key>
@@ -389,6 +402,7 @@
           <Property Type="Int64" Name="TIEN_LAI" Nullable="false" />
           <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
           <Property Type="String" Name="NOI_DUNG" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CREATED_AT" />
         </EntityType>
         <EntityType Name="TRA_NO_VAY">
           <Key>
@@ -422,6 +436,7 @@
           <EntitySetMapping Name="CHI_KHAC">
             <EntityTypeMapping TypeName="tgasModel.CHI_KHAC">
               <MappingFragment StoreEntitySet="CHI_KHAC">
+                <ScalarProperty Name="NGAY_CHI" ColumnName="NGAY_CHI" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
                 <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
@@ -446,6 +461,7 @@
           <EntitySetMapping Name="CHI_TIEU_DUNG_NOI_BO">
             <EntityTypeMapping TypeName="tgasModel.CHI_TIEU_DUNG_NOI_BO">
               <MappingFragment StoreEntitySet="CHI_TIEU_DUNG_NOI_BO">
+                <ScalarProperty Name="NGAY_CHI" ColumnName="NGAY_CHI" />
                 <ScalarProperty Name="MAXE" ColumnName="MAXE" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
@@ -459,6 +475,8 @@
           <EntitySetMapping Name="CHO_VAY">
             <EntityTypeMapping TypeName="tgasModel.CHO_VAY">
               <MappingFragment StoreEntitySet="CHO_VAY">
+                <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
+                <ScalarProperty Name="DA_TRA" ColumnName="DA_TRA" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
                 <ScalarProperty Name="MA_NGUON_NO" ColumnName="MA_NGUON_NO" />
@@ -559,6 +577,8 @@
           <EntitySetMapping Name="XUAT_HANG">
             <EntityTypeMapping TypeName="tgasModel.XUAT_HANG">
               <MappingFragment StoreEntitySet="XUAT_HANG">
+                <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
+                <ScalarProperty Name="DA_TRA" ColumnName="DA_TRA" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
                 <ScalarProperty Name="MAHH" ColumnName="MAHH" />
@@ -584,6 +604,7 @@
           <EntitySetMapping Name="THU_NO">
             <EntityTypeMapping TypeName="tgasModel.THU_NO">
               <MappingFragment StoreEntitySet="THU_NO">
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
                 <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
                 <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
                 <ScalarProperty Name="TIEN_LAI" ColumnName="TIEN_LAI" />
@@ -653,7 +674,7 @@
         <EntityTypeShape EntityType="tgasModel.NHAN_VIEN" Width="1.5" PointX="8.75" PointY="0.75" Height="1.4033821614583353" IsExpanded="true" />
         <EntityTypeShape EntityType="tgasModel.NHAP_HANG" Width="1.5" PointX="8.75" PointY="3.75" Height="2.7494921875000031" IsExpanded="true" />
         <EntityTypeShape EntityType="tgasModel.VAY" Width="1.5" PointX="8.75" PointY="7.75" Height="2.1725878906250031" IsExpanded="true" />
-        <EntityTypeShape EntityType="tgasModel.XUAT_HANG" Width="1.5" PointX="4.75" PointY="9.75" Height="3.1340950520833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="tgasModel.XUAT_HANG" Width="1.5" PointX="4.75" PointY="9.75" Height="3.5386979166666652" IsExpanded="true" />
         <EntityTypeShape EntityType="tgasModel.XE" Width="1.5" PointX="0.75" PointY="10.75" Height="1.4033821614583388" />
         <EntityTypeShape EntityType="tgasModel.THU_NO" Width="1.5" PointX="7.375" PointY="10.75" Height="2.1725878906250031" />
         <EntityTypeShape EntityType="tgasModel.TRA_NO_VAY" Width="1.5" PointX="9.375" PointY="10.75" Height="2.3648893229166674" />
