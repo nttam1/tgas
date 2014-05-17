@@ -33,13 +33,19 @@
             this.comboBoxKHO = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.TONGLAI_LB = new System.Windows.Forms.TextBox();
-            this.TONGNO_LB = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataGridViewTHUNO = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBoxLAIVAY = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxNOVAY = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TONGLAI_LB = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TONGNO_LB = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButtonNOVAY = new System.Windows.Forms.RadioButton();
+            this.radioButtonNOHH = new System.Windows.Forms.RadioButton();
             this.buttonADD = new System.Windows.Forms.Button();
             this.textBoxTIENLAI = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,15 +53,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxKHACHHANG = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.richTextBoxNOIDUNG = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxTONGTIEN = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.richTextBoxNOIDUNG = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTHUNO)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,12 +110,9 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.TONGLAI_LB);
-            this.tabPage1.Controls.Add(this.TONGNO_LB);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.dataGridViewTHUNO);
-            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.buttonADD);
             this.tabPage1.Controls.Add(this.textBoxTIENLAI);
             this.tabPage1.Controls.Add(this.label4);
@@ -121,6 +127,208 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "THU NỢ KHÁCH HÀNG";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBoxLAIVAY);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.textBoxNOVAY);
+            this.groupBox3.Location = new System.Drawing.Point(344, 152);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(302, 79);
+            this.groupBox3.TabIndex = 39;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "NỢ VAY";
+            // 
+            // textBoxLAIVAY
+            // 
+            this.textBoxLAIVAY.Location = new System.Drawing.Point(157, 53);
+            this.textBoxLAIVAY.Name = "textBoxLAIVAY";
+            this.textBoxLAIVAY.ReadOnly = true;
+            this.textBoxLAIVAY.Size = new System.Drawing.Size(126, 20);
+            this.textBoxLAIVAY.TabIndex = 36;
+            this.textBoxLAIVAY.Text = "0";
+            this.textBoxLAIVAY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 13);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "TỔNG NỢ HIỆN TẠI";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(154, 25);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(106, 13);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "TỔNG LÃI HIỆN TẠI";
+            // 
+            // textBoxNOVAY
+            // 
+            this.textBoxNOVAY.Location = new System.Drawing.Point(15, 53);
+            this.textBoxNOVAY.Name = "textBoxNOVAY";
+            this.textBoxNOVAY.ReadOnly = true;
+            this.textBoxNOVAY.Size = new System.Drawing.Size(123, 20);
+            this.textBoxNOVAY.TabIndex = 35;
+            this.textBoxNOVAY.Text = "0";
+            this.textBoxNOVAY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.TONGLAI_LB);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.TONGNO_LB);
+            this.groupBox2.Location = new System.Drawing.Point(14, 152);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(302, 79);
+            this.groupBox2.TabIndex = 38;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "NỢ HÀNG HÓA";
+            // 
+            // TONGLAI_LB
+            // 
+            this.TONGLAI_LB.Location = new System.Drawing.Point(157, 53);
+            this.TONGLAI_LB.Name = "TONGLAI_LB";
+            this.TONGLAI_LB.ReadOnly = true;
+            this.TONGLAI_LB.Size = new System.Drawing.Size(126, 20);
+            this.TONGLAI_LB.TabIndex = 36;
+            this.TONGLAI_LB.Text = "0";
+            this.TONGLAI_LB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 13);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "TỔNG NỢ HIỆN TẠI";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(154, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(106, 13);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "TỔNG LÃI HIỆN TẠI";
+            // 
+            // TONGNO_LB
+            // 
+            this.TONGNO_LB.Location = new System.Drawing.Point(15, 53);
+            this.TONGNO_LB.Name = "TONGNO_LB";
+            this.TONGNO_LB.ReadOnly = true;
+            this.TONGNO_LB.Size = new System.Drawing.Size(123, 20);
+            this.TONGNO_LB.TabIndex = 35;
+            this.TONGNO_LB.Text = "0";
+            this.TONGNO_LB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButtonNOVAY);
+            this.groupBox1.Controls.Add(this.radioButtonNOHH);
+            this.groupBox1.Location = new System.Drawing.Point(467, 51);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(112, 77);
+            this.groupBox1.TabIndex = 37;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "TRẢ NỢ CHO";
+            // 
+            // radioButtonNOVAY
+            // 
+            this.radioButtonNOVAY.AutoSize = true;
+            this.radioButtonNOVAY.Location = new System.Drawing.Point(7, 54);
+            this.radioButtonNOVAY.Name = "radioButtonNOVAY";
+            this.radioButtonNOVAY.Size = new System.Drawing.Size(65, 17);
+            this.radioButtonNOVAY.TabIndex = 1;
+            this.radioButtonNOVAY.TabStop = true;
+            this.radioButtonNOVAY.Text = "NỢ VAY";
+            this.radioButtonNOVAY.UseVisualStyleBackColor = true;
+            this.radioButtonNOVAY.CheckedChanged += new System.EventHandler(this.radioButtonNOVAY_CheckedChanged);
+            // 
+            // radioButtonNOHH
+            // 
+            this.radioButtonNOHH.AutoSize = true;
+            this.radioButtonNOHH.Checked = true;
+            this.radioButtonNOHH.Location = new System.Drawing.Point(7, 20);
+            this.radioButtonNOHH.Name = "radioButtonNOHH";
+            this.radioButtonNOHH.Size = new System.Drawing.Size(101, 17);
+            this.radioButtonNOHH.TabIndex = 0;
+            this.radioButtonNOHH.TabStop = true;
+            this.radioButtonNOHH.Text = "NỢ HÀNG HÓA";
+            this.radioButtonNOHH.UseVisualStyleBackColor = true;
+            this.radioButtonNOHH.CheckedChanged += new System.EventHandler(this.radioButtonNOHH_CheckedChanged);
+            // 
+            // buttonADD
+            // 
+            this.buttonADD.Location = new System.Drawing.Point(610, 71);
+            this.buttonADD.Name = "buttonADD";
+            this.buttonADD.Size = new System.Drawing.Size(75, 49);
+            this.buttonADD.TabIndex = 30;
+            this.buttonADD.Text = "NHẬP";
+            this.buttonADD.UseVisualStyleBackColor = true;
+            this.buttonADD.Click += new System.EventHandler(this.buttonADD_Click);
+            // 
+            // textBoxTIENLAI
+            // 
+            this.textBoxTIENLAI.Location = new System.Drawing.Point(224, 88);
+            this.textBoxTIENLAI.Name = "textBoxTIENLAI";
+            this.textBoxTIENLAI.Size = new System.Drawing.Size(208, 20);
+            this.textBoxTIENLAI.TabIndex = 29;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(221, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "TIỀN LÃI";
+            // 
+            // textBoxTIENGOC
+            // 
+            this.textBoxTIENGOC.Location = new System.Drawing.Point(11, 88);
+            this.textBoxTIENGOC.Name = "textBoxTIENGOC";
+            this.textBoxTIENGOC.Size = new System.Drawing.Size(197, 20);
+            this.textBoxTIENGOC.TabIndex = 27;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(8, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "TIỀN GỐC";
+            // 
+            // comboBoxKHACHHANG
+            // 
+            this.comboBoxKHACHHANG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxKHACHHANG.FormattingEnabled = true;
+            this.comboBoxKHACHHANG.Location = new System.Drawing.Point(250, 20);
+            this.comboBoxKHACHHANG.Name = "comboBoxKHACHHANG";
+            this.comboBoxKHACHHANG.Size = new System.Drawing.Size(198, 21);
+            this.comboBoxKHACHHANG.TabIndex = 25;
+            this.comboBoxKHACHHANG.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHACHHANG_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(144, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "KHÁCH HÀNG";
             // 
             // tabPage2
             // 
@@ -137,124 +345,13 @@
             this.tabPage2.Text = "THU NỢ KHÁC";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // TONGLAI_LB
+            // richTextBoxNOIDUNG
             // 
-            this.TONGLAI_LB.Location = new System.Drawing.Point(450, 40);
-            this.TONGLAI_LB.Name = "TONGLAI_LB";
-            this.TONGLAI_LB.ReadOnly = true;
-            this.TONGLAI_LB.Size = new System.Drawing.Size(158, 20);
-            this.TONGLAI_LB.TabIndex = 36;
-            this.TONGLAI_LB.Text = "0";
-            this.TONGLAI_LB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // TONGNO_LB
-            // 
-            this.TONGNO_LB.Location = new System.Drawing.Point(245, 40);
-            this.TONGNO_LB.Name = "TONGNO_LB";
-            this.TONGNO_LB.ReadOnly = true;
-            this.TONGNO_LB.Size = new System.Drawing.Size(158, 20);
-            this.TONGNO_LB.TabIndex = 35;
-            this.TONGNO_LB.Text = "0";
-            this.TONGNO_LB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(447, 12);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 13);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "TỔNG LÃI HIỆN TẠI";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(242, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 13);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "TỔNG NỢ HIỆN TẠI";
-            // 
-            // dataGridViewTHUNO
-            // 
-            this.dataGridViewTHUNO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTHUNO.Location = new System.Drawing.Point(3, 148);
-            this.dataGridViewTHUNO.Name = "dataGridViewTHUNO";
-            this.dataGridViewTHUNO.Size = new System.Drawing.Size(709, 219);
-            this.dataGridViewTHUNO.TabIndex = 32;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(0, 129);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(272, 13);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "NHỮNG LẦN THU NỢ KHÁC CỦA KHÁCH HÀNG NÀY";
-            // 
-            // buttonADD
-            // 
-            this.buttonADD.Location = new System.Drawing.Point(478, 102);
-            this.buttonADD.Name = "buttonADD";
-            this.buttonADD.Size = new System.Drawing.Size(75, 23);
-            this.buttonADD.TabIndex = 30;
-            this.buttonADD.Text = "NHẬP";
-            this.buttonADD.UseVisualStyleBackColor = true;
-            this.buttonADD.Click += new System.EventHandler(this.buttonADD_Click);
-            // 
-            // textBoxTIENLAI
-            // 
-            this.textBoxTIENLAI.Location = new System.Drawing.Point(227, 104);
-            this.textBoxTIENLAI.Name = "textBoxTIENLAI";
-            this.textBoxTIENLAI.Size = new System.Drawing.Size(208, 20);
-            this.textBoxTIENLAI.TabIndex = 29;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(224, 77);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "TIỀN LÃI";
-            // 
-            // textBoxTIENGOC
-            // 
-            this.textBoxTIENGOC.Location = new System.Drawing.Point(14, 104);
-            this.textBoxTIENGOC.Name = "textBoxTIENGOC";
-            this.textBoxTIENGOC.Size = new System.Drawing.Size(197, 20);
-            this.textBoxTIENGOC.TabIndex = 27;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(11, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "TIỀN GỐC";
-            // 
-            // comboBoxKHACHHANG
-            // 
-            this.comboBoxKHACHHANG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKHACHHANG.FormattingEnabled = true;
-            this.comboBoxKHACHHANG.Location = new System.Drawing.Point(13, 39);
-            this.comboBoxKHACHHANG.Name = "comboBoxKHACHHANG";
-            this.comboBoxKHACHHANG.Size = new System.Drawing.Size(198, 21);
-            this.comboBoxKHACHHANG.TabIndex = 25;
-            this.comboBoxKHACHHANG.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHACHHANG_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(10, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "KHÁCH HÀNG";
+            this.richTextBoxNOIDUNG.Location = new System.Drawing.Point(190, 115);
+            this.richTextBoxNOIDUNG.Name = "richTextBoxNOIDUNG";
+            this.richTextBoxNOIDUNG.Size = new System.Drawing.Size(260, 96);
+            this.richTextBoxNOIDUNG.TabIndex = 44;
+            this.richTextBoxNOIDUNG.Text = "";
             // 
             // button1
             // 
@@ -294,14 +391,6 @@
             this.label12.Text = "TỔNG TIỀN";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // richTextBoxNOIDUNG
-            // 
-            this.richTextBoxNOIDUNG.Location = new System.Drawing.Point(190, 115);
-            this.richTextBoxNOIDUNG.Name = "richTextBoxNOIDUNG";
-            this.richTextBoxNOIDUNG.Size = new System.Drawing.Size(260, 96);
-            this.richTextBoxNOIDUNG.TabIndex = 44;
-            this.richTextBoxNOIDUNG.Text = "";
-            // 
             // FThuNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,9 +410,14 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTHUNO)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,8 +434,6 @@
         private System.Windows.Forms.TextBox TONGNO_LB;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridViewTHUNO;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonADD;
         private System.Windows.Forms.TextBox textBoxTIENLAI;
         private System.Windows.Forms.Label label4;
@@ -355,5 +447,14 @@
         private System.Windows.Forms.TextBox textBoxTONGTIEN;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RichTextBox richTextBoxNOIDUNG;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButtonNOVAY;
+        private System.Windows.Forms.RadioButton radioButtonNOHH;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox textBoxLAIVAY;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxNOVAY;
     }
 }

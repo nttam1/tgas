@@ -67,8 +67,9 @@
     <Property Name="LAI_SUAT" Type="float" Nullable="false" />
     <Property Name="NGAY_CHO_VAY" Type="datetime" Nullable="false" />
     <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
-    <Property Name="DA_TRA" Type="integer" />
+    <Property Name="DA_TRA" Type="float" />
     <Property Name="NGAY_TRA" Type="datetime" />
+    <Property Name="TRA_XONG" Type="integer" />
   </EntityType>
   <EntityType Name="HANG_HOA">
     <Key>
@@ -149,6 +150,7 @@
     <Property Name="NOI_DUNG" Type="nvarchar" />
     <Property Name="NGAY_TRA" Type="datetime" Nullable="false" />
     <Property Name="CREATED_AT" Type="datetime" />
+    <Property Name="LOAI_NO" Type="integer" Nullable="false" />
   </EntityType>
   <EntityType Name="TRA_NO_NCC">
     <Key>
@@ -206,7 +208,8 @@
     <Property Name="TRA_TRUOC" Type="integer" Nullable="false" />
     <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
     <Property Name="NGAY_XUAT" Type="datetime" />
-    <Property Name="DA_TRA" Type="integer" />
+    <Property Name="DA_TRA" Type="float" />
     <Property Name="NGAY_TRA" Type="datetime" />
+    <Property Name="TRA_XONG" Type="integer" Nullable="false" />
   </EntityType>
 </Schema>

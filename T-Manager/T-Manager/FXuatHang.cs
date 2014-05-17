@@ -32,6 +32,8 @@ namespace T_Manager
                 ele.DON_GIA_BAN = Convert.ToInt32(textBoxDONGIA.Text);
                 ele.TRA_TRUOC = Convert.ToInt32(textBoxDUATRUOC.Text);
                 ele.LAI_SUAT = Convert.ToDouble(textBoxLAISUAT.Text);
+                ele.DA_TRA = 0;
+                ele.NGAY_TRA = dateTimePickerNGAYBAN.Value;
                 ele.MAHH = Convert.ToInt32(comboBoxHANGHOA.SelectedValue.ToString());
                 if (ele.DON_GIA_BAN == 0 || ele.SO_LUONG == 0)
                 {

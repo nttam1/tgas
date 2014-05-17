@@ -40,21 +40,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CHO_VAY">
-      <EntityTypeMapping TypeName="tgasModel.CHO_VAY">
-        <MappingFragment StoreEntitySet="CHO_VAY">
-          <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
-          <ScalarProperty Name="DA_TRA" ColumnName="DA_TRA" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
-          <ScalarProperty Name="MA_NGUON_NO" ColumnName="MA_NGUON_NO" />
-          <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
-          <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
-          <ScalarProperty Name="NGAY_CHO_VAY" ColumnName="NGAY_CHO_VAY" />
-          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="HANG_HOA">
       <EntityTypeMapping TypeName="tgasModel.HANG_HOA">
         <MappingFragment StoreEntitySet="HANG_HOA">
@@ -142,25 +127,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="XUAT_HANG">
-      <EntityTypeMapping TypeName="tgasModel.XUAT_HANG">
-        <MappingFragment StoreEntitySet="XUAT_HANG">
-          <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
-          <ScalarProperty Name="DA_TRA" ColumnName="DA_TRA" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
-          <ScalarProperty Name="MAHH" ColumnName="MAHH" />
-          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
-          <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
-          <ScalarProperty Name="DON_GIA_BAN" ColumnName="DON_GIA_BAN" />
-          <ScalarProperty Name="THANH_TOAN_XUAT" ColumnName="THANH_TOAN_XUAT" />
-          <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
-          <ScalarProperty Name="TRA_TRUOC" ColumnName="TRA_TRUOC" />
-          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
-          <ScalarProperty Name="NGAY_XUAT" ColumnName="NGAY_XUAT" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="XEs">
       <EntityTypeMapping TypeName="tgasModel.XE">
         <MappingFragment StoreEntitySet="XE">
@@ -172,6 +138,7 @@
     <EntitySetMapping Name="THU_NO">
       <EntityTypeMapping TypeName="tgasModel.THU_NO">
         <MappingFragment StoreEntitySet="THU_NO">
+          <ScalarProperty Name="LOAI_NO" ColumnName="LOAI_NO" />
           <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
           <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
           <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
@@ -204,6 +171,42 @@
           <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
           <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
           <ScalarProperty Name="MANCC" ColumnName="MANCC" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHO_VAY">
+      <EntityTypeMapping TypeName="tgasModel.CHO_VAY">
+        <MappingFragment StoreEntitySet="CHO_VAY">
+          <ScalarProperty Name="TRA_XONG" ColumnName="TRA_XONG" />
+          <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
+          <ScalarProperty Name="DA_TRA" ColumnName="DA_TRA" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="NGAY_CHO_VAY" ColumnName="NGAY_CHO_VAY" />
+          <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
+          <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
+          <ScalarProperty Name="MA_NGUON_NO" ColumnName="MA_NGUON_NO" />
+          <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XUAT_HANG">
+      <EntityTypeMapping TypeName="tgasModel.XUAT_HANG">
+        <MappingFragment StoreEntitySet="XUAT_HANG">
+          <ScalarProperty Name="TRA_XONG" ColumnName="TRA_XONG" />
+          <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
+          <ScalarProperty Name="DA_TRA" ColumnName="DA_TRA" />
+          <ScalarProperty Name="NGAY_XUAT" ColumnName="NGAY_XUAT" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="TRA_TRUOC" ColumnName="TRA_TRUOC" />
+          <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
+          <ScalarProperty Name="THANH_TOAN_XUAT" ColumnName="THANH_TOAN_XUAT" />
+          <ScalarProperty Name="DON_GIA_BAN" ColumnName="DON_GIA_BAN" />
+          <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+          <ScalarProperty Name="MAHH" ColumnName="MAHH" />
+          <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

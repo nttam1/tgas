@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using T_Manager.Modal;
 
 namespace T_Manager
 {
@@ -24,6 +25,7 @@ namespace T_Manager
             comboBoxKHACHHANG.DataSource = DataInstance.Instance().DBContext().KHACH_HANG;
             comboBoxKHACHHANG.DisplayMember = "NAME";
             comboBoxKHACHHANG.ValueMember = "ID";
+            comboBoxKHACHHANG_SelectedIndexChanged(sender, e);
         }
 
         private BindingSource bs = new BindingSource();
@@ -41,6 +43,9 @@ namespace T_Manager
                 dataGridViewCHOVAY.Columns[1].Visible = false;
                 dataGridViewCHOVAY.Columns[2].Visible = false;
                 dataGridViewCHOVAY.Columns[6].Visible = false;
+                dataGridViewCHOVAY.Columns[7].Visible = false;
+                dataGridViewCHOVAY.Columns[8].Visible = false;
+                dataGridViewCHOVAY.Columns[9].Visible = false;
                 dataGridViewCHOVAY.Columns[3].HeaderText = "Tổng tiền";
                 dataGridViewCHOVAY.Columns[4].HeaderText = "Lãi suất";
                 dataGridViewCHOVAY.Columns[5].HeaderText = "Ngày cho vay";
@@ -91,6 +96,8 @@ namespace T_Manager
                     LAI_SUAT = lai,
                     NGAY_CHO_VAY = DateTime.Now,
                     CREATED_AT = DateTime.Now,
+                    DA_TRA = 0,
+                    TRA_XONG = MChoVay.CHUA_TRA_XONG,                
                 });
                 bs.EndEdit();
                 bs.ResetBindings(false);

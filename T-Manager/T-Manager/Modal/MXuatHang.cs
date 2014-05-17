@@ -7,11 +7,13 @@ namespace T_Manager.Modal
 {
     class MXuatHang
     {
-       /// <summary>
-       /// Trừ số lượng xuất hàng vào số lượng còn lại của nhập hàng
-       /// </summary>
-       /// <param name="_SoLuong">Số lượng xuất hàng</param>
-       /// <param name="ele">Object Xuất hàng</param>
+        public const int CHUA_TRA_XONG = 0;
+        public const int DA_TRA_XONG = 1;
+        /// <summary>
+        /// Trừ số lượng xuất hàng vào số lượng còn lại của nhập hàng
+        /// </summary>
+        /// <param name="_SoLuong">Số lượng xuất hàng</param>
+        /// <param name="ele">Object Xuất hàng</param>
         public static void Update(long _SoLuong, XUAT_HANG ele)
         {
             foreach (var row in DataInstance.Instance().DBContext().NHAP_HANG
@@ -28,6 +30,6 @@ namespace T_Manager.Modal
                 }
             }
         }
- 
+
     }
 }

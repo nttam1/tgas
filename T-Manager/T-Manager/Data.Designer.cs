@@ -113,22 +113,6 @@ namespace T_Manager
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<CHO_VAY> CHO_VAY
-        {
-            get
-            {
-                if ((_CHO_VAY == null))
-                {
-                    _CHO_VAY = base.CreateObjectSet<CHO_VAY>("CHO_VAY");
-                }
-                return _CHO_VAY;
-            }
-        }
-        private ObjectSet<CHO_VAY> _CHO_VAY;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<HANG_HOA> HANG_HOA
         {
             get
@@ -273,22 +257,6 @@ namespace T_Manager
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<XUAT_HANG> XUAT_HANG
-        {
-            get
-            {
-                if ((_XUAT_HANG == null))
-                {
-                    _XUAT_HANG = base.CreateObjectSet<XUAT_HANG>("XUAT_HANG");
-                }
-                return _XUAT_HANG;
-            }
-        }
-        private ObjectSet<XUAT_HANG> _XUAT_HANG;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<XE> XEs
         {
             get
@@ -349,6 +317,38 @@ namespace T_Manager
             }
         }
         private ObjectSet<TRA_NO_NCC> _TRA_NO_NCC;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<CHO_VAY> CHO_VAY
+        {
+            get
+            {
+                if ((_CHO_VAY == null))
+                {
+                    _CHO_VAY = base.CreateObjectSet<CHO_VAY>("CHO_VAY");
+                }
+                return _CHO_VAY;
+            }
+        }
+        private ObjectSet<CHO_VAY> _CHO_VAY;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<XUAT_HANG> XUAT_HANG
+        {
+            get
+            {
+                if ((_XUAT_HANG == null))
+                {
+                    _XUAT_HANG = base.CreateObjectSet<XUAT_HANG>("XUAT_HANG");
+                }
+                return _XUAT_HANG;
+            }
+        }
+        private ObjectSet<XUAT_HANG> _XUAT_HANG;
 
         #endregion
 
@@ -376,14 +376,6 @@ namespace T_Manager
         public void AddToCHI_TIEU_DUNG_NOI_BO(CHI_TIEU_DUNG_NOI_BO cHI_TIEU_DUNG_NOI_BO)
         {
             base.AddObject("CHI_TIEU_DUNG_NOI_BO", cHI_TIEU_DUNG_NOI_BO);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the CHO_VAY EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToCHO_VAY(CHO_VAY cHO_VAY)
-        {
-            base.AddObject("CHO_VAY", cHO_VAY);
         }
     
         /// <summary>
@@ -459,14 +451,6 @@ namespace T_Manager
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the XUAT_HANG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToXUAT_HANG(XUAT_HANG xUAT_HANG)
-        {
-            base.AddObject("XUAT_HANG", xUAT_HANG);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the XEs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToXEs(XE xE)
@@ -496,6 +480,22 @@ namespace T_Manager
         public void AddToTRA_NO_NCC(TRA_NO_NCC tRA_NO_NCC)
         {
             base.AddObject("TRA_NO_NCC", tRA_NO_NCC);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the CHO_VAY EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToCHO_VAY(CHO_VAY cHO_VAY)
+        {
+            base.AddObject("CHO_VAY", cHO_VAY);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the XUAT_HANG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToXUAT_HANG(XUAT_HANG xUAT_HANG)
+        {
+            base.AddObject("XUAT_HANG", xUAT_HANG);
         }
 
         #endregion
@@ -1358,7 +1358,7 @@ namespace T_Manager
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int64> DA_TRA
+        public Nullable<global::System.Double> DA_TRA
         {
             get
             {
@@ -1373,8 +1373,8 @@ namespace T_Manager
                 OnDA_TRAChanged();
             }
         }
-        private Nullable<global::System.Int64> _DA_TRA;
-        partial void OnDA_TRAChanging(Nullable<global::System.Int64> value);
+        private Nullable<global::System.Double> _DA_TRA;
+        partial void OnDA_TRAChanging(Nullable<global::System.Double> value);
         partial void OnDA_TRAChanged();
     
         /// <summary>
@@ -1400,6 +1400,30 @@ namespace T_Manager
         private Nullable<global::System.DateTime> _NGAY_TRA;
         partial void OnNGAY_TRAChanging(Nullable<global::System.DateTime> value);
         partial void OnNGAY_TRAChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> TRA_XONG
+        {
+            get
+            {
+                return _TRA_XONG;
+            }
+            set
+            {
+                OnTRA_XONGChanging(value);
+                ReportPropertyChanging("TRA_XONG");
+                _TRA_XONG = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TRA_XONG");
+                OnTRA_XONGChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _TRA_XONG;
+        partial void OnTRA_XONGChanging(Nullable<global::System.Int64> value);
+        partial void OnTRA_XONGChanged();
 
         #endregion
 
@@ -2373,7 +2397,8 @@ namespace T_Manager
         /// <param name="tIEN_GOC">Initial value of the TIEN_GOC property.</param>
         /// <param name="tIEN_LAI">Initial value of the TIEN_LAI property.</param>
         /// <param name="nGAY_TRA">Initial value of the NGAY_TRA property.</param>
-        public static THU_NO CreateTHU_NO(global::System.Int64 id, global::System.Int64 mAKH, global::System.Int64 mAKHO, global::System.Int64 tIEN_GOC, global::System.Int64 tIEN_LAI, global::System.DateTime nGAY_TRA)
+        /// <param name="lOAI_NO">Initial value of the LOAI_NO property.</param>
+        public static THU_NO CreateTHU_NO(global::System.Int64 id, global::System.Int64 mAKH, global::System.Int64 mAKHO, global::System.Int64 tIEN_GOC, global::System.Int64 tIEN_LAI, global::System.DateTime nGAY_TRA, global::System.Int64 lOAI_NO)
         {
             THU_NO tHU_NO = new THU_NO();
             tHU_NO.ID = id;
@@ -2382,6 +2407,7 @@ namespace T_Manager
             tHU_NO.TIEN_GOC = tIEN_GOC;
             tHU_NO.TIEN_LAI = tIEN_LAI;
             tHU_NO.NGAY_TRA = nGAY_TRA;
+            tHU_NO.LOAI_NO = lOAI_NO;
             return tHU_NO;
         }
 
@@ -2583,6 +2609,30 @@ namespace T_Manager
         private Nullable<global::System.DateTime> _CREATED_AT;
         partial void OnCREATED_ATChanging(Nullable<global::System.DateTime> value);
         partial void OnCREATED_ATChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 LOAI_NO
+        {
+            get
+            {
+                return _LOAI_NO;
+            }
+            set
+            {
+                OnLOAI_NOChanging(value);
+                ReportPropertyChanging("LOAI_NO");
+                _LOAI_NO = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LOAI_NO");
+                OnLOAI_NOChanged();
+            }
+        }
+        private global::System.Int64 _LOAI_NO;
+        partial void OnLOAI_NOChanging(global::System.Int64 value);
+        partial void OnLOAI_NOChanged();
 
         #endregion
 
@@ -3282,7 +3332,8 @@ namespace T_Manager
         /// <param name="lAI_SUAT">Initial value of the LAI_SUAT property.</param>
         /// <param name="tRA_TRUOC">Initial value of the TRA_TRUOC property.</param>
         /// <param name="cREATED_AT">Initial value of the CREATED_AT property.</param>
-        public static XUAT_HANG CreateXUAT_HANG(global::System.Int64 id, global::System.Int64 mAKHO, global::System.Int64 mAHH, global::System.Int64 mAKH, global::System.Int64 sO_LUONG, global::System.Int64 dON_GIA_BAN, global::System.Int64 tHANH_TOAN_XUAT, global::System.Double lAI_SUAT, global::System.Int64 tRA_TRUOC, global::System.DateTime cREATED_AT)
+        /// <param name="tRA_XONG">Initial value of the TRA_XONG property.</param>
+        public static XUAT_HANG CreateXUAT_HANG(global::System.Int64 id, global::System.Int64 mAKHO, global::System.Int64 mAHH, global::System.Int64 mAKH, global::System.Int64 sO_LUONG, global::System.Int64 dON_GIA_BAN, global::System.Int64 tHANH_TOAN_XUAT, global::System.Double lAI_SUAT, global::System.Int64 tRA_TRUOC, global::System.DateTime cREATED_AT, global::System.Int64 tRA_XONG)
         {
             XUAT_HANG xUAT_HANG = new XUAT_HANG();
             xUAT_HANG.ID = id;
@@ -3295,6 +3346,7 @@ namespace T_Manager
             xUAT_HANG.LAI_SUAT = lAI_SUAT;
             xUAT_HANG.TRA_TRUOC = tRA_TRUOC;
             xUAT_HANG.CREATED_AT = cREATED_AT;
+            xUAT_HANG.TRA_XONG = tRA_XONG;
             return xUAT_HANG;
         }
 
@@ -3574,7 +3626,7 @@ namespace T_Manager
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int64> DA_TRA
+        public Nullable<global::System.Double> DA_TRA
         {
             get
             {
@@ -3589,8 +3641,8 @@ namespace T_Manager
                 OnDA_TRAChanged();
             }
         }
-        private Nullable<global::System.Int64> _DA_TRA;
-        partial void OnDA_TRAChanging(Nullable<global::System.Int64> value);
+        private Nullable<global::System.Double> _DA_TRA;
+        partial void OnDA_TRAChanging(Nullable<global::System.Double> value);
         partial void OnDA_TRAChanged();
     
         /// <summary>
@@ -3616,6 +3668,30 @@ namespace T_Manager
         private Nullable<global::System.DateTime> _NGAY_TRA;
         partial void OnNGAY_TRAChanging(Nullable<global::System.DateTime> value);
         partial void OnNGAY_TRAChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 TRA_XONG
+        {
+            get
+            {
+                return _TRA_XONG;
+            }
+            set
+            {
+                OnTRA_XONGChanging(value);
+                ReportPropertyChanging("TRA_XONG");
+                _TRA_XONG = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TRA_XONG");
+                OnTRA_XONGChanged();
+            }
+        }
+        private global::System.Int64 _TRA_XONG;
+        partial void OnTRA_XONGChanging(global::System.Int64 value);
+        partial void OnTRA_XONGChanged();
 
         #endregion
 

@@ -17,6 +17,11 @@ namespace T_Manager
             InitializeComponent();
         }
 
+        Int32 NoHH = 0;
+        Int32 LaiHH = 0;
+        Int32 NoVay = 0;
+        Int32 LaiVay = 0;
+
         private void FThuNo_Load(object sender, EventArgs e)
         {
             comboBoxKHO.DataSource = DataInstance.Instance().DBContext().KHOes;
@@ -35,7 +40,8 @@ namespace T_Manager
                 {
                     c.KeyPress +=new KeyPressEventHandler(c_KeyPress);
                 }
-            }        
+            }
+            radioButtonNOHH_CheckedChanged(sender, e);
         }
         private void c_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -51,37 +57,32 @@ namespace T_Manager
             {
                 kh = Int32.Parse(comboBoxKHACHHANG.SelectedValue.ToString());
                 kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
-                bs.DataSource = DataInstance.Instance().DBContext().THU_NO.Where(u => u.MAKHO == kho)
-                    .Where(u => u.MAKH == kh);
-                dataGridViewTHUNO.DataSource = bs;
-                dataGridViewTHUNO.Columns[0].Visible = false;
-                dataGridViewTHUNO.Columns[1].Visible = false;
-                dataGridViewTHUNO.Columns[2].Visible = false;
-                dataGridViewTHUNO.Columns[6].Visible = false;
-                dataGridViewTHUNO.Columns[7].Visible = false;
-                dataGridViewTHUNO.Columns[3].HeaderText = "Tiền gốc";
-                dataGridViewTHUNO.Columns[4].HeaderText = "Tiền lãi";
-                dataGridViewTHUNO.Columns[5].HeaderText = "Ngày trả";
-                dataGridViewTHUNO.ReadOnly = true;
+                MKhachHang mKH = new MKhachHang(kh, kho);
+                // Hien thi tong no, tong la
+                try
+                {
+                    textBoxNOVAY.Text = Utility.StringToVND(mKH.NoVayHienTai().ToString());
+                    textBoxLAIVAY.Text = Utility.StringToVND(mKH.LaiVayHienTai().ToString());
+                }
+                catch (Exception ex)
+                {
+                    textBoxNOVAY.Text = "0 VND";
+                    textBoxLAIVAY.Text = "0 VND";
+                }
+                try
+                {
+                    TONGNO_LB.Text = Utility.StringToVND(mKH.NoHHHienTai().ToString());
+                    TONGLAI_LB.Text = Utility.StringToVND(mKH.LaiHHHienTai().ToString());
+                }
+                catch (Exception ex)
+                {
+                    TONGNO_LB.Text = "0 VND";
+                    TONGLAI_LB.Text = "0 VND";
+                }
             }
             catch (Exception ex)
             {
-
             }
-
-            try
-            {
-                MKhachHang mKH = new MKhachHang(kh);
-                /* Hien thi tong no, tong lai */
-                TONGNO_LB.Text = Utility.StringToVND(mKH.NoHienTai().ToString());
-                TONGLAI_LB.Text = Utility.StringToVND(mKH.LaiHienTai().ToString());
-            }
-            catch (Exception ex)
-            {
-                TONGNO_LB.Text = "0 VND";
-                TONGLAI_LB.Text = "0 VND";
-            }
-
         }
 
         private void comboBoxKHO_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,25 +98,41 @@ namespace T_Manager
                 var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
                 var goc = Int32.Parse(textBoxTIENGOC.Text);
                 var lai = Int32.Parse(textBoxTIENLAI.Text);
-                bs.Add(new THU_NO()
+                var loai_no = radioButtonNOHH.Checked == true ? MThuNo.THU_NO_HH : MThuNo.THU_NO_VAY;
+                var cur_lai = LaiVay + LaiHH;
+                var cur_no = NoHH + NoVay;
+                try
                 {
-                    MAKH = kh,
-                    MAKHO = kho,
-                    TIEN_GOC = goc,
-                    TIEN_LAI = lai,
-                    NGAY_TRA = DateTime.Now,
-                    CREATED_AT = DateTime.Now
-                });
-                bs.EndEdit();
-                bs.ResetBindings(false);
-                DataInstance.Instance().DBContext().SaveChanges();
-                textBoxTIENGOC.Text = "";
-                textBoxTIENLAI.Text = "";
+                    THU_NO ele = new THU_NO()
+                    {
+                        MAKH = kh,
+                        MAKHO = kho,
+                        TIEN_GOC = goc,
+                        TIEN_LAI = lai,
+                        LOAI_NO = loai_no,
+                        NGAY_TRA = DateTime.Now,
+                        CREATED_AT = DateTime.Now
+                    };
+                    bs.Add(ele);
+                    bs.EndEdit();
+                    bs.ResetBindings(false);
+                    DataInstance.Instance().DBContext().SaveChanges();
+                    // Cap nhat tien no
+                    MKhachHang mKH = new MKhachHang(kh);
+                    mKH.CapNhatNo(goc, lai, ele);
+
+                    textBoxTIENGOC.Text = "";
+                    textBoxTIENLAI.Text = "";
+                    comboBoxKHACHHANG_SelectedIndexChanged(sender, e);
+                }
+                catch (Exception ex)
+                {
+                }
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Dữ liệu nhập vào không đúng, Vui lòng kiểm tra lại");
             }
-
         }
 
         private void textBoxTIENLAI_KeyPress(object sender, KeyPressEventArgs e)
@@ -179,6 +196,18 @@ namespace T_Manager
             catch (Exception ex)
             {
             }
+        }
+
+        private void radioButtonNOHH_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBox2.BackColor = Color.Aquamarine;
+            groupBox3.BackColor = Color.Azure;
+        }
+
+        private void radioButtonNOVAY_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBox3.BackColor = Color.Aquamarine;
+            groupBox2.BackColor = Color.Azure;
         }
     }
 }
