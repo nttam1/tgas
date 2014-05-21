@@ -43,28 +43,59 @@ namespace T_Manager.REPORT
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var include_THUNO = checkBoxTHUNO.Checked;
             BindingSource bs = new BindingSource();
             long MAKH = long.Parse(comboBox1.SelectedValue.ToString());
-            bs.DataSource = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                             join hh in DataInstance.Instance().DBContext().HANG_HOA on xh.MAHH equals hh.ID
-                             join kho in DataInstance.Instance().DBContext().KHOes on xh.MAKHO equals kho.ID
-                             join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
-                             where xh.NGAY_XUAT >= dateTimePicker1.Value
-                             where xh.NGAY_XUAT <= dateTimePicker2.Value
-                             where xh.MAKH == MAKH
-                             select new
-                             {
-                                 DATE = xh.NGAY_XUAT.Value,
-                                 KHO = kho.NAME,
-                                 HANGHOA = hh.NAME,
-                                 SOLUONG = xh.SO_LUONG,
-                                 DONGIABAN = xh.DON_GIA_BAN,
-                                 THANHTIEN = xh.SO_LUONG * xh.DON_GIA_BAN,
-                                 THANHTOAN = xh.TRA_TRUOC,
-                                 CONNO = xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC,
-                                 KHACHHANG = kh.NAME,
-                                 LAISUAT = xh.LAI_SUAT
-                             });
+            if (include_THUNO == true)
+            {
+                bs.DataSource = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
+                                 join hh in DataInstance.Instance().DBContext().HANG_HOA on xh.MAHH equals hh.ID
+                                 join kho in DataInstance.Instance().DBContext().KHOes on xh.MAKHO equals kho.ID
+                                 join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
+                                 where xh.NGAY_XUAT >= dateTimePicker1.Value
+                                 where xh.NGAY_XUAT <= dateTimePicker2.Value
+                                 where xh.MAKH == MAKH
+                                 select new
+                                 {
+                                     DATE = xh.NGAY_XUAT.Value,
+                                     KHO = kho.NAME,
+                                     HANGHOA = hh.NAME,
+                                     SOLUONG = xh.SO_LUONG,
+                                     DONGIABAN = xh.DON_GIA_BAN,
+                                     THANHTIEN = xh.SO_LUONG * xh.DON_GIA_BAN,
+                                     THANHTOAN = xh.TRA_TRUOC,
+                                     CONNO = xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC,
+                                     KHACHHANG = kh.NAME,
+                                     DATRA = xh.DA_TRA.Value,
+                                     NGAYTRA = xh.NGAY_TRA.Value,
+                                     LAISUAT = xh.LAI_SUAT
+                                 });
+            }
+            else
+            {
+                bs.DataSource = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
+                                 join hh in DataInstance.Instance().DBContext().HANG_HOA on xh.MAHH equals hh.ID
+                                 join kho in DataInstance.Instance().DBContext().KHOes on xh.MAKHO equals kho.ID
+                                 join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
+                                 where xh.NGAY_XUAT >= dateTimePicker1.Value
+                                 where xh.NGAY_XUAT <= dateTimePicker2.Value
+                                 where xh.MAKH == MAKH
+                                 select new
+                                 {
+                                     DATE = xh.NGAY_XUAT.Value,
+                                     KHO = kho.NAME,
+                                     HANGHOA = hh.NAME,
+                                     SOLUONG = xh.SO_LUONG,
+                                     DONGIABAN = xh.DON_GIA_BAN,
+                                     THANHTIEN = xh.SO_LUONG * xh.DON_GIA_BAN,
+                                     THANHTOAN = xh.TRA_TRUOC,
+                                     CONNO = xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC,
+                                     KHACHHANG = kh.NAME,
+                                     DATRA = 0,
+                                     NGAYTRA = xh.NGAY_TRA.Value,
+                                     LAISUAT = xh.LAI_SUAT
+                                 });
+            }
             CrystalReportCongNoKhachHang rpt = new CrystalReportCongNoKhachHang();
             rpt.SetDataSource(bs);
             rpt.SetParameterValue("KH", comboBox1.Text);
@@ -72,6 +103,7 @@ namespace T_Manager.REPORT
             rpt.SetParameterValue("TO", dateTimePicker2.Value);
             rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
             crystalReportViewer1.ReportSource = rpt;
+            crystalReportViewer1.Zoom(150);
         }
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)

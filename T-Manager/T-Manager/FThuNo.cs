@@ -96,8 +96,8 @@ namespace T_Manager
             {
                 var kh = Int32.Parse(comboBoxKHACHHANG.SelectedValue.ToString());
                 var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
-                var goc = Int32.Parse(textBoxTIENGOC.Text);
-                var lai = Int32.Parse(textBoxTIENLAI.Text);
+                var goc = Int64.Parse(textBoxTIENGOC.Text);
+                var lai = Int64.Parse(textBoxTIENLAI.Text);
                 var loai_no = radioButtonNOHH.Checked == true ? MThuNo.THU_NO_HH : MThuNo.THU_NO_VAY;
                 var cur_lai = LaiVay + LaiHH;
                 var cur_no = NoHH + NoVay;
