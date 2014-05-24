@@ -246,7 +246,14 @@ namespace T_Manager.Modal
                 double total = 0;
                 foreach (var r in rows)
                 {
-                    total += (DateTime.Now - (DateTime)r.NGAY_XUAT).Days * (r.SO_LUONG * r.DON_GIA_BAN - (double)r.DA_TRA - r.TRA_TRUOC) * r.LAI_SUAT / 3000;
+                    var thanhtien_A = r.SO_LUONG * r.DON_GIA_BAN;
+                    var thanhtien_B = r.SO_LUONG * r.DON_GIA_BAN - r.DA_TRA.Value;
+                    var ngay_tra = r.NGAY_TRA.Value.Date;
+                    var ngay_xuat = r.NGAY_XUAT.Value.Date;
+                    var now = DateTime.Now.Date;
+                    var n_ngay_A = (ngay_tra - ngay_xuat).Days;
+                    var n_ngay_B = (now - ngay_tra).Days; ;
+                    total += (thanhtien_A * r.LAI_SUAT * n_ngay_A / 3000) +  (thanhtien_B * r.LAI_SUAT * n_ngay_B / 3000);
                 }
                 return total;
             }

@@ -845,6 +845,8 @@ namespace T_Manager.DATASET {
             
             private global::System.Data.DataColumn columnCONNO;
             
+            private global::System.Data.DataColumn columnDATRA;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TongHopCongNoDataTable() {
@@ -920,6 +922,14 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DATRAColumn {
+                get {
+                    return this.columnDATRA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -955,14 +965,15 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TongHopCongNoRow AddTongHopCongNoRow(int STT, string KHACHHANG, int TIENNO, int THANHTOAN, int CONNO) {
+            public TongHopCongNoRow AddTongHopCongNoRow(int STT, string KHACHHANG, int TIENNO, int THANHTOAN, int CONNO, int DATRA) {
                 TongHopCongNoRow rowTongHopCongNoRow = ((TongHopCongNoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STT,
                         KHACHHANG,
                         TIENNO,
                         THANHTOAN,
-                        CONNO};
+                        CONNO,
+                        DATRA};
                 rowTongHopCongNoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTongHopCongNoRow);
                 return rowTongHopCongNoRow;
@@ -990,6 +1001,7 @@ namespace T_Manager.DATASET {
                 this.columnTIENNO = base.Columns["TIENNO"];
                 this.columnTHANHTOAN = base.Columns["THANHTOAN"];
                 this.columnCONNO = base.Columns["CONNO"];
+                this.columnDATRA = base.Columns["DATRA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1005,6 +1017,8 @@ namespace T_Manager.DATASET {
                 base.Columns.Add(this.columnTHANHTOAN);
                 this.columnCONNO = new global::System.Data.DataColumn("CONNO", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCONNO);
+                this.columnDATRA = new global::System.Data.DataColumn("DATRA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATRA);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2487,6 +2501,22 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int DATRA {
+                get {
+                    try {
+                        return ((int)(this[this.tableTongHopCongNo.DATRAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DATRA\' in table \'TongHopCongNo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTongHopCongNo.DATRAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSTTNull() {
                 return this.IsNull(this.tableTongHopCongNo.STTColumn);
             }
@@ -2543,6 +2573,18 @@ namespace T_Manager.DATASET {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCONNONull() {
                 this[this.tableTongHopCongNo.CONNOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDATRANull() {
+                return this.IsNull(this.tableTongHopCongNo.DATRAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDATRANull() {
+                this[this.tableTongHopCongNo.DATRAColumn] = global::System.Convert.DBNull;
             }
         }
         

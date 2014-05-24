@@ -116,6 +116,7 @@ namespace T_Manager
                     bs.Add(ele);
                     bs.EndEdit();
                     bs.ResetBindings(false);
+                    DataInstance.Instance().DBContext().AddToTHU_NO(ele);
                     DataInstance.Instance().DBContext().SaveChanges();
                     // Cap nhat tien no
                     MKhachHang mKH = new MKhachHang(kh);

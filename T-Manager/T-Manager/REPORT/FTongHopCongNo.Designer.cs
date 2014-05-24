@@ -37,11 +37,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.checkBoxTHUNO = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxTHUNO);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBoxKHO);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
@@ -131,6 +133,16 @@
             this.crystalReportViewer1.TabIndex = 11;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
+            // checkBoxTHUNO
+            // 
+            this.checkBoxTHUNO.AutoSize = true;
+            this.checkBoxTHUNO.Location = new System.Drawing.Point(304, 30);
+            this.checkBoxTHUNO.Name = "checkBoxTHUNO";
+            this.checkBoxTHUNO.Size = new System.Drawing.Size(114, 17);
+            this.checkBoxTHUNO.TabIndex = 12;
+            this.checkBoxTHUNO.Text = "TÍNH CẢ THU NỢ";
+            this.checkBoxTHUNO.UseVisualStyleBackColor = true;
+            // 
             // FTongHopCongNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,5 +174,6 @@
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private System.Windows.Forms.ComboBox comboBoxKHO;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox checkBoxTHUNO;
     }
 }

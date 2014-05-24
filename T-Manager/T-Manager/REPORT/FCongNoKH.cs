@@ -55,6 +55,7 @@ namespace T_Manager.REPORT
                                  where xh.NGAY_XUAT >= dateTimePicker1.Value
                                  where xh.NGAY_XUAT <= dateTimePicker2.Value
                                  where xh.MAKH == MAKH
+                                 orderby xh.NGAY_XUAT ascending
                                  select new
                                  {
                                      DATE = xh.NGAY_XUAT.Value,
@@ -80,6 +81,7 @@ namespace T_Manager.REPORT
                                  where xh.NGAY_XUAT >= dateTimePicker1.Value
                                  where xh.NGAY_XUAT <= dateTimePicker2.Value
                                  where xh.MAKH == MAKH
+                                 orderby xh.NGAY_XUAT ascending
                                  select new
                                  {
                                      DATE = xh.NGAY_XUAT.Value,

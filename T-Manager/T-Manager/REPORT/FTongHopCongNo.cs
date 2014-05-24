@@ -18,25 +18,51 @@ namespace T_Manager.REPORT
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var include_thuno = checkBoxTHUNO.Checked;
             var kho = long.Parse(comboBoxKHO.SelectedValue.ToString());
             var _from = dateTimePicker1.Value;
             var _to = dateTimePicker2.Value;
 
             BindingSource bs = new BindingSource();
-            bs.DataSource = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                             join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
-                             where xh.MAKHO == kho
-                             where xh.NGAY_XUAT >= _from
-                             where xh.NGAY_XUAT <= _to
-                             group xh by new {xh.MAKH, kh.NAME} into g
-                             select new
-                             {
-                                 STT = g.Key.MAKH,
-                                 KHACHHANG = g.Key.NAME,
-                                 TIENNO = g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN),
-                                 THANHTOAN = g.Sum(xh => xh.TRA_TRUOC),
-                                 CONNO = g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC)
-                             });
+
+            if (include_thuno == true)
+            {
+                bs.DataSource = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
+                                 join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
+                                 where xh.MAKHO == kho
+                                 where xh.NGAY_XUAT >= _from
+                                 where xh.NGAY_XUAT <= _to
+                                 group xh by new { xh.MAKH, kh.NAME } into g
+                                 select new
+                                 {
+                                     STT = g.Key.MAKH,
+                                     KHACHHANG = g.Key.NAME,
+                                     TIENNO = g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN),
+                                     THANHTOAN = g.Sum(xh => xh.TRA_TRUOC),
+                                     DATRA = g.Sum(xh => xh.DA_TRA.Value),
+                                     CONNO = g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC - xh.DA_TRA.Value)
+                                 });
+
+            }
+            else
+            {
+                bs.DataSource = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
+                                 join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
+                                 where xh.MAKHO == kho
+                                 where xh.NGAY_XUAT >= _from
+                                 where xh.NGAY_XUAT <= _to
+                                 group xh by new { xh.MAKH, kh.NAME } into g
+                                 select new
+                                 {
+                                     STT = g.Key.MAKH,
+                                     KHACHHANG = g.Key.NAME,
+                                     TIENNO = g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN),
+                                     THANHTOAN = g.Sum(xh => xh.TRA_TRUOC),
+                                     DATRA = 0,
+                                     CONNO = g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC)
+                                 });
+
+            }
             CrystalReportTONGHOPCONGNO rpt = new CrystalReportTONGHOPCONGNO();
             rpt.SetDataSource(bs);
             rpt.SetParameterValue("KHO", comboBoxKHO.Text);
