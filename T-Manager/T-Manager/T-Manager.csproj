@@ -376,6 +376,7 @@
     <None Include="DATASET\DataSetReport.xss">
       <DependentUpon>DataSetReport.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\tgasEntities.datasource" />
     <None Include="Properties\DataSources\T_Manager.DATASET.DataSetCNKH.datasource" />
     <None Include="Properties\DataSources\XUAT_HANG.datasource" />
     <None Include="Properties\Settings.settings">

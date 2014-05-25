@@ -419,7 +419,7 @@ namespace T_Manager.DATASET {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class CongNoKhachHangDataTable : global::System.Data.TypedTableBase<CongNoKhachHangRow> {
             
-            private global::System.Data.DataColumn columnDATE;
+            private global::System.Data.DataColumn columnNGAY;
             
             private global::System.Data.DataColumn columnKHO;
             
@@ -431,19 +431,17 @@ namespace T_Manager.DATASET {
             
             private global::System.Data.DataColumn columnTHANHTIEN;
             
-            private global::System.Data.DataColumn columnTHANHTOAN;
-            
-            private global::System.Data.DataColumn columnCONNO;
-            
-            private global::System.Data.DataColumn columnKHACHHANG;
-            
-            private global::System.Data.DataColumn columnLAI;
+            private global::System.Data.DataColumn columnTRATRUOC;
             
             private global::System.Data.DataColumn columnLAISUAT;
             
-            private global::System.Data.DataColumn columnDATRA;
+            private global::System.Data.DataColumn columnLAI;
             
-            private global::System.Data.DataColumn columnNGAYTRA;
+            private global::System.Data.DataColumn columnTRAGOC;
+            
+            private global::System.Data.DataColumn columnTRALAI;
+            
+            private global::System.Data.DataColumn columnCONNO;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -480,9 +478,9 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DATEColumn {
+            public global::System.Data.DataColumn NGAYColumn {
                 get {
-                    return this.columnDATE;
+                    return this.columnNGAY;
                 }
             }
             
@@ -528,33 +526,9 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn THANHTOANColumn {
+            public global::System.Data.DataColumn TRATRUOCColumn {
                 get {
-                    return this.columnTHANHTOAN;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CONNOColumn {
-                get {
-                    return this.columnCONNO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn KHACHHANGColumn {
-                get {
-                    return this.columnKHACHHANG;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LAIColumn {
-                get {
-                    return this.columnLAI;
+                    return this.columnTRATRUOC;
                 }
             }
             
@@ -568,17 +542,33 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DATRAColumn {
+            public global::System.Data.DataColumn LAIColumn {
                 get {
-                    return this.columnDATRA;
+                    return this.columnLAI;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NGAYTRAColumn {
+            public global::System.Data.DataColumn TRAGOCColumn {
                 get {
-                    return this.columnNGAYTRA;
+                    return this.columnTRAGOC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TRALAIColumn {
+                get {
+                    return this.columnTRALAI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CONNOColumn {
+                get {
+                    return this.columnCONNO;
                 }
             }
             
@@ -619,22 +609,21 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CongNoKhachHangRow AddCongNoKhachHangRow(System.DateTime DATE, string KHO, string HANGHOA, int SOLUONG, int DONGIABAN, int THANHTIEN, int THANHTOAN, int CONNO, string KHACHHANG, int LAI, double LAISUAT, int DATRA, System.DateTime NGAYTRA) {
+            public CongNoKhachHangRow AddCongNoKhachHangRow(System.DateTime NGAY, string KHO, string HANGHOA, long SOLUONG, int DONGIABAN, long THANHTIEN, long TRATRUOC, double LAISUAT, double LAI, long TRAGOC, long TRALAI, long CONNO) {
                 CongNoKhachHangRow rowCongNoKhachHangRow = ((CongNoKhachHangRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        DATE,
+                        NGAY,
                         KHO,
                         HANGHOA,
                         SOLUONG,
                         DONGIABAN,
                         THANHTIEN,
-                        THANHTOAN,
-                        CONNO,
-                        KHACHHANG,
-                        LAI,
+                        TRATRUOC,
                         LAISUAT,
-                        DATRA,
-                        NGAYTRA};
+                        LAI,
+                        TRAGOC,
+                        TRALAI,
+                        CONNO};
                 rowCongNoKhachHangRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCongNoKhachHangRow);
                 return rowCongNoKhachHangRow;
@@ -657,51 +646,48 @@ namespace T_Manager.DATASET {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnDATE = base.Columns["DATE"];
+                this.columnNGAY = base.Columns["NGAY"];
                 this.columnKHO = base.Columns["KHO"];
                 this.columnHANGHOA = base.Columns["HANGHOA"];
                 this.columnSOLUONG = base.Columns["SOLUONG"];
                 this.columnDONGIABAN = base.Columns["DONGIABAN"];
                 this.columnTHANHTIEN = base.Columns["THANHTIEN"];
-                this.columnTHANHTOAN = base.Columns["THANHTOAN"];
-                this.columnCONNO = base.Columns["CONNO"];
-                this.columnKHACHHANG = base.Columns["KHACHHANG"];
-                this.columnLAI = base.Columns["LAI"];
+                this.columnTRATRUOC = base.Columns["TRATRUOC"];
                 this.columnLAISUAT = base.Columns["LAISUAT"];
-                this.columnDATRA = base.Columns["DATRA"];
-                this.columnNGAYTRA = base.Columns["NGAYTRA"];
+                this.columnLAI = base.Columns["LAI"];
+                this.columnTRAGOC = base.Columns["TRAGOC"];
+                this.columnTRALAI = base.Columns["TRALAI"];
+                this.columnCONNO = base.Columns["CONNO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnDATE = new global::System.Data.DataColumn("DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDATE);
+                this.columnNGAY = new global::System.Data.DataColumn("NGAY", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNGAY);
                 this.columnKHO = new global::System.Data.DataColumn("KHO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKHO);
                 this.columnHANGHOA = new global::System.Data.DataColumn("HANGHOA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHANGHOA);
-                this.columnSOLUONG = new global::System.Data.DataColumn("SOLUONG", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnSOLUONG = new global::System.Data.DataColumn("SOLUONG", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSOLUONG);
                 this.columnDONGIABAN = new global::System.Data.DataColumn("DONGIABAN", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDONGIABAN);
-                this.columnTHANHTIEN = new global::System.Data.DataColumn("THANHTIEN", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnTHANHTIEN = new global::System.Data.DataColumn("THANHTIEN", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTHANHTIEN);
-                this.columnTHANHTOAN = new global::System.Data.DataColumn("THANHTOAN", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTHANHTOAN);
-                this.columnCONNO = new global::System.Data.DataColumn("CONNO", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCONNO);
-                this.columnKHACHHANG = new global::System.Data.DataColumn("KHACHHANG", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKHACHHANG);
-                this.columnLAI = new global::System.Data.DataColumn("LAI", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLAI);
+                this.columnTRATRUOC = new global::System.Data.DataColumn("TRATRUOC", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTRATRUOC);
                 this.columnLAISUAT = new global::System.Data.DataColumn("LAISUAT", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLAISUAT);
-                this.columnDATRA = new global::System.Data.DataColumn("DATRA", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDATRA);
-                this.columnNGAYTRA = new global::System.Data.DataColumn("NGAYTRA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNGAYTRA);
-                this.columnDATE.DateTimeMode = global::System.Data.DataSetDateTime.Utc;
+                this.columnLAI = new global::System.Data.DataColumn("LAI", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLAI);
+                this.columnTRAGOC = new global::System.Data.DataColumn("TRAGOC", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTRAGOC);
+                this.columnTRALAI = new global::System.Data.DataColumn("TRALAI", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTRALAI);
+                this.columnCONNO = new global::System.Data.DataColumn("CONNO", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONNO);
+                this.columnNGAY.DateTimeMode = global::System.Data.DataSetDateTime.Utc;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2042,17 +2028,17 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DATE {
+            public System.DateTime NGAY {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableCongNoKhachHang.DATEColumn]));
+                        return ((global::System.DateTime)(this[this.tableCongNoKhachHang.NGAYColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DATE\' in table \'CongNoKhachHang\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY\' in table \'CongNoKhachHang\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCongNoKhachHang.DATEColumn] = value;
+                    this[this.tableCongNoKhachHang.NGAYColumn] = value;
                 }
             }
             
@@ -2090,10 +2076,10 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int SOLUONG {
+            public long SOLUONG {
                 get {
                     try {
-                        return ((int)(this[this.tableCongNoKhachHang.SOLUONGColumn]));
+                        return ((long)(this[this.tableCongNoKhachHang.SOLUONGColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'SOLUONG\' in table \'CongNoKhachHang\' is DBNull.", e);
@@ -2122,10 +2108,10 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int THANHTIEN {
+            public long THANHTIEN {
                 get {
                     try {
-                        return ((int)(this[this.tableCongNoKhachHang.THANHTIENColumn]));
+                        return ((long)(this[this.tableCongNoKhachHang.THANHTIENColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'THANHTIEN\' in table \'CongNoKhachHang\' is DBNull.", e);
@@ -2138,65 +2124,17 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int THANHTOAN {
+            public long TRATRUOC {
                 get {
                     try {
-                        return ((int)(this[this.tableCongNoKhachHang.THANHTOANColumn]));
+                        return ((long)(this[this.tableCongNoKhachHang.TRATRUOCColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'THANHTOAN\' in table \'CongNoKhachHang\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TRATRUOC\' in table \'CongNoKhachHang\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCongNoKhachHang.THANHTOANColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int CONNO {
-                get {
-                    try {
-                        return ((int)(this[this.tableCongNoKhachHang.CONNOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CONNO\' in table \'CongNoKhachHang\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCongNoKhachHang.CONNOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string KHACHHANG {
-                get {
-                    try {
-                        return ((string)(this[this.tableCongNoKhachHang.KHACHHANGColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KHACHHANG\' in table \'CongNoKhachHang\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCongNoKhachHang.KHACHHANGColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int LAI {
-                get {
-                    try {
-                        return ((int)(this[this.tableCongNoKhachHang.LAIColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LAI\' in table \'CongNoKhachHang\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCongNoKhachHang.LAIColumn] = value;
+                    this[this.tableCongNoKhachHang.TRATRUOCColumn] = value;
                 }
             }
             
@@ -2218,46 +2156,78 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int DATRA {
+            public double LAI {
                 get {
                     try {
-                        return ((int)(this[this.tableCongNoKhachHang.DATRAColumn]));
+                        return ((double)(this[this.tableCongNoKhachHang.LAIColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DATRA\' in table \'CongNoKhachHang\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LAI\' in table \'CongNoKhachHang\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCongNoKhachHang.DATRAColumn] = value;
+                    this[this.tableCongNoKhachHang.LAIColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime NGAYTRA {
+            public long TRAGOC {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableCongNoKhachHang.NGAYTRAColumn]));
+                        return ((long)(this[this.tableCongNoKhachHang.TRAGOCColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NGAYTRA\' in table \'CongNoKhachHang\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TRAGOC\' in table \'CongNoKhachHang\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCongNoKhachHang.NGAYTRAColumn] = value;
+                    this[this.tableCongNoKhachHang.TRAGOCColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDATENull() {
-                return this.IsNull(this.tableCongNoKhachHang.DATEColumn);
+            public long TRALAI {
+                get {
+                    try {
+                        return ((long)(this[this.tableCongNoKhachHang.TRALAIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TRALAI\' in table \'CongNoKhachHang\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCongNoKhachHang.TRALAIColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDATENull() {
-                this[this.tableCongNoKhachHang.DATEColumn] = global::System.Convert.DBNull;
+            public long CONNO {
+                get {
+                    try {
+                        return ((long)(this[this.tableCongNoKhachHang.CONNOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CONNO\' in table \'CongNoKhachHang\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCongNoKhachHang.CONNOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNGAYNull() {
+                return this.IsNull(this.tableCongNoKhachHang.NGAYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNGAYNull() {
+                this[this.tableCongNoKhachHang.NGAYColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2322,50 +2292,14 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTHANHTOANNull() {
-                return this.IsNull(this.tableCongNoKhachHang.THANHTOANColumn);
+            public bool IsTRATRUOCNull() {
+                return this.IsNull(this.tableCongNoKhachHang.TRATRUOCColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTHANHTOANNull() {
-                this[this.tableCongNoKhachHang.THANHTOANColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCONNONull() {
-                return this.IsNull(this.tableCongNoKhachHang.CONNOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCONNONull() {
-                this[this.tableCongNoKhachHang.CONNOColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsKHACHHANGNull() {
-                return this.IsNull(this.tableCongNoKhachHang.KHACHHANGColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetKHACHHANGNull() {
-                this[this.tableCongNoKhachHang.KHACHHANGColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLAINull() {
-                return this.IsNull(this.tableCongNoKhachHang.LAIColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLAINull() {
-                this[this.tableCongNoKhachHang.LAIColumn] = global::System.Convert.DBNull;
+            public void SetTRATRUOCNull() {
+                this[this.tableCongNoKhachHang.TRATRUOCColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2382,26 +2316,50 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDATRANull() {
-                return this.IsNull(this.tableCongNoKhachHang.DATRAColumn);
+            public bool IsLAINull() {
+                return this.IsNull(this.tableCongNoKhachHang.LAIColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDATRANull() {
-                this[this.tableCongNoKhachHang.DATRAColumn] = global::System.Convert.DBNull;
+            public void SetLAINull() {
+                this[this.tableCongNoKhachHang.LAIColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNGAYTRANull() {
-                return this.IsNull(this.tableCongNoKhachHang.NGAYTRAColumn);
+            public bool IsTRAGOCNull() {
+                return this.IsNull(this.tableCongNoKhachHang.TRAGOCColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNGAYTRANull() {
-                this[this.tableCongNoKhachHang.NGAYTRAColumn] = global::System.Convert.DBNull;
+            public void SetTRAGOCNull() {
+                this[this.tableCongNoKhachHang.TRAGOCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTRALAINull() {
+                return this.IsNull(this.tableCongNoKhachHang.TRALAIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTRALAINull() {
+                this[this.tableCongNoKhachHang.TRALAIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCONNONull() {
+                return this.IsNull(this.tableCongNoKhachHang.CONNOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCONNONull() {
+                this[this.tableCongNoKhachHang.CONNOColumn] = global::System.Convert.DBNull;
             }
         }
         

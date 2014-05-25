@@ -139,4 +139,20 @@ namespace T_Manager.REPORT
 
         }
     }
+
+    class CCongNoKhachHang
+    {
+        public DateTime NGAY;
+        public string KHO;
+        public string HANGHOA;
+        public Int64 SOLUONG;
+        public Int64 DONGIA;
+        public Int64 THANHTIEN;
+        public Int64 TRATRUOC;
+        public double LAISUAT;
+        public double LAI;
+        public Int64 TRAGOC;
+        public Int64 TRALAI;
+        public Int64 CONNO;
+    }
 }

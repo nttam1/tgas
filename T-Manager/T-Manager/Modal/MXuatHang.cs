@@ -31,5 +31,37 @@ namespace T_Manager.Modal
             }
         }
 
+        /// <summary>
+        /// Tính lãi hiện tại của xuất hàng theo ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="include_THUNO"></param>
+        /// <returns></returns>
+        public static double GetLai(int id, bool include_THUNO = true)
+        {
+            double value = 0;
+            XUAT_HANG xh = (from _xh in DataInstance.Instance().DBContext().XUAT_HANG
+                            where _xh.ID == id
+                            select _xh).First();
+            /* Sử dụng chi tiết thu nợ để tính lãi */
+            if (include_THUNO == true)
+            {
+                /* Những lần khách hàng đã trả cho phần nợ xuất hàng này */
+                var thu_no_s = MChiTietThuNo.BelongTo(xh);
+
+            }
+            /* Không sử dụng chi tiết thu nợ */
+            else
+            {               
+                value = Utility.Lai(xh.NGAY_XUAT.Value, xh.LAI_SUAT, xh.SO_LUONG * xh.DON_GIA_BAN);
+            }
+            return value;
+        }
+
+        public static double GetNo(int id, bool include_THUNO = true)
+        {
+            double value = 0;
+            return value;
+        }
     }
 }
