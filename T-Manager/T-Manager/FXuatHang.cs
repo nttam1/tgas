@@ -26,15 +26,14 @@ namespace T_Manager
                 var ele = new XUAT_HANG();
                 ele.MAKHO = Convert.ToInt32(comboBoxKho.SelectedValue.ToString());
                 ele.MAKH = Convert.ToInt32(comboBoxKHACH_HANG.SelectedValue.ToString());
-                ele.NGAY_XUAT = dateTimePickerNGAYBAN.Value;
+                ele.NGAY_XUAT = dateTimePickerNGAYBAN.Value.Date;
                 ele.CREATED_AT = DateTime.Now;
                 ele.SO_LUONG = Convert.ToInt32(textBoxSOLUONG.Text);
                 ele.DON_GIA_BAN = Convert.ToInt32(textBoxDONGIA.Text);
                 ele.TRA_TRUOC = Convert.ToInt32(textBoxDUATRUOC.Text);
-                ele.LAI_SUAT = Convert.ToDouble(textBoxLAISUAT.Text);
-                ele.DA_TRA = 0;
-                ele.NGAY_TRA = dateTimePickerNGAYBAN.Value;
+                ele.LAI_SUAT = Convert.ToDouble(textBoxLAISUAT.Text) / 100;
                 ele.MAHH = Convert.ToInt32(comboBoxHANGHOA.SelectedValue.ToString());
+                ele.TRANG_THAI = MXuatHang.CHUA_TRA_XONG;
                 if (ele.DON_GIA_BAN == 0 || ele.SO_LUONG == 0)
                 {
                     MessageBox.Show("Chưa nhập số lượng hoặc đơn giá bán");

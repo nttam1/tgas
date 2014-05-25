@@ -21,299 +21,255 @@ namespace T_Manager.Modal
             this.MAKHO = MAKHO;
         }
 
-        #region Relationship
-        /// <summary>
-        /// Cập nhật tiền đã trả vào Xuất Hàng hoặc Cho Vay
-        /// </summary>
-        /// <param name="_TienGoc"></param>
-        /// <param name="_TienLai"></param>
-        /// <param name="ele"></param>
-        public void CapNhatNo(long _TienGoc, double _TienLai, THU_NO ele)
-        {
-            if (ele.LOAI_NO == MThuNo.THU_NO_HH)
-            {
-                // Xuat Hang
-                int _break = 0;
-                while (_break == 0)
-                {
-                    XUAT_HANG xuat_hang;
-                    if (MAKHO == -1)
-                    {
-                        xuat_hang = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                                     where xh.MAKH == MAKH
-                                     where xh.TRA_XONG == MXuatHang.CHUA_TRA_XONG
-                                     orderby xh.NGAY_XUAT
-                                     select xh).First();
-                    }
-                    else
-                    {
-                        xuat_hang = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                                     where xh.MAKH == MAKH
-                                     where xh.MAKHO == MAKHO
-                                     where xh.TRA_XONG == MXuatHang.CHUA_TRA_XONG
-                                     orderby xh.NGAY_XUAT
-                                     select xh).First();
-                    }
-                    var conno = xuat_hang.SO_LUONG * xuat_hang.DON_GIA_BAN - xuat_hang.TRA_TRUOC - (long)xuat_hang.DA_TRA;
-                    var laino = (DateTime.Now - (DateTime)xuat_hang.NGAY_XUAT).Days * conno * xuat_hang.LAI_SUAT / 3000;
-                    if (_TienLai + _TienGoc >= conno + laino)
-                    {
-                        xuat_hang.DA_TRA += conno + laino;
-                        xuat_hang.TRA_XONG = 1;
-                        _TienLai = _TienLai - laino;
-                        _TienGoc = _TienGoc - conno;
-                        if (_TienGoc == 0 && _TienLai == 0)
-                        {
-                            _break = -1;
-                        }
-                    }
-                    else
-                    {
-                        xuat_hang.DA_TRA += _TienLai + _TienGoc;
-                        _break = -1;
-                    }
-                    xuat_hang.NGAY_TRA = DateTime.Now;
-                    DataInstance.Instance().DBContext().SaveChanges();
-                }
-            }
-            else
-            {
-                // Cho vay
-                int _break = 0;
-                while (_break == 0)
-                {
-                    T_Manager.CHO_VAY cv;
-                    if (MAKHO == -1)
-                    {
-                        cv = (from xh in DataInstance.Instance().DBContext().CHO_VAY
-                              where xh.MA_NGUON_NO == MAKH
-                              where xh.TRA_XONG == MXuatHang.CHUA_TRA_XONG
-                              orderby xh.NGAY_CHO_VAY
-                              select xh).First();
-                    }
-                    else
-                    {
-                        cv = (from xh in DataInstance.Instance().DBContext().CHO_VAY
-                              where xh.MA_NGUON_NO == MAKH
-                              where xh.MAKHO == MAKHO
-                              where xh.TRA_XONG == MXuatHang.CHUA_TRA_XONG
-                              orderby xh.NGAY_CHO_VAY
-                              select xh).First();
-                    }
-                    var conno = cv.TONG_TIEN - (long)cv.DA_TRA;
-                    var laino = (DateTime.Now - (DateTime)cv.NGAY_CHO_VAY).Days * conno * cv.LAI_SUAT / 3000;
-                    if (_TienLai + _TienGoc >= conno + laino)
-                    {
-                        cv.DA_TRA += conno + laino;
-                        cv.TRA_XONG = 1;
-                        _TienLai = _TienLai - laino;
-                        _TienGoc = _TienGoc - conno;
-                        if (_TienGoc == 0 && _TienLai == 0)
-                        {
-                            _break = -1;
-                        }
-                    }
-                    else
-                    {
-                        cv.DA_TRA += _TienLai + _TienGoc;
-                        _break = -1;
-                    }
-                    cv.NGAY_TRA = DateTime.Now;
-                    DataInstance.Instance().DBContext().SaveChanges();
-                }
-            }
-        }
-        #endregion
-
         #region Get
-        public double TongNo()
-        {
-            return TongNoHH() + TongNoVay() - TongThu();
-        }
-        public double NoHienTai()
-        {
-            return 0;
-        }
-        public double LaiHienTai()
-        {
-            return 0;
-        }
+
         #endregion
 
-        #region Thu Nợ
-        public double ThuNo()
+        #region Nợ hàng hóa
+        /// <summary>
+        /// Tổng tiền gốc hiện tại khách hàng nợ
+        /// </summary>
+        /// <returns></returns>
+        public double NoHHHienTai(bool include_THUNO = true)
         {
-            try
+            double value = 0;
+            IQueryable<XUAT_HANG> _rows;
+            if (include_THUNO == true)
             {
-                return (from tn in DataInstance.Instance().DBContext().THU_NO
-                        where tn.MAKH == MAKH
-                        select tn.TIEN_GOC
-                                  ).Sum();
-            }
-            catch (Exception ex)
-            {
-                return 0;
-            }
-        }
+                /* Lấy tất cả những lần xuất hàng cho khách hàng mà khách chưa trả xong */
+                /* Có thể sử dụng cách Sum(Nợ) - Sum(Trả).
+                 * Vì chỉ tính tiền gốc, không tính lãi nên ko cần quan tâm ngày trả 
+                 * Tuy nhiên khi lượng dữ liệu lớn sẽ tốn thời gian để lấy những dữ liệu không cần thiết
+                 */
+                _rows = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
+                         where xh.MAKHO == MAKHO
+                         where xh.MAKH == MAKH
+                         where xh.TRANG_THAI == MXuatHang.CHUA_TRA_XONG
+                         orderby xh.NGAY_XUAT ascending
+                         select xh);
 
-        public double ThuLai()
-        {
-            try
-            {
-                return (from tn in DataInstance.Instance().DBContext().THU_NO
-                        where tn.MAKH == MAKH
-                        select tn.TIEN_LAI
-                                  ).Sum();
-            }
-            catch (Exception ex)
-            {
-                return 0;
-            }
-        }
+                /* Tìm phần đã được thanh toán đó, trừ vào tổng nợ những lần chưa trả xong */
 
-        public double TongThu()
-        {
-            try
-            {
-                return (from tn in DataInstance.Instance().DBContext().THU_NO
-                        where tn.MAKH == MAKH
-                        select tn.TIEN_GOC + tn.TIEN_LAI
-                                  ).Sum();
-            }
-            catch (Exception ex)
-            {
-                return 0;
-            }
-        }
-        #endregion
-
-        #region Nợ Xuất Hàng
-        public double TongNoHH()
-        {
-            return NoHHHienTai() + LaiHHHienTai();
-        }
-
-        public double NoHHHienTai()
-        {
-            try
-            {
-                if (MAKHO == -1)
+                foreach (XUAT_HANG row in _rows)
                 {
-                    return (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                            where xh.MAKH == MAKH
-                            where xh.TRA_XONG == MXuatHang.CHUA_TRA_XONG
-                            select xh.SO_LUONG * xh.DON_GIA_BAN - (double)xh.DA_TRA - xh.TRA_TRUOC
-                                      ).Sum();
+                    /* Tìm những phần đã thanh toán của lần xuất hàng này */
+                    double da_thanh_toan = 0;
+                    try
+                    {
+                        da_thanh_toan = (from cttn in DataInstance.Instance().DBContext().CHI_TIET_THU_NO
+                                         where cttn.LOAI_NO == MThuNo.NO_HANG_HOA
+                                         where cttn.NO_ID == row.ID
+                                         select cttn.TIEN_GOC
+                                                      ).Sum();
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                    value += row.SO_LUONG * row.DON_GIA_BAN - da_thanh_toan;
 
                 }
-                else
-                {
-                    return (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                            where xh.MAKH == MAKH
-                            where xh.MAKHO == MAKHO
-                            where xh.TRA_XONG == MXuatHang.CHUA_TRA_XONG
-                            select xh.SO_LUONG * xh.DON_GIA_BAN - (double)xh.DA_TRA - xh.TRA_TRUOC
-                                      ).Sum();
-                }
-            }
-            catch (Exception ex)
-            {
-                return 0;
-            }
-        }
 
-        public double LaiHHHienTai()
-        {
-            try
-            {
-                IQueryable<XUAT_HANG> rows = null;
-                if (MAKHO == -1)
-                {
-                    rows = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                            where xh.MAKH == MAKH
-                            where xh.TRA_XONG == MXuatHang.CHUA_TRA_XONG
-                            select xh);
-                }
-                else
-                {
-                    rows = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                            where xh.MAKH == MAKH
-                            where xh.MAKHO == MAKHO
-                            where xh.TRA_XONG == MXuatHang.CHUA_TRA_XONG
-                            select xh);
-
-                }
-                double total = 0;
-                foreach (var r in rows)
-                {
-                    var thanhtien_A = r.SO_LUONG * r.DON_GIA_BAN;
-                    var thanhtien_B = r.SO_LUONG * r.DON_GIA_BAN - r.DA_TRA.Value;
-                    var ngay_tra = r.NGAY_TRA.Value.Date;
-                    var ngay_xuat = r.NGAY_XUAT.Value.Date;
-                    var now = DateTime.Now.Date;
-                    var n_ngay_A = (ngay_tra - ngay_xuat).Days;
-                    var n_ngay_B = (now - ngay_tra).Days; ;
-                    total += (thanhtien_A * r.LAI_SUAT * n_ngay_A / 3000) +  (thanhtien_B * r.LAI_SUAT * n_ngay_B / 3000);
-                }
-                return total;
-            }
-            catch (Exception ex)
-            {
-                return 0;
-            }
-        }
-        #endregion
-
-        #region Nợ Vay
-        public double NoVayHienTai()
-        {
-            if (MAKHO == -1)
-            {
-                return (from novay in DataInstance.Instance().DBContext().CHO_VAY
-                        where novay.MA_NGUON_NO == MAKH
-                        where novay.TRA_XONG == MChoVay.CHUA_TRA_XONG
-                        select novay.TONG_TIEN - (double)novay.DA_TRA).Sum();
             }
             else
             {
-                return (from novay in DataInstance.Instance().DBContext().CHO_VAY
-                        where novay.MA_NGUON_NO == MAKH
-                        where novay.MAKHO == MAKHO
-                        where novay.TRA_XONG == MChoVay.CHUA_TRA_XONG
-                        select novay.TONG_TIEN - (double)novay.DA_TRA).Sum();
-            }
-        }
+                try
+                {
+                    double _tong_no = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
+                                       where xh.MAKHO == MAKHO
+                                       where xh.MAKH == MAKH
+                                       orderby xh.NGAY_XUAT ascending
+                                       select xh.SO_LUONG * xh.DON_GIA_BAN).Sum();
+                    value = _tong_no;
+                }
+                catch (Exception ex)
+                {
 
-        public double LaiVayHienTai()
+                }
+            }
+            return value;
+        }
+        /// <summary>
+        /// Tính lãi nợ hàng hóa hiện tại của khách hàng
+        /// </summary>
+        /// <param name="include_THUNO"></param>
+        /// <returns></returns>
+        public double LaiHHHienTai(bool include_THUNO = true)
         {
-            double sum = 0;
-            IQueryable<T_Manager.CHO_VAY> nos = null;
-            if (MAKHO == -1)
+            double value = 0;
+            IQueryable<XUAT_HANG> _rows;
+            if (include_THUNO == true)
             {
-                nos = (from novay in DataInstance.Instance().DBContext().CHO_VAY
-                       where novay.MA_NGUON_NO == MAKH
-                       where novay.TRA_XONG == MChoVay.CHUA_TRA_XONG
-                       select novay);
+                /* Lấy tất cả những lần xuất hàng cho khách hàng mà khách chưa trả xong*/
+                _rows = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
+                         where xh.MAKHO == MAKHO
+                         where xh.MAKH == MAKH
+                         where xh.TRANG_THAI == MXuatHang.CHUA_TRA_XONG
+                         orderby xh.NGAY_XUAT ascending
+                         select xh);
+                /* Tìm những phần đã được thanh toán đó, trừ vào tổng nợ lãi những lần chưa trả xong */
+                foreach (XUAT_HANG row in _rows)
+                {
+                    /* Tìm những phần đã thanh toán của lần xuất hàng này */
+                    var da_thanh_toan = (from cttn in DataInstance.Instance().DBContext().CHI_TIET_THU_NO
+                                         where cttn.LOAI_NO == MThuNo.NO_HANG_HOA
+                                         where cttn.NO_ID == row.ID
+                                         select cttn);
+                    DateTime _ngay_no = row.NGAY_XUAT.Value;
+                    double _tong_tien_hien_tai = row.SO_LUONG * row.DON_GIA_BAN;
+                    foreach (CHI_TIET_THU_NO tn in da_thanh_toan)
+                    {
+                        value += Utility.Lai(_ngay_no, tn.NGAY_TRA, row.LAI_SUAT, _tong_tien_hien_tai) - tn.TIEN_LAI;
+                        _ngay_no = tn.NGAY_TRA;
+                        _tong_tien_hien_tai -= tn.TIEN_GOC;
+                    }
+                    value += Utility.Lai(_ngay_no, row.LAI_SUAT, _tong_tien_hien_tai);
+
+                }
+
             }
             else
             {
-                nos = (from novay in DataInstance.Instance().DBContext().CHO_VAY
-                       where novay.MA_NGUON_NO == MAKH
-                       where novay.TRA_XONG == MChoVay.CHUA_TRA_XONG
-                       select novay);
+                /* Vì không sử dụng dữ liệu từ thu nợ */
+                /* Tổng lãi nợ của khách hàng từ đầu đến bây giờ */
+                var _xh = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
+                           where xh.MAKHO == MAKHO
+                           where xh.MAKH == MAKH
+                           orderby xh.NGAY_XUAT ascending
+                           select xh);
+                double _tong_lai_no = 0;
+                foreach (XUAT_HANG row in _xh)
+                {
+                    _tong_lai_no += Utility.Lai(row.NGAY_XUAT.Value, row.LAI_SUAT, row.SO_LUONG * row.DON_GIA_BAN);
+                }
+                value = _tong_lai_no;
             }
-            foreach (var _e in nos)
-            {
-                sum += (DateTime.Now - (DateTime)_e.NGAY_CHO_VAY).Days * (_e.TONG_TIEN - (double)_e.DA_TRA) * _e.LAI_SUAT / 3000;
-            }
-            return sum;
+            return value;
         }
-
-        public double TongNoVay()
-        {
-            return NoVayHienTai() + LaiVayHienTai();
-        }
-
         #endregion
+
+        #region Nợ vay
+        /// <summary>
+        /// Tổng tiền gốc hiện tại khách hàng nợ
+        /// </summary>
+        /// <returns></returns>
+        public double NoVayHienTai(bool include_THUNO = true)
+        {
+            double value = 0;
+            IQueryable<CHO_VAY> _rows;
+            if (include_THUNO == true)
+            {
+                /* Lấy tất cả những lần xuất hàng cho khách hàng mà khách chưa trả xong */
+                /* Có thể sử dụng cách Sum(Nợ) - Sum(Trả).
+                 * Vì chỉ tính tiền gốc, không tính lãi nên ko cần quan tâm ngày trả 
+                 * Tuy nhiên khi lượng dữ liệu lớn sẽ tốn thời gian để lấy những dữ liệu không cần thiết
+                 */
+                _rows = (from xh in DataInstance.Instance().DBContext().CHO_VAY
+                         where xh.MAKHO == MAKHO
+                         where xh.MA_NGUON_NO == MAKH
+                         where xh.TRANG_THAI == MXuatHang.CHUA_TRA_XONG
+                         orderby xh.NGAY_CHO_VAY ascending
+                         select xh);
+
+                /* Tìm phần đã được thanh toán đó, trừ vào tổng nợ những lần chưa trả xong */
+
+                foreach (CHO_VAY row in _rows)
+                {
+                    /* Tìm những phần đã thanh toán của lần xuất hàng này */
+                    double da_thanh_toan = 0;
+                    try
+                    {
+                        da_thanh_toan = (from cttn in DataInstance.Instance().DBContext().CHI_TIET_THU_NO
+                                         where cttn.LOAI_NO == MThuNo.NO_VAY
+                                         where cttn.NO_ID == row.ID
+                                         select cttn.TIEN_GOC
+                                                      ).Sum();
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                    value += row.TONG_TIEN - da_thanh_toan;
+
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    double _tong_no = (from xh in DataInstance.Instance().DBContext().CHO_VAY
+                                       where xh.MAKHO == MAKHO
+                                       where xh.MA_NGUON_NO == MAKH
+                                       orderby xh.NGAY_CHO_VAY ascending
+                                       select xh.TONG_TIEN).Sum();
+                    value = _tong_no;
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            return value;
+        }
+        /// <summary>
+        /// Tính lãi nợ hàng hóa hiện tại của khách hàng
+        /// </summary>
+        /// <param name="include_THUNO"></param>
+        /// <returns></returns>
+        public double LaiVayHienTai(bool include_THUNO = true)
+        {
+            double value = 0;
+            IQueryable<CHO_VAY> _rows;
+            if (include_THUNO == true)
+            {
+                /* Lấy tất cả những lần xuất hàng cho khách hàng mà khách chưa trả xong*/
+                _rows = (from xh in DataInstance.Instance().DBContext().CHO_VAY
+                         where xh.MAKHO == MAKHO
+                         where xh.MA_NGUON_NO == MAKH
+                         where xh.TRANG_THAI == MXuatHang.CHUA_TRA_XONG
+                         orderby xh.NGAY_CHO_VAY ascending
+                         select xh);
+                /* Tìm những phần đã được thanh toán đó, trừ vào tổng nợ lãi những lần chưa trả xong */
+                foreach (CHO_VAY row in _rows)
+                {
+                    /* Tìm những phần đã thanh toán của lần xuất hàng này */
+                    var da_thanh_toan = (from cttn in DataInstance.Instance().DBContext().CHI_TIET_THU_NO
+                                         where cttn.LOAI_NO == MThuNo.NO_VAY
+                                         where cttn.NO_ID == row.ID
+                                         select cttn);
+                    DateTime _ngay_no = row.NGAY_CHO_VAY;
+                    double _tong_tien_hien_tai = row.TONG_TIEN;
+                    foreach (CHI_TIET_THU_NO tn in da_thanh_toan)
+                    {
+                        value += Utility.Lai(_ngay_no, tn.NGAY_TRA, row.LAI_SUAT, _tong_tien_hien_tai) - tn.TIEN_LAI;
+                        _ngay_no = tn.NGAY_TRA;
+                        _tong_tien_hien_tai -= tn.TIEN_GOC;
+                    }
+                    value += Utility.Lai(_ngay_no, row.LAI_SUAT, _tong_tien_hien_tai);
+
+                }
+
+            }
+            else
+            {
+                /* Vì không sử dụng dữ liệu từ thu nợ */
+                /* Tổng lãi nợ của khách hàng từ đầu đến bây giờ */
+                var _xh = (from xh in DataInstance.Instance().DBContext().CHO_VAY
+                           where xh.MAKHO == MAKHO
+                           where xh.MA_NGUON_NO == MAKH
+                           orderby xh.NGAY_CHO_VAY ascending
+                           select xh);
+                double _tong_lai_no = 0;
+                foreach (CHO_VAY row in _xh)
+                {
+                    _tong_lai_no += Utility.Lai(row.NGAY_CHO_VAY, row.LAI_SUAT, row.TONG_TIEN);
+                }
+                value = _tong_lai_no;
+            }
+            return value;
+        }
+        #endregion
+
     }
 }

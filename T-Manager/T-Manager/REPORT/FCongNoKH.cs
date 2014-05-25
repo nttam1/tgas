@@ -67,8 +67,8 @@ namespace T_Manager.REPORT
                                      THANHTOAN = xh.TRA_TRUOC,
                                      CONNO = xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC,
                                      KHACHHANG = kh.NAME,
-                                     DATRA = xh.DA_TRA.Value,
-                                     NGAYTRA = xh.NGAY_TRA.Value,
+                                     DATRA = 0,//xh.DA_TRA.Value,
+                                     NGAYTRA = 0,//xh.NGAY_TRA.Value,
                                      LAISUAT = xh.LAI_SUAT
                                  });
             }
@@ -94,7 +94,7 @@ namespace T_Manager.REPORT
                                      CONNO = xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC,
                                      KHACHHANG = kh.NAME,
                                      DATRA = 0,
-                                     NGAYTRA = xh.NGAY_TRA.Value,
+                                     NGAYTRA = 0,//xh.NGAY_TRA.Value,
                                      LAISUAT = xh.LAI_SUAT
                                  });
             }

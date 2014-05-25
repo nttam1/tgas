@@ -39,6 +39,7 @@
             this.buttonADD = new System.Windows.Forms.Button();
             this.dataGridViewCHOVAY = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCHOVAY)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +117,7 @@
             // 
             this.textBoxLAISUAT.Location = new System.Drawing.Point(425, 105);
             this.textBoxLAISUAT.Name = "textBoxLAISUAT";
-            this.textBoxLAISUAT.Size = new System.Drawing.Size(116, 20);
+            this.textBoxLAISUAT.Size = new System.Drawing.Size(85, 20);
             this.textBoxLAISUAT.TabIndex = 7;
             this.textBoxLAISUAT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLAISUAT_KeyPress);
             // 
@@ -148,11 +149,21 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "NHỮNG LẦN VAY KHÁC CỦA KHÁCH HÀNG NÀY";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(516, 108);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "%";
+            // 
             // FChoVay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 442);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridViewCHOVAY);
             this.Controls.Add(this.buttonADD);
@@ -190,5 +201,6 @@
         private System.Windows.Forms.Button buttonADD;
         private System.Windows.Forms.DataGridView dataGridViewCHOVAY;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

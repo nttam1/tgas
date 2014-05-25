@@ -25,8 +25,6 @@ C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\D
 C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FHangHoa.resources
 C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FCongNoKH.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe.config
-C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.exe
-C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.pdb
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.pdb
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csprojResolveAssemblyReference.cache
@@ -48,9 +46,11 @@ C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FTraNoVay
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FVay.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Properties.Resources.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FXuatHang.resources
-C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FCongNoKH.resources
-C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csproj.GenerateResource.Cache
-C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FTongHopCongNo.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FChiTietNoNCC.resources
-C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FTongHopNoNCC.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FChiTietNoVay.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FCongNoKH.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FTongHopCongNo.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FTongHopNoNCC.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csproj.GenerateResource.Cache
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.exe
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.pdb

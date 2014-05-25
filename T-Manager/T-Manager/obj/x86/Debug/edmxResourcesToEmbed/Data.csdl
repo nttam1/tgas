@@ -17,6 +17,7 @@
     <EntitySet Name="THU_NO" EntityType="tgasModel.THU_NO" />
     <EntitySet Name="TRA_NO_VAY" EntityType="tgasModel.TRA_NO_VAY" />
     <EntitySet Name="TRA_NO_NCC" EntityType="tgasModel.TRA_NO_NCC" />
+    <EntitySet Name="CHI_TIET_THU_NO" EntityType="tgasModel.CHI_TIET_THU_NO" />
     <EntitySet Name="CHO_VAY" EntityType="tgasModel.CHO_VAY" />
     <EntitySet Name="XUAT_HANG" EntityType="tgasModel.XUAT_HANG" />
   </EntityContainer>
@@ -178,6 +179,20 @@
     <Property Type="Int64" Name="MAKHO" Nullable="false" />
     <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
   </EntityType>
+  <EntityType Name="CHI_TIET_THU_NO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="LOAI_NO" Nullable="false" />
+    <Property Type="Int64" Name="NO_ID" Nullable="false" />
+    <Property Type="Int64" Name="THU_NO_ID" Nullable="false" />
+    <Property Type="Int64" Name="TIEN_GOC" Nullable="false" />
+    <Property Type="Int64" Name="TIEN_LAI" Nullable="false" />
+    <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
+    <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
+    <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
+  </EntityType>
   <EntityType Name="CHO_VAY">
     <Key>
       <PropertyRef Name="ID" />
@@ -189,9 +204,7 @@
     <Property Type="Double" Name="LAI_SUAT" Nullable="false" />
     <Property Type="DateTime" Name="NGAY_CHO_VAY" Nullable="false" />
     <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
-    <Property Type="Double" Name="DA_TRA" />
-    <Property Type="DateTime" Name="NGAY_TRA" />
-    <Property Type="Int64" Name="TRA_XONG" />
+    <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
   </EntityType>
   <EntityType Name="XUAT_HANG">
     <Key>
@@ -208,8 +221,6 @@
     <Property Type="Int64" Name="TRA_TRUOC" Nullable="false" />
     <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
     <Property Type="DateTime" Name="NGAY_XUAT" />
-    <Property Type="Double" Name="DA_TRA" />
-    <Property Type="DateTime" Name="NGAY_TRA" />
-    <Property Type="Int64" Name="TRA_XONG" Nullable="false" />
+    <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
   </EntityType>
 </Schema>

@@ -175,12 +175,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CHI_TIET_THU_NO">
+      <EntityTypeMapping TypeName="tgasModel.CHI_TIET_THU_NO">
+        <MappingFragment StoreEntitySet="CHI_TIET_THU_NO">
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
+          <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+          <ScalarProperty Name="TIEN_LAI" ColumnName="TIEN_LAI" />
+          <ScalarProperty Name="TIEN_GOC" ColumnName="TIEN_GOC" />
+          <ScalarProperty Name="THU_NO_ID" ColumnName="THU_NO_ID" />
+          <ScalarProperty Name="NO_ID" ColumnName="NO_ID" />
+          <ScalarProperty Name="LOAI_NO" ColumnName="LOAI_NO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CHO_VAY">
       <EntityTypeMapping TypeName="tgasModel.CHO_VAY">
         <MappingFragment StoreEntitySet="CHO_VAY">
-          <ScalarProperty Name="TRA_XONG" ColumnName="TRA_XONG" />
-          <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
-          <ScalarProperty Name="DA_TRA" ColumnName="DA_TRA" />
+          <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
           <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
           <ScalarProperty Name="NGAY_CHO_VAY" ColumnName="NGAY_CHO_VAY" />
           <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
@@ -194,9 +207,7 @@
     <EntitySetMapping Name="XUAT_HANG">
       <EntityTypeMapping TypeName="tgasModel.XUAT_HANG">
         <MappingFragment StoreEntitySet="XUAT_HANG">
-          <ScalarProperty Name="TRA_XONG" ColumnName="TRA_XONG" />
-          <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
-          <ScalarProperty Name="DA_TRA" ColumnName="DA_TRA" />
+          <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
           <ScalarProperty Name="NGAY_XUAT" ColumnName="NGAY_XUAT" />
           <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
           <ScalarProperty Name="TRA_TRUOC" ColumnName="TRA_TRUOC" />

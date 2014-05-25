@@ -61,18 +61,16 @@ namespace T_Manager
                 // Hien thi tong no, tong la
                 try
                 {
-                    textBoxNOVAY.Text = Utility.StringToVND(mKH.NoVayHienTai().ToString());
-                    textBoxLAIVAY.Text = Utility.StringToVND(mKH.LaiVayHienTai().ToString());
-                }
-                catch (Exception ex)
-                {
-                    textBoxNOVAY.Text = "0 VND";
-                    textBoxLAIVAY.Text = "0 VND";
-                }
-                try
-                {
-                    TONGNO_LB.Text = Utility.StringToVND(mKH.NoHHHienTai().ToString());
-                    TONGLAI_LB.Text = Utility.StringToVND(mKH.LaiHHHienTai().ToString());
+                    if (radioButtonNOHH.Checked == true)
+                    {
+                        TONGNO_LB.Text = Utility.StringToVND(mKH.NoHHHienTai().ToString());
+                        TONGLAI_LB.Text = Utility.StringToVND(mKH.LaiHHHienTai().ToString());
+                    }
+                    else
+                    {
+                        TONGNO_LB.Text = Utility.StringToVND(mKH.NoVayHienTai().ToString());
+                        TONGLAI_LB.Text = Utility.StringToVND(mKH.LaiVayHienTai().ToString());
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -98,33 +96,12 @@ namespace T_Manager
                 var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
                 var goc = Int64.Parse(textBoxTIENGOC.Text);
                 var lai = Int64.Parse(textBoxTIENLAI.Text);
-                var loai_no = radioButtonNOHH.Checked == true ? MThuNo.THU_NO_HH : MThuNo.THU_NO_VAY;
+                var loai_no = radioButtonNOHH.Checked == true ? MThuNo.NO_HANG_HOA : MThuNo.NO_VAY;
                 var cur_lai = LaiVay + LaiHH;
                 var cur_no = NoHH + NoVay;
                 try
                 {
-                    THU_NO ele = new THU_NO()
-                    {
-                        MAKH = kh,
-                        MAKHO = kho,
-                        TIEN_GOC = goc,
-                        TIEN_LAI = lai,
-                        LOAI_NO = loai_no,
-                        NGAY_TRA = DateTime.Now,
-                        CREATED_AT = DateTime.Now
-                    };
-                    bs.Add(ele);
-                    bs.EndEdit();
-                    bs.ResetBindings(false);
-                    DataInstance.Instance().DBContext().AddToTHU_NO(ele);
-                    DataInstance.Instance().DBContext().SaveChanges();
-                    // Cap nhat tien no
-                    MKhachHang mKH = new MKhachHang(kh);
-                    mKH.CapNhatNo(goc, lai, ele);
-
-                    textBoxTIENGOC.Text = "";
-                    textBoxTIENLAI.Text = "";
-                    comboBoxKHACHHANG_SelectedIndexChanged(sender, e);
+                    MThuNo.Create(loai_no, kho, kh, goc, lai, DateTime.Now);
                 }
                 catch (Exception ex)
                 {
@@ -201,14 +178,17 @@ namespace T_Manager
 
         private void radioButtonNOHH_CheckedChanged(object sender, EventArgs e)
         {
-            groupBox2.BackColor = Color.Aquamarine;
-            groupBox3.BackColor = Color.Azure;
+            comboBoxKHACHHANG_SelectedIndexChanged(sender, e);
         }
 
         private void radioButtonNOVAY_CheckedChanged(object sender, EventArgs e)
         {
-            groupBox3.BackColor = Color.Aquamarine;
-            groupBox2.BackColor = Color.Azure;
+            comboBoxKHACHHANG_SelectedIndexChanged(sender, e);
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

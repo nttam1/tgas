@@ -8,5 +8,6 @@ namespace T_Manager
     class ConstClass
     {
         public const string COMPANY_NAME = "XĂNG DẦU NHẬT LINH";
+        public const int NGAY_TINH_LAI = 30;
     }
 }

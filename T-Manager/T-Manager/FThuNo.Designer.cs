@@ -33,11 +33,6 @@
             this.comboBoxKHO = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBoxLAIVAY = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxNOVAY = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TONGLAI_LB = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,7 +56,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -110,7 +104,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.buttonADD);
@@ -123,61 +116,11 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabPage1.Size = new System.Drawing.Size(718, 386);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "THU NỢ KHÁCH HÀNG";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.textBoxLAIVAY);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.textBoxNOVAY);
-            this.groupBox3.Location = new System.Drawing.Point(344, 152);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(302, 79);
-            this.groupBox3.TabIndex = 39;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "NỢ VAY";
-            // 
-            // textBoxLAIVAY
-            // 
-            this.textBoxLAIVAY.Location = new System.Drawing.Point(157, 53);
-            this.textBoxLAIVAY.Name = "textBoxLAIVAY";
-            this.textBoxLAIVAY.ReadOnly = true;
-            this.textBoxLAIVAY.Size = new System.Drawing.Size(126, 20);
-            this.textBoxLAIVAY.TabIndex = 36;
-            this.textBoxLAIVAY.Text = "0";
-            this.textBoxLAIVAY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 13);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "TỔNG NỢ HIỆN TẠI";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(154, 25);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(106, 13);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "TỔNG LÃI HIỆN TẠI";
-            // 
-            // textBoxNOVAY
-            // 
-            this.textBoxNOVAY.Location = new System.Drawing.Point(15, 53);
-            this.textBoxNOVAY.Name = "textBoxNOVAY";
-            this.textBoxNOVAY.ReadOnly = true;
-            this.textBoxNOVAY.Size = new System.Drawing.Size(123, 20);
-            this.textBoxNOVAY.TabIndex = 35;
-            this.textBoxNOVAY.Text = "0";
-            this.textBoxNOVAY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox2
             // 
@@ -185,12 +128,13 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.TONGNO_LB);
-            this.groupBox2.Location = new System.Drawing.Point(14, 152);
+            this.groupBox2.Location = new System.Drawing.Point(190, 159);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(302, 79);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "NỢ HÀNG HÓA";
+            this.groupBox2.Text = "TỔNG CỘNG NỢ CỦA KHÁCH HÀNG";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // TONGLAI_LB
             // 
@@ -410,8 +354,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -451,10 +393,5 @@
         private System.Windows.Forms.RadioButton radioButtonNOVAY;
         private System.Windows.Forms.RadioButton radioButtonNOHH;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBoxLAIVAY;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBoxNOVAY;
     }
 }

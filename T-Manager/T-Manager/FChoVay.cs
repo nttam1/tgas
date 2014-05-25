@@ -87,7 +87,7 @@ namespace T_Manager
                 var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
                 var kh = Int32.Parse(comboBoxKHACHHANG.SelectedValue.ToString());
                 var tien = Int32.Parse(textBoxTONGTIEN.Text);
-                var lai = double.Parse(textBoxLAISUAT.Text);
+                var lai = double.Parse(textBoxLAISUAT.Text) / 100;
                 bs.Add(new CHO_VAY()
                 {
                     MAKHO = kho,
@@ -96,8 +96,8 @@ namespace T_Manager
                     LAI_SUAT = lai,
                     NGAY_CHO_VAY = DateTime.Now,
                     CREATED_AT = DateTime.Now,
-                    DA_TRA = 0,
-                    TRA_XONG = MChoVay.CHUA_TRA_XONG,                
+                   // DA_TRA = 0,
+                    //TRA_XONG = MChoVay.CHUA_TRA_XONG,                
                 });
                 bs.EndEdit();
                 bs.ResetBindings(false);

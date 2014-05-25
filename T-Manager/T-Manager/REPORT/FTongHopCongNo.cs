@@ -39,8 +39,8 @@ namespace T_Manager.REPORT
                                      KHACHHANG = g.Key.NAME,
                                      TIENNO = g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN),
                                      THANHTOAN = g.Sum(xh => xh.TRA_TRUOC),
-                                     DATRA = g.Sum(xh => xh.DA_TRA.Value),
-                                     CONNO = g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC - xh.DA_TRA.Value)
+                                     DATRA = 0, //g.Sum(xh => xh.DA_TRA.Value),
+                                     CONNO = 0, //g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC - xh.DA_TRA.Value)
                                  });
 
             }
