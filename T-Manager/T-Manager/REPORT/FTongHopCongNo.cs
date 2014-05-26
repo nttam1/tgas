@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using T_Manager.Modal;
 
 namespace T_Manager.REPORT
 {
@@ -18,51 +19,90 @@ namespace T_Manager.REPORT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var include_thuno = checkBoxTHUNO.Checked;
+            List<CTongHopCongNo> _datasource = new List<CTongHopCongNo>();
+            var include_THUNO = checkBoxTHUNO.Checked;
             var kho = long.Parse(comboBoxKHO.SelectedValue.ToString());
-            var _from = dateTimePicker1.Value;
-            var _to = dateTimePicker2.Value;
+            var _from = dateTimePicker1.Value.Date;
+            var _to = dateTimePicker2.Value.Date;
 
             BindingSource bs = new BindingSource();
 
-            if (include_thuno == true)
-            {
-                bs.DataSource = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                                 join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
-                                 where xh.MAKHO == kho
-                                 where xh.NGAY_XUAT >= _from
-                                 where xh.NGAY_XUAT <= _to
-                                 group xh by new { xh.MAKH, kh.NAME } into g
-                                 select new
-                                 {
-                                     STT = g.Key.MAKH,
-                                     KHACHHANG = g.Key.NAME,
-                                     TIENNO = g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN),
-                                     THANHTOAN = g.Sum(xh => xh.TRA_TRUOC),
-                                     DATRA = 0, //g.Sum(xh => xh.DA_TRA.Value),
-                                     CONNO = 0, //g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC - xh.DA_TRA.Value)
-                                 });
+            /* Tính tổng tiền, trả trước group theo MAKH */
+            var _xh = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
+                       join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
+                       where xh.MAKHO == kho
+                       where xh.NGAY_XUAT >= _from && xh.NGAY_XUAT <= _to
+                       group xh by new { xh.MAKH, kh.NAME } into g
+                       select new CTongHopCongNo()
+                       {
+                           STT = g.Key.MAKH,
+                           MAKH = g.Key.MAKH,
+                           KHACHHANG = g.Key.NAME,
+                           TRATRUOC = g.Sum(u => u.TRA_TRUOC),
+                           THANHTIEN = g.Sum(u => u.SO_LUONG * u.DON_GIA_BAN),
+                           DATRA = 0,
+                           CONNO = g.Sum(u => u.SO_LUONG * u.DON_GIA_BAN - u.TRA_TRUOC)
+                       }
+                       );
 
+            int STT = 1;
+            if (include_THUNO == true)
+            {
+                /* Có sử dụng dữ liệu thu nợ */
+                /* Tính tổng lãi cho từng KH */
+                foreach (CTongHopCongNo row in _xh)
+                {
+                    double lai = 0;
+                    double datra = 0;
+                    /* Tính lãi cho tất cả những lần xuất hàng cho KH */
+                    foreach (XUAT_HANG _row in (from _xh_ in DataInstance.Instance().DBContext().XUAT_HANG
+                                                where _xh_.MAKHO == kho
+                                                where _xh_.MAKH == row.MAKH
+                                                select _xh_))
+                    {
+                        /* Không sử dụng dữ liệu từ thu nợ */
+                        lai += MXuatHang.GetLaiPhatSinh((int)_row.ID);
+                        datra += MChiTietThuNo.DaTraHH((int)_row.ID);
+                    }
+                    _datasource.Add(new CTongHopCongNo()
+                    {
+                        STT = STT++,
+                        KHACHHANG = row.KHACHHANG,
+                        TRATRUOC = row.TRATRUOC,
+                        THANHTIEN = row.THANHTIEN + (long)lai,
+                        DATRA = (long)datra,
+                        CONNO = row.CONNO + (long)lai - (long)datra
+                    });
+                }
             }
             else
             {
-                bs.DataSource = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                                 join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
-                                 where xh.MAKHO == kho
-                                 where xh.NGAY_XUAT >= _from
-                                 where xh.NGAY_XUAT <= _to
-                                 group xh by new { xh.MAKH, kh.NAME } into g
-                                 select new
-                                 {
-                                     STT = g.Key.MAKH,
-                                     KHACHHANG = g.Key.NAME,
-                                     TIENNO = g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN),
-                                     THANHTOAN = g.Sum(xh => xh.TRA_TRUOC),
-                                     DATRA = 0,
-                                     CONNO = g.Sum(xh => xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC)
-                                 });
-
+                /* Không sử dụng dữ liệu thu nợ*/
+                /* Tính tổng lãi cho từng KH */
+                foreach (CTongHopCongNo row in _xh)
+                {
+                    double lai = 0;
+                    /* Tính lãi cho tất cả những lần xuất hàng cho KH */                    
+                    foreach (XUAT_HANG _row in (from _xh_ in DataInstance.Instance().DBContext().XUAT_HANG
+                                                where _xh_.MAKHO == kho
+                                                where _xh_.MAKH == row.MAKH
+                                                select _xh_))
+                    {
+                        /* Không sử dụng dữ liệu từ thu nợ */
+                        lai += MXuatHang.GetLaiPhatSinh((int)_row.ID, false);
+                    }
+                    _datasource.Add(new CTongHopCongNo()
+                    {
+                        STT = STT++,
+                        KHACHHANG = row.KHACHHANG,
+                        TRATRUOC = row.TRATRUOC,
+                        THANHTIEN = row.THANHTIEN + (long)lai,
+                        DATRA = 0,
+                        CONNO = row.CONNO + (long)lai
+                    });
+                }
             }
+            bs.DataSource = _datasource;
             CrystalReportTONGHOPCONGNO rpt = new CrystalReportTONGHOPCONGNO();
             rpt.SetDataSource(bs);
             rpt.SetParameterValue("KHO", comboBoxKHO.Text);
@@ -70,6 +110,7 @@ namespace T_Manager.REPORT
             rpt.SetParameterValue("TO", _to);
             rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
             crystalReportViewer1.ReportSource = rpt;
+            crystalReportViewer1.Zoom(150);
         }
 
         private void FTongHopCongNo_Load(object sender, EventArgs e)
@@ -81,4 +122,16 @@ namespace T_Manager.REPORT
             dateTimePicker1.Value = dateTimePicker1.Value.AddMonths(-1);
         }
     }
+
+    class CTongHopCongNo
+    {
+        public long STT;
+        public long MAKH;
+        public string KHACHHANG;
+        public Int64 TRATRUOC;
+        public Int64 THANHTIEN;
+        public Int64 DATRA;
+        public Int64 CONNO;
+    }
+
 }

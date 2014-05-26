@@ -21,10 +21,6 @@ namespace T_Manager.Modal
             this.MAKHO = MAKHO;
         }
 
-        #region Get
-
-        #endregion
-
         #region Nợ hàng hóa
         /// <summary>
         /// Tổng tiền gốc hiện tại khách hàng nợ

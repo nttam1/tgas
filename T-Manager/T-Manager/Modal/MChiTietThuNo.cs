@@ -10,6 +10,21 @@ namespace T_Manager.Modal
         public const int CHUA_TRA_XONG = 0;
         public const int TRA_XONG = 1;
 
+        /// <summary>
+        /// Tổng tiền mà khách hàng đã trả cho lần xuất hàng có ID = _ID_
+        /// </summary>
+        /// <param name="xuat_hang_ID"></param>
+        /// <returns></returns>
+        public static double DaTraHH(int xuat_hang_ID)
+        {
+            return TraGocHH(xuat_hang_ID) + TraLaiHH(xuat_hang_ID);
+        }
+
+        /// <summary>
+        /// Tổng gốc hàng hóa mà khách hàng đã trả
+        /// </summary>
+        /// <param name="xuat_hang_ID"></param>
+        /// <returns></returns>
         public static double TraGocHH(int xuat_hang_ID)
         {
             double value = 0;
@@ -26,6 +41,11 @@ namespace T_Manager.Modal
             return value;
         }
 
+        /// <summary>
+        /// Tổng lãi HH mà khách hàng đã trả
+        /// </summary>
+        /// <param name="xuat_hang_ID"></param>
+        /// <returns></returns>
         public static double TraLaiHH(int xuat_hang_ID)
         {
             double value = 0;
