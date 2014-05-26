@@ -10,6 +10,38 @@ namespace T_Manager.Modal
         public const int CHUA_TRA_XONG = 0;
         public const int TRA_XONG = 1;
 
+        public static double TraGocHH(int xuat_hang_ID)
+        {
+            double value = 0;
+            try
+            {
+                value = (from cttn in DataInstance.Instance().DBContext().CHI_TIET_THU_NO
+                        where cttn.LOAI_NO == MThuNo.NO_HANG_HOA
+                        where cttn.NO_ID == xuat_hang_ID
+                        select cttn.TIEN_GOC).Sum();
+            }
+            catch (Exception ex)
+            {
+            }
+            return value;
+        }
+
+        public static double TraLaiHH(int xuat_hang_ID)
+        {
+            double value = 0;
+            try
+            {
+                value = (from cttn in DataInstance.Instance().DBContext().CHI_TIET_THU_NO
+                         where cttn.LOAI_NO == MThuNo.NO_HANG_HOA
+                         where cttn.NO_ID == xuat_hang_ID
+                         select cttn.TIEN_LAI).Sum();
+            }
+            catch (Exception ex)
+            {
+            }
+            return value;
+        }
+
         public static IQueryable<CHI_TIET_THU_NO> BelongTo(XUAT_HANG xh)
         {
             return (from cttn in DataInstance.Instance().DBContext().CHI_TIET_THU_NO

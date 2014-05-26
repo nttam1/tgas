@@ -10,6 +10,7 @@ using System.Data.Entity;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using System.Data.Objects;
+using T_Manager.Modal;
 
 namespace T_Manager.REPORT
 {
@@ -28,7 +29,7 @@ namespace T_Manager.REPORT
             comboBox1.DisplayMember = "NAME";
             comboBox1.ValueMember = "ID";
 
-            dateTimePicker1.Value = dateTimePicker1.Value.AddMonths(-1);
+            dateTimePickerFROM.Value = dateTimePickerFROM.Value.AddMonths(-1);
         }
 
         private void comboBoxKHACHHANG_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,66 +44,94 @@ namespace T_Manager.REPORT
 
         private void button1_Click(object sender, EventArgs e)
         {
+            List<CCongNoKhachHang> _datasource = new List<CCongNoKhachHang>();
             var include_THUNO = checkBoxTHUNO.Checked;
             BindingSource bs = new BindingSource();
             long MAKH = long.Parse(comboBox1.SelectedValue.ToString());
+            DateTime FROM = dateTimePickerFROM.Value.Date;
+            DateTime TO = dateTimePickerTO.Value.Date;
+
+            /* Lấy tất cả dữ liệu xuất hàng cho khách hàng này */
+            /* Từ ngày đến ngày */
+            IQueryable<CCongNoKhachHang> xuat_hang = (from _xh in DataInstance.Instance().DBContext().XUAT_HANG
+                                                      join _kho in DataInstance.Instance().DBContext().KHOes on _xh.MAKHO equals _kho.ID
+                                                      join _hh in DataInstance.Instance().DBContext().HANG_HOA on _xh.MAHH equals _hh.ID
+                                                      where _xh.MAKH == MAKH
+                                                      where _xh.NGAY_XUAT >= FROM && _xh.NGAY_XUAT <= TO
+                                                      orderby _xh.NGAY_XUAT ascending
+                                                      select new CCongNoKhachHang
+                                                      {
+                                                          ID = (int)_xh.ID,
+                                                          NGAY = _xh.NGAY_XUAT.Value,
+                                                          KHO = _kho.NAME,
+                                                          HANGHOA = _hh.NAME,
+                                                          SOLUONG = _xh.SO_LUONG,
+                                                          DONGIABAN = _xh.DON_GIA_BAN,
+                                                          THANHTIEN = _xh.SO_LUONG * _xh.DON_GIA_BAN,
+                                                          TRATRUOC = _xh.TRA_TRUOC,
+                                                          LAISUAT = _xh.LAI_SUAT,
+                                                          LAI = 0,
+                                                          TRAGOC = 0,
+                                                          TRALAI = 0,
+                                                          CONNO = 0
+                                                      });
+
             if (include_THUNO == true)
             {
-                bs.DataSource = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                                 join hh in DataInstance.Instance().DBContext().HANG_HOA on xh.MAHH equals hh.ID
-                                 join kho in DataInstance.Instance().DBContext().KHOes on xh.MAKHO equals kho.ID
-                                 join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
-                                 where xh.NGAY_XUAT >= dateTimePicker1.Value
-                                 where xh.NGAY_XUAT <= dateTimePicker2.Value
-                                 where xh.MAKH == MAKH
-                                 orderby xh.NGAY_XUAT ascending
-                                 select new
-                                 {
-                                     DATE = xh.NGAY_XUAT.Value,
-                                     KHO = kho.NAME,
-                                     HANGHOA = hh.NAME,
-                                     SOLUONG = xh.SO_LUONG,
-                                     DONGIABAN = xh.DON_GIA_BAN,
-                                     THANHTIEN = xh.SO_LUONG * xh.DON_GIA_BAN,
-                                     THANHTOAN = xh.TRA_TRUOC,
-                                     CONNO = xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC,
-                                     KHACHHANG = kh.NAME,
-                                     DATRA = 0,//xh.DA_TRA.Value,
-                                     NGAYTRA = 0,//xh.NGAY_TRA.Value,
-                                     LAISUAT = xh.LAI_SUAT
-                                 });
+                /* Có sử dụng dữ liệu từ thu nợ */
+                foreach (CCongNoKhachHang row in xuat_hang)
+                {
+                    double lai = MXuatHang.GetLaiPhatSinh(row.ID);
+                    long tragoc = (long)MChiTietThuNo.TraGocHH(row.ID) ;
+                    long tralai = (long)MChiTietThuNo.TraLaiHH(row.ID);
+                    _datasource.Add(new CCongNoKhachHang()
+                    {
+                        NGAY = row.NGAY,
+                        KHO = row.KHO,
+                        HANGHOA = row.HANGHOA,
+                        SOLUONG = row.SOLUONG,
+                        DONGIABAN = row.DONGIABAN,
+                        THANHTIEN = row.THANHTIEN,
+                        TRATRUOC = row.TRATRUOC,
+                        LAISUAT = row.LAISUAT * 100,
+                        /* Cần tính lãi */
+                        LAI = lai,
+                        TRAGOC = tragoc,
+                        TRALAI = tralai,
+                        CONNO = row.THANHTIEN + (long)lai - row.TRATRUOC - tragoc - tralai
+                    });
+                }
             }
             else
             {
-                bs.DataSource = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                                 join hh in DataInstance.Instance().DBContext().HANG_HOA on xh.MAHH equals hh.ID
-                                 join kho in DataInstance.Instance().DBContext().KHOes on xh.MAKHO equals kho.ID
-                                 join kh in DataInstance.Instance().DBContext().KHACH_HANG on xh.MAKH equals kh.ID
-                                 where xh.NGAY_XUAT >= dateTimePicker1.Value
-                                 where xh.NGAY_XUAT <= dateTimePicker2.Value
-                                 where xh.MAKH == MAKH
-                                 orderby xh.NGAY_XUAT ascending
-                                 select new
-                                 {
-                                     DATE = xh.NGAY_XUAT.Value,
-                                     KHO = kho.NAME,
-                                     HANGHOA = hh.NAME,
-                                     SOLUONG = xh.SO_LUONG,
-                                     DONGIABAN = xh.DON_GIA_BAN,
-                                     THANHTIEN = xh.SO_LUONG * xh.DON_GIA_BAN,
-                                     THANHTOAN = xh.TRA_TRUOC,
-                                     CONNO = xh.SO_LUONG * xh.DON_GIA_BAN - xh.TRA_TRUOC,
-                                     KHACHHANG = kh.NAME,
-                                     DATRA = 0,
-                                     NGAYTRA = 0,//xh.NGAY_TRA.Value,
-                                     LAISUAT = xh.LAI_SUAT
-                                 });
+                /* Không sử dụng dữ liệu từ thu nợ */
+                foreach (CCongNoKhachHang row in xuat_hang)
+                {
+                    double lai = Utility.Lai(row.NGAY, row.LAISUAT, row.THANHTIEN - row.TRATRUOC);
+                    _datasource.Add(new CCongNoKhachHang()
+                    {
+                        NGAY = row.NGAY,
+                        KHO = row.KHO,
+                        HANGHOA = row.HANGHOA,
+                        SOLUONG = row.SOLUONG,
+                        DONGIABAN = row.DONGIABAN,
+                        THANHTIEN = row.THANHTIEN,
+                        TRATRUOC = row.TRATRUOC,
+                        LAISUAT = row.LAISUAT * 100,
+                        /* Cần tính lãi */
+                        LAI = lai,
+                        TRAGOC = 0,
+                        TRALAI = 0,
+                        CONNO = row.THANHTIEN + (long)lai - row.TRATRUOC
+                    });
+                }
             }
+            bs.DataSource = _datasource;
             CrystalReportCongNoKhachHang rpt = new CrystalReportCongNoKhachHang();
             rpt.SetDataSource(bs);
             rpt.SetParameterValue("KH", comboBox1.Text);
-            rpt.SetParameterValue("FROM", dateTimePicker1.Value);
-            rpt.SetParameterValue("TO", dateTimePicker2.Value);
+            rpt.SetParameterValue("FROM", dateTimePickerFROM.Value);
+            rpt.SetParameterValue("TO", dateTimePickerTO.Value);
             rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
             crystalReportViewer1.ReportSource = rpt;
             crystalReportViewer1.Zoom(150);
@@ -142,11 +171,12 @@ namespace T_Manager.REPORT
 
     class CCongNoKhachHang
     {
+        public int ID;
         public DateTime NGAY;
         public string KHO;
         public string HANGHOA;
         public Int64 SOLUONG;
-        public Int64 DONGIA;
+        public Int64 DONGIABAN;
         public Int64 THANHTIEN;
         public Int64 TRATRUOC;
         public double LAISUAT;
