@@ -48,5 +48,10 @@ namespace T_Manager
                 this.buttonADD_Click(sender, e);
             }
         }
+
+        private void textBoxKHACHHANG_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

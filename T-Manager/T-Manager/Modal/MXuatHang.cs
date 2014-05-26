@@ -29,6 +29,7 @@ namespace T_Manager.Modal
                     break;
                 }
             }
+            DataInstance.Instance().DBContext().SaveChanges();
         }
 
         /// <summary>

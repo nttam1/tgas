@@ -6,6 +6,7 @@
     <edmx:StorageModels>
     <Schema Namespace="tgasModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="tgasModelStoreContainer">
+          <EntitySet Name="BAN_HANG" EntityType="tgasModel.Store.BAN_HANG" store:Type="Tables" />
           <EntitySet Name="CHI_KHAC" EntityType="tgasModel.Store.CHI_KHAC" store:Type="Tables" />
           <EntitySet Name="CHI_LUONG" EntityType="tgasModel.Store.CHI_LUONG" store:Type="Tables" />
           <EntitySet Name="CHI_TIET_THU_NO" EntityType="tgasModel.Store.CHI_TIET_THU_NO" store:Type="Tables" />
@@ -26,6 +27,18 @@
           <EntitySet Name="XE" EntityType="tgasModel.Store.XE" store:Type="Tables" />
           <EntitySet Name="XUAT_HANG" EntityType="tgasModel.Store.XUAT_HANG" store:Type="Tables" />
         </EntityContainer>
+        <EntityType Name="BAN_HANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MAKHO" Type="integer" Nullable="false" />
+          <Property Name="MAHH" Type="integer" Nullable="false" />
+          <Property Name="SO_LUONG" Type="integer" Nullable="false" />
+          <Property Name="DON_GIA_BAN" Type="integer" Nullable="false" />
+          <Property Name="NGAY_BAN" Type="datetime" Nullable="false" />
+          <Property Name="CREATED_TIME" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="CHI_KHAC">
           <Key>
             <PropertyRef Name="ID" />
@@ -252,6 +265,7 @@
           <EntitySet Name="CHI_TIET_THU_NO" EntityType="tgasModel.CHI_TIET_THU_NO" />
           <EntitySet Name="CHO_VAY" EntityType="tgasModel.CHO_VAY" />
           <EntitySet Name="XUAT_HANG" EntityType="tgasModel.XUAT_HANG" />
+          <EntitySet Name="BAN_HANG" EntityType="tgasModel.BAN_HANG" />
         </EntityContainer>
         <EntityType Name="CHI_KHAC">
           <Key>
@@ -454,6 +468,18 @@
           <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
           <Property Type="DateTime" Name="NGAY_XUAT" />
           <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BAN_HANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int64" Name="MAKHO" Nullable="false" />
+          <Property Type="Int64" Name="MAHH" Nullable="false" />
+          <Property Type="Int64" Name="SO_LUONG" Nullable="false" />
+          <Property Type="Int64" Name="DON_GIA_BAN" Nullable="false" />
+          <Property Type="DateTime" Name="NGAY_BAN" Nullable="false" />
+          <Property Type="DateTime" Name="CREATED_TIME" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -682,6 +708,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="BAN_HANG">
+            <EntityTypeMapping TypeName="tgasModel.BAN_HANG">
+              <MappingFragment StoreEntitySet="BAN_HANG">
+                <ScalarProperty Name="CREATED_TIME" ColumnName="CREATED_TIME" />
+                <ScalarProperty Name="NGAY_BAN" ColumnName="NGAY_BAN" />
+                <ScalarProperty Name="DON_GIA_BAN" ColumnName="DON_GIA_BAN" />
+                <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
+                <ScalarProperty Name="MAHH" ColumnName="MAHH" />
+                <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -722,6 +761,7 @@
         <EntityTypeShape EntityType="tgasModel.CHI_TIET_THU_NO" Width="1.5" PointX="11.375" PointY="8.75" Height="2.7494921875000031" />
         <EntityTypeShape EntityType="tgasModel.CHO_VAY" Width="1.5" PointX="3.375" PointY="10.75" Height="2.5571907552083388" />
         <EntityTypeShape EntityType="tgasModel.XUAT_HANG" Width="1.5" PointX="11.375" PointY="3.75" Height="3.3263964843750031" />
+        <EntityTypeShape EntityType="tgasModel.BAN_HANG" Width="1.5" PointX="11.375" PointY="12.75" Height="2.3648893229166674" />
       </Diagram>
     </Diagrams>
   </Designer>

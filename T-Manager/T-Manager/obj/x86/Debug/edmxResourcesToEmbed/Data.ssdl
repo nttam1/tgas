@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="tgasModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="tgasModelStoreContainer">
+    <EntitySet Name="BAN_HANG" EntityType="tgasModel.Store.BAN_HANG" store:Type="Tables" />
     <EntitySet Name="CHI_KHAC" EntityType="tgasModel.Store.CHI_KHAC" store:Type="Tables" />
     <EntitySet Name="CHI_LUONG" EntityType="tgasModel.Store.CHI_LUONG" store:Type="Tables" />
     <EntitySet Name="CHI_TIET_THU_NO" EntityType="tgasModel.Store.CHI_TIET_THU_NO" store:Type="Tables" />
@@ -21,6 +22,18 @@
     <EntitySet Name="XE" EntityType="tgasModel.Store.XE" store:Type="Tables" />
     <EntitySet Name="XUAT_HANG" EntityType="tgasModel.Store.XUAT_HANG" store:Type="Tables" />
   </EntityContainer>
+  <EntityType Name="BAN_HANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MAKHO" Type="integer" Nullable="false" />
+    <Property Name="MAHH" Type="integer" Nullable="false" />
+    <Property Name="SO_LUONG" Type="integer" Nullable="false" />
+    <Property Name="DON_GIA_BAN" Type="integer" Nullable="false" />
+    <Property Name="NGAY_BAN" Type="datetime" Nullable="false" />
+    <Property Name="CREATED_TIME" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="CHI_KHAC">
     <Key>
       <PropertyRef Name="ID" />

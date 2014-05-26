@@ -47,11 +47,12 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button20 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -139,6 +140,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button21);
             this.groupBox1.Controls.Add(this.buttonNhapHang);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
@@ -149,7 +151,7 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(422, 191);
+            this.groupBox1.Size = new System.Drawing.Size(422, 233);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "NHẬP CHƯNG TỪ";
@@ -259,12 +261,22 @@
             this.groupBox3.Controls.Add(this.button18);
             this.groupBox3.Controls.Add(this.button17);
             this.groupBox3.Controls.Add(this.button16);
-            this.groupBox3.Location = new System.Drawing.Point(12, 226);
+            this.groupBox3.Location = new System.Drawing.Point(12, 251);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(422, 193);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "BÁO CÁO";
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(194, 19);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(171, 23);
+            this.button20.TabIndex = 4;
+            this.button20.Text = "CHI TIẾT NỢ VAY";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button19
             // 
@@ -306,15 +318,15 @@
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
-            // button20
+            // button21
             // 
-            this.button20.Location = new System.Drawing.Point(194, 19);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(171, 23);
-            this.button20.TabIndex = 4;
-            this.button20.Text = "CHI TIẾT NỢ VAY";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
+            this.button21.Location = new System.Drawing.Point(126, 179);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(145, 48);
+            this.button21.TabIndex = 8;
+            this.button21.Text = "BÁN HÀNG";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // FMain
             // 
@@ -363,6 +375,7 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
     }
 }
 

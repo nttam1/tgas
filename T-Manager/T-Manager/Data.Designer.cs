@@ -365,6 +365,22 @@ namespace T_Manager
             }
         }
         private ObjectSet<XUAT_HANG> _XUAT_HANG;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<BAN_HANG> BAN_HANG
+        {
+            get
+            {
+                if ((_BAN_HANG == null))
+                {
+                    _BAN_HANG = base.CreateObjectSet<BAN_HANG>("BAN_HANG");
+                }
+                return _BAN_HANG;
+            }
+        }
+        private ObjectSet<BAN_HANG> _BAN_HANG;
 
         #endregion
 
@@ -521,6 +537,14 @@ namespace T_Manager
         {
             base.AddObject("XUAT_HANG", xUAT_HANG);
         }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the BAN_HANG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToBAN_HANG(BAN_HANG bAN_HANG)
+        {
+            base.AddObject("BAN_HANG", bAN_HANG);
+        }
 
         #endregion
 
@@ -529,6 +553,219 @@ namespace T_Manager
     #endregion
 
     #region Entities
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="tgasModel", Name="BAN_HANG")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class BAN_HANG : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new BAN_HANG object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="mAKHO">Initial value of the MAKHO property.</param>
+        /// <param name="mAHH">Initial value of the MAHH property.</param>
+        /// <param name="sO_LUONG">Initial value of the SO_LUONG property.</param>
+        /// <param name="dON_GIA_BAN">Initial value of the DON_GIA_BAN property.</param>
+        /// <param name="nGAY_BAN">Initial value of the NGAY_BAN property.</param>
+        /// <param name="cREATED_TIME">Initial value of the CREATED_TIME property.</param>
+        public static BAN_HANG CreateBAN_HANG(global::System.Int64 id, global::System.Int64 mAKHO, global::System.Int64 mAHH, global::System.Int64 sO_LUONG, global::System.Int64 dON_GIA_BAN, global::System.DateTime nGAY_BAN, global::System.DateTime cREATED_TIME)
+        {
+            BAN_HANG bAN_HANG = new BAN_HANG();
+            bAN_HANG.ID = id;
+            bAN_HANG.MAKHO = mAKHO;
+            bAN_HANG.MAHH = mAHH;
+            bAN_HANG.SO_LUONG = sO_LUONG;
+            bAN_HANG.DON_GIA_BAN = dON_GIA_BAN;
+            bAN_HANG.NGAY_BAN = nGAY_BAN;
+            bAN_HANG.CREATED_TIME = cREATED_TIME;
+            return bAN_HANG;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 MAKHO
+        {
+            get
+            {
+                return _MAKHO;
+            }
+            set
+            {
+                OnMAKHOChanging(value);
+                ReportPropertyChanging("MAKHO");
+                _MAKHO = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MAKHO");
+                OnMAKHOChanged();
+            }
+        }
+        private global::System.Int64 _MAKHO;
+        partial void OnMAKHOChanging(global::System.Int64 value);
+        partial void OnMAKHOChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 MAHH
+        {
+            get
+            {
+                return _MAHH;
+            }
+            set
+            {
+                OnMAHHChanging(value);
+                ReportPropertyChanging("MAHH");
+                _MAHH = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MAHH");
+                OnMAHHChanged();
+            }
+        }
+        private global::System.Int64 _MAHH;
+        partial void OnMAHHChanging(global::System.Int64 value);
+        partial void OnMAHHChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 SO_LUONG
+        {
+            get
+            {
+                return _SO_LUONG;
+            }
+            set
+            {
+                OnSO_LUONGChanging(value);
+                ReportPropertyChanging("SO_LUONG");
+                _SO_LUONG = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SO_LUONG");
+                OnSO_LUONGChanged();
+            }
+        }
+        private global::System.Int64 _SO_LUONG;
+        partial void OnSO_LUONGChanging(global::System.Int64 value);
+        partial void OnSO_LUONGChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 DON_GIA_BAN
+        {
+            get
+            {
+                return _DON_GIA_BAN;
+            }
+            set
+            {
+                OnDON_GIA_BANChanging(value);
+                ReportPropertyChanging("DON_GIA_BAN");
+                _DON_GIA_BAN = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DON_GIA_BAN");
+                OnDON_GIA_BANChanged();
+            }
+        }
+        private global::System.Int64 _DON_GIA_BAN;
+        partial void OnDON_GIA_BANChanging(global::System.Int64 value);
+        partial void OnDON_GIA_BANChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime NGAY_BAN
+        {
+            get
+            {
+                return _NGAY_BAN;
+            }
+            set
+            {
+                OnNGAY_BANChanging(value);
+                ReportPropertyChanging("NGAY_BAN");
+                _NGAY_BAN = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NGAY_BAN");
+                OnNGAY_BANChanged();
+            }
+        }
+        private global::System.DateTime _NGAY_BAN;
+        partial void OnNGAY_BANChanging(global::System.DateTime value);
+        partial void OnNGAY_BANChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime CREATED_TIME
+        {
+            get
+            {
+                return _CREATED_TIME;
+            }
+            set
+            {
+                OnCREATED_TIMEChanging(value);
+                ReportPropertyChanging("CREATED_TIME");
+                _CREATED_TIME = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CREATED_TIME");
+                OnCREATED_TIMEChanged();
+            }
+        }
+        private global::System.DateTime _CREATED_TIME;
+        partial void OnCREATED_TIMEChanging(global::System.DateTime value);
+        partial void OnCREATED_TIMEChanged();
+
+        #endregion
+
+    
+    }
     
     /// <summary>
     /// No Metadata Documentation available.

@@ -54,3 +54,4 @@ C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FT
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csproj.GenerateResource.Cache
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.exe
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.pdb
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FBanHang.resources

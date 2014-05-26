@@ -127,6 +127,12 @@
     <Compile Include="Data\FXe.Designer.cs">
       <DependentUpon>FXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="FBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBanHang.Designer.cs">
+      <DependentUpon>FBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="FChi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,8 +193,10 @@
     <Compile Include="FVay.Designer.cs">
       <DependentUpon>FVay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modal\MBanHang.cs" />
     <Compile Include="Modal\MChiTietThuNo.cs" />
     <Compile Include="Modal\MChoVay.cs" />
+    <Compile Include="Modal\MHangHoa.cs" />
     <Compile Include="Modal\MKhachHang.cs" />
     <Compile Include="Modal\MKho.cs" />
     <Compile Include="Modal\MNcc.cs" />
@@ -281,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\FXe.resx">
       <DependentUpon>FXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBanHang.resx">
+      <DependentUpon>FBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FChi.resx">
       <DependentUpon>FChi.cs</DependentUpon>

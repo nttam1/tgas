@@ -152,5 +152,11 @@ namespace T_Manager
             REPORT.FChiTietNoVay f = new REPORT.FChiTietNoVay();
             f.ShowDialog();
         }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            FBanHang f = new FBanHang();
+            f.ShowDialog();
+        }
     }
 }

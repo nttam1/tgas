@@ -222,5 +222,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="BAN_HANG">
+      <EntityTypeMapping TypeName="tgasModel.BAN_HANG">
+        <MappingFragment StoreEntitySet="BAN_HANG">
+          <ScalarProperty Name="CREATED_TIME" ColumnName="CREATED_TIME" />
+          <ScalarProperty Name="NGAY_BAN" ColumnName="NGAY_BAN" />
+          <ScalarProperty Name="DON_GIA_BAN" ColumnName="DON_GIA_BAN" />
+          <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
+          <ScalarProperty Name="MAHH" ColumnName="MAHH" />
+          <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
