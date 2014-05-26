@@ -45,6 +45,7 @@ namespace T_Manager.REPORT
         private void button1_Click(object sender, EventArgs e)
         {
             List<CCongNoKhachHang> _datasource = new List<CCongNoKhachHang>();
+            string note = "";
             var include_THUNO = checkBoxTHUNO.Checked;
             BindingSource bs = new BindingSource();
             long MAKH = long.Parse(comboBox1.SelectedValue.ToString());
@@ -78,6 +79,7 @@ namespace T_Manager.REPORT
 
             if (include_THUNO == true)
             {
+                note = "ĐÃ BAO GỒM THU NỢ";
                 /* Có sử dụng dữ liệu từ thu nợ */
                 foreach (CCongNoKhachHang row in xuat_hang)
                 {
@@ -104,6 +106,7 @@ namespace T_Manager.REPORT
             }
             else
             {
+                note = "KHÔNG BAO GỒM THU NỢ";
                 /* Không sử dụng dữ liệu từ thu nợ */
                 foreach (CCongNoKhachHang row in xuat_hang)
                 {
@@ -133,6 +136,7 @@ namespace T_Manager.REPORT
             rpt.SetParameterValue("FROM", dateTimePickerFROM.Value);
             rpt.SetParameterValue("TO", dateTimePickerTO.Value);
             rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
+            rpt.SetParameterValue("NOTE", note);
             crystalReportViewer1.ReportSource = rpt;
             crystalReportViewer1.Zoom(150);
         }

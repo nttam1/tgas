@@ -59,6 +59,7 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "XEM TỔNG HỢP CÔNG NỢ TỪ NGÀY ĐẾN NGÀY";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // checkBoxTHUNO
             // 

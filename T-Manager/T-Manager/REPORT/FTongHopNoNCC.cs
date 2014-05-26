@@ -18,16 +18,17 @@ namespace T_Manager.REPORT
 
         private void buttonVIEW_Click(object sender, EventArgs e)
         {
-            var _from = dateTimePicker1.Value;
-            var _to = dateTimePicker2.Value;
+            string note = "";
+            long da_tra = 0;
+            var _from = dateTimePickerFROM.Value;
+            var _to = dateTimePickerTO.Value;
 
             BindingSource bs = new BindingSource();
             bs.DataSource = (from nh in DataInstance.Instance().DBContext().NHAP_HANG
                              join ncc in DataInstance.Instance().DBContext().NHA_CUNG_CAP on nh.MANCC equals ncc.ID
                              join hh in DataInstance.Instance().DBContext().HANG_HOA on nh.MAHH equals hh.ID
                              /* Khac ton kho */
-                             where nh.NGAY_NHAP >= _from
-                             where nh.NGAY_NHAP <= _to
+                             where nh.NGAY_NHAP >= _from && nh.NGAY_NHAP <= _to
                              select new
                              {
                                  NCC = ncc.NAME,
@@ -35,6 +36,7 @@ namespace T_Manager.REPORT
                                  SOLUONG = nh.SO_LUONG,
                                  THANHTIEN = nh.SO_LUONG * nh.DON_GIA_MUA,
                              });
+
             CrystalReportTONGHOPNONCC rpt = new CrystalReportTONGHOPNONCC();
             rpt.SetDataSource(bs);
             rpt.SetParameterValue("FROM", _from);
@@ -45,7 +47,7 @@ namespace T_Manager.REPORT
 
         private void FTongHopNoNCC_Load(object sender, EventArgs e)
         {
-            dateTimePicker1.Value = dateTimePicker1.Value.AddMonths(-1);
+            dateTimePickerFROM.Value = dateTimePickerFROM.Value.AddMonths(-1);
         }
     }
 }

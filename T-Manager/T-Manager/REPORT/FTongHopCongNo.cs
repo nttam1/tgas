@@ -21,6 +21,7 @@ namespace T_Manager.REPORT
         {
             List<CTongHopCongNo> _datasource = new List<CTongHopCongNo>();
             var include_THUNO = checkBoxTHUNO.Checked;
+            string note = "";
             var kho = long.Parse(comboBoxKHO.SelectedValue.ToString());
             var _from = dateTimePicker1.Value.Date;
             var _to = dateTimePicker2.Value.Date;
@@ -48,6 +49,7 @@ namespace T_Manager.REPORT
             int STT = 1;
             if (include_THUNO == true)
             {
+                note = "ĐÃ BAO GỒM THU NỢ";
                 /* Có sử dụng dữ liệu thu nợ */
                 /* Tính tổng lãi cho từng KH */
                 foreach (CTongHopCongNo row in _xh)
@@ -77,6 +79,7 @@ namespace T_Manager.REPORT
             }
             else
             {
+                note = "KHÔNG BAO GỒM THU NỢ";
                 /* Không sử dụng dữ liệu thu nợ*/
                 /* Tính tổng lãi cho từng KH */
                 foreach (CTongHopCongNo row in _xh)
@@ -109,6 +112,7 @@ namespace T_Manager.REPORT
             rpt.SetParameterValue("FROM", _from);
             rpt.SetParameterValue("TO", _to);
             rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
+            rpt.SetParameterValue("NOTE", note);
             crystalReportViewer1.ReportSource = rpt;
             crystalReportViewer1.Zoom(150);
         }
@@ -120,6 +124,11 @@ namespace T_Manager.REPORT
             comboBoxKHO.ValueMember = "ID";
 
             dateTimePicker1.Value = dateTimePicker1.Value.AddMonths(-1);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 

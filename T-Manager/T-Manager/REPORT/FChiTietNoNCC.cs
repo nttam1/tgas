@@ -19,9 +19,9 @@ namespace T_Manager.REPORT
         private void buttonVIEW_Click(object sender, EventArgs e)
         {
             var _ncc = long.Parse(comboBoxNCC.SelectedValue.ToString());
-            var _from = dateTimePicker1.Value;
-            var _to = dateTimePicker2.Value;
-
+            var _from = dateTimePickerFROM.Value;
+            var _to = dateTimePickerTO.Value;
+            string note = "";
             BindingSource bs = new BindingSource();
             bs.DataSource = (from nh in DataInstance.Instance().DBContext().NHAP_HANG
                              join kho in DataInstance.Instance().DBContext().KHOes on nh.MAKHO equals kho.ID
@@ -54,7 +54,12 @@ namespace T_Manager.REPORT
             comboBoxNCC.DisplayMember = "NAME";
             comboBoxNCC.ValueMember = "ID";
 
-            dateTimePicker1.Value = dateTimePicker1.Value.AddMonths(-1);
+            dateTimePickerFROM.Value = dateTimePickerFROM.Value.AddMonths(-1);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
