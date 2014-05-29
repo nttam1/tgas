@@ -60,60 +60,67 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 32);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(4, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.Size = new System.Drawing.Size(105, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "NGUỒN VAY";
             // 
             // comboBoxNCC
             // 
             this.comboBoxNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxNCC.FormattingEnabled = true;
-            this.comboBoxNCC.Location = new System.Drawing.Point(107, 29);
+            this.comboBoxNCC.Location = new System.Drawing.Point(115, 13);
             this.comboBoxNCC.Name = "comboBoxNCC";
-            this.comboBoxNCC.Size = new System.Drawing.Size(219, 21);
+            this.comboBoxNCC.Size = new System.Drawing.Size(380, 28);
             this.comboBoxNCC.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(65, 64);
+            this.dateTimePicker1.Location = new System.Drawing.Point(101, 47);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(137, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(137, 26);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(233, 70);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(259, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "ĐẾN NGÀY";
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(322, 65);
+            this.dateTimePicker2.Location = new System.Drawing.Point(358, 47);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(137, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(137, 26);
             this.dateTimePicker2.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 67);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "TỪ NGÀY";
             // 
             // buttonVIEW
             // 
-            this.buttonVIEW.Location = new System.Drawing.Point(500, 64);
+            this.buttonVIEW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVIEW.Location = new System.Drawing.Point(526, 18);
             this.buttonVIEW.Name = "buttonVIEW";
-            this.buttonVIEW.Size = new System.Drawing.Size(75, 23);
+            this.buttonVIEW.Size = new System.Drawing.Size(97, 55);
             this.buttonVIEW.TabIndex = 6;
             this.buttonVIEW.Text = "Xem";
             this.buttonVIEW.UseVisualStyleBackColor = true;

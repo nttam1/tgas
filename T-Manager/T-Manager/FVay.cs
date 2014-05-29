@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using T_Manager.Modal;
 
 namespace T_Manager
 {
@@ -32,6 +33,9 @@ namespace T_Manager
                     c.KeyPress += new KeyPressEventHandler(c_KeyPress);
                 }
             }
+            comboBoxTHOIGIAN.DataSource = MVay.ThoiDoan();
+            comboBoxTHOIGIAN.DisplayMember = "NAME";
+            comboBoxTHOIGIAN.ValueMember = "VALUE";
         }
         private void c_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -48,9 +52,10 @@ namespace T_Manager
             {
                 MA_NGUON_VAY = nguon,
                 TONG_TIEN = tien,
-                LAI_SUAT = laisuat,
+                LAI_SUAT = laisuat / 100,
                 NGAY_VAY = ngayvay,
                 CREATED_AT = DateTime.Now,
+                KY_HAN = long.Parse(comboBoxTHOIGIAN.SelectedValue.ToString()),
             });
             bs.EndEdit();
             bs.ResetBindings(false);

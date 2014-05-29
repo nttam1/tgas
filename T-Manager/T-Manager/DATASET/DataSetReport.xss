@@ -10,7 +10,7 @@
     <Shape ID="DesignTable:TongHopCongNo" ZOrder="4" X="213" Y="10" Height="143" Width="168" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
     <Shape ID="DesignTable:ChiTietNoNCC" ZOrder="3" X="389" Y="10" Height="143" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
     <Shape ID="DesignTable:TONGHOPNONCC" ZOrder="1" X="206" Y="179" Height="124" Width="171" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
-    <Shape ID="DesignTable:CHITIETNOVAY" ZOrder="2" X="390" Y="238" Height="106" Width="149" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
+    <Shape ID="DesignTable:CHITIETNOVAY" ZOrder="2" X="390" Y="238" Height="143" Width="155" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

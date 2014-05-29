@@ -70,6 +70,9 @@
               <xs:element name="NGAYVAY" msprop:Generator_ColumnVarNameInTable="columnNGAYVAY" msprop:Generator_ColumnPropNameInRow="NGAYVAY" msprop:Generator_ColumnPropNameInTable="NGAYVAYColumn" msprop:Generator_UserColumnName="NGAYVAY" type="xs:dateTime" minOccurs="0" />
               <xs:element name="TONGTIEN" msprop:Generator_ColumnVarNameInTable="columnTONGTIEN" msprop:Generator_ColumnPropNameInRow="TONGTIEN" msprop:Generator_ColumnPropNameInTable="TONGTIENColumn" msprop:Generator_UserColumnName="TONGTIEN" type="xs:int" minOccurs="0" />
               <xs:element name="LAISUAT" msprop:Generator_ColumnVarNameInTable="columnLAISUAT" msprop:Generator_ColumnPropNameInRow="LAISUAT" msprop:Generator_ColumnPropNameInTable="LAISUATColumn" msprop:Generator_UserColumnName="LAISUAT" type="xs:double" minOccurs="0" />
+              <xs:element name="THOIDOAN" msprop:Generator_ColumnVarNameInTable="columnTHOIDOAN" msprop:Generator_ColumnPropNameInRow="THOIDOAN" msprop:Generator_ColumnPropNameInTable="THOIDOANColumn" msprop:Generator_UserColumnName="THOIDOAN" type="xs:string" minOccurs="0" />
+              <xs:element name="TONGNO" msprop:Generator_ColumnVarNameInTable="columnTONGNO" msprop:Generator_ColumnPropNameInRow="TONGNO" msprop:Generator_ColumnPropNameInTable="TONGNOColumn" msprop:Generator_UserColumnName="TONGNO" type="xs:long" minOccurs="0" />
+              <xs:element name="LAI" msprop:Generator_ColumnVarNameInTable="columnLAI" msprop:Generator_ColumnPropNameInRow="LAI" msprop:Generator_ColumnPropNameInTable="LAIColumn" msprop:Generator_UserColumnName="LAI" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

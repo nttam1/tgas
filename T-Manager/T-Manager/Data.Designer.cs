@@ -3564,7 +3564,8 @@ namespace T_Manager
         /// <param name="lAI_SUAT">Initial value of the LAI_SUAT property.</param>
         /// <param name="nGAY_VAY">Initial value of the NGAY_VAY property.</param>
         /// <param name="cREATED_AT">Initial value of the CREATED_AT property.</param>
-        public static VAY CreateVAY(global::System.Int64 id, global::System.Int64 mA_NGUON_VAY, global::System.Int64 tONG_TIEN, global::System.Double lAI_SUAT, global::System.DateTime nGAY_VAY, global::System.DateTime cREATED_AT)
+        /// <param name="kY_HAN">Initial value of the KY_HAN property.</param>
+        public static VAY CreateVAY(global::System.Int64 id, global::System.Int64 mA_NGUON_VAY, global::System.Int64 tONG_TIEN, global::System.Double lAI_SUAT, global::System.DateTime nGAY_VAY, global::System.DateTime cREATED_AT, global::System.Int64 kY_HAN)
         {
             VAY vAY = new VAY();
             vAY.ID = id;
@@ -3573,6 +3574,7 @@ namespace T_Manager
             vAY.LAI_SUAT = lAI_SUAT;
             vAY.NGAY_VAY = nGAY_VAY;
             vAY.CREATED_AT = cREATED_AT;
+            vAY.KY_HAN = kY_HAN;
             return vAY;
         }
 
@@ -3726,6 +3728,30 @@ namespace T_Manager
         private global::System.DateTime _CREATED_AT;
         partial void OnCREATED_ATChanging(global::System.DateTime value);
         partial void OnCREATED_ATChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 KY_HAN
+        {
+            get
+            {
+                return _KY_HAN;
+            }
+            set
+            {
+                OnKY_HANChanging(value);
+                ReportPropertyChanging("KY_HAN");
+                _KY_HAN = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("KY_HAN");
+                OnKY_HANChanged();
+            }
+        }
+        private global::System.Int64 _KY_HAN;
+        partial void OnKY_HANChanging(global::System.Int64 value);
+        partial void OnKY_HANChanged();
 
         #endregion
 

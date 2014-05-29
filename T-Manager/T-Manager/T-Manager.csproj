@@ -205,6 +205,7 @@
     <Compile Include="Modal\MNcc.cs" />
     <Compile Include="Modal\MNhapHang.cs" />
     <Compile Include="Modal\MThuNo.cs" />
+    <Compile Include="Modal\MVay.cs" />
     <Compile Include="Modal\MXuatHang.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

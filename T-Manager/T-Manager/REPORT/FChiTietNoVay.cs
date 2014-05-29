@@ -32,17 +32,28 @@ namespace T_Manager.REPORT
             var _to = dateTimePicker2.Value;
 
             BindingSource bs = new BindingSource();
-            bs.DataSource = (from v in DataInstance.Instance().DBContext().VAYs
+            var rows = (from v in DataInstance.Instance().DBContext().VAYs
                              join nv in DataInstance.Instance().DBContext().NGUON_VAY on v.MA_NGUON_VAY equals nv.ID
                              where v.MA_NGUON_VAY == _ncc
                              where v.NGAY_VAY >= _from
                              where v.NGAY_VAY <= _to
-                             select new
-                             {
-                                 NGAYVAY = v.NGAY_VAY,
-                                 TONGTIEN = v.TONG_TIEN,
-                                 LAISUAT = v.LAI_SUAT
-                             });
+                             orderby v.NGAY_VAY ascending
+                             select v);
+            List<CChiTietNoVay> l = new List<CChiTietNoVay>();
+            foreach (VAY _r in rows)
+            {
+                long lai = (long)Utility.Lai(_r.NGAY_VAY.Date, _r.LAI_SUAT,(int)_r.KY_HAN, _r.TONG_TIEN);
+                l.Add(new CChiTietNoVay
+                {
+                    NGAYVAY = _r.NGAY_VAY.Date,
+                    TONGTIEN = _r.TONG_TIEN,
+                    LAISUAT = _r.LAI_SUAT * 100,
+                    THOIDOAN = _r.KY_HAN.ToString() + " Tháng",
+                    LAI = lai,
+                    TONGNO = _r.TONG_TIEN + lai
+                });
+            }
+            bs.DataSource = l;
             CrystalReportCHITIETNOVAY rpt = new CrystalReportCHITIETNOVAY();
             rpt.SetDataSource(bs);
             rpt.SetParameterValue("NV", comboBoxNCC.Text);
@@ -51,5 +62,14 @@ namespace T_Manager.REPORT
             rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
             crystalReportViewer1.ReportSource = rpt;
         }
+    }
+    class CChiTietNoVay
+    {
+        public DateTime NGAYVAY;
+        public long TONGTIEN;
+        public double LAISUAT;
+        public string THOIDOAN;
+        public long TONGNO;
+        public double LAI;
     }
 }

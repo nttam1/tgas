@@ -215,6 +215,7 @@
           <Property Name="MA_NGUON_VAY" Type="integer" Nullable="false" />
           <Property Name="TONG_TIEN" Type="integer" Nullable="false" />
           <Property Name="LAI_SUAT" Type="float" Nullable="false" />
+          <Property Name="KY_HAN" Type="integer" Nullable="false" />
           <Property Name="NGAY_VAY" Type="datetime" Nullable="false" />
           <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
         </EntityType>
@@ -382,6 +383,7 @@
           <Property Name="LAI_SUAT" Type="Double" Nullable="false" />
           <Property Name="NGAY_VAY" Type="DateTime" Nullable="false" />
           <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
+          <Property Type="Int64" Name="KY_HAN" Nullable="false" />
         </EntityType>
         <EntityType Name="XE">
           <Key>
@@ -608,6 +610,7 @@
           <EntitySetMapping Name="VAYs">
             <EntityTypeMapping TypeName="tgasModel.VAY">
               <MappingFragment StoreEntitySet="VAY">
+                <ScalarProperty Name="KY_HAN" ColumnName="KY_HAN" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="MA_NGUON_VAY" ColumnName="MA_NGUON_VAY" />
                 <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />

@@ -10,6 +10,36 @@ namespace T_Manager
         public static string StringToVND(string input){
             return string.Format("{0:#,##0 VND}", double.Parse(input));
         }
+        /// <summary>
+        /// Tính lãi đơn theo thời đoạn đến ngày hiện tại
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="lai_suat"></param>
+        /// <param name="thoi_doan"></param>
+        /// <param name="tong_tien"></param>
+        /// <returns></returns>
+        public static double Lai(DateTime start, double lai_suat, int thoi_doan, long tong_tien)
+        {
+            return Lai(start, DateTime.Now, lai_suat, thoi_doan, tong_tien);
+        }
+
+        /// <summary>
+        /// Tính lãi đơn theo thời đoạn từ ngày đến ngày
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="lai_suat"></param>
+        /// <param name="thoi_doan"></param>
+        /// <param name="tong_tien"></param>
+        /// <returns></returns>
+        public static double Lai(DateTime start, DateTime end, double lai_suat, int thoi_doan, long tong_tien)
+        {
+            double value = 0;
+            int _year = end.Year - start.Year;
+            int _thang = _year * 12 + (end.Month - start.Month);
+            int _thoi_doan_lai = _thang / thoi_doan;
+            value = tong_tien * lai_suat * _thoi_doan_lai;
+            return value;
+        }
 
         /// <summary>
         /// Tính lãi đơn đến ngày hiện tại

@@ -135,6 +135,7 @@
     <Property Name="LAI_SUAT" Type="Double" Nullable="false" />
     <Property Name="NGAY_VAY" Type="DateTime" Nullable="false" />
     <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
+    <Property Type="Int64" Name="KY_HAN" Nullable="false" />
   </EntityType>
   <EntityType Name="XE">
     <Key>
