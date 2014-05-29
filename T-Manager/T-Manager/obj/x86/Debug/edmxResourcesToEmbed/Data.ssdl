@@ -33,6 +33,7 @@
     <Property Name="DON_GIA_BAN" Type="integer" Nullable="false" />
     <Property Name="NGAY_BAN" Type="datetime" Nullable="false" />
     <Property Name="CREATED_TIME" Type="datetime" Nullable="false" />
+    <Property Name="CHI_TIET_BAN_HANG" Type="nvarchar" Nullable="false" />
   </EntityType>
   <EntityType Name="CHI_KHAC">
     <Key>
@@ -235,5 +236,6 @@
     <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
     <Property Name="NGAY_XUAT" Type="datetime" />
     <Property Name="TRANG_THAI" Type="integer" Nullable="false" />
+    <Property Name="CHI_TIET_XUAT_HANG" Type="nvarchar" Nullable="false" />
   </EntityType>
 </Schema>

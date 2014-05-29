@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace T_Manager.Modal
 {
@@ -16,19 +17,35 @@ namespace T_Manager.Modal
         /// <param name="ele">Object Xuất hàng</param>
         public static void Update(long _SoLuong, XUAT_HANG ele)
         {
+            List<CXuatHangChiTiet> chitiet = new List<CXuatHangChiTiet>();
             foreach (var row in DataInstance.Instance().DBContext().NHAP_HANG
                 .Where(u => u.MAKHO == ele.MAKHO)
                 .Where(u => u.MAHH == ele.MAHH)
                 .OrderBy(u => u.NGAY_NHAP))
             {
+                /**
+                 * Cập nhật số lượng vào nhập hàng
+                 */
                 var sub_SL = row.SL_CON_LAI;
                 row.SL_CON_LAI = _SoLuong >= row.SL_CON_LAI ? 0 : row.SL_CON_LAI - _SoLuong;
+
+                /* Cập nhật chi tiết số lượng, đơn giá để tính lãi lỗi*/
+                chitiet.Add(new CXuatHangChiTiet()
+                {
+                    NHAPHANGID = row.ID,
+                    SOLUONG = row.SL_CON_LAI > 0 ? _SoLuong : sub_SL,
+                    DONGIA = row.DON_GIA_MUA
+                });
+
                 _SoLuong = _SoLuong >= sub_SL ? _SoLuong - sub_SL : 0;
+
                 if (_SoLuong == 0)
                 {
                     break;
-                }
+                }                
             }
+            string s_chitiet = JsonConvert.SerializeObject(chitiet);
+            ele.CHI_TIET_XUAT_HANG = s_chitiet;
             DataInstance.Instance().DBContext().SaveChanges();
         }
 
@@ -92,5 +109,12 @@ namespace T_Manager.Modal
             double value = 0;
             return value;
         }
+    }
+
+    class CXuatHangChiTiet
+    {
+        public long NHAPHANGID;
+        public long SOLUONG;
+        public long DONGIA;
     }
 }

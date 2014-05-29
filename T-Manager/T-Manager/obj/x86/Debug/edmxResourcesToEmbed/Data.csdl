@@ -223,6 +223,7 @@
     <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
     <Property Type="DateTime" Name="NGAY_XUAT" />
     <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
+    <Property Type="String" Name="CHI_TIET_XUAT_HANG" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="BAN_HANG">
     <Key>
@@ -235,5 +236,6 @@
     <Property Type="Int64" Name="DON_GIA_BAN" Nullable="false" />
     <Property Type="DateTime" Name="NGAY_BAN" Nullable="false" />
     <Property Type="DateTime" Name="CREATED_TIME" Nullable="false" />
+    <Property Type="String" Name="CHI_TIET_BAN_HANG" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

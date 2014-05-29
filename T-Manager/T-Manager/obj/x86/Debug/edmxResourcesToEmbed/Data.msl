@@ -207,6 +207,7 @@
     <EntitySetMapping Name="XUAT_HANG">
       <EntityTypeMapping TypeName="tgasModel.XUAT_HANG">
         <MappingFragment StoreEntitySet="XUAT_HANG">
+          <ScalarProperty Name="CHI_TIET_XUAT_HANG" ColumnName="CHI_TIET_XUAT_HANG" />
           <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
           <ScalarProperty Name="NGAY_XUAT" ColumnName="NGAY_XUAT" />
           <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
@@ -225,6 +226,7 @@
     <EntitySetMapping Name="BAN_HANG">
       <EntityTypeMapping TypeName="tgasModel.BAN_HANG">
         <MappingFragment StoreEntitySet="BAN_HANG">
+          <ScalarProperty Name="CHI_TIET_BAN_HANG" ColumnName="CHI_TIET_BAN_HANG" />
           <ScalarProperty Name="CREATED_TIME" ColumnName="CREATED_TIME" />
           <ScalarProperty Name="NGAY_BAN" ColumnName="NGAY_BAN" />
           <ScalarProperty Name="DON_GIA_BAN" ColumnName="DON_GIA_BAN" />

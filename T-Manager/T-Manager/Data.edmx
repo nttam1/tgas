@@ -38,6 +38,7 @@
           <Property Name="DON_GIA_BAN" Type="integer" Nullable="false" />
           <Property Name="NGAY_BAN" Type="datetime" Nullable="false" />
           <Property Name="CREATED_TIME" Type="datetime" Nullable="false" />
+          <Property Name="CHI_TIET_BAN_HANG" Type="nvarchar" Nullable="false" />
         </EntityType>
         <EntityType Name="CHI_KHAC">
           <Key>
@@ -240,6 +241,7 @@
           <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
           <Property Name="NGAY_XUAT" Type="datetime" />
           <Property Name="TRANG_THAI" Type="integer" Nullable="false" />
+          <Property Name="CHI_TIET_XUAT_HANG" Type="nvarchar" Nullable="false" />
         </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -468,6 +470,7 @@
           <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
           <Property Type="DateTime" Name="NGAY_XUAT" />
           <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
+          <Property Type="String" Name="CHI_TIET_XUAT_HANG" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="BAN_HANG">
           <Key>
@@ -480,6 +483,7 @@
           <Property Type="Int64" Name="DON_GIA_BAN" Nullable="false" />
           <Property Type="DateTime" Name="NGAY_BAN" Nullable="false" />
           <Property Type="DateTime" Name="CREATED_TIME" Nullable="false" />
+          <Property Type="String" Name="CHI_TIET_BAN_HANG" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -693,6 +697,7 @@
           <EntitySetMapping Name="XUAT_HANG">
             <EntityTypeMapping TypeName="tgasModel.XUAT_HANG">
               <MappingFragment StoreEntitySet="XUAT_HANG">
+                <ScalarProperty Name="CHI_TIET_XUAT_HANG" ColumnName="CHI_TIET_XUAT_HANG" />
                 <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
                 <ScalarProperty Name="NGAY_XUAT" ColumnName="NGAY_XUAT" />
                 <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
@@ -711,6 +716,7 @@
           <EntitySetMapping Name="BAN_HANG">
             <EntityTypeMapping TypeName="tgasModel.BAN_HANG">
               <MappingFragment StoreEntitySet="BAN_HANG">
+                <ScalarProperty Name="CHI_TIET_BAN_HANG" ColumnName="CHI_TIET_BAN_HANG" />
                 <ScalarProperty Name="CREATED_TIME" ColumnName="CREATED_TIME" />
                 <ScalarProperty Name="NGAY_BAN" ColumnName="NGAY_BAN" />
                 <ScalarProperty Name="DON_GIA_BAN" ColumnName="DON_GIA_BAN" />

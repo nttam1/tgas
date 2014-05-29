@@ -27,6 +27,8 @@ C:\Users\Tam\documents\visual studio 2010\Projects\T-Manager\T-Manager\obj\x86\D
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe.config
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.pdb
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csprojResolveAssemblyReference.cache
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FHangHoa.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FKho.resources
@@ -34,6 +36,7 @@ C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FNCC
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FNguonVay.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FTaiKhoan.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FXe.resources
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FBanHang.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FChi.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FChoVay.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FKhachHang.resources
@@ -54,4 +57,3 @@ C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FT
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csproj.GenerateResource.Cache
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.exe
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.pdb
-C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FBanHang.resources

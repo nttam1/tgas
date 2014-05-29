@@ -574,7 +574,8 @@ namespace T_Manager
         /// <param name="dON_GIA_BAN">Initial value of the DON_GIA_BAN property.</param>
         /// <param name="nGAY_BAN">Initial value of the NGAY_BAN property.</param>
         /// <param name="cREATED_TIME">Initial value of the CREATED_TIME property.</param>
-        public static BAN_HANG CreateBAN_HANG(global::System.Int64 id, global::System.Int64 mAKHO, global::System.Int64 mAHH, global::System.Int64 sO_LUONG, global::System.Int64 dON_GIA_BAN, global::System.DateTime nGAY_BAN, global::System.DateTime cREATED_TIME)
+        /// <param name="cHI_TIET_BAN_HANG">Initial value of the CHI_TIET_BAN_HANG property.</param>
+        public static BAN_HANG CreateBAN_HANG(global::System.Int64 id, global::System.Int64 mAKHO, global::System.Int64 mAHH, global::System.Int64 sO_LUONG, global::System.Int64 dON_GIA_BAN, global::System.DateTime nGAY_BAN, global::System.DateTime cREATED_TIME, global::System.String cHI_TIET_BAN_HANG)
         {
             BAN_HANG bAN_HANG = new BAN_HANG();
             bAN_HANG.ID = id;
@@ -584,6 +585,7 @@ namespace T_Manager
             bAN_HANG.DON_GIA_BAN = dON_GIA_BAN;
             bAN_HANG.NGAY_BAN = nGAY_BAN;
             bAN_HANG.CREATED_TIME = cREATED_TIME;
+            bAN_HANG.CHI_TIET_BAN_HANG = cHI_TIET_BAN_HANG;
             return bAN_HANG;
         }
 
@@ -761,6 +763,30 @@ namespace T_Manager
         private global::System.DateTime _CREATED_TIME;
         partial void OnCREATED_TIMEChanging(global::System.DateTime value);
         partial void OnCREATED_TIMEChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String CHI_TIET_BAN_HANG
+        {
+            get
+            {
+                return _CHI_TIET_BAN_HANG;
+            }
+            set
+            {
+                OnCHI_TIET_BAN_HANGChanging(value);
+                ReportPropertyChanging("CHI_TIET_BAN_HANG");
+                _CHI_TIET_BAN_HANG = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("CHI_TIET_BAN_HANG");
+                OnCHI_TIET_BAN_HANGChanged();
+            }
+        }
+        private global::System.String _CHI_TIET_BAN_HANG;
+        partial void OnCHI_TIET_BAN_HANGChanging(global::System.String value);
+        partial void OnCHI_TIET_BAN_HANGChanged();
 
         #endregion
 
@@ -3813,7 +3839,8 @@ namespace T_Manager
         /// <param name="tRA_TRUOC">Initial value of the TRA_TRUOC property.</param>
         /// <param name="cREATED_AT">Initial value of the CREATED_AT property.</param>
         /// <param name="tRANG_THAI">Initial value of the TRANG_THAI property.</param>
-        public static XUAT_HANG CreateXUAT_HANG(global::System.Int64 id, global::System.Int64 mAKHO, global::System.Int64 mAHH, global::System.Int64 mAKH, global::System.Int64 sO_LUONG, global::System.Int64 dON_GIA_BAN, global::System.Int64 tHANH_TOAN_XUAT, global::System.Double lAI_SUAT, global::System.Int64 tRA_TRUOC, global::System.DateTime cREATED_AT, global::System.Int64 tRANG_THAI)
+        /// <param name="cHI_TIET_XUAT_HANG">Initial value of the CHI_TIET_XUAT_HANG property.</param>
+        public static XUAT_HANG CreateXUAT_HANG(global::System.Int64 id, global::System.Int64 mAKHO, global::System.Int64 mAHH, global::System.Int64 mAKH, global::System.Int64 sO_LUONG, global::System.Int64 dON_GIA_BAN, global::System.Int64 tHANH_TOAN_XUAT, global::System.Double lAI_SUAT, global::System.Int64 tRA_TRUOC, global::System.DateTime cREATED_AT, global::System.Int64 tRANG_THAI, global::System.String cHI_TIET_XUAT_HANG)
         {
             XUAT_HANG xUAT_HANG = new XUAT_HANG();
             xUAT_HANG.ID = id;
@@ -3827,6 +3854,7 @@ namespace T_Manager
             xUAT_HANG.TRA_TRUOC = tRA_TRUOC;
             xUAT_HANG.CREATED_AT = cREATED_AT;
             xUAT_HANG.TRANG_THAI = tRANG_THAI;
+            xUAT_HANG.CHI_TIET_XUAT_HANG = cHI_TIET_XUAT_HANG;
             return xUAT_HANG;
         }
 
@@ -4124,6 +4152,30 @@ namespace T_Manager
         private global::System.Int64 _TRANG_THAI;
         partial void OnTRANG_THAIChanging(global::System.Int64 value);
         partial void OnTRANG_THAIChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String CHI_TIET_XUAT_HANG
+        {
+            get
+            {
+                return _CHI_TIET_XUAT_HANG;
+            }
+            set
+            {
+                OnCHI_TIET_XUAT_HANGChanging(value);
+                ReportPropertyChanging("CHI_TIET_XUAT_HANG");
+                _CHI_TIET_XUAT_HANG = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("CHI_TIET_XUAT_HANG");
+                OnCHI_TIET_XUAT_HANGChanged();
+            }
+        }
+        private global::System.String _CHI_TIET_XUAT_HANG;
+        partial void OnCHI_TIET_XUAT_HANGChanging(global::System.String value);
+        partial void OnCHI_TIET_XUAT_HANGChanged();
 
         #endregion
 
