@@ -35,22 +35,23 @@ namespace T_Manager.REPORT
             var rows = (from v in DataInstance.Instance().DBContext().VAYs
                              join nv in DataInstance.Instance().DBContext().NGUON_VAY on v.MA_NGUON_VAY equals nv.ID
                              where v.MA_NGUON_VAY == _ncc
-                             where v.NGAY_VAY >= _from
-                             where v.NGAY_VAY <= _to
+                             where v.NGAY_VAY >= _from && v.NGAY_VAY <= _to
                              orderby v.NGAY_VAY ascending
                              select v);
             List<CChiTietNoVay> l = new List<CChiTietNoVay>();
             foreach (VAY _r in rows)
             {
                 long lai = (long)Utility.Lai(_r.NGAY_VAY.Date, _r.LAI_SUAT,(int)_r.KY_HAN, _r.TONG_TIEN);
+                long tragoc = 0;
+                long tralai = 0;
                 l.Add(new CChiTietNoVay
                 {
                     NGAYVAY = _r.NGAY_VAY.Date,
                     TONGTIEN = _r.TONG_TIEN,
                     LAISUAT = _r.LAI_SUAT * 100,
                     THOIDOAN = _r.KY_HAN.ToString() + " Tháng",
-                    LAI = lai,
-                    TONGNO = _r.TONG_TIEN + lai
+                    TRAGOC = tragoc,
+                    TRALAI = tralai
                 });
             }
             bs.DataSource = l;
@@ -69,7 +70,7 @@ namespace T_Manager.REPORT
         public long TONGTIEN;
         public double LAISUAT;
         public string THOIDOAN;
-        public long TONGNO;
-        public double LAI;
+        public long TRAGOC;
+        public double TRALAI;
     }
 }

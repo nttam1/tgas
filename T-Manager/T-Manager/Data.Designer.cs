@@ -241,22 +241,6 @@ namespace T_Manager
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<VAY> VAYs
-        {
-            get
-            {
-                if ((_VAYs == null))
-                {
-                    _VAYs = base.CreateObjectSet<VAY>("VAYs");
-                }
-                return _VAYs;
-            }
-        }
-        private ObjectSet<VAY> _VAYs;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<XE> XEs
         {
             get
@@ -381,6 +365,22 @@ namespace T_Manager
             }
         }
         private ObjectSet<BAN_HANG> _BAN_HANG;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<VAY> VAYs
+        {
+            get
+            {
+                if ((_VAYs == null))
+                {
+                    _VAYs = base.CreateObjectSet<VAY>("VAYs");
+                }
+                return _VAYs;
+            }
+        }
+        private ObjectSet<VAY> _VAYs;
 
         #endregion
 
@@ -475,14 +475,6 @@ namespace T_Manager
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the VAYs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToVAYs(VAY vAY)
-        {
-            base.AddObject("VAYs", vAY);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the XEs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToXEs(XE xE)
@@ -544,6 +536,14 @@ namespace T_Manager
         public void AddToBAN_HANG(BAN_HANG bAN_HANG)
         {
             base.AddObject("BAN_HANG", bAN_HANG);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the VAYs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToVAYs(VAY vAY)
+        {
+            base.AddObject("VAYs", vAY);
         }
 
         #endregion
@@ -3352,7 +3352,8 @@ namespace T_Manager
         /// <param name="tIEN_LAI">Initial value of the TIEN_LAI property.</param>
         /// <param name="nGAY_TRA">Initial value of the NGAY_TRA property.</param>
         /// <param name="cREATED_AT">Initial value of the CREATED_AT property.</param>
-        public static TRA_NO_VAY CreateTRA_NO_VAY(global::System.Int64 id, global::System.Int64 mA_NGUON_VAY, global::System.Int64 mAKHO, global::System.Int64 tIEN_GOC, global::System.Int64 tIEN_LAI, global::System.DateTime nGAY_TRA, global::System.DateTime cREATED_AT)
+        /// <param name="vAY_ID">Initial value of the VAY_ID property.</param>
+        public static TRA_NO_VAY CreateTRA_NO_VAY(global::System.Int64 id, global::System.Int64 mA_NGUON_VAY, global::System.Int64 mAKHO, global::System.Int64 tIEN_GOC, global::System.Int64 tIEN_LAI, global::System.DateTime nGAY_TRA, global::System.DateTime cREATED_AT, global::System.Int64 vAY_ID)
         {
             TRA_NO_VAY tRA_NO_VAY = new TRA_NO_VAY();
             tRA_NO_VAY.ID = id;
@@ -3362,6 +3363,7 @@ namespace T_Manager
             tRA_NO_VAY.TIEN_LAI = tIEN_LAI;
             tRA_NO_VAY.NGAY_TRA = nGAY_TRA;
             tRA_NO_VAY.CREATED_AT = cREATED_AT;
+            tRA_NO_VAY.VAY_ID = vAY_ID;
             return tRA_NO_VAY;
         }
 
@@ -3539,6 +3541,30 @@ namespace T_Manager
         private global::System.DateTime _CREATED_AT;
         partial void OnCREATED_ATChanging(global::System.DateTime value);
         partial void OnCREATED_ATChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 VAY_ID
+        {
+            get
+            {
+                return _VAY_ID;
+            }
+            set
+            {
+                OnVAY_IDChanging(value);
+                ReportPropertyChanging("VAY_ID");
+                _VAY_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("VAY_ID");
+                OnVAY_IDChanged();
+            }
+        }
+        private global::System.Int64 _VAY_ID;
+        partial void OnVAY_IDChanging(global::System.Int64 value);
+        partial void OnVAY_IDChanged();
 
         #endregion
 
@@ -3562,19 +3588,21 @@ namespace T_Manager
         /// <param name="mA_NGUON_VAY">Initial value of the MA_NGUON_VAY property.</param>
         /// <param name="tONG_TIEN">Initial value of the TONG_TIEN property.</param>
         /// <param name="lAI_SUAT">Initial value of the LAI_SUAT property.</param>
+        /// <param name="kY_HAN">Initial value of the KY_HAN property.</param>
         /// <param name="nGAY_VAY">Initial value of the NGAY_VAY property.</param>
         /// <param name="cREATED_AT">Initial value of the CREATED_AT property.</param>
-        /// <param name="kY_HAN">Initial value of the KY_HAN property.</param>
-        public static VAY CreateVAY(global::System.Int64 id, global::System.Int64 mA_NGUON_VAY, global::System.Int64 tONG_TIEN, global::System.Double lAI_SUAT, global::System.DateTime nGAY_VAY, global::System.DateTime cREATED_AT, global::System.Int64 kY_HAN)
+        /// <param name="tRANG_THAI">Initial value of the TRANG_THAI property.</param>
+        public static VAY CreateVAY(global::System.Int64 id, global::System.Int64 mA_NGUON_VAY, global::System.Int64 tONG_TIEN, global::System.Double lAI_SUAT, global::System.Int64 kY_HAN, global::System.DateTime nGAY_VAY, global::System.DateTime cREATED_AT, global::System.Int64 tRANG_THAI)
         {
             VAY vAY = new VAY();
             vAY.ID = id;
             vAY.MA_NGUON_VAY = mA_NGUON_VAY;
             vAY.TONG_TIEN = tONG_TIEN;
             vAY.LAI_SUAT = lAI_SUAT;
+            vAY.KY_HAN = kY_HAN;
             vAY.NGAY_VAY = nGAY_VAY;
             vAY.CREATED_AT = cREATED_AT;
-            vAY.KY_HAN = kY_HAN;
+            vAY.TRANG_THAI = tRANG_THAI;
             return vAY;
         }
 
@@ -3686,6 +3714,30 @@ namespace T_Manager
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
+        public global::System.Int64 KY_HAN
+        {
+            get
+            {
+                return _KY_HAN;
+            }
+            set
+            {
+                OnKY_HANChanging(value);
+                ReportPropertyChanging("KY_HAN");
+                _KY_HAN = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("KY_HAN");
+                OnKY_HANChanged();
+            }
+        }
+        private global::System.Int64 _KY_HAN;
+        partial void OnKY_HANChanging(global::System.Int64 value);
+        partial void OnKY_HANChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.DateTime NGAY_VAY
         {
             get
@@ -3734,24 +3786,24 @@ namespace T_Manager
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 KY_HAN
+        public global::System.Int64 TRANG_THAI
         {
             get
             {
-                return _KY_HAN;
+                return _TRANG_THAI;
             }
             set
             {
-                OnKY_HANChanging(value);
-                ReportPropertyChanging("KY_HAN");
-                _KY_HAN = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("KY_HAN");
-                OnKY_HANChanged();
+                OnTRANG_THAIChanging(value);
+                ReportPropertyChanging("TRANG_THAI");
+                _TRANG_THAI = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TRANG_THAI");
+                OnTRANG_THAIChanged();
             }
         }
-        private global::System.Int64 _KY_HAN;
-        partial void OnKY_HANChanging(global::System.Int64 value);
-        partial void OnKY_HANChanged();
+        private global::System.Int64 _TRANG_THAI;
+        partial void OnTRANG_THAIChanging(global::System.Int64 value);
+        partial void OnTRANG_THAIChanged();
 
         #endregion
 

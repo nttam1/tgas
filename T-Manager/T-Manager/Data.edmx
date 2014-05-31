@@ -206,6 +206,7 @@
           <Property Name="TIEN_LAI" Type="integer" Nullable="false" />
           <Property Name="NGAY_TRA" Type="datetime" Nullable="false" />
           <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+          <Property Name="VAY_ID" Type="integer" Nullable="false" />
         </EntityType>
         <EntityType Name="VAY">
           <Key>
@@ -218,6 +219,7 @@
           <Property Name="KY_HAN" Type="integer" Nullable="false" />
           <Property Name="NGAY_VAY" Type="datetime" Nullable="false" />
           <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+          <Property Name="TRANG_THAI" Type="integer" Nullable="false" />
         </EntityType>
         <EntityType Name="XE">
           <Key>
@@ -260,7 +262,6 @@
           <EntitySet Name="NHA_CUNG_CAP" EntityType="tgasModel.NHA_CUNG_CAP" />
           <EntitySet Name="NHAN_VIEN" EntityType="tgasModel.NHAN_VIEN" />
           <EntitySet Name="NHAP_HANG" EntityType="tgasModel.NHAP_HANG" />
-          <EntitySet Name="VAYs" EntityType="tgasModel.VAY" />
           <EntitySet Name="XEs" EntityType="tgasModel.XE" />
           <EntitySet Name="THU_NO" EntityType="tgasModel.THU_NO" />
           <EntitySet Name="TRA_NO_VAY" EntityType="tgasModel.TRA_NO_VAY" />
@@ -269,6 +270,7 @@
           <EntitySet Name="CHO_VAY" EntityType="tgasModel.CHO_VAY" />
           <EntitySet Name="XUAT_HANG" EntityType="tgasModel.XUAT_HANG" />
           <EntitySet Name="BAN_HANG" EntityType="tgasModel.BAN_HANG" />
+          <EntitySet Name="VAYs" EntityType="tgasModel.VAY" />
         </EntityContainer>
         <EntityType Name="CHI_KHAC">
           <Key>
@@ -373,18 +375,6 @@
           <Property Name="NGAY_NHAP" Type="DateTime" Nullable="false" />
           <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
         </EntityType>
-        <EntityType Name="VAY">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="MA_NGUON_VAY" Type="Int64" Nullable="false" />
-          <Property Name="TONG_TIEN" Type="Int64" Nullable="false" />
-          <Property Name="LAI_SUAT" Type="Double" Nullable="false" />
-          <Property Name="NGAY_VAY" Type="DateTime" Nullable="false" />
-          <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
-          <Property Type="Int64" Name="KY_HAN" Nullable="false" />
-        </EntityType>
         <EntityType Name="XE">
           <Key>
             <PropertyRef Name="ID" />
@@ -417,6 +407,7 @@
           <Property Type="Int64" Name="TIEN_LAI" Nullable="false" />
           <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
           <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
+          <Property Type="Int64" Name="VAY_ID" Nullable="false" />
         </EntityType>
         <EntityType Name="TRA_NO_NCC">
           <Key>
@@ -486,6 +477,19 @@
           <Property Type="DateTime" Name="NGAY_BAN" Nullable="false" />
           <Property Type="DateTime" Name="CREATED_TIME" Nullable="false" />
           <Property Type="String" Name="CHI_TIET_BAN_HANG" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VAY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int64" Name="MA_NGUON_VAY" Nullable="false" />
+          <Property Type="Int64" Name="TONG_TIEN" Nullable="false" />
+          <Property Type="Double" Name="LAI_SUAT" Nullable="false" />
+          <Property Type="Int64" Name="KY_HAN" Nullable="false" />
+          <Property Type="DateTime" Name="NGAY_VAY" Nullable="false" />
+          <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
+          <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -607,19 +611,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="VAYs">
-            <EntityTypeMapping TypeName="tgasModel.VAY">
-              <MappingFragment StoreEntitySet="VAY">
-                <ScalarProperty Name="KY_HAN" ColumnName="KY_HAN" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="MA_NGUON_VAY" ColumnName="MA_NGUON_VAY" />
-                <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
-                <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
-                <ScalarProperty Name="NGAY_VAY" ColumnName="NGAY_VAY" />
-                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="XEs">
             <EntityTypeMapping TypeName="tgasModel.XE">
               <MappingFragment StoreEntitySet="XE">
@@ -646,6 +637,7 @@
           <EntitySetMapping Name="TRA_NO_VAY">
             <EntityTypeMapping TypeName="tgasModel.TRA_NO_VAY">
               <MappingFragment StoreEntitySet="TRA_NO_VAY">
+                <ScalarProperty Name="VAY_ID" ColumnName="VAY_ID" />
                 <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
                 <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
                 <ScalarProperty Name="TIEN_LAI" ColumnName="TIEN_LAI" />
@@ -730,6 +722,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="VAYs">
+            <EntityTypeMapping TypeName="tgasModel.VAY">
+              <MappingFragment StoreEntitySet="VAY">
+                <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="NGAY_VAY" ColumnName="NGAY_VAY" />
+                <ScalarProperty Name="KY_HAN" ColumnName="KY_HAN" />
+                <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
+                <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
+                <ScalarProperty Name="MA_NGUON_VAY" ColumnName="MA_NGUON_VAY" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -762,7 +768,6 @@
         <EntityTypeShape EntityType="tgasModel.NHA_CUNG_CAP" Width="1.5" PointX="2.75" PointY="7.75" Height="1.4033821614583317" IsExpanded="true" />
         <EntityTypeShape EntityType="tgasModel.NHAN_VIEN" Width="1.5" PointX="8.75" PointY="0.75" Height="1.4033821614583353" IsExpanded="true" />
         <EntityTypeShape EntityType="tgasModel.NHAP_HANG" Width="1.5" PointX="8.75" PointY="3.75" Height="2.7494921875000031" IsExpanded="true" />
-        <EntityTypeShape EntityType="tgasModel.VAY" Width="1.5" PointX="8.75" PointY="7.75" Height="2.1725878906250031" IsExpanded="true" />
         <EntityTypeShape EntityType="tgasModel.XE" Width="1.5" PointX="0.75" PointY="10.75" Height="1.4033821614583388" />
         <EntityTypeShape EntityType="tgasModel.THU_NO" Width="1.5" PointX="7.375" PointY="10.75" Height="2.1725878906250031" />
         <EntityTypeShape EntityType="tgasModel.TRA_NO_VAY" Width="1.5" PointX="9.375" PointY="10.75" Height="2.3648893229166674" />
@@ -771,6 +776,7 @@
         <EntityTypeShape EntityType="tgasModel.CHO_VAY" Width="1.5" PointX="3.375" PointY="10.75" Height="2.5571907552083388" />
         <EntityTypeShape EntityType="tgasModel.XUAT_HANG" Width="1.5" PointX="11.375" PointY="3.75" Height="3.3263964843750031" />
         <EntityTypeShape EntityType="tgasModel.BAN_HANG" Width="1.5" PointX="11.375" PointY="12.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="tgasModel.VAY" Width="1.5" PointX="13.375" PointY="0.75" Height="2.5571907552083317" />
       </Diagram>
     </Diagrams>
   </Designer>

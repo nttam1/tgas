@@ -115,19 +115,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="VAYs">
-      <EntityTypeMapping TypeName="tgasModel.VAY">
-        <MappingFragment StoreEntitySet="VAY">
-          <ScalarProperty Name="KY_HAN" ColumnName="KY_HAN" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="MA_NGUON_VAY" ColumnName="MA_NGUON_VAY" />
-          <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
-          <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
-          <ScalarProperty Name="NGAY_VAY" ColumnName="NGAY_VAY" />
-          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="XEs">
       <EntityTypeMapping TypeName="tgasModel.XE">
         <MappingFragment StoreEntitySet="XE">
@@ -154,6 +141,7 @@
     <EntitySetMapping Name="TRA_NO_VAY">
       <EntityTypeMapping TypeName="tgasModel.TRA_NO_VAY">
         <MappingFragment StoreEntitySet="TRA_NO_VAY">
+          <ScalarProperty Name="VAY_ID" ColumnName="VAY_ID" />
           <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
           <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
           <ScalarProperty Name="TIEN_LAI" ColumnName="TIEN_LAI" />
@@ -234,6 +222,20 @@
           <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
           <ScalarProperty Name="MAHH" ColumnName="MAHH" />
           <ScalarProperty Name="MAKHO" ColumnName="MAKHO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VAYs">
+      <EntityTypeMapping TypeName="tgasModel.VAY">
+        <MappingFragment StoreEntitySet="VAY">
+          <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="NGAY_VAY" ColumnName="NGAY_VAY" />
+          <ScalarProperty Name="KY_HAN" ColumnName="KY_HAN" />
+          <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
+          <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
+          <ScalarProperty Name="MA_NGUON_VAY" ColumnName="MA_NGUON_VAY" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

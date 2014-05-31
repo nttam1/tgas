@@ -12,7 +12,6 @@
     <EntitySet Name="NHA_CUNG_CAP" EntityType="tgasModel.NHA_CUNG_CAP" />
     <EntitySet Name="NHAN_VIEN" EntityType="tgasModel.NHAN_VIEN" />
     <EntitySet Name="NHAP_HANG" EntityType="tgasModel.NHAP_HANG" />
-    <EntitySet Name="VAYs" EntityType="tgasModel.VAY" />
     <EntitySet Name="XEs" EntityType="tgasModel.XE" />
     <EntitySet Name="THU_NO" EntityType="tgasModel.THU_NO" />
     <EntitySet Name="TRA_NO_VAY" EntityType="tgasModel.TRA_NO_VAY" />
@@ -21,6 +20,7 @@
     <EntitySet Name="CHO_VAY" EntityType="tgasModel.CHO_VAY" />
     <EntitySet Name="XUAT_HANG" EntityType="tgasModel.XUAT_HANG" />
     <EntitySet Name="BAN_HANG" EntityType="tgasModel.BAN_HANG" />
+    <EntitySet Name="VAYs" EntityType="tgasModel.VAY" />
   </EntityContainer>
   <EntityType Name="CHI_KHAC">
     <Key>
@@ -125,18 +125,6 @@
     <Property Name="NGAY_NHAP" Type="DateTime" Nullable="false" />
     <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
   </EntityType>
-  <EntityType Name="VAY">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Name="MA_NGUON_VAY" Type="Int64" Nullable="false" />
-    <Property Name="TONG_TIEN" Type="Int64" Nullable="false" />
-    <Property Name="LAI_SUAT" Type="Double" Nullable="false" />
-    <Property Name="NGAY_VAY" Type="DateTime" Nullable="false" />
-    <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
-    <Property Type="Int64" Name="KY_HAN" Nullable="false" />
-  </EntityType>
   <EntityType Name="XE">
     <Key>
       <PropertyRef Name="ID" />
@@ -169,6 +157,7 @@
     <Property Type="Int64" Name="TIEN_LAI" Nullable="false" />
     <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
     <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
+    <Property Type="Int64" Name="VAY_ID" Nullable="false" />
   </EntityType>
   <EntityType Name="TRA_NO_NCC">
     <Key>
@@ -238,5 +227,18 @@
     <Property Type="DateTime" Name="NGAY_BAN" Nullable="false" />
     <Property Type="DateTime" Name="CREATED_TIME" Nullable="false" />
     <Property Type="String" Name="CHI_TIET_BAN_HANG" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VAY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="MA_NGUON_VAY" Nullable="false" />
+    <Property Type="Int64" Name="TONG_TIEN" Nullable="false" />
+    <Property Type="Double" Name="LAI_SUAT" Nullable="false" />
+    <Property Type="Int64" Name="KY_HAN" Nullable="false" />
+    <Property Type="DateTime" Name="NGAY_VAY" Nullable="false" />
+    <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
+    <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
   </EntityType>
 </Schema>

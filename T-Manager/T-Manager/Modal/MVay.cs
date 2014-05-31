@@ -7,6 +7,8 @@ namespace T_Manager.Modal
 {
     class MVay
     {
+        public const int CHUA_TRA_XONG = 0;
+        public const int DA_TRA_XONG = 1;
         public static List<object> ThoiDoan()
         {
             List<object> l = new List<object>();

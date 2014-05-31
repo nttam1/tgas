@@ -29,6 +29,7 @@ C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.pdb
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csprojResolveAssemblyReference.cache
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FHangHoa.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FKho.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FNCC.resources
@@ -56,4 +57,3 @@ C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FT
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csproj.GenerateResource.Cache
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.exe
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.pdb
-C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csprojResolveAssemblyReference.cache

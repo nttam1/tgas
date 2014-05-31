@@ -48,11 +48,11 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button20 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
@@ -278,22 +278,13 @@
             this.groupBox3.Controls.Add(this.button17);
             this.groupBox3.Controls.Add(this.button16);
             this.groupBox3.Controls.Add(this.button20);
+            this.groupBox3.Controls.Add(this.button22);
             this.groupBox3.Location = new System.Drawing.Point(12, 251);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(422, 193);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "BÁO CÁO";
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(6, 135);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(171, 23);
-            this.button20.TabIndex = 4;
-            this.button20.Text = "CHI TIẾT NỢ VAY";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button19
             // 
@@ -335,9 +326,19 @@
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(6, 135);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(171, 23);
+            this.button20.TabIndex = 4;
+            this.button20.Text = "CHI TIẾT NỢ VAY";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
             // button22
             // 
-            this.button22.Location = new System.Drawing.Point(493, 305);
+            this.button22.Location = new System.Drawing.Point(6, 164);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(171, 23);
             this.button22.TabIndex = 5;
@@ -373,7 +374,7 @@
             // 
             // button26
             // 
-            this.button26.Location = new System.Drawing.Point(493, 218);
+            this.button26.Location = new System.Drawing.Point(493, 276);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(171, 23);
             this.button26.TabIndex = 11;
@@ -382,7 +383,7 @@
             // 
             // button27
             // 
-            this.button27.Location = new System.Drawing.Point(493, 247);
+            this.button27.Location = new System.Drawing.Point(493, 305);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(171, 23);
             this.button27.TabIndex = 11;
@@ -412,7 +413,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button24);
             this.Controls.Add(this.button23);
-            this.Controls.Add(this.button22);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

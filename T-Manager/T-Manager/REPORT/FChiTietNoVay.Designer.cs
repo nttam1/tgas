@@ -52,7 +52,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(790, 93);
+            this.groupBox1.Size = new System.Drawing.Size(790, 132);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "XEM CHI TIẾT NỢ VAY";
@@ -81,7 +81,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(101, 47);
+            this.dateTimePicker1.Location = new System.Drawing.Point(116, 47);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(137, 26);
             this.dateTimePicker1.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(259, 51);
+            this.label2.Location = new System.Drawing.Point(4, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 8;
@@ -100,7 +100,7 @@
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(358, 47);
+            this.dateTimePicker2.Location = new System.Drawing.Point(116, 86);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(137, 26);
             this.dateTimePicker2.TabIndex = 5;
@@ -118,7 +118,7 @@
             // buttonVIEW
             // 
             this.buttonVIEW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVIEW.Location = new System.Drawing.Point(526, 18);
+            this.buttonVIEW.Location = new System.Drawing.Point(349, 51);
             this.buttonVIEW.Name = "buttonVIEW";
             this.buttonVIEW.Size = new System.Drawing.Size(97, 55);
             this.buttonVIEW.TabIndex = 6;
@@ -132,9 +132,9 @@
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 93);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 132);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(790, 359);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(790, 320);
             this.crystalReportViewer1.TabIndex = 12;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 

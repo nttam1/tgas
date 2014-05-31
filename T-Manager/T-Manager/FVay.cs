@@ -56,6 +56,7 @@ namespace T_Manager
                 NGAY_VAY = ngayvay,
                 CREATED_AT = DateTime.Now,
                 KY_HAN = long.Parse(comboBoxTHOIGIAN.SelectedValue.ToString()),
+                TRANG_THAI = MVay.CHUA_TRA_XONG
             });
             bs.EndEdit();
             bs.ResetBindings(false);

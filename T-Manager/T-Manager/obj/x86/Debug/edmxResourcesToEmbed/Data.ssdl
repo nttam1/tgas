@@ -201,6 +201,7 @@
     <Property Name="TIEN_LAI" Type="integer" Nullable="false" />
     <Property Name="NGAY_TRA" Type="datetime" Nullable="false" />
     <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+    <Property Name="VAY_ID" Type="integer" Nullable="false" />
   </EntityType>
   <EntityType Name="VAY">
     <Key>
@@ -213,6 +214,7 @@
     <Property Name="KY_HAN" Type="integer" Nullable="false" />
     <Property Name="NGAY_VAY" Type="datetime" Nullable="false" />
     <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+    <Property Name="TRANG_THAI" Type="integer" Nullable="false" />
   </EntityType>
   <EntityType Name="XE">
     <Key>
