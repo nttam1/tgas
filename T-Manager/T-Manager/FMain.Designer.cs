@@ -344,6 +344,7 @@
             this.button22.TabIndex = 5;
             this.button22.Text = "TỔNG HỢP NỢ VAY";
             this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // button23
             // 

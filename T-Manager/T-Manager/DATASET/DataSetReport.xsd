@@ -80,11 +80,9 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NGUONVAY" msprop:Generator_ColumnVarNameInTable="columnNGUONVAY" msprop:Generator_ColumnPropNameInRow="NGUONVAY" msprop:Generator_ColumnPropNameInTable="NGUONVAYColumn" msprop:Generator_UserColumnName="NGUONVAY" type="xs:string" minOccurs="0" />
-              <xs:element name="TONGTIEN" msprop:Generator_ColumnVarNameInTable="columnTONGTIEN" msprop:Generator_ColumnPropNameInRow="TONGTIEN" msprop:Generator_ColumnPropNameInTable="TONGTIENColumn" msprop:Generator_UserColumnName="TONGTIEN" type="xs:string" minOccurs="0" />
-              <xs:element name="TONGLAI" msprop:Generator_ColumnVarNameInTable="columnTONGLAI" msprop:Generator_ColumnPropNameInRow="TONGLAI" msprop:Generator_ColumnPropNameInTable="TONGLAIColumn" msprop:Generator_UserColumnName="TONGLAI" type="xs:string" minOccurs="0" />
-              <xs:element name="TONGNO" msprop:Generator_ColumnVarNameInTable="columnTONGNO" msprop:Generator_ColumnPropNameInRow="TONGNO" msprop:Generator_ColumnPropNameInTable="TONGNOColumn" msprop:Generator_UserColumnName="TONGNO" type="xs:string" minOccurs="0" />
-              <xs:element name="DATHANHTOAN" msprop:Generator_ColumnVarNameInTable="columnDATHANHTOAN" msprop:Generator_ColumnPropNameInRow="DATHANHTOAN" msprop:Generator_ColumnPropNameInTable="DATHANHTOANColumn" msprop:Generator_UserColumnName="DATHANHTOAN" type="xs:string" minOccurs="0" />
-              <xs:element name="CONNO" msprop:Generator_ColumnVarNameInTable="columnCONNO" msprop:Generator_ColumnPropNameInRow="CONNO" msprop:Generator_ColumnPropNameInTable="CONNOColumn" msprop:Generator_UserColumnName="CONNO" type="xs:string" minOccurs="0" />
+              <xs:element name="TONGTIEN" msprop:Generator_ColumnVarNameInTable="columnTONGTIEN" msprop:Generator_ColumnPropNameInRow="TONGTIEN" msprop:Generator_ColumnPropNameInTable="TONGTIENColumn" msprop:Generator_UserColumnName="TONGTIEN" type="xs:long" minOccurs="0" />
+              <xs:element name="TRAGOC" msprop:Generator_ColumnVarNameInTable="columnTRAGOC" msprop:Generator_ColumnPropNameInRow="TRAGOC" msprop:Generator_ColumnPropNameInTable="TRAGOCColumn" msprop:Generator_UserColumnName="TRAGOC" type="xs:long" minOccurs="0" />
+              <xs:element name="TRALAI" msprop:Generator_ColumnVarNameInTable="columnTRALAI" msprop:Generator_ColumnPropNameInRow="TRALAI" msprop:Generator_ColumnPropNameInTable="TRALAIColumn" msprop:Generator_UserColumnName="TRALAI" type="xs:long" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

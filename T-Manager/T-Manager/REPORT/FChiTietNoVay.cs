@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using T_Manager.Modal;
 
 namespace T_Manager.REPORT
 {
@@ -41,17 +42,15 @@ namespace T_Manager.REPORT
             List<CChiTietNoVay> l = new List<CChiTietNoVay>();
             foreach (VAY _r in rows)
             {
-                long lai = (long)Utility.Lai(_r.NGAY_VAY.Date, _r.LAI_SUAT,(int)_r.KY_HAN, _r.TONG_TIEN);
-                long tragoc = 0;
-                long tralai = 0;
+                CThanhToan _thanhtoan = MVay.THANHTOAN(_r);
                 l.Add(new CChiTietNoVay
                 {
                     NGAYVAY = _r.NGAY_VAY.Date,
                     TONGTIEN = _r.TONG_TIEN,
                     LAISUAT = _r.LAI_SUAT * 100,
                     THOIDOAN = _r.KY_HAN.ToString() + " Tháng",
-                    TRAGOC = tragoc,
-                    TRALAI = tralai
+                    TRAGOC = _thanhtoan.GOC,
+                    TRALAI = _thanhtoan.LAI
                 });
             }
             bs.DataSource = l;

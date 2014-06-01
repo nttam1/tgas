@@ -158,5 +158,11 @@ namespace T_Manager
             FBanHang f = new FBanHang();
             f.ShowDialog();
         }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            REPORT.FTongHopNoVay f = new REPORT.FTongHopNoVay();
+            f.ShowDialog();
+        }
     }
 }
