@@ -2,6 +2,10 @@
     
     
     public partial class DataSetReport {
+        partial class NHAPXUATKHODataTable
+        {
+        }
+    
         partial class ChiTietNoNCCDataTable
         {
         }

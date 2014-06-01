@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePickerFROM = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerTO = new System.Windows.Forms.DateTimePicker();
             this.buttonVIEW = new System.Windows.Forms.Button();
+            this.dateTimePickerTO = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFROM = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -54,32 +54,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TỔNG HỢP NỢ VAY";
             // 
-            // label1
+            // buttonVIEW
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TỪ NGÀY";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ĐẾN NGÀY";
-            // 
-            // dateTimePickerFROM
-            // 
-            this.dateTimePickerFROM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerFROM.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFROM.Location = new System.Drawing.Point(180, 39);
-            this.dateTimePickerFROM.Name = "dateTimePickerFROM";
-            this.dateTimePickerFROM.Size = new System.Drawing.Size(152, 29);
-            this.dateTimePickerFROM.TabIndex = 2;
+            this.buttonVIEW.Location = new System.Drawing.Point(381, 31);
+            this.buttonVIEW.Name = "buttonVIEW";
+            this.buttonVIEW.Size = new System.Drawing.Size(126, 85);
+            this.buttonVIEW.TabIndex = 4;
+            this.buttonVIEW.Text = "XEM";
+            this.buttonVIEW.UseVisualStyleBackColor = true;
+            this.buttonVIEW.Click += new System.EventHandler(this.buttonVIEW_Click);
             // 
             // dateTimePickerTO
             // 
@@ -90,15 +73,32 @@
             this.dateTimePickerTO.Size = new System.Drawing.Size(152, 29);
             this.dateTimePickerTO.TabIndex = 3;
             // 
-            // buttonVIEW
+            // dateTimePickerFROM
             // 
-            this.buttonVIEW.Location = new System.Drawing.Point(381, 31);
-            this.buttonVIEW.Name = "buttonVIEW";
-            this.buttonVIEW.Size = new System.Drawing.Size(126, 85);
-            this.buttonVIEW.TabIndex = 4;
-            this.buttonVIEW.Text = "XEM";
-            this.buttonVIEW.UseVisualStyleBackColor = true;
-            this.buttonVIEW.Click += new System.EventHandler(this.buttonVIEW_Click);
+            this.dateTimePickerFROM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerFROM.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerFROM.Location = new System.Drawing.Point(180, 39);
+            this.dateTimePickerFROM.Name = "dateTimePickerFROM";
+            this.dateTimePickerFROM.Size = new System.Drawing.Size(152, 29);
+            this.dateTimePickerFROM.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ĐẾN NGÀY";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "TỪ NGÀY";
             // 
             // crystalReportViewer1
             // 
@@ -119,8 +119,13 @@
             this.ClientSize = new System.Drawing.Size(772, 423);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FTongHopNoVay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TỔNG HỢP NỢ VAY";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

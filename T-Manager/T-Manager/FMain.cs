@@ -164,5 +164,11 @@ namespace T_Manager
             REPORT.FTongHopNoVay f = new REPORT.FTongHopNoVay();
             f.ShowDialog();
         }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            REPORT.FNhapXuatTungKho f = new REPORT.FNhapXuatTungKho();
+            f.ShowDialog();
+        }
     }
 }

@@ -86,6 +86,19 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="NHAPXUATKHO" msprop:Generator_TableClassName="NHAPXUATKHODataTable" msprop:Generator_TableVarName="tableNHAPXUATKHO" msprop:Generator_RowChangedName="NHAPXUATKHORowChanged" msprop:Generator_TablePropName="NHAPXUATKHO" msprop:Generator_RowDeletingName="NHAPXUATKHORowDeleting" msprop:Generator_RowChangingName="NHAPXUATKHORowChanging" msprop:Generator_RowEvHandlerName="NHAPXUATKHORowChangeEventHandler" msprop:Generator_RowDeletedName="NHAPXUATKHORowDeleted" msprop:Generator_RowClassName="NHAPXUATKHORow" msprop:Generator_UserTableName="NHAPXUATKHO" msprop:Generator_RowEvArgName="NHAPXUATKHORowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NHAPXUAT" msprop:Generator_ColumnVarNameInTable="columnNHAPXUAT" msprop:Generator_ColumnPropNameInRow="NHAPXUAT" msprop:Generator_ColumnPropNameInTable="NHAPXUATColumn" msprop:Generator_UserColumnName="NHAPXUAT" type="xs:string" minOccurs="0" />
+              <xs:element name="NOIDUNG" msprop:Generator_ColumnVarNameInTable="columnNOIDUNG" msprop:Generator_ColumnPropNameInRow="NOIDUNG" msprop:Generator_ColumnPropNameInTable="NOIDUNGColumn" msprop:Generator_UserColumnName="NOIDUNG" type="xs:string" minOccurs="0" />
+              <xs:element name="HANGHOA" msprop:Generator_ColumnVarNameInTable="columnHANGHOA" msprop:Generator_ColumnPropNameInRow="HANGHOA" msprop:Generator_ColumnPropNameInTable="HANGHOAColumn" msprop:Generator_UserColumnName="HANGHOA" type="xs:string" minOccurs="0" />
+              <xs:element name="SOLUONG" msprop:Generator_ColumnVarNameInTable="columnSOLUONG" msprop:Generator_ColumnPropNameInRow="SOLUONG" msprop:Generator_ColumnPropNameInTable="SOLUONGColumn" msprop:Generator_UserColumnName="SOLUONG" type="xs:long" minOccurs="0" />
+              <xs:element name="DONGIA" msprop:Generator_ColumnVarNameInTable="columnDONGIA" msprop:Generator_ColumnPropNameInRow="DONGIA" msprop:Generator_ColumnPropNameInTable="DONGIAColumn" msprop:Generator_UserColumnName="DONGIA" type="xs:long" minOccurs="0" />
+              <xs:element name="THANHTIEN" msprop:Generator_ColumnVarNameInTable="columnTHANHTIEN" msprop:Generator_ColumnPropNameInRow="THANHTIEN" msprop:Generator_ColumnPropNameInTable="THANHTIENColumn" msprop:Generator_UserColumnName="THANHTIEN" type="xs:long" minOccurs="0" />
+              <xs:element name="NGAY" msprop:Generator_ColumnVarNameInTable="columnNGAY" msprop:Generator_ColumnPropNameInRow="NGAY" msprop:Generator_ColumnPropNameInTable="NGAYColumn" msprop:Generator_UserColumnName="NGAY" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

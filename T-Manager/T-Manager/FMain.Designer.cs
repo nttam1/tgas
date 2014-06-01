@@ -278,6 +278,7 @@
             this.groupBox3.Controls.Add(this.button17);
             this.groupBox3.Controls.Add(this.button16);
             this.groupBox3.Controls.Add(this.button20);
+            this.groupBox3.Controls.Add(this.button25);
             this.groupBox3.Controls.Add(this.button22);
             this.groupBox3.Location = new System.Drawing.Point(12, 251);
             this.groupBox3.Name = "groupBox3";
@@ -366,12 +367,13 @@
             // 
             // button25
             // 
-            this.button25.Location = new System.Drawing.Point(493, 392);
+            this.button25.Location = new System.Drawing.Point(194, 19);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(171, 23);
             this.button25.TabIndex = 11;
             this.button25.Text = "NHẬP XUẤT TỪNG KHO";
             this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // button26
             // 
@@ -410,7 +412,6 @@
             this.Controls.Add(this.button28);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button25);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button24);
             this.Controls.Add(this.button23);
