@@ -31,7 +31,20 @@ namespace T_Manager.REPORT
             DateTime _from = dateTimePickerFROM.Value;
             DateTime _to = dateTimePickerTO.Value;
             BindingSource bs = new BindingSource();
-            bs.DataSource = MKho.NHAP_XUAT(_kho, _from, _to) ;
+            List<CNhapXuatTungKho> list = new List<CNhapXuatTungKho>();
+            // Tất cả hàng hóa
+            var hh = (from _hh in DataInstance.Instance().DBContext().HANG_HOA orderby _hh.NAME select _hh);
+            foreach (HANG_HOA h in hh)
+            {
+                CNhapXuatTungKho c = new CNhapXuatTungKho();
+                c.HANGHOA = h.NAME;
+                c.TONDAU = MKho.TON_DAU(_kho, _from, h.ID);
+                c.NHAP = MKho.Total_Nhap_To(_kho, _from, _to, true, h.ID);
+                c.XUAT = MKho.Total_Xuat_To(_kho, _from, _to, true, h.ID);
+                c.TONCUOI = MKho.TON_CUOI(_kho, _to, h.ID);
+                list.Add(c);
+            }
+            bs.DataSource = list;
             CrystalReportNHAPXUATTUNGKHO rpt = new CrystalReportNHAPXUATTUNGKHO();
             rpt.SetDataSource(bs);
             rpt.SetParameterValue("KHO", comboBoxKHO.Text);
@@ -44,14 +57,11 @@ namespace T_Manager.REPORT
     }
     class CNhapXuatTungKho
     {
-        public DateTime CREATED_AT;
-        public DateTime NGAY;
-        public string NHAPXUAT;
         public string HANGHOA;
-        public long SOLUONG;
-        public long DONGIA;
-        public long THANHTIEN;
-        public string NOIDUNG;
+        public long TONDAU;
+        public long NHAP;
+        public long XUAT;
+        public long TONCUOI;
 
 
     }

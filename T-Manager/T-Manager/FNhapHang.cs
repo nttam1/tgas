@@ -95,7 +95,7 @@ namespace T_Manager
                 var ele = new NHAP_HANG();
                 ele.MAKHO = Convert.ToInt32(comboBoxKho.SelectedValue.ToString());
                 ele.MANCC = Convert.ToInt32(comboBoxNCC.SelectedValue.ToString());
-                ele.NGAY_NHAP = dateTimePickerNGAYNHAP.Value;
+                ele.NGAY_NHAP = dateTimePickerNGAYNHAP.Value.Date;
                 ele.CREATED_AT = DateTime.Now;
                 ele.SO_LUONG = Convert.ToInt32(textBoxSOLUONG.Text);
                 ele.SL_CON_LAI = Convert.ToInt32(textBoxSOLUONG.Text);

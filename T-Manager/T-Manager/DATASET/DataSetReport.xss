@@ -12,7 +12,7 @@
     <Shape ID="DesignTable:TONGHOPNONCC" ZOrder="3" X="206" Y="179" Height="124" Width="171" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
     <Shape ID="DesignTable:CHITIETNOVAY" ZOrder="4" X="390" Y="238" Height="143" Width="155" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
     <Shape ID="DesignTable:TONGHOPNOVAY" ZOrder="2" X="16" Y="277" Height="105" Width="171" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
-    <Shape ID="DesignTable:NHAPXUATKHO" ZOrder="1" X="200" Y="313" Height="162" Width="161" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
+    <Shape ID="DesignTable:NHAPXUATKHO" ZOrder="1" X="200" Y="313" Height="124" Width="161" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

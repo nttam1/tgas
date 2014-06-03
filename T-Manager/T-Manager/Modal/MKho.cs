@@ -18,86 +18,130 @@ namespace T_Manager.Modal
             return DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE == type);
         }
 
-        /// <summary>
-        /// Lấy tất cả thông tin về nhập xuất hàng tưng kho
-        /// Order theo thời gian tạo
-        /// Nhập: + Nhập hàng
-        /// Xuất: + Bán hàng
-        ///       + Xuất hàng
-        /// </summary>
-        /// <param name="MAKHO"></param>
-        /// <param name="From"></param>
-        /// <param name="To"></param>
-        /// <returns></returns>
-        public static List<CNhapXuatTungKho> NHAP_XUAT(long MAKHO, DateTime From, DateTime To)
+        public static long Total_Nhap_To(long KHO_ID, DateTime TO, bool INCLUDE_TODAY = false, long MAHH = 0)
         {
-            /*Lấy dữ liêu*/
-            List<CNhapXuatTungKho> list = new List<CNhapXuatTungKho>();
-            var nhap = (from n in DataInstance.Instance().DBContext().NHAP_HANG
-                        join hh in DataInstance.Instance().DBContext().HANG_HOA on n.MAHH equals hh.ID
-                        join ncc in DataInstance.Instance().DBContext().NHA_CUNG_CAP on n.MANCC equals ncc.ID
-                        where n.MAKHO == MAKHO
-                        where n.NGAY_NHAP >= From && n.NGAY_NHAP <= To
-                        select new CNhapXuatTungKho
-                        {
-                            CREATED_AT = n.CREATED_AT,
-                            DONGIA = n.DON_GIA_MUA,
-                            HANGHOA = hh.NAME,
-                            NHAPXUAT = "NHẬP",
-                            SOLUONG = n.SO_LUONG,
-                            THANHTIEN = -n.DON_GIA_MUA * n.SO_LUONG,
-                            NOIDUNG = ncc.NAME,
-                            NGAY = n.NGAY_NHAP
-                        });
+            DateTime FROM = new DateTime(1991, 12, 25);
+            return Total_Nhap_To(KHO_ID, FROM, TO, INCLUDE_TODAY, MAHH);
+        }
 
-            var xuat = (from x in DataInstance.Instance().DBContext().XUAT_HANG
-                        join hh in DataInstance.Instance().DBContext().HANG_HOA on x.MAHH equals hh.ID
-                        join kh in DataInstance.Instance().DBContext().KHACH_HANG on x.MAKH equals kh.ID
-                        where x.MAKHO == MAKHO
-                        where x.NGAY_XUAT >= From && x.NGAY_XUAT <= To
-                        select new CNhapXuatTungKho
-                        {
-                            CREATED_AT = x.CREATED_AT,
-                            DONGIA = x.DON_GIA_BAN,
-                            HANGHOA = hh.NAME,
-                            NHAPXUAT = "XUẤT",
-                            SOLUONG = -x.SO_LUONG,
-                            THANHTIEN = x.DON_GIA_BAN * x.SO_LUONG,
-                            NOIDUNG = "KH: " + kh.NAME,
-                            NGAY = x.NGAY_XUAT.Value
-                        });
+        public static long Total_Xuat_To(long KHO_ID, DateTime TO, bool INCLUDE_TODAY = false, long MAHH = 0)
+        {
+            DateTime FROM = new DateTime(1991, 12, 25);
+            return Total_Xuat_To(KHO_ID, FROM, TO, INCLUDE_TODAY, MAHH);
+        }
 
-            var ban = (from b in DataInstance.Instance().DBContext().BAN_HANG
-                       join hh in DataInstance.Instance().DBContext().HANG_HOA on b.MAHH equals hh.ID
-                       where b.MAKHO == MAKHO
-                       where b.NGAY_BAN >= From && b.NGAY_BAN <= To
-                       select new CNhapXuatTungKho
-                       {
-                           CREATED_AT = b.CREATED_TIME,
-                           DONGIA = b.DON_GIA_BAN,
-                           HANGHOA = hh.NAME,
-                           NHAPXUAT = "XUẤT",
-                           SOLUONG = -b.SO_LUONG,
-                           THANHTIEN = b.DON_GIA_BAN * b.SO_LUONG,
-                           NOIDUNG = "BÁN MẶT",
-                           NGAY = b.NGAY_BAN
-                       });
-            /*Thêm dữ liệu vào list*/
-            foreach (CNhapXuatTungKho _r in nhap)
+        /// <summary>
+        /// Tính tổng số lượng đã nhập vào kho
+        /// </summary>
+        /// <param name="KHO_ID"></param>
+        /// <param name="TO"></param>
+        /// <param name="INCLUDE_TODAY">true: tính luôn cả ngày đang tính</param>
+        /// <param name="MAHH">0: tất cả hàng hóa</param>
+        /// <returns></returns>
+        public static long Total_Nhap_To(long KHO_ID, DateTime FROM, DateTime TO, bool INCLUDE_TODAY = false, long MAHH = 0)
+        {
+            long value = 0;
+            long _MAFrom = MAHH;
+            long _MATo = MAHH;
+            FROM = FROM.Date;
+            TO = TO.Date;
+            if (INCLUDE_TODAY == false)
             {
-                list.Add(_r);
+                TO = TO.AddDays(-1);
             }
-            foreach (CNhapXuatTungKho _r in ban)
+            try
             {
-                list.Add(_r);
+                if (MAHH == 0)
+                {
+                    _MAFrom = 1;
+                    _MATo = (from _n in DataInstance.Instance().DBContext().HANG_HOA select _n.ID).Max();
+                }
+                value = (from _n in DataInstance.Instance().DBContext().NHAP_HANG
+                         where _n.MAKHO == KHO_ID
+                         where _n.NGAY_NHAP >= FROM && _n.NGAY_NHAP <= TO
+                         where _n.MAHH >= _MAFrom && _n.MAHH <= _MATo
+                         select _n.SO_LUONG).Sum();
             }
-            foreach (CNhapXuatTungKho _r in xuat)
+            catch (Exception ex)
             {
-                list.Add(_r);
+
             }
-            /*Sắp xếp dữ liệu theo created time*/
-            list.OrderBy(u => u.NGAY);
-            return list.OrderBy(u => u.NGAY).ToList();
+            return value;
+        }
+
+        /// <summary>
+        /// Tổng số lượng xuất hàng
+        /// </summary>
+        /// <param name="KHO_ID"></param>
+        /// <param name="TO"></param>
+        /// <param name="INCLUDE_TODAY">true: tính luôn cả ngày đang tính</param>
+        /// <param name="MAHH">0: tất cả hàng hóa</param>
+        /// <returns></returns>
+        public static long Total_Xuat_To(long KHO_ID, DateTime FROM, DateTime TO, bool INCLUDE_TODAY = false, long MAHH = 0)
+        {
+            long value = 0;
+            long _MAFrom = MAHH;
+            long _MATo = MAHH;
+            FROM = FROM.Date;
+            TO = TO.Date;
+            if (INCLUDE_TODAY == false)
+            {
+                TO = TO.AddDays(-1);
+            }
+            try
+            {
+                if (MAHH == 0)
+                {
+                    _MAFrom = 1;
+                    _MATo = (from _n in DataInstance.Instance().DBContext().HANG_HOA select _n.ID).Max();
+                }
+                value = (from _n in DataInstance.Instance().DBContext().XUAT_HANG
+                         where _n.MAKHO == KHO_ID
+                         where _n.NGAY_XUAT <= TO
+                         where _n.MAHH >= _MAFrom && _n.MAHH <= _MATo
+                         select _n.SO_LUONG).Sum();
+                value += (from _n in DataInstance.Instance().DBContext().BAN_HANG
+                         where _n.MAKHO == KHO_ID
+                          where _n.MAHH >= _MAFrom && _n.MAHH <= _MATo
+                         where _n.MAHH >= _MAFrom && _n.MAHH <= _MATo
+                         select _n.SO_LUONG).Sum();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return value;
+        }
+
+
+        /// <summary>
+        /// Tính tồn đầu kì số lượng hàng hóa trong kho
+        /// </summary>
+        /// <param name="KHO_ID"></param>
+        /// <param name="TO"></param>
+        /// <param name="MAHH">0: tất cả hàng hóa</param>
+        /// <returns></returns>
+        public static long TON_DAU(long KHO_ID, DateTime TO, long MAHH = 0)
+        {
+            long value = 0;
+            value = Total_Nhap_To(KHO_ID, TO, false, MAHH) - Total_Xuat_To(KHO_ID, TO, false, MAHH);
+            return value;
+        }
+
+        /// <summary>
+        /// Tính tồn cuối kì số lượng hàng hóa trong kho
+        /// </summary>
+        /// <param name="KHO_ID"></param>
+        /// <param name="TO"></param>
+        /// <param name="MAHH">0: tất cả hàng hóa</param>
+        /// <returns></returns>
+        public static long TON_CUOI(long KHO_ID, DateTime TO, long MAHH = 0)
+        {
+            long value = 0;
+            long nhap = Total_Nhap_To(KHO_ID, TO, true, MAHH);
+            long xuat = Total_Xuat_To(KHO_ID, TO, true, MAHH);
+            value = nhap - xuat;
+            return value;
         }
     }
 }
