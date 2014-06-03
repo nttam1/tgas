@@ -170,5 +170,11 @@ namespace T_Manager
             REPORT.FNhapXuatTungKho f = new REPORT.FNhapXuatTungKho();
             f.ShowDialog();
         }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            REPORT.FChiTungKho f = new REPORT.FChiTungKho();
+            f.ShowDialog();
+        }
     }
 }

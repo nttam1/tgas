@@ -43,6 +43,8 @@ namespace T_Manager
 
             var nv_id = Int32.Parse(comboBoxNHANVIEN.SelectedValue.ToString());
             var kho_id = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
+            comboBoxKHO_SelectedIndexChanged(sender, e);
+            comboBoxNHANVIEN_SelectedIndexChanged(sender, e);
 
         }
 
@@ -54,8 +56,6 @@ namespace T_Manager
                 var kho_id = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
                 bs_nv.DataSource = dbContext.CHI_LUONG.Where(u => u.MANV == nv_id)
                  .Where(u => u.MAKHO == kho_id);
-                 //.Select(l => new { l.LUONG_THANG, l.TONG_TIEN });
-                 //.ToList();
                 dataGridViewLuong.DataSource = bs_nv;
 
                 dataGridViewLuong.Columns[0].Visible = false;
@@ -127,9 +127,10 @@ namespace T_Manager
                 dataGridViewCHIKHAC.DataSource = bs_ck;
                 dataGridViewCHIKHAC.Columns[0].Visible = false;
                 dataGridViewCHIKHAC.Columns[1].Visible = false;
+                dataGridViewCHIKHAC.Columns[4].Visible = false;
                 dataGridViewCHIKHAC.Columns[2].HeaderText = "Nội dung chi";
                 dataGridViewCHIKHAC.Columns[3].HeaderText = "Tổng tiền chi";
-                dataGridViewCHIKHAC.Columns[4].HeaderText = "Ngày nhập";
+                dataGridViewCHIKHAC.Columns[5].HeaderText = "Ngày chi";
             }
             catch (Exception ex)
             {
@@ -172,6 +173,7 @@ namespace T_Manager
                     MAHH = hh,
                     SO_LUONG = soluong,
                     DON_GIA_BAN = dongia,
+                    NGAY_CHI = DateTime.Now.Date,
                     CREATED_AT = DateTime.Now
                 });
                 dbContext.SaveChanges();
@@ -221,6 +223,7 @@ namespace T_Manager
                 NOI_DUNG = chikhac,
                 TONG_TIEN = chitien,
                 CREATED_AT = DateTime.Now,
+                NGAY_CHI = DateTime.Now.Date,
                 MAKHO = Int32.Parse(comboBoxKHO.SelectedValue.ToString())
             });
             bs_ck.EndEdit();

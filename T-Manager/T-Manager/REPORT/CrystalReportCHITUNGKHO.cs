@@ -16,14 +16,14 @@ namespace T_Manager.REPORT {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReportNHAPXUATTUNGKHO : ReportClass {
+    public class CrystalReportCHITUNGKHO : ReportClass {
         
-        public CrystalReportNHAPXUATTUNGKHO() {
+        public CrystalReportCHITUNGKHO() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReportNHAPXUATTUNGKHO.rpt";
+                return "CrystalReportCHITUNGKHO.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace T_Manager.REPORT {
         
         public override string FullResourceName {
             get {
-                return "T_Manager.REPORT.CrystalReportNHAPXUATTUNGKHO.rpt";
+                return "T_Manager.REPORT.CrystalReportCHITUNGKHO.rpt";
             }
             set {
                 // Do nothing
@@ -98,7 +98,7 @@ namespace T_Manager.REPORT {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_KH {
+        public CrystalDecisions.Shared.IParameterField Parameter_KHO {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -119,28 +119,12 @@ namespace T_Manager.REPORT {
                 return this.DataDefinition.ParameterFields[3];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_NOTE {
-            get {
-                return this.DataDefinition.ParameterFields[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_KHO {
-            get {
-                return this.DataDefinition.ParameterFields[5];
-            }
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReportNHAPXUATTUNGKHO : Component, ICachedReport {
+    public class CachedCrystalReportCHITUNGKHO : Component, ICachedReport {
         
-        public CachedCrystalReportNHAPXUATTUNGKHO() {
+        public CachedCrystalReportCHITUNGKHO() {
         }
         
         [Browsable(false)]
@@ -177,7 +161,7 @@ namespace T_Manager.REPORT {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReportNHAPXUATTUNGKHO rpt = new CrystalReportNHAPXUATTUNGKHO();
+            CrystalReportCHITUNGKHO rpt = new CrystalReportCHITUNGKHO();
             rpt.Site = this.Site;
             return rpt;
         }

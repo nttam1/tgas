@@ -53,10 +53,10 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
@@ -280,6 +280,7 @@
             this.groupBox3.Controls.Add(this.button20);
             this.groupBox3.Controls.Add(this.button25);
             this.groupBox3.Controls.Add(this.button22);
+            this.groupBox3.Controls.Add(this.button23);
             this.groupBox3.Location = new System.Drawing.Point(12, 251);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(422, 193);
@@ -337,6 +338,16 @@
             this.button20.UseVisualStyleBackColor = true;
             this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
+            // button25
+            // 
+            this.button25.Location = new System.Drawing.Point(194, 19);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(171, 23);
+            this.button25.TabIndex = 11;
+            this.button25.Text = "NHẬP XUẤT TỪNG KHO";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            // 
             // button22
             // 
             this.button22.Location = new System.Drawing.Point(6, 164);
@@ -349,12 +360,13 @@
             // 
             // button23
             // 
-            this.button23.Location = new System.Drawing.Point(493, 334);
+            this.button23.Location = new System.Drawing.Point(194, 48);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(171, 23);
             this.button23.TabIndex = 6;
             this.button23.Text = "CHI TỪNG KHO";
             this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // button24
             // 
@@ -364,16 +376,6 @@
             this.button24.TabIndex = 11;
             this.button24.Text = "LÃI LỖ TỪNG KHO";
             this.button24.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(194, 19);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(171, 23);
-            this.button25.TabIndex = 11;
-            this.button25.Text = "NHẬP XUẤT TỪNG KHO";
-            this.button25.UseVisualStyleBackColor = true;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // button26
             // 
@@ -414,7 +416,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button24);
-            this.Controls.Add(this.button23);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
