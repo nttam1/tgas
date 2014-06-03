@@ -40,6 +40,25 @@ namespace T_Manager
                 }
                 else
                 {
+                    long lton = 0;
+
+                    try
+                    {
+                        lton = (from ton in DataInstance.Instance().DBContext().NHAP_HANG
+                                where ton.MAKHO == ele.MAKHO
+                                where ton.MAHH == ele.MAHH
+                                select ton.SL_CON_LAI).Sum();
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                    if (ele.SO_LUONG > lton)
+                    {
+                        MessageBox.Show("Số lượng bán hàng lớn hơn số lượng tồn. \nCòn tồn: " + lton.ToString(), "Lỗi số lượng!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     dbContext.AddToXUAT_HANG(ele);
                     /* TRỪ SỐ LƯỢNG HÀNG ĐÃ XUẤT VÀO NHẬP HÀNG */
                     MXuatHang.Update(ele.SO_LUONG, ele);

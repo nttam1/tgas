@@ -30,12 +30,16 @@ namespace T_Manager.Modal
                 row.SL_CON_LAI = _SoLuong >= row.SL_CON_LAI ? 0 : row.SL_CON_LAI - _SoLuong;
 
                 /* Cập nhật chi tiết số lượng, đơn giá để tính lãi lỗi*/
-                chitiet.Add(new CXuatHangChiTiet()
+                long __subSL = row.SL_CON_LAI > 0 ? _SoLuong : sub_SL;
+                if (__subSL > 0)
                 {
-                    NHAPHANGID = row.ID,
-                    SOLUONG = row.SL_CON_LAI > 0 ? _SoLuong : sub_SL,
-                    DONGIA = row.DON_GIA_MUA
-                });
+                    chitiet.Add(new CXuatHangChiTiet()
+                    {
+                        NHAPHANGID = row.ID,
+                        SOLUONG = row.SL_CON_LAI > 0 ? _SoLuong : sub_SL,
+                        DONGIA = row.DON_GIA_MUA
+                    });
+                }
 
                 _SoLuong = _SoLuong >= sub_SL ? _SoLuong - sub_SL : 0;
 

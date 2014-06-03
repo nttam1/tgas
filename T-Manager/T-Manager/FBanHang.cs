@@ -31,8 +31,6 @@ namespace T_Manager
 
             DateTime now = DateTime.Now.Date;
             comboBoxKHO_SelectedIndexChanged(sender, e);
-
-            labeldate.Text = "Ngày: " + DateTime.Now.ToString();
             
             textBoxDONGIABAN.Select();
             textBoxDONGIABAN.SelectAll();
@@ -40,10 +38,51 @@ namespace T_Manager
 
         private void comboBoxHANGHOA_SelectedIndexChanged(object sender, EventArgs e)
         {
-            T_Manager.HANG_HOA _e = (T_Manager.HANG_HOA)comboBoxHANGHOA.SelectedItem;
-            labeLUNIT.Text = _e.UNIT;
+            long _kho = 0;
+            try
+            {
+                _kho = long.Parse(comboBoxKHO.SelectedValue.ToString());
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            long _hh = 0;
+            try
+            {
+                T_Manager.HANG_HOA _e = (T_Manager.HANG_HOA)comboBoxHANGHOA.SelectedItem;
+                labeLUNIT.Text = _e.UNIT;
+                _hh = _e.ID;
+            }
+            catch (Exception ex)
+            {
+
+            }
             textBoxDONGIABAN.Select();
             textBoxDONGIABAN.SelectAll();
+
+            try
+            {
+                textBoxKHO.Text = comboBoxKHO.Text;
+                textBoxHANGHOA.Text = comboBoxHANGHOA.Text;
+                textBoxDONGIA.Text = (from ton in DataInstance.Instance().DBContext().NHAP_HANG
+                                      where ton.MAKHO == _kho
+                                      where ton.MAHH == _hh
+                                      where ton.SL_CON_LAI > 0
+                                      orderby ton.NGAY_NHAP ascending
+                                      select ton.DON_GIA_MUA).First().ToString();
+                textBoxDONGIA.Text = Utility.StringToVND(textBoxDONGIA.Text);
+                textBoxSLTON.Text = (from ton in DataInstance.Instance().DBContext().NHAP_HANG
+                                     where ton.MAKHO == _kho
+                                     where ton.MAHH == _hh
+                                     select ton.SL_CON_LAI).Sum().ToString();
+            }
+            catch (Exception ex)
+            {
+                textBoxDONGIA.Text = Utility.StringToVND("0");
+                textBoxSLTON.Text = "0";
+            }
         }
 
         private void buttonADD_Click(object sender, EventArgs e)
@@ -57,9 +96,22 @@ namespace T_Manager
                 bh.SO_LUONG = long.Parse(textBoxSOLUONG.Text);
                 bh.DON_GIA_BAN = long.Parse(textBoxDONGIABAN.Text);
                 bh.CREATED_TIME = DateTime.Now;
-                //bs.Add(bh);
-                //bs.EndEdit();
-                //bs.ResetBindings(false);
+
+                if (bh.SO_LUONG == 0 || bh.DON_GIA_BAN == 0)
+                {
+                    MessageBox.Show("Số lượng và đơn giá không được bằng 0", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                long lton = (from ton in DataInstance.Instance().DBContext().NHAP_HANG
+                            where ton.MAKHO == bh.MAKHO
+                            where ton.MAHH == bh.MAHH
+                            select ton.SL_CON_LAI).Sum();
+                if (bh.SO_LUONG > lton)
+                {
+                    MessageBox.Show("Số lượng bán hàng lớn hơn số lượng tồn. \nCòn tồn: " + lton.ToString(), "Lỗi số lượng!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 MBanHang.Creat(bh.MAKHO, bh.MAHH, bh.SO_LUONG, bh.DON_GIA_BAN, bh.NGAY_BAN);
                 textBoxSOLUONG.Text = "0";
                 textBoxSOLUONG.Select();
@@ -125,6 +177,8 @@ namespace T_Manager
             {
 
             }
+
+            comboBoxHANGHOA_SelectedIndexChanged(sender, e);
         }
     }
 }

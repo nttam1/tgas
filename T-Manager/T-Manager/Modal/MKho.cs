@@ -135,16 +135,29 @@ namespace T_Manager.Modal
                     _MAFrom = 1;
                     _MATo = (from _n in DataInstance.Instance().DBContext().HANG_HOA select _n.ID).Max();
                 }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            try
+            {
                 value = (from _n in DataInstance.Instance().DBContext().XUAT_HANG
                          where _n.MAKHO == KHO_ID
-                         where _n.NGAY_XUAT <= TO
+                         where _n.NGAY_XUAT >= FROM && _n.NGAY_XUAT <= TO
                          where _n.MAHH >= _MAFrom && _n.MAHH <= _MATo
                          select _n.SO_LUONG).Sum();
+            }
+            catch (Exception ex)
+            {
+
+            } try
+            {
                 value += (from _n in DataInstance.Instance().DBContext().BAN_HANG
-                         where _n.MAKHO == KHO_ID
+                          where _n.MAKHO == KHO_ID
+                          where _n.NGAY_BAN >= FROM && _n.NGAY_BAN <= TO
                           where _n.MAHH >= _MAFrom && _n.MAHH <= _MATo
-                         where _n.MAHH >= _MAFrom && _n.MAHH <= _MATo
-                         select _n.SO_LUONG).Sum();
+                          select _n.SO_LUONG).Sum();
             }
             catch (Exception ex)
             {

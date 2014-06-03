@@ -44,13 +44,17 @@ namespace T_Manager.Modal
                 nh.SL_CON_LAI = _soluong >= nh.SL_CON_LAI ? 0 : nh.SL_CON_LAI - _soluong;
 
                 /* Cập nhật chi tiết số lượng, đơn giá để tính lãi lỗi*/
-                chitiet.Add(new CXuatHangChiTiet()
+                long __subSL = nh.SL_CON_LAI > 0 ? _soluong : sub_SL;
+                if (__subSL > 0)
                 {
-                    NHAPHANGID = nh.ID,
-                    SOLUONG = nh.SL_CON_LAI > 0 ? _soluong : sub_SL,
-                    DONGIA = nh.DON_GIA_MUA
-                });
 
+                    chitiet.Add(new CXuatHangChiTiet()
+                    {
+                        NHAPHANGID = nh.ID,
+                        SOLUONG = nh.SL_CON_LAI > 0 ? _soluong : sub_SL,
+                        DONGIA = nh.DON_GIA_MUA
+                    });
+                }
                 _soluong = _soluong >= sub_SL ? _soluong - sub_SL : 0;
                 DataInstance.Instance().DBContext().SaveChanges();
                 if (_soluong == 0)
