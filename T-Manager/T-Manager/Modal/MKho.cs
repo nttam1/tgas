@@ -18,6 +18,46 @@ namespace T_Manager.Modal
             return DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE == type);
         }
 
+        public static long Total_Chi(long MAKHO, DateTime FROM, DateTime TO)
+        {
+            long _kho = MAKHO;
+            DateTime _from = FROM.Date;
+            DateTime _to = TO.Date;
+            long luong = 0;
+            long noibo = 0;
+            long khac = 0;
+
+            try
+            {
+                luong = (from _luong in DataInstance.Instance().DBContext().CHI_LUONG
+                         join _nv in DataInstance.Instance().DBContext().NHAN_VIEN on _luong.MANV equals _nv.ID
+                         where _luong.MAKHO == _kho
+                         where _luong.NGAY_CHI >= _from && _luong.NGAY_CHI <= _to
+                         select _luong.TONG_TIEN).Sum();
+            }
+            catch (Exception ex) { }
+
+            try
+            {
+                noibo = (from _chi in DataInstance.Instance().DBContext().CHI_TIEU_DUNG_NOI_BO
+                         join _xe in DataInstance.Instance().DBContext().XEs on _chi.MAXE equals _xe.ID
+                         where _chi.MAKHO == _kho
+                         where _chi.NGAY_CHI >= _from && _chi.NGAY_CHI <= _to
+                         select _chi.SO_LUONG * _chi.DON_GIA_BAN).Sum();
+            }
+            catch (Exception ex) { }
+
+            try
+            {
+                khac = (from _luong in DataInstance.Instance().DBContext().CHI_KHAC
+                        where _luong.MAKHO == _kho
+                        where _luong.NGAY_CHI >= _from && _luong.NGAY_CHI <= _to
+                         select _luong.TONG_TIEN).Sum();
+            }
+            catch (Exception ex) { }
+            return luong + noibo + khac;
+        }
+
         public static long Total_Nhap_To(long KHO_ID, DateTime TO, bool INCLUDE_TODAY = false, long MAHH = 0)
         {
             DateTime FROM = new DateTime(1991, 12, 25);

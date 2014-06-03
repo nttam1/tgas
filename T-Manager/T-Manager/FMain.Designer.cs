@@ -279,6 +279,7 @@
             this.groupBox3.Controls.Add(this.button16);
             this.groupBox3.Controls.Add(this.button20);
             this.groupBox3.Controls.Add(this.button25);
+            this.groupBox3.Controls.Add(this.button24);
             this.groupBox3.Controls.Add(this.button22);
             this.groupBox3.Controls.Add(this.button23);
             this.groupBox3.Location = new System.Drawing.Point(12, 251);
@@ -370,12 +371,13 @@
             // 
             // button24
             // 
-            this.button24.Location = new System.Drawing.Point(493, 363);
+            this.button24.Location = new System.Drawing.Point(194, 77);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(171, 23);
             this.button24.TabIndex = 11;
             this.button24.Text = "LÃI LỖ TỪNG KHO";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // button26
             // 
@@ -397,7 +399,7 @@
             // 
             // button28
             // 
-            this.button28.Location = new System.Drawing.Point(493, 421);
+            this.button28.Location = new System.Drawing.Point(493, 334);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(171, 23);
             this.button28.TabIndex = 11;
@@ -415,7 +417,6 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button24);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

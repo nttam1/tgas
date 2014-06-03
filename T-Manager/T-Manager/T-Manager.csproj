@@ -239,6 +239,12 @@
       <DependentUpon>CrystalReportCongNoKhachHang.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REPORT\CrystalReportLAILOTUNGKHO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportLAILOTUNGKHO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\CrystalReportNHAPXUATTUNGKHO.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -286,6 +292,12 @@
     </Compile>
     <Compile Include="REPORT\FCongNoKH.Designer.cs">
       <DependentUpon>FCongNoKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT\FLaiLoTungKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\FLaiLoTungKho.Designer.cs">
+      <DependentUpon>FLaiLoTungKho.cs</DependentUpon>
     </Compile>
     <Compile Include="REPORT\FNhapXuatTungKho.cs">
       <SubType>Form</SubType>
@@ -392,6 +404,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportCongNoKhachHang.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\CrystalReportLAILOTUNGKHO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportLAILOTUNGKHO.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\CrystalReportNHAPXUATTUNGKHO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportNHAPXUATTUNGKHO.cs</LastGenOutput>
@@ -419,6 +435,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FCongNoKH.resx">
       <DependentUpon>FCongNoKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\FLaiLoTungKho.resx">
+      <DependentUpon>FLaiLoTungKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FNhapXuatTungKho.resx">
       <DependentUpon>FNhapXuatTungKho.cs</DependentUpon>

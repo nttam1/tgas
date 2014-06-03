@@ -106,6 +106,19 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="LAILOTUNGKHO" msprop:Generator_TableClassName="LAILOTUNGKHODataTable" msprop:Generator_TableVarName="tableLAILOTUNGKHO" msprop:Generator_RowChangedName="LAILOTUNGKHORowChanged" msprop:Generator_TablePropName="LAILOTUNGKHO" msprop:Generator_RowDeletingName="LAILOTUNGKHORowDeleting" msprop:Generator_RowChangingName="LAILOTUNGKHORowChanging" msprop:Generator_RowEvHandlerName="LAILOTUNGKHORowChangeEventHandler" msprop:Generator_RowDeletedName="LAILOTUNGKHORowDeleted" msprop:Generator_RowClassName="LAILOTUNGKHORow" msprop:Generator_UserTableName="LAILOTUNGKHO" msprop:Generator_RowEvArgName="LAILOTUNGKHORowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NGAY" msprop:Generator_ColumnVarNameInTable="columnNGAY" msprop:Generator_ColumnPropNameInRow="NGAY" msprop:Generator_ColumnPropNameInTable="NGAYColumn" msprop:Generator_UserColumnName="NGAY" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="HANGHOA" msprop:Generator_ColumnVarNameInTable="columnHANGHOA" msprop:Generator_ColumnPropNameInRow="HANGHOA" msprop:Generator_ColumnPropNameInTable="HANGHOAColumn" msprop:Generator_UserColumnName="HANGHOA" type="xs:string" minOccurs="0" />
+              <xs:element name="GHICHU" msprop:Generator_ColumnVarNameInTable="columnGHICHU" msprop:Generator_ColumnPropNameInRow="GHICHU" msprop:Generator_ColumnPropNameInTable="GHICHUColumn" msprop:Generator_UserColumnName="GHICHU" type="xs:string" minOccurs="0" />
+              <xs:element name="SOLUONG" msprop:Generator_ColumnVarNameInTable="columnSOLUONG" msprop:Generator_ColumnPropNameInRow="SOLUONG" msprop:Generator_ColumnPropNameInTable="SOLUONGColumn" msprop:Generator_UserColumnName="SOLUONG" type="xs:long" minOccurs="0" />
+              <xs:element name="DONGIAMUA" msprop:Generator_ColumnVarNameInTable="columnDONGIAMUA" msprop:Generator_ColumnPropNameInRow="DONGIAMUA" msprop:Generator_ColumnPropNameInTable="DONGIAMUAColumn" msprop:Generator_UserColumnName="DONGIAMUA" type="xs:long" minOccurs="0" />
+              <xs:element name="DONGIABAN" msprop:Generator_ColumnVarNameInTable="columnDONGIABAN" msprop:Generator_ColumnPropNameInRow="DONGIABAN" msprop:Generator_ColumnPropNameInTable="DONGIABANColumn" msprop:Generator_UserColumnName="DONGIABAN" type="xs:long" minOccurs="0" />
+              <xs:element name="TONGLAI" msprop:Generator_ColumnVarNameInTable="columnTONGLAI" msprop:Generator_ColumnPropNameInRow="TONGLAI" msprop:Generator_ColumnPropNameInTable="TONGLAIColumn" msprop:Generator_UserColumnName="TONGLAI" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
