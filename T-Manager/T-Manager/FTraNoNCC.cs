@@ -76,7 +76,7 @@ namespace T_Manager
                 var kho = Convert.ToInt32(comboBoxKHO.SelectedValue.ToString());
                 var ncc = Convert.ToInt32(comboBoxNCC.SelectedValue.ToString());
                 var tien = Int32.Parse(textBoxTONGTIEN.Text);
-                var ngay = dateTimePicker1.Value;
+                var ngay = dateTimePicker1.Value.Date;
                 bs.Add(new TRA_NO_NCC()
                 {
                     MANCC = ncc,

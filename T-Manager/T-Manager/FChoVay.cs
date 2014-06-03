@@ -94,10 +94,8 @@ namespace T_Manager
                     MA_NGUON_NO = kh,
                     TONG_TIEN = tien,
                     LAI_SUAT = lai,
-                    NGAY_CHO_VAY = DateTime.Now,
-                    CREATED_AT = DateTime.Now,
-                   // DA_TRA = 0,
-                    //TRA_XONG = MChoVay.CHUA_TRA_XONG,                
+                    NGAY_CHO_VAY = DateTime.Now.Date,
+                    CREATED_AT = DateTime.Now,         
                 });
                 bs.EndEdit();
                 bs.ResetBindings(false);

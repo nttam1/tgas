@@ -89,7 +89,7 @@ namespace T_Manager
                         MAKHO = Int32.Parse(comboBoxKHO.SelectedValue.ToString()),
                         MANV = Int32.Parse(comboBoxNHANVIEN.SelectedValue.ToString()),
                         LUONG_THANG = Int32.Parse(dateTimePickerTHANG.Value.Month.ToString()),
-                        NGAY_CHI = now,
+                        NGAY_CHI = now.Date,
                         CREATED_AT = now,
                         TONG_TIEN = Int32.Parse(textBoxTONGTIEN.Text),
                     });

@@ -86,7 +86,7 @@ namespace T_Manager
                 var nguonvay = Convert.ToInt32(comboBoxNGUONVAY.SelectedValue.ToString());
                 var goc = Convert.ToInt32(textBoxTONGTIEN.Text);
                 var lai = Convert.ToInt32(textBoxTIENLAI.Text);
-                var ngay = dateTimePicker1.Value;
+                var ngay = dateTimePicker1.Value.Date;
                 bool traxong = checkBoxTRAXONG.Checked == true;
                 /*LAYT VAY_ID */    
                 VAY _v = (VAY)bs.List[_SelectedRow];

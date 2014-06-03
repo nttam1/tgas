@@ -47,7 +47,7 @@ namespace T_Manager
             var nguon = Int32.Parse(comboBoxNGUONVAY.SelectedValue.ToString());
             var tien = Int32.Parse(textBoxTONGTIEN.Text);
             var laisuat = double.Parse(textBoxLAISUAT.Text);
-            var ngayvay = dateTimePicker1.Value;
+            var ngayvay = dateTimePicker1.Value.Date;
             bs.Add(new VAY()
             {
                 MA_NGUON_VAY = nguon,
