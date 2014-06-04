@@ -18,6 +18,65 @@ namespace T_Manager.Modal
             return DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE == type);
         }
 
+        /// <summary>
+        /// TỔNG TIỀN KHO THU VÀO
+        /// + TIỀN BÁN HÀNG, XUẤT HÀNG
+        /// + TIỀN THU NỢ
+        /// </summary>
+        /// <param name="MAKHO"></param>
+        /// <param name="FROM"></param>
+        /// <param name="TO"></param>
+        /// <returns></returns>
+        public static long Total_Thu(long MAKHO, DateTime FROM, DateTime TO)
+        {
+            long banhang = 0;
+            long xuathang = 0;
+            long thuno = 0;
+            FROM = FROM.Date;
+            TO = TO.Date;
+
+            try
+            {
+                banhang = (from _luong in DataInstance.Instance().DBContext().BAN_HANG
+                           where _luong.MAKHO == MAKHO
+                           where _luong.NGAY_BAN >= FROM && _luong.NGAY_BAN <= TO
+                           select _luong.SO_LUONG * _luong.DON_GIA_BAN).Sum();
+            }
+            catch (Exception ex) { }
+
+            try
+            {
+                xuathang = (from _luong in DataInstance.Instance().DBContext().XUAT_HANG
+                           where _luong.MAKHO == MAKHO
+                           where _luong.NGAY_XUAT >= FROM && _luong.NGAY_XUAT <= TO
+                           select _luong.SO_LUONG * _luong.DON_GIA_BAN).Sum();
+            }
+            catch (Exception ex) { }
+
+            try
+            {
+                thuno = (from _luong in DataInstance.Instance().DBContext().THU_NO
+                            where _luong.MAKHO == MAKHO
+                            where _luong.NGAY_TRA >= FROM && _luong.NGAY_TRA <= TO
+                            select _luong.TIEN_GOC +  _luong.TIEN_LAI).Sum();
+            }
+            catch (Exception ex) { }
+            return xuathang + banhang + thuno;
+        }
+
+
+
+        /// <summary>
+        /// TỔNG SỐ TIỀN MÀ KHO CHI RA
+        /// + CHI LƯƠNG
+        /// + CHI KHÁC
+        /// + CHI NỘI BỘ
+        /// + CHO VAY
+        /// </summary>
+        /// <param name="MAKHO"></param>
+        /// <param name="FROM"></param>
+        /// <param name="TO"></param>
+        /// <returns></returns>
         public static long Total_Chi(long MAKHO, DateTime FROM, DateTime TO)
         {
             long _kho = MAKHO;
@@ -26,6 +85,7 @@ namespace T_Manager.Modal
             long luong = 0;
             long noibo = 0;
             long khac = 0;
+            long chovay = 0;
 
             try
             {
@@ -55,7 +115,19 @@ namespace T_Manager.Modal
                          select _luong.TONG_TIEN).Sum();
             }
             catch (Exception ex) { }
-            return luong + noibo + khac;
+
+            try
+            {
+                chovay = (from _luong in DataInstance.Instance().DBContext().CHO_VAY
+                          where _luong.MAKHO == _kho
+                          where _luong.NGAY_CHO_VAY >= _from && _luong.NGAY_CHO_VAY <= _to
+                          select _luong.TONG_TIEN).Sum();
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return luong + noibo + khac + chovay;
         }
 
         public static long Total_Nhap_To(long KHO_ID, DateTime TO, bool INCLUDE_TODAY = false, long MAHH = 0)

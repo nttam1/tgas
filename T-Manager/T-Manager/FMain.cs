@@ -188,5 +188,11 @@ namespace T_Manager
             REPORT.FChiTietThanhToanNCC f = new REPORT.FChiTietThanhToanNCC();
             f.ShowDialog();
         }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            REPORT.FXemKhoQuy f = new REPORT.FXemKhoQuy();
+            f.ShowDialog();
+        }
     }
 }

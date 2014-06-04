@@ -62,6 +62,17 @@ namespace T_Manager.REPORT
                              NOIDUNG = _luong.NOI_DUNG,
                              TONGTIEN = _luong.TONG_TIEN,
                          });
+            var chovay = (from _luong in DataInstance.Instance().DBContext().CHO_VAY
+                          join _kh in DataInstance.Instance().DBContext().KHACH_HANG on _luong.MA_NGUON_NO equals _kh.ID
+                          where _luong.MAKHO == _kho
+                          where _luong.NGAY_CHO_VAY >= _from && _luong.NGAY_CHO_VAY <= _to
+                          select new CChiTungKho
+                          {
+                              NGAYCHI = _luong.NGAY_CHO_VAY,
+                              NOIDUNG = "Cho vay: " + _kh.NAME,
+                              TONGTIEN = _luong.TONG_TIEN,
+                          });
+
 
             /*CHI LUONG*/
             foreach (CChiTungKho h in luong)
