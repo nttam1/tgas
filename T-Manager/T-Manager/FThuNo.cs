@@ -51,13 +51,12 @@ namespace T_Manager
         private BindingSource bs = new BindingSource();
         private void comboBoxKHACHHANG_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Int32 kho = -1;
             Int32 kh = -1;
             try
             {
                 kh = Int32.Parse(comboBoxKHACHHANG.SelectedValue.ToString());
-                kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
-                MKhachHang mKH = new MKhachHang(kh, kho);
+                //kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
+                MKhachHang mKH = new MKhachHang(kh);
                 // Hien thi tong no, tong la
                 try
                 {

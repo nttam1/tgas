@@ -9,16 +9,22 @@ namespace T_Manager.Modal
     {
         private int MAKH = -1;
         private int MAKHO = -1;
+        private long _MA_FROM;
+        private long _MA_TO;
 
         public MKhachHang(int MAKH)
         {
             this.MAKH = MAKH;
+            this._MA_FROM = 1;
+            this._MA_TO = (from hh in DataInstance.Instance().DBContext().HANG_HOA select hh.ID).Max();
         }
 
         public MKhachHang(int MAKH, int MAKHO)
         {
             this.MAKH = MAKH;
             this.MAKHO = MAKHO;
+            _MA_FROM = MAKHO;
+            _MA_TO = MAKHO;
         }
 
         #region Nợ hàng hóa
@@ -38,7 +44,7 @@ namespace T_Manager.Modal
                  * Tuy nhiên khi lượng dữ liệu lớn sẽ tốn thời gian để lấy những dữ liệu không cần thiết
                  */
                 _rows = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                         where xh.MAKHO == MAKHO
+                         where xh.MAKHO >= _MA_FROM && xh.MAKHO <= _MA_TO
                          where xh.MAKH == MAKH
                          where xh.TRANG_THAI == MXuatHang.CHUA_TRA_XONG
                          orderby xh.NGAY_XUAT ascending
@@ -72,7 +78,7 @@ namespace T_Manager.Modal
                 try
                 {
                     double _tong_no = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                                       where xh.MAKHO == MAKHO
+                                       where xh.MAKHO >= _MA_FROM && xh.MAKHO <= _MA_TO
                                        where xh.MAKH == MAKH
                                        orderby xh.NGAY_XUAT ascending
                                        select xh.SO_LUONG * xh.DON_GIA_BAN).Sum();
@@ -98,7 +104,7 @@ namespace T_Manager.Modal
             {
                 /* Lấy tất cả những lần xuất hàng cho khách hàng mà khách chưa trả xong*/
                 _rows = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                         where xh.MAKHO == MAKHO
+                         where xh.MAKHO >= _MA_FROM && xh.MAKHO <= _MA_TO
                          where xh.MAKH == MAKH
                          where xh.TRANG_THAI == MXuatHang.CHUA_TRA_XONG
                          orderby xh.NGAY_XUAT ascending
@@ -129,7 +135,7 @@ namespace T_Manager.Modal
                 /* Vì không sử dụng dữ liệu từ thu nợ */
                 /* Tổng lãi nợ của khách hàng từ đầu đến bây giờ */
                 var _xh = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                           where xh.MAKHO == MAKHO
+                           where xh.MAKHO >= _MA_FROM && xh.MAKHO <= _MA_TO
                            where xh.MAKH == MAKH
                            orderby xh.NGAY_XUAT ascending
                            select xh);
@@ -161,7 +167,7 @@ namespace T_Manager.Modal
                  * Tuy nhiên khi lượng dữ liệu lớn sẽ tốn thời gian để lấy những dữ liệu không cần thiết
                  */
                 _rows = (from xh in DataInstance.Instance().DBContext().CHO_VAY
-                         where xh.MAKHO == MAKHO
+                         where xh.MAKHO >= _MA_FROM && xh.MAKHO <= _MA_TO
                          where xh.MA_NGUON_NO == MAKH
                          where xh.TRANG_THAI == MXuatHang.CHUA_TRA_XONG
                          orderby xh.NGAY_CHO_VAY ascending
@@ -195,7 +201,7 @@ namespace T_Manager.Modal
                 try
                 {
                     double _tong_no = (from xh in DataInstance.Instance().DBContext().CHO_VAY
-                                       where xh.MAKHO == MAKHO
+                                       where xh.MAKHO >= _MA_FROM && xh.MAKHO <= _MA_TO
                                        where xh.MA_NGUON_NO == MAKH
                                        orderby xh.NGAY_CHO_VAY ascending
                                        select xh.TONG_TIEN).Sum();
@@ -221,7 +227,7 @@ namespace T_Manager.Modal
             {
                 /* Lấy tất cả những lần xuất hàng cho khách hàng mà khách chưa trả xong*/
                 _rows = (from xh in DataInstance.Instance().DBContext().CHO_VAY
-                         where xh.MAKHO == MAKHO
+                         where xh.MAKHO >= _MA_FROM && xh.MAKHO <= _MA_TO
                          where xh.MA_NGUON_NO == MAKH
                          where xh.TRANG_THAI == MXuatHang.CHUA_TRA_XONG
                          orderby xh.NGAY_CHO_VAY ascending
@@ -252,7 +258,7 @@ namespace T_Manager.Modal
                 /* Vì không sử dụng dữ liệu từ thu nợ */
                 /* Tổng lãi nợ của khách hàng từ đầu đến bây giờ */
                 var _xh = (from xh in DataInstance.Instance().DBContext().CHO_VAY
-                           where xh.MAKHO == MAKHO
+                           where xh.MAKHO >= _MA_FROM && xh.MAKHO <= _MA_TO
                            where xh.MA_NGUON_NO == MAKH
                            orderby xh.NGAY_CHO_VAY ascending
                            select xh);

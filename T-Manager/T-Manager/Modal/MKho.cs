@@ -21,7 +21,7 @@ namespace T_Manager.Modal
         /// <summary>
         /// TỔNG TIỀN KHO THU VÀO
         /// + TIỀN BÁN HÀNG, XUẤT HÀNG
-        /// + TIỀN THU NỢ
+        /// + TIỀN THU NỢ - đã bao gồm thu nợ và thu khác
         /// </summary>
         /// <param name="MAKHO"></param>
         /// <param name="FROM"></param>
@@ -72,6 +72,7 @@ namespace T_Manager.Modal
         /// + CHI KHÁC
         /// + CHI NỘI BỘ
         /// + CHO VAY
+        /// + CHI KHÁC
         /// </summary>
         /// <param name="MAKHO"></param>
         /// <param name="FROM"></param>
@@ -86,6 +87,7 @@ namespace T_Manager.Modal
             long noibo = 0;
             long khac = 0;
             long chovay = 0;
+            long chikhac = 0;
 
             try
             {
@@ -121,6 +123,17 @@ namespace T_Manager.Modal
                 chovay = (from _luong in DataInstance.Instance().DBContext().CHO_VAY
                           where _luong.MAKHO == _kho
                           where _luong.NGAY_CHO_VAY >= _from && _luong.NGAY_CHO_VAY <= _to
+                          select _luong.TONG_TIEN).Sum();
+            }
+            catch (Exception ex)
+            {
+            }
+
+            try
+            {
+                chikhac = (from _luong in DataInstance.Instance().DBContext().CHI_KHAC
+                          where _luong.MAKHO == _kho
+                          where _luong.NGAY_CHI >= _from && _luong.NGAY_CHI <= _to
                           select _luong.TONG_TIEN).Sum();
             }
             catch (Exception ex)

@@ -245,6 +245,12 @@
       <DependentUpon>CrystalReportCongNoKhachHang.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REPORT\CrystalReportCONGOSHANGNGAT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportCONGOSHANGNGAT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\CrystalReportLAILOTUNGKHO.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -310,6 +316,12 @@
     </Compile>
     <Compile Include="REPORT\FCongNoKH.Designer.cs">
       <DependentUpon>FCongNoKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT\FCongSoHangNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\FCongSoHangNgay.Designer.cs">
+      <DependentUpon>FCongSoHangNgay.cs</DependentUpon>
     </Compile>
     <Compile Include="REPORT\FLaiLoTungKho.cs">
       <SubType>Form</SubType>
@@ -432,6 +444,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportCongNoKhachHang.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\CrystalReportCONGOSHANGNGAT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportCONGOSHANGNGAT.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\CrystalReportLAILOTUNGKHO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportLAILOTUNGKHO.cs</LastGenOutput>
@@ -470,6 +486,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FCongNoKH.resx">
       <DependentUpon>FCongNoKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\FCongSoHangNgay.resx">
+      <DependentUpon>FCongSoHangNgay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FLaiLoTungKho.resx">
       <DependentUpon>FLaiLoTungKho.cs</DependentUpon>

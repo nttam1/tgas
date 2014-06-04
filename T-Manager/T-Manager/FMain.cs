@@ -194,5 +194,11 @@ namespace T_Manager
             REPORT.FXemKhoQuy f = new REPORT.FXemKhoQuy();
             f.ShowDialog();
         }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            REPORT.FCongSoHangNgay f = new REPORT.FCongSoHangNgay();
+            f.ShowDialog();
+        }
     }
 }

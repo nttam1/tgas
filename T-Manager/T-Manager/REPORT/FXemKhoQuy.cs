@@ -39,6 +39,11 @@ namespace T_Manager.REPORT
             rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
             crystalReportViewer1.ReportSource = rpt;
         }
+
+        private void FXemKhoQuy_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
     class CXemKhoQuy
