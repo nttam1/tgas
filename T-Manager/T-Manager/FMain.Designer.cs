@@ -415,12 +415,13 @@
             // 
             // button28
             // 
-            this.button28.Location = new System.Drawing.Point(493, 334);
+            this.button28.Location = new System.Drawing.Point(410, 284);
             this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(171, 23);
+            this.button28.Size = new System.Drawing.Size(266, 23);
             this.button28.TabIndex = 11;
             this.button28.Text = "CHUYỂN TIỀN VÀO TÀI KHOẢN";
             this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
             // FMain
             // 

@@ -381,6 +381,22 @@ namespace T_Manager
             }
         }
         private ObjectSet<VAY> _VAYs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<CHUYEN_TIEN> CHUYEN_TIEN
+        {
+            get
+            {
+                if ((_CHUYEN_TIEN == null))
+                {
+                    _CHUYEN_TIEN = base.CreateObjectSet<CHUYEN_TIEN>("CHUYEN_TIEN");
+                }
+                return _CHUYEN_TIEN;
+            }
+        }
+        private ObjectSet<CHUYEN_TIEN> _CHUYEN_TIEN;
 
         #endregion
 
@@ -544,6 +560,14 @@ namespace T_Manager
         public void AddToVAYs(VAY vAY)
         {
             base.AddObject("VAYs", vAY);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the CHUYEN_TIEN EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToCHUYEN_TIEN(CHUYEN_TIEN cHUYEN_TIEN)
+        {
+            base.AddObject("CHUYEN_TIEN", cHUYEN_TIEN);
         }
 
         #endregion
@@ -1930,6 +1954,167 @@ namespace T_Manager
         private global::System.Int64 _TRANG_THAI;
         partial void OnTRANG_THAIChanging(global::System.Int64 value);
         partial void OnTRANG_THAIChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="tgasModel", Name="CHUYEN_TIEN")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class CHUYEN_TIEN : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new CHUYEN_TIEN object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="iD_TAI_KHOAN">Initial value of the ID_TAI_KHOAN property.</param>
+        /// <param name="tONG_TIEN">Initial value of the TONG_TIEN property.</param>
+        /// <param name="nGAY_CHUYEN">Initial value of the NGAY_CHUYEN property.</param>
+        /// <param name="cREATED_AT">Initial value of the CREATED_AT property.</param>
+        public static CHUYEN_TIEN CreateCHUYEN_TIEN(global::System.Int64 id, global::System.Int64 iD_TAI_KHOAN, global::System.Int64 tONG_TIEN, global::System.DateTime nGAY_CHUYEN, global::System.DateTime cREATED_AT)
+        {
+            CHUYEN_TIEN cHUYEN_TIEN = new CHUYEN_TIEN();
+            cHUYEN_TIEN.ID = id;
+            cHUYEN_TIEN.ID_TAI_KHOAN = iD_TAI_KHOAN;
+            cHUYEN_TIEN.TONG_TIEN = tONG_TIEN;
+            cHUYEN_TIEN.NGAY_CHUYEN = nGAY_CHUYEN;
+            cHUYEN_TIEN.CREATED_AT = cREATED_AT;
+            return cHUYEN_TIEN;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID_TAI_KHOAN
+        {
+            get
+            {
+                return _ID_TAI_KHOAN;
+            }
+            set
+            {
+                OnID_TAI_KHOANChanging(value);
+                ReportPropertyChanging("ID_TAI_KHOAN");
+                _ID_TAI_KHOAN = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ID_TAI_KHOAN");
+                OnID_TAI_KHOANChanged();
+            }
+        }
+        private global::System.Int64 _ID_TAI_KHOAN;
+        partial void OnID_TAI_KHOANChanging(global::System.Int64 value);
+        partial void OnID_TAI_KHOANChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 TONG_TIEN
+        {
+            get
+            {
+                return _TONG_TIEN;
+            }
+            set
+            {
+                OnTONG_TIENChanging(value);
+                ReportPropertyChanging("TONG_TIEN");
+                _TONG_TIEN = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TONG_TIEN");
+                OnTONG_TIENChanged();
+            }
+        }
+        private global::System.Int64 _TONG_TIEN;
+        partial void OnTONG_TIENChanging(global::System.Int64 value);
+        partial void OnTONG_TIENChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime NGAY_CHUYEN
+        {
+            get
+            {
+                return _NGAY_CHUYEN;
+            }
+            set
+            {
+                OnNGAY_CHUYENChanging(value);
+                ReportPropertyChanging("NGAY_CHUYEN");
+                _NGAY_CHUYEN = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NGAY_CHUYEN");
+                OnNGAY_CHUYENChanged();
+            }
+        }
+        private global::System.DateTime _NGAY_CHUYEN;
+        partial void OnNGAY_CHUYENChanging(global::System.DateTime value);
+        partial void OnNGAY_CHUYENChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime CREATED_AT
+        {
+            get
+            {
+                return _CREATED_AT;
+            }
+            set
+            {
+                OnCREATED_ATChanging(value);
+                ReportPropertyChanging("CREATED_AT");
+                _CREATED_AT = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CREATED_AT");
+                OnCREATED_ATChanged();
+            }
+        }
+        private global::System.DateTime _CREATED_AT;
+        partial void OnCREATED_ATChanging(global::System.DateTime value);
+        partial void OnCREATED_ATChanged();
 
         #endregion
 

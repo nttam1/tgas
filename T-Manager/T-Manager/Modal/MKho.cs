@@ -19,6 +19,42 @@ namespace T_Manager.Modal
         }
 
         /// <summary>
+        /// TÍNH TỔNG TIỀN HIỆN TẠI CÓ TRONG KHO QUỸ
+        /// TỔNG THU - TỔNG CHI - TIỀN ĐÃ CHUYỂN VÀO TÀI KHOẢN
+        /// </summary>
+        /// <param name="TO"></param>
+        /// <returns></returns>
+        public static long Tong_Tien_Hien_Tai(DateTime TO)
+        {
+            long value = 0;
+            TO = TO.Date;
+            DateTime FROM = new DateTime(1991, 12, 25);
+
+            /* THU - CHI CỦA TẤT CẢ CÁC KHO */
+            foreach (KHO kho in (from _kho in DataInstance.Instance().DBContext().KHOes select _kho))
+            {
+                value += Total_Thu(kho.ID, FROM, TO) + Total_Chi(kho.ID, FROM, TO);
+            }
+            /* TRỪ TỔNG TIỀN ĐÃ CHUYỂN VÀO TÀI KHOẢN */
+
+            long tchuyen = 0;
+            try
+            {
+                tchuyen = (from c in DataInstance.Instance().DBContext().CHUYEN_TIEN
+                           where c.NGAY_CHUYEN <= TO
+                           select c.TONG_TIEN).Sum();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            value = value - tchuyen;
+
+            return value;
+        }
+
+        /// <summary>
         /// TỔNG TIỀN KHO THU VÀO
         /// + TIỀN BÁN HÀNG, XUẤT HÀNG
         /// + TIỀN THU NỢ - đã bao gồm thu nợ và thu khác

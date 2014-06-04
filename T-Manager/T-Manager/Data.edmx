@@ -12,6 +12,7 @@
           <EntitySet Name="CHI_TIET_THU_NO" EntityType="tgasModel.Store.CHI_TIET_THU_NO" store:Type="Tables" />
           <EntitySet Name="CHI_TIEU_DUNG_NOI_BO" EntityType="tgasModel.Store.CHI_TIEU_DUNG_NOI_BO" store:Type="Tables" />
           <EntitySet Name="CHO_VAY" EntityType="tgasModel.Store.CHO_VAY" store:Type="Tables" />
+          <EntitySet Name="CHUYEN_TIEN" EntityType="tgasModel.Store.CHUYEN_TIEN" store:Type="Tables" />
           <EntitySet Name="HANG_HOA" EntityType="tgasModel.Store.HANG_HOA" store:Type="Tables" />
           <EntitySet Name="KHACH_HANG" EntityType="tgasModel.Store.KHACH_HANG" store:Type="Tables" />
           <EntitySet Name="KHO" EntityType="tgasModel.Store.KHO" store:Type="Tables" />
@@ -102,6 +103,16 @@
           <Property Name="NGAY_CHO_VAY" Type="datetime" Nullable="false" />
           <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
           <Property Name="TRANG_THAI" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHUYEN_TIEN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID_TAI_KHOAN" Type="integer" Nullable="false" />
+          <Property Name="TONG_TIEN" Type="integer" Nullable="false" />
+          <Property Name="NGAY_CHUYEN" Type="datetime" Nullable="false" />
+          <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="HANG_HOA">
           <Key>
@@ -271,6 +282,7 @@
           <EntitySet Name="XUAT_HANG" EntityType="tgasModel.XUAT_HANG" />
           <EntitySet Name="BAN_HANG" EntityType="tgasModel.BAN_HANG" />
           <EntitySet Name="VAYs" EntityType="tgasModel.VAY" />
+          <EntitySet Name="CHUYEN_TIEN" EntityType="tgasModel.CHUYEN_TIEN" />
         </EntityContainer>
         <EntityType Name="CHI_KHAC">
           <Key>
@@ -490,6 +502,16 @@
           <Property Type="DateTime" Name="NGAY_VAY" Nullable="false" />
           <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
           <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHUYEN_TIEN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int64" Name="ID_TAI_KHOAN" Nullable="false" />
+          <Property Type="Int64" Name="TONG_TIEN" Nullable="false" />
+          <Property Type="DateTime" Name="NGAY_CHUYEN" Nullable="false" />
+          <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -736,6 +758,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CHUYEN_TIEN">
+            <EntityTypeMapping TypeName="tgasModel.CHUYEN_TIEN">
+              <MappingFragment StoreEntitySet="CHUYEN_TIEN">
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="NGAY_CHUYEN" ColumnName="NGAY_CHUYEN" />
+                <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
+                <ScalarProperty Name="ID_TAI_KHOAN" ColumnName="ID_TAI_KHOAN" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -777,6 +810,7 @@
         <EntityTypeShape EntityType="tgasModel.XUAT_HANG" Width="1.5" PointX="11.375" PointY="3.75" Height="3.3263964843750031" />
         <EntityTypeShape EntityType="tgasModel.BAN_HANG" Width="1.5" PointX="11.375" PointY="12.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="tgasModel.VAY" Width="1.5" PointX="13.375" PointY="0.75" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="tgasModel.CHUYEN_TIEN" Width="1.5" PointX="0.75" PointY="13.75" Height="1.9802864583333282" />
       </Diagram>
     </Diagrams>
   </Designer>

@@ -7,6 +7,7 @@
     <EntitySet Name="CHI_TIET_THU_NO" EntityType="tgasModel.Store.CHI_TIET_THU_NO" store:Type="Tables" />
     <EntitySet Name="CHI_TIEU_DUNG_NOI_BO" EntityType="tgasModel.Store.CHI_TIEU_DUNG_NOI_BO" store:Type="Tables" />
     <EntitySet Name="CHO_VAY" EntityType="tgasModel.Store.CHO_VAY" store:Type="Tables" />
+    <EntitySet Name="CHUYEN_TIEN" EntityType="tgasModel.Store.CHUYEN_TIEN" store:Type="Tables" />
     <EntitySet Name="HANG_HOA" EntityType="tgasModel.Store.HANG_HOA" store:Type="Tables" />
     <EntitySet Name="KHACH_HANG" EntityType="tgasModel.Store.KHACH_HANG" store:Type="Tables" />
     <EntitySet Name="KHO" EntityType="tgasModel.Store.KHO" store:Type="Tables" />
@@ -97,6 +98,16 @@
     <Property Name="NGAY_CHO_VAY" Type="datetime" Nullable="false" />
     <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
     <Property Name="TRANG_THAI" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CHUYEN_TIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TAI_KHOAN" Type="integer" Nullable="false" />
+    <Property Name="TONG_TIEN" Type="integer" Nullable="false" />
+    <Property Name="NGAY_CHUYEN" Type="datetime" Nullable="false" />
+    <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="HANG_HOA">
     <Key>

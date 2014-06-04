@@ -200,5 +200,11 @@ namespace T_Manager
             REPORT.FCongSoHangNgay f = new REPORT.FCongSoHangNgay();
             f.ShowDialog();
         }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            FChuyenTien f = new FChuyenTien();
+            f.ShowDialog();
+        }
     }
 }
