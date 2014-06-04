@@ -1,6 +1,6 @@
 ﻿namespace T_Manager.REPORT
 {
-    partial class FChiTietNoNCC
+    partial class FChiTietThanhToanNCC
     {
         /// <summary>
         /// Required designer variable.
@@ -53,10 +53,10 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(789, 142);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.Size = new System.Drawing.Size(791, 151);
+            this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "XEM NỢ NHÀ CUNG CẤP TỪ NGÀY ĐẾN NGÀY";
+            this.groupBox1.Text = "CHI TIẾT THANH TOÁN CHO NHÀ CUNG CẤP";
             // 
             // label3
             // 
@@ -82,7 +82,7 @@
             // 
             this.dateTimePickerFROM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerFROM.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFROM.Location = new System.Drawing.Point(140, 70);
+            this.dateTimePickerFROM.Location = new System.Drawing.Point(140, 69);
             this.dateTimePickerFROM.Name = "dateTimePickerFROM";
             this.dateTimePickerFROM.Size = new System.Drawing.Size(137, 26);
             this.dateTimePickerFROM.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 107);
+            this.label2.Location = new System.Drawing.Point(4, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 8;
@@ -101,7 +101,7 @@
             // 
             this.dateTimePickerTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerTO.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerTO.Location = new System.Drawing.Point(140, 102);
+            this.dateTimePickerTO.Location = new System.Drawing.Point(140, 112);
             this.dateTimePickerTO.Name = "dateTimePickerTO";
             this.dateTimePickerTO.Size = new System.Drawing.Size(137, 26);
             this.dateTimePickerTO.TabIndex = 5;
@@ -110,7 +110,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 75);
+            this.label1.Location = new System.Drawing.Point(4, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 7;
@@ -119,9 +119,9 @@
             // buttonVIEW
             // 
             this.buttonVIEW.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVIEW.Location = new System.Drawing.Point(283, 75);
+            this.buttonVIEW.Location = new System.Drawing.Point(283, 69);
             this.buttonVIEW.Name = "buttonVIEW";
-            this.buttonVIEW.Size = new System.Drawing.Size(224, 48);
+            this.buttonVIEW.Size = new System.Drawing.Size(218, 68);
             this.buttonVIEW.TabIndex = 6;
             this.buttonVIEW.Text = "Xem";
             this.buttonVIEW.UseVisualStyleBackColor = true;
@@ -133,26 +133,27 @@
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 142);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 151);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(789, 327);
-            this.crystalReportViewer1.TabIndex = 11;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(791, 317);
+            this.crystalReportViewer1.TabIndex = 12;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // FChiTietNoNCC
+            // FChiTietThanhToanNCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 469);
+            this.ClientSize = new System.Drawing.Size(791, 468);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FChiTietNoNCC";
-            this.Text = "CHI TIẾT NỢ NHÀ CUNG CẤP";
+            this.Name = "FChiTietThanhToanNCC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "CHI TIẾT THANH TOÁN NHÀ CUNG CẤP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FChiTietNoNCC_Load);
+            this.Load += new System.EventHandler(this.FChiTietThanhToanNCC_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -162,13 +163,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBoxNCC;
         private System.Windows.Forms.DateTimePicker dateTimePickerFROM;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePickerTO;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonVIEW;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBoxNCC;
     }
 }

@@ -182,5 +182,11 @@ namespace T_Manager
             REPORT.FLaiLoTungKho f = new REPORT.FLaiLoTungKho();
             f.ShowDialog();
         }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            REPORT.FChiTietThanhToanNCC f = new REPORT.FChiTietThanhToanNCC();
+            f.ShowDialog();
+        }
     }
 }

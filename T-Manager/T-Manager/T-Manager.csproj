@@ -227,6 +227,12 @@
       <DependentUpon>CrystalReportCHITIETNOVAY.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REPORT\CrystalReportCHITIETTHANHTOANNCC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportCHITIETTHANHTOANNCC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\CrystalReportCHITUNGKHO.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -280,6 +286,12 @@
     </Compile>
     <Compile Include="REPORT\FChiTietNoVay.Designer.cs">
       <DependentUpon>FChiTietNoVay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT\FChiTietThanhToanNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\FChiTietThanhToanNCC.Designer.cs">
+      <DependentUpon>FChiTietThanhToanNCC.cs</DependentUpon>
     </Compile>
     <Compile Include="REPORT\FChiTungKho.cs">
       <SubType>Form</SubType>
@@ -396,6 +408,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportCHITIETNOVAY.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\CrystalReportCHITIETTHANHTOANNCC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportCHITIETTHANHTOANNCC.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\CrystalReportCHITUNGKHO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportCHITUNGKHO.cs</LastGenOutput>
@@ -429,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FChiTietNoVay.resx">
       <DependentUpon>FChiTietNoVay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\FChiTietThanhToanNCC.resx">
+      <DependentUpon>FChiTietThanhToanNCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FChiTungKho.resx">
       <DependentUpon>FChiTungKho.cs</DependentUpon>

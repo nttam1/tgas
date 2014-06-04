@@ -54,12 +54,13 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -273,6 +274,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button29);
             this.groupBox3.Controls.Add(this.button19);
             this.groupBox3.Controls.Add(this.button18);
             this.groupBox3.Controls.Add(this.button17);
@@ -349,6 +351,16 @@
             this.button25.UseVisualStyleBackColor = true;
             this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(194, 77);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(171, 23);
+            this.button24.TabIndex = 11;
+            this.button24.Text = "LÃI LỖ TỪNG KHO";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
             // button22
             // 
             this.button22.Location = new System.Drawing.Point(6, 164);
@@ -368,16 +380,6 @@
             this.button23.Text = "CHI TỪNG KHO";
             this.button23.UseVisualStyleBackColor = true;
             this.button23.Click += new System.EventHandler(this.button23_Click);
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(194, 77);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(171, 23);
-            this.button24.TabIndex = 11;
-            this.button24.Text = "LÃI LỖ TỪNG KHO";
-            this.button24.UseVisualStyleBackColor = true;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // button26
             // 
@@ -405,6 +407,16 @@
             this.button28.TabIndex = 11;
             this.button28.Text = "CHUYỂN TIỀN VÀO TÀI KHOẢN";
             this.button28.UseVisualStyleBackColor = true;
+            // 
+            // button29
+            // 
+            this.button29.Location = new System.Drawing.Point(194, 115);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(171, 23);
+            this.button29.TabIndex = 12;
+            this.button29.Text = "CHI TIẾT THANH TOÁN NCC";
+            this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
             // 
             // FMain
             // 
@@ -464,6 +476,7 @@
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button button29;
     }
 }
 
