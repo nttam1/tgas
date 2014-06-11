@@ -37,7 +37,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button21 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -61,6 +60,7 @@
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -148,7 +148,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button21);
             this.groupBox1.Controls.Add(this.buttonNhapHang);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
@@ -163,16 +162,6 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "NHẬP CHƯNG TỪ";
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(126, 179);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(145, 48);
-            this.button21.TabIndex = 8;
-            this.button21.Text = "BÁN HÀNG";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // groupBox2
             // 
@@ -415,19 +404,30 @@
             // 
             // button28
             // 
-            this.button28.Location = new System.Drawing.Point(410, 284);
+            this.button28.Location = new System.Drawing.Point(465, 284);
             this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(266, 23);
+            this.button28.Size = new System.Drawing.Size(186, 23);
             this.button28.TabIndex = 11;
             this.button28.Text = "CHUYỂN TIỀN VÀO TÀI KHOẢN";
             this.button28.UseVisualStyleBackColor = true;
             this.button28.Click += new System.EventHandler(this.button28_Click);
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(465, 327);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(186, 23);
+            this.button21.TabIndex = 12;
+            this.button21.Text = "LỊCH SỬ CHUYỂN TIỀN";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click_1);
             // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 513);
+            this.Controls.Add(this.button21);
             this.Controls.Add(this.button28);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -471,7 +471,6 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button22;
@@ -480,6 +479,7 @@
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Button button21;
     }
 }
 

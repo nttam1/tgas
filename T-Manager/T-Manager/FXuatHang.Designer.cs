@@ -45,14 +45,6 @@
             this.comboBoxKHACH_HANG = new System.Windows.Forms.ComboBox();
             this.comboBoxKho = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnKHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnKHACHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnHANGHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDONGIABAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSOLUON = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDUATRUOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLAISUAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNGAYBAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxDUATRUOC = new System.Windows.Forms.TextBox();
@@ -61,6 +53,7 @@
             this.labelDVT = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.checkBoxBANMAT = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,9 +73,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(8, 264);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(194, 25);
+            this.label8.Size = new System.Drawing.Size(261, 25);
             this.label8.TabIndex = 33;
-            this.label8.Text = "Chứng từ vừa nhập";
+            this.label8.Text = "Chứng từ nhập trong ngày";
             // 
             // label5
             // 
@@ -173,6 +166,7 @@
             this.dateTimePickerNGAYBAN.Name = "dateTimePickerNGAYBAN";
             this.dateTimePickerNGAYBAN.Size = new System.Drawing.Size(206, 20);
             this.dateTimePickerNGAYBAN.TabIndex = 24;
+            this.dateTimePickerNGAYBAN.ValueChanged += new System.EventHandler(this.dateTimePickerNGAYBAN_ValueChanged);
             // 
             // textBoxDONGIA
             // 
@@ -198,8 +192,9 @@
             this.comboBoxKHACH_HANG.FormattingEnabled = true;
             this.comboBoxKHACH_HANG.Location = new System.Drawing.Point(236, 108);
             this.comboBoxKHACH_HANG.Name = "comboBoxKHACH_HANG";
-            this.comboBoxKHACH_HANG.Size = new System.Drawing.Size(206, 21);
+            this.comboBoxKHACH_HANG.Size = new System.Drawing.Size(128, 21);
             this.comboBoxKHACH_HANG.TabIndex = 20;
+            this.comboBoxKHACH_HANG.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHACH_HANG_SelectedIndexChanged);
             // 
             // comboBoxKho
             // 
@@ -209,63 +204,15 @@
             this.comboBoxKho.Name = "comboBoxKho";
             this.comboBoxKho.Size = new System.Drawing.Size(206, 21);
             this.comboBoxKho.TabIndex = 19;
+            this.comboBoxKho.SelectedIndexChanged += new System.EventHandler(this.comboBoxKho_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnKHO,
-            this.ColumnKHACHANG,
-            this.ColumnHANGHOA,
-            this.ColumnDONGIABAN,
-            this.ColumnSOLUON,
-            this.ColumnDUATRUOC,
-            this.ColumnLAISUAT,
-            this.ColumnNGAYBAN});
             this.dataGridView1.Location = new System.Drawing.Point(12, 292);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(854, 181);
             this.dataGridView1.TabIndex = 34;
-            // 
-            // ColumnKHO
-            // 
-            this.ColumnKHO.HeaderText = "KHO";
-            this.ColumnKHO.Name = "ColumnKHO";
-            // 
-            // ColumnKHACHANG
-            // 
-            this.ColumnKHACHANG.HeaderText = "KHÁCH HÀNG";
-            this.ColumnKHACHANG.Name = "ColumnKHACHANG";
-            // 
-            // ColumnHANGHOA
-            // 
-            this.ColumnHANGHOA.HeaderText = "HÀNG HÓA";
-            this.ColumnHANGHOA.Name = "ColumnHANGHOA";
-            // 
-            // ColumnDONGIABAN
-            // 
-            this.ColumnDONGIABAN.HeaderText = "ĐƠN GIÁ BÁN";
-            this.ColumnDONGIABAN.Name = "ColumnDONGIABAN";
-            // 
-            // ColumnSOLUON
-            // 
-            this.ColumnSOLUON.HeaderText = "SỐ LƯỢNG";
-            this.ColumnSOLUON.Name = "ColumnSOLUON";
-            // 
-            // ColumnDUATRUOC
-            // 
-            this.ColumnDUATRUOC.HeaderText = "ĐƯA TRƯỚC";
-            this.ColumnDUATRUOC.Name = "ColumnDUATRUOC";
-            // 
-            // ColumnLAISUAT
-            // 
-            this.ColumnLAISUAT.HeaderText = "LÃI SUẤT";
-            this.ColumnLAISUAT.Name = "ColumnLAISUAT";
-            // 
-            // ColumnNGAYBAN
-            // 
-            this.ColumnNGAYBAN.HeaderText = "NGÀY BÁN";
-            this.ColumnNGAYBAN.Name = "ColumnNGAYBAN";
             // 
             // label9
             // 
@@ -339,11 +286,23 @@
             this.label14.TabIndex = 42;
             this.label14.Text = "%";
             // 
+            // checkBoxBANMAT
+            // 
+            this.checkBoxBANMAT.AutoSize = true;
+            this.checkBoxBANMAT.Location = new System.Drawing.Point(370, 111);
+            this.checkBoxBANMAT.Name = "checkBoxBANMAT";
+            this.checkBoxBANMAT.Size = new System.Drawing.Size(74, 17);
+            this.checkBoxBANMAT.TabIndex = 43;
+            this.checkBoxBANMAT.Text = "BÁN MẶT";
+            this.checkBoxBANMAT.UseVisualStyleBackColor = true;
+            this.checkBoxBANMAT.CheckedChanged += new System.EventHandler(this.checkBoxBANMAT_CheckedChanged);
+            // 
             // FXuatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 485);
+            this.Controls.Add(this.checkBoxBANMAT);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.labelDVT);
@@ -409,13 +368,6 @@
         private System.Windows.Forms.Label labelDVT;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnKHO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnKHACHANG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHANGHOA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDONGIABAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSOLUON;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDUATRUOC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLAISUAT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNGAYBAN;
+        private System.Windows.Forms.CheckBox checkBoxBANMAT;
     }
 }

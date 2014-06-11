@@ -206,5 +206,11 @@ namespace T_Manager
             FChuyenTien f = new FChuyenTien();
             f.ShowDialog();
         }
+
+        private void button21_Click_1(object sender, EventArgs e)
+        {
+            REPORT.FChiTietChuyenTien f = new REPORT.FChiTietChuyenTien();
+            f.ShowDialog();
+        }
     }
 }

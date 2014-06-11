@@ -40,6 +40,8 @@
             this.dataGridViewCHOVAY = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePickerCHOVAY = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCHOVAY)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             this.comboBoxKHO.FormattingEnabled = true;
             this.comboBoxKHO.Location = new System.Drawing.Point(293, 12);
             this.comboBoxKHO.Name = "comboBoxKHO";
-            this.comboBoxKHO.Size = new System.Drawing.Size(144, 37);
+            this.comboBoxKHO.Size = new System.Drawing.Size(353, 37);
             this.comboBoxKHO.TabIndex = 0;
             this.comboBoxKHO.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHO_SelectedIndexChanged);
             // 
@@ -123,9 +125,9 @@
             // 
             // buttonADD
             // 
-            this.buttonADD.Location = new System.Drawing.Point(568, 103);
+            this.buttonADD.Location = new System.Drawing.Point(693, 78);
             this.buttonADD.Name = "buttonADD";
-            this.buttonADD.Size = new System.Drawing.Size(75, 23);
+            this.buttonADD.Size = new System.Drawing.Size(75, 48);
             this.buttonADD.TabIndex = 8;
             this.buttonADD.Text = "NHẬP";
             this.buttonADD.UseVisualStyleBackColor = true;
@@ -136,7 +138,7 @@
             this.dataGridViewCHOVAY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCHOVAY.Location = new System.Drawing.Point(12, 153);
             this.dataGridViewCHOVAY.Name = "dataGridViewCHOVAY";
-            this.dataGridViewCHOVAY.Size = new System.Drawing.Size(643, 277);
+            this.dataGridViewCHOVAY.Size = new System.Drawing.Size(768, 277);
             this.dataGridViewCHOVAY.TabIndex = 9;
             // 
             // label5
@@ -152,17 +154,37 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(516, 108);
+            this.label6.Location = new System.Drawing.Point(512, 108);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "%";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label7.Location = new System.Drawing.Point(540, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "NGÀY CHO VAY";
+            // 
+            // dateTimePickerCHOVAY
+            // 
+            this.dateTimePickerCHOVAY.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerCHOVAY.Location = new System.Drawing.Point(552, 105);
+            this.dateTimePickerCHOVAY.Name = "dateTimePickerCHOVAY";
+            this.dateTimePickerCHOVAY.Size = new System.Drawing.Size(121, 20);
+            this.dateTimePickerCHOVAY.TabIndex = 13;
+            // 
             // FChoVay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 442);
+            this.ClientSize = new System.Drawing.Size(795, 442);
+            this.Controls.Add(this.dateTimePickerCHOVAY);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridViewCHOVAY);
@@ -202,5 +224,7 @@
         private System.Windows.Forms.DataGridView dataGridViewCHOVAY;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dateTimePickerCHOVAY;
     }
 }

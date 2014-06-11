@@ -13,6 +13,29 @@ namespace T_Manager.Modal
         public const int KHO_TK_NGANHANG = 1;
         public const int KHO_QUY = 2;
 
+        /// <summary>
+        /// SỐ LƯỢNG HÀNG HÓA CÒN LẠI TRONG KHO
+        /// </summary>
+        /// <param name="MAKHO"></param>
+        /// <param name="MAHH"></param>
+        /// <returns></returns>
+        public static long Ton(long MAKHO, long MAHH)
+        {
+            long value = 0;
+            try
+            {
+                value = (from ton in DataInstance.Instance().DBContext().NHAP_HANG
+                         where ton.MAKHO == MAKHO
+                         where ton.MAHH == MAHH
+                         select ton.SL_CON_LAI).Sum();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return value;
+        }
+
         public static IQueryable<T_Manager.KHO> Get(int type)
         {
             return DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE == type);

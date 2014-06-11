@@ -19,32 +19,24 @@ namespace T_Manager.REPORT
 
         private void FCongSoHangNgay_Load(object sender, EventArgs e)
         {
-
+            comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
+            comboBoxKHO.DisplayMember = "NAME";
+            comboBoxKHO.ValueMember = "ID";
         }
 
         private void buttonVIEW_Click(object sender, EventArgs e)
         {
             var _today = dateTimePickerFROM.Value.Date;
+            long _kho = long.Parse(comboBoxKHO.SelectedValue.ToString());
             BindingSource bs = new BindingSource();
             CrystalReportCONGOSHANGNGAT rpt = new CrystalReportCONGOSHANGNGAT();
             List<CCongSoHangNgay> list = new List<CCongSoHangNgay>();
             var hh = (from _hh in DataInstance.Instance().DBContext().HANG_HOA select _hh);
             foreach (HANG_HOA h in hh)
             {
-                foreach (BAN_HANG bh in (from _bh in DataInstance.Instance().DBContext().BAN_HANG
-                                         where _bh.MAHH == h.ID
-                                         where _bh.NGAY_BAN == _today
-                                         select _bh))
-                {
-                    CCongSoHangNgay c = new CCongSoHangNgay();
-                    c.HANGHOA = h.NAME;
-                    c.SOLUONG = bh.SO_LUONG;
-                    c.DONGIA = bh.DON_GIA_BAN;
-                    c.THANHTIEN = bh.SO_LUONG * bh.DON_GIA_BAN;
-                    list.Add(c);
-                }
                 foreach (XUAT_HANG bh in (from _bh in DataInstance.Instance().DBContext().XUAT_HANG
                                           where _bh.MAHH == h.ID
+                                          where _bh.MAKHO == _kho
                                           where _bh.NGAY_XUAT == _today
                                           select _bh))
                 {
@@ -87,6 +79,7 @@ namespace T_Manager.REPORT
             {
                 thuno = (from tn in DataInstance.Instance().DBContext().THU_NO
                          where tn.NGAY_TRA == _today
+                         where tn.MAKHO == _kho
                          where tn.LOAI_NO == MThuNo.NO_VAY
                          select tn.TIEN_GOC + tn.TIEN_LAI
                                                 ).Sum();
@@ -99,6 +92,7 @@ namespace T_Manager.REPORT
             {
                 thukhac = (from tn in DataInstance.Instance().DBContext().THU_NO
                            where tn.NGAY_TRA == _today
+                           where tn.MAKHO == _kho
                            where tn.LOAI_NO == MThuNo.NO_KHAC
                            select tn.TIEN_GOC + tn.TIEN_LAI
                                                 ).Sum();
@@ -110,6 +104,7 @@ namespace T_Manager.REPORT
             try
             {
                 chiluong = (from tn in DataInstance.Instance().DBContext().CHI_LUONG
+                            where tn.MAKHO == _kho
                             where tn.NGAY_CHI == _today
                             select tn.TONG_TIEN
                                                 ).Sum();
@@ -121,6 +116,7 @@ namespace T_Manager.REPORT
             try
             {
                 chikhac = (from tn in DataInstance.Instance().DBContext().CHI_KHAC
+                           where tn.MAKHO == _kho
                            where tn.NGAY_CHI == _today
                            select tn.TONG_TIEN
                                                 ).Sum();
@@ -132,6 +128,7 @@ namespace T_Manager.REPORT
             try
             {
                 chincc = (from tn in DataInstance.Instance().DBContext().TRA_NO_NCC
+                          where tn.MAKHO == _kho
                           where tn.NGAY_TRA == _today
                           select tn.TONG_TIEN
                                                 ).Sum();
@@ -144,6 +141,7 @@ namespace T_Manager.REPORT
             {
                 no = (from tn in DataInstance.Instance().DBContext().VAYs
                       where tn.NGAY_VAY == _today
+                      where tn.MAKHO == _kho
                       select tn.TONG_TIEN
                                                 ).Sum();
             }

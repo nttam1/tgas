@@ -263,6 +263,12 @@
       <DependentUpon>CrystalReportLAILOTUNGKHO.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REPORT\CrystalReportLICHSUCHUYENTIEN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportLICHSUCHUYENTIEN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\CrystalReportNHAPXUATTUNGKHO.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -292,6 +298,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReportXEMKHOQUY.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORT\FChiTietChuyenTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\FChiTietChuyenTien.Designer.cs">
+      <DependentUpon>FChiTietChuyenTien.cs</DependentUpon>
     </Compile>
     <Compile Include="REPORT\FChiTietNoNCC.cs">
       <SubType>Form</SubType>
@@ -461,6 +473,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportLAILOTUNGKHO.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\CrystalReportLICHSUCHUYENTIEN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportLICHSUCHUYENTIEN.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\CrystalReportNHAPXUATTUNGKHO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportNHAPXUATTUNGKHO.cs</LastGenOutput>
@@ -480,6 +496,9 @@
     <EmbeddedResource Include="REPORT\CrystalReportXEMKHOQUY.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportXEMKHOQUY.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\FChiTietChuyenTien.resx">
+      <DependentUpon>FChiTietChuyenTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FChiTietNoNCC.resx">
       <DependentUpon>FChiTietNoNCC.cs</DependentUpon>

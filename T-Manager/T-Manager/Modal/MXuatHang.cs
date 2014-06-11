@@ -10,6 +10,7 @@ namespace T_Manager.Modal
     {
         public const int CHUA_TRA_XONG = 0;
         public const int DA_TRA_XONG = 1;
+        public const int MAKH_XUAT_MAT = -1;
         /// <summary>
         /// Trừ số lượng xuất hàng vào số lượng còn lại của nhập hàng
         /// </summary>

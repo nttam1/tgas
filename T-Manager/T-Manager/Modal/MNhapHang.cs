@@ -7,6 +7,6 @@ namespace T_Manager.Modal
 {
     class MNhapHang
     {
-        
+        public const int MANCC_TONKHO = -1;
     }
 }

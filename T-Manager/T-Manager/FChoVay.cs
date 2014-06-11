@@ -19,10 +19,10 @@ namespace T_Manager
 
         private void FChoVay_Load(object sender, EventArgs e)
         {
-            comboBoxKHO.DataSource = DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE == 0);
+            comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
-            comboBoxKHACHHANG.DataSource = DataInstance.Instance().DBContext().KHACH_HANG;
+            comboBoxKHACHHANG.DataSource = DataInstance.Instance().DBContext().KHACH_HANG.OrderBy(u => u.NAME);
             comboBoxKHACHHANG.DisplayMember = "NAME";
             comboBoxKHACHHANG.ValueMember = "ID";
             comboBoxKHACHHANG_SelectedIndexChanged(sender, e);
@@ -44,8 +44,6 @@ namespace T_Manager
                 dataGridViewCHOVAY.Columns[2].Visible = false;
                 dataGridViewCHOVAY.Columns[6].Visible = false;
                 dataGridViewCHOVAY.Columns[7].Visible = false;
-                dataGridViewCHOVAY.Columns[8].Visible = false;
-                dataGridViewCHOVAY.Columns[9].Visible = false;
                 dataGridViewCHOVAY.Columns[3].HeaderText = "Tổng tiền";
                 dataGridViewCHOVAY.Columns[4].HeaderText = "Lãi suất";
                 dataGridViewCHOVAY.Columns[5].HeaderText = "Ngày cho vay";
@@ -94,7 +92,7 @@ namespace T_Manager
                     MA_NGUON_NO = kh,
                     TONG_TIEN = tien,
                     LAI_SUAT = lai,
-                    NGAY_CHO_VAY = DateTime.Now.Date,
+                    NGAY_CHO_VAY = dateTimePickerCHOVAY.Value.Date,
                     CREATED_AT = DateTime.Now,         
                 });
                 bs.EndEdit();

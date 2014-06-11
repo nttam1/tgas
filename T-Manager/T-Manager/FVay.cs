@@ -20,10 +20,14 @@ namespace T_Manager
         private BindingSource bs = new BindingSource();
         private void FVay_Load(object sender, EventArgs e)
         {
+            comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
+            comboBoxKHO.DisplayMember = "NAME";
+            comboBoxKHO.ValueMember = "ID";
+
             comboBoxNGUONVAY.DataSource = DataInstance.Instance().DBContext().NGUON_VAY;
             comboBoxNGUONVAY.DisplayMember = "NAME";
             comboBoxNGUONVAY.ValueMember = "ID";
-
+            dataGridView1.DataSource = bs;
             comboBoxNGUONVAY_SelectedIndexChanged(sender, e);
 
             foreach (Control c in this.Controls)
@@ -47,10 +51,12 @@ namespace T_Manager
             var nguon = Int32.Parse(comboBoxNGUONVAY.SelectedValue.ToString());
             var tien = Int32.Parse(textBoxTONGTIEN.Text);
             var laisuat = double.Parse(textBoxLAISUAT.Text);
+            long kho = long.Parse(comboBoxKHO.SelectedValue.ToString());
             var ngayvay = dateTimePicker1.Value.Date;
             bs.Add(new VAY()
             {
                 MA_NGUON_VAY = nguon,
+                MAKHO = kho,
                 TONG_TIEN = tien,
                 LAI_SUAT = laisuat / 100,
                 NGAY_VAY = ngayvay,
@@ -65,19 +71,27 @@ namespace T_Manager
 
         private void comboBoxNGUONVAY_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBoxKHO_SelectedIndexChanged(sender, e);
+        }
+
+        private void comboBoxKHO_SelectedIndexChanged(object sender, EventArgs e)
+        {
             try
             {
                 var nguon = Int32.Parse(comboBoxNGUONVAY.SelectedValue.ToString());
-                bs.DataSource = DataInstance.Instance().DBContext().VAYs.Where(u => u.MA_NGUON_VAY == nguon);
-                dataGridView1.DataSource = bs;
+                long kho = long.Parse(comboBoxKHO.SelectedValue.ToString());
+                bs.DataSource = DataInstance.Instance().DBContext().VAYs.Where(u => u.MA_NGUON_VAY == nguon && u.MAKHO == kho);
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].Visible = false;
                 dataGridView1.Columns[5].Visible = false;
+                dataGridView1.Columns[6].Visible = false;
+                dataGridView1.Columns[7].Visible = false;
+                dataGridView1.Columns[8].Visible = false;
                 dataGridView1.Columns[2].HeaderText = "Tổng tiền";
                 dataGridView1.Columns[3].HeaderText = "Lãi suất";
                 dataGridView1.Columns[4].HeaderText = "Ngày vay";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
             }
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.Objects;
+using T_Manager.Modal;
 
 namespace T_Manager
 {
@@ -14,6 +15,7 @@ namespace T_Manager
     {
         private tgasEntities dbContext = DataInstance.Instance().DBContext();
         DataTable table = new DataTable();
+        BindingSource bs = new BindingSource();
 
         public FNhapHang()
         {
@@ -22,56 +24,19 @@ namespace T_Manager
 
         private void NhapHang_Load(object sender, EventArgs e)
         {
-            comboBoxKho.DataSource = T_Manager.Modal.MKho.Get(0);//dbContext.KHOes.Where(u => u.TYPE == 0);
+            comboBoxKho.DataSource = T_Manager.Modal.MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);//dbContext.KHOes.Where(u => u.TYPE == 0);
             comboBoxKho.DisplayMember = "NAME";
             comboBoxKho.ValueMember = "ID";
 
-            comboBoxNCC.DataSource = T_Manager.Modal.MNcc.Get();//dbContext.NHA_CUNG_CAP;
+            comboBoxNCC.DataSource = T_Manager.Modal.MNcc.Get().OrderBy(u => u.NAME);//dbContext.NHA_CUNG_CAP;
             comboBoxNCC.DisplayMember = "NAME";
             comboBoxNCC.ValueMember = "ID";
 
-            comboBoxHANGHOA.DataSource = dbContext.HANG_HOA;
+            comboBoxHANGHOA.DataSource = dbContext.HANG_HOA.OrderBy(u => u.NAME);
             comboBoxHANGHOA.DisplayMember = "NAME";
             comboBoxHANGHOA.ValueMember = "ID";
-
-            dataGridView1.AutoGenerateColumns = false;
-
-            DataGridViewTextBoxColumn col1 = new DataGridViewTextBoxColumn();
-            col1.DataPropertyName = "KHO";
-            col1.HeaderText = "Kho";
-            col1.Name = "column_KHO";
-            dataGridView1.Columns.Add(col1);
-
-            DataGridViewTextBoxColumn col2 = new DataGridViewTextBoxColumn();
-            col2.DataPropertyName = "NCC";
-            col2.HeaderText = "Nhà Cung Cấp";
-            col2.Name = "column_NCC";
-            dataGridView1.Columns.Add(col2);
-
-            DataGridViewTextBoxColumn col3 = new DataGridViewTextBoxColumn();
-            col3.DataPropertyName = "HANG_HOA";
-            col3.HeaderText = "Hàng Hóa";
-            col3.Name = "column_HANG_HOA";
-            dataGridView1.Columns.Add(col3);
-
-                            DataGridViewTextBoxColumn col4 = new DataGridViewTextBoxColumn();
-            col4.DataPropertyName = "DG_NHAP";
-            col4.HeaderText = "Đơn Giá Nhập";
-            col4.Name = "column_DG_NHAP";
-            dataGridView1.Columns.Add(col4);
-
-                        DataGridViewTextBoxColumn col5 = new DataGridViewTextBoxColumn();
-            col5.DataPropertyName = "SO_LUONG";
-            col5.HeaderText = "Số lượng";
-            col5.Name = "column_SO_LUONG";
-            dataGridView1.Columns.Add(col5);
-
-                        DataGridViewTextBoxColumn col6 = new DataGridViewTextBoxColumn();
-            col6.DataPropertyName = "NGAY_NHAP";
-            col6.HeaderText = "Ngày Nhập";
-            col6.Name = "column_NGAY_NHAP";
-            dataGridView1.Columns.Add(col6);
-
+            dataGridView1.DataSource = bs;
+            comboBoxHANGHOA_SelectedIndexChanged(sender, e);
         }
 
         private void dataGridViewNhapHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -104,13 +69,15 @@ namespace T_Manager
                 if (ele.SO_LUONG == 0 || ele.DON_GIA_MUA == 0)
                 {
                     MessageBox.Show("Chưa nhập số lượng hoặc đơn giá");
+                    return;
                 }
                 else
                 {
-                    dbContext.AddToNHAP_HANG(ele);
+                    bs.Add(ele);
+                    bs.EndEdit();
+                    bs.ResetBindings(false);
                     dbContext.SaveChanges();
-                    textBoxDONGIA.SelectAll();
-                    dataGridView1.Rows.Add(comboBoxKho.Text, comboBoxNCC.Text, comboBoxHANGHOA.Text, ele.DON_GIA_MUA, ele.SO_LUONG, ele.NGAY_NHAP.ToShortDateString());
+                    textBoxDONGIA.Select();
                 }
             }
             catch (Exception ex)
@@ -121,7 +88,7 @@ namespace T_Manager
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            comboBoxHANGHOA_SelectedIndexChanged(sender, e);
         }
 
         private void buttonCLEAR_Click(object sender, EventArgs e)
@@ -147,6 +114,40 @@ namespace T_Manager
         private void textBoxDONGIA_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = (!char.IsDigit(e.KeyChar)) && (!char.IsControl(e.KeyChar));
+        }
+
+        private void comboBoxHANGHOA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime now = dateTimePickerNGAYNHAP.Value.Date;
+                long kho = long.Parse(comboBoxKho.SelectedValue.ToString());
+                long ncc = long.Parse(comboBoxNCC.SelectedValue.ToString());
+                long hh = long.Parse(comboBoxHANGHOA.SelectedValue.ToString());
+                bs.DataSource = dbContext.NHAP_HANG.Where(u => u.NGAY_NHAP == now && u.MAKHO == kho && u.MANCC == ncc && u.MAHH == hh);
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[1].Visible = false;
+                dataGridView1.Columns[2].Visible = false;
+                dataGridView1.Columns[3].Visible = false;
+                dataGridView1.Columns[8].Visible = false;
+                dataGridView1.Columns[4].HeaderText = "SỐ LƯỢNG";
+                dataGridView1.Columns[5].Visible = false;
+                dataGridView1.Columns[6].HeaderText = "ĐƠN GIÁ";
+                dataGridView1.Columns[7].Visible = false;
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void comboBoxNCC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBoxHANGHOA_SelectedIndexChanged(sender, e);
+        }
+
+        private void comboBoxKho_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBoxHANGHOA_SelectedIndexChanged(sender, e);
         }
     }
 }

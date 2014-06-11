@@ -369,22 +369,6 @@ namespace T_Manager
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<VAY> VAYs
-        {
-            get
-            {
-                if ((_VAYs == null))
-                {
-                    _VAYs = base.CreateObjectSet<VAY>("VAYs");
-                }
-                return _VAYs;
-            }
-        }
-        private ObjectSet<VAY> _VAYs;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<CHUYEN_TIEN> CHUYEN_TIEN
         {
             get
@@ -397,6 +381,22 @@ namespace T_Manager
             }
         }
         private ObjectSet<CHUYEN_TIEN> _CHUYEN_TIEN;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<VAY> VAYs
+        {
+            get
+            {
+                if ((_VAYs == null))
+                {
+                    _VAYs = base.CreateObjectSet<VAY>("VAYs");
+                }
+                return _VAYs;
+            }
+        }
+        private ObjectSet<VAY> _VAYs;
 
         #endregion
 
@@ -555,19 +555,19 @@ namespace T_Manager
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the VAYs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToVAYs(VAY vAY)
-        {
-            base.AddObject("VAYs", vAY);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the CHUYEN_TIEN EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToCHUYEN_TIEN(CHUYEN_TIEN cHUYEN_TIEN)
         {
             base.AddObject("CHUYEN_TIEN", cHUYEN_TIEN);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the VAYs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToVAYs(VAY vAY)
+        {
+            base.AddObject("VAYs", vAY);
         }
 
         #endregion
@@ -3777,7 +3777,8 @@ namespace T_Manager
         /// <param name="nGAY_VAY">Initial value of the NGAY_VAY property.</param>
         /// <param name="cREATED_AT">Initial value of the CREATED_AT property.</param>
         /// <param name="tRANG_THAI">Initial value of the TRANG_THAI property.</param>
-        public static VAY CreateVAY(global::System.Int64 id, global::System.Int64 mA_NGUON_VAY, global::System.Int64 tONG_TIEN, global::System.Double lAI_SUAT, global::System.Int64 kY_HAN, global::System.DateTime nGAY_VAY, global::System.DateTime cREATED_AT, global::System.Int64 tRANG_THAI)
+        /// <param name="mAKHO">Initial value of the MAKHO property.</param>
+        public static VAY CreateVAY(global::System.Int64 id, global::System.Int64 mA_NGUON_VAY, global::System.Int64 tONG_TIEN, global::System.Double lAI_SUAT, global::System.Int64 kY_HAN, global::System.DateTime nGAY_VAY, global::System.DateTime cREATED_AT, global::System.Int64 tRANG_THAI, global::System.Int64 mAKHO)
         {
             VAY vAY = new VAY();
             vAY.ID = id;
@@ -3788,6 +3789,7 @@ namespace T_Manager
             vAY.NGAY_VAY = nGAY_VAY;
             vAY.CREATED_AT = cREATED_AT;
             vAY.TRANG_THAI = tRANG_THAI;
+            vAY.MAKHO = mAKHO;
             return vAY;
         }
 
@@ -3989,6 +3991,30 @@ namespace T_Manager
         private global::System.Int64 _TRANG_THAI;
         partial void OnTRANG_THAIChanging(global::System.Int64 value);
         partial void OnTRANG_THAIChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 MAKHO
+        {
+            get
+            {
+                return _MAKHO;
+            }
+            set
+            {
+                OnMAKHOChanging(value);
+                ReportPropertyChanging("MAKHO");
+                _MAKHO = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MAKHO");
+                OnMAKHOChanged();
+            }
+        }
+        private global::System.Int64 _MAKHO;
+        partial void OnMAKHOChanging(global::System.Int64 value);
+        partial void OnMAKHOChanged();
 
         #endregion
 

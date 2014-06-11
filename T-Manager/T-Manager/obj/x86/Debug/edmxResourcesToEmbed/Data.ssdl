@@ -226,6 +226,7 @@
     <Property Name="NGAY_VAY" Type="datetime" Nullable="false" />
     <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
     <Property Name="TRANG_THAI" Type="integer" Nullable="false" />
+    <Property Name="MAKHO" Type="integer" Nullable="false" />
   </EntityType>
   <EntityType Name="XE">
     <Key>

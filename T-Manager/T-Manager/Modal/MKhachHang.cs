@@ -16,7 +16,7 @@ namespace T_Manager.Modal
         {
             this.MAKH = MAKH;
             this._MA_FROM = 1;
-            this._MA_TO = (from hh in DataInstance.Instance().DBContext().HANG_HOA select hh.ID).Max();
+            this._MA_TO = (from kho in DataInstance.Instance().DBContext().KHOes select kho.ID).Max();
         }
 
         public MKhachHang(int MAKH, int MAKHO)

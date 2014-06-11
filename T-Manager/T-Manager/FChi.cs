@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using T_Manager.Modal;
 
 namespace T_Manager
 {
@@ -25,19 +26,19 @@ namespace T_Manager
 
         private void FChi_Load(object sender, EventArgs e)
         {
-            comboBoxKHO.DataSource = dbContext.KHOes.Where(u => u.TYPE == 0);
+            comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME) ;
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
 
-            comboBoxNHANVIEN.DataSource = dbContext.NHAN_VIEN;
+            comboBoxNHANVIEN.DataSource = dbContext.NHAN_VIEN.OrderBy(u => u.NAME);
             comboBoxNHANVIEN.DisplayMember = "NAME";
             comboBoxNHANVIEN.ValueMember = "ID";
 
-            comboBoxNBXE.DataSource = dbContext.XEs;
+            comboBoxNBXE.DataSource = dbContext.XEs.OrderBy(u => u.BIEN_SO);
             comboBoxNBXE.DisplayMember = "BIEN_SO";
             comboBoxNBXE.ValueMember = "ID";
 
-            comboBoxNBXANGDAU.DataSource = dbContext.HANG_HOA;
+            comboBoxNBXANGDAU.DataSource = dbContext.HANG_HOA.OrderBy(u => u.NAME);
             comboBoxNBXANGDAU.DisplayMember = "NAME";
             comboBoxNBXANGDAU.ValueMember = "ID";
 
@@ -89,7 +90,7 @@ namespace T_Manager
                         MAKHO = Int32.Parse(comboBoxKHO.SelectedValue.ToString()),
                         MANV = Int32.Parse(comboBoxNHANVIEN.SelectedValue.ToString()),
                         LUONG_THANG = Int32.Parse(dateTimePickerTHANG.Value.Month.ToString()),
-                        NGAY_CHI = now.Date,
+                        NGAY_CHI = dateTimePickerdATE.Value.Date,
                         CREATED_AT = now,
                         TONG_TIEN = Int32.Parse(textBoxTONGTIEN.Text),
                     });
@@ -173,7 +174,7 @@ namespace T_Manager
                     MAHH = hh,
                     SO_LUONG = soluong,
                     DON_GIA_BAN = dongia,
-                    NGAY_CHI = DateTime.Now.Date,
+                    NGAY_CHI = dateTimePickerdATE.Value.Date,
                     CREATED_AT = DateTime.Now
                 });
                 dbContext.SaveChanges();
@@ -223,7 +224,7 @@ namespace T_Manager
                 NOI_DUNG = chikhac,
                 TONG_TIEN = chitien,
                 CREATED_AT = DateTime.Now,
-                NGAY_CHI = DateTime.Now.Date,
+                NGAY_CHI = dateTimePickerdATE.Value.Date,
                 MAKHO = Int32.Parse(comboBoxKHO.SelectedValue.ToString())
             });
             bs_ck.EndEdit();
