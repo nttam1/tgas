@@ -52,6 +52,11 @@ namespace T_Manager.REPORT
             rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
             crystalReportViewer1.ReportSource = rpt;
         }
+
+        private void FTongHopNoVay_Load(object sender, EventArgs e)
+        {
+            dateTimePickerFROM.Value = dateTimePickerTO.Value.AddMonths(-1);
+        }
     }
 
     class CTongHopNoVay

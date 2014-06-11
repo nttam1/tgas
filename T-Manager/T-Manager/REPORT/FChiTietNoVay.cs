@@ -19,7 +19,7 @@ namespace T_Manager.REPORT
 
         private void FChiTietNoVay_Load(object sender, EventArgs e)
         {
-            comboBoxNCC.DataSource = DataInstance.Instance().DBContext().NGUON_VAY;
+            comboBoxNCC.DataSource = DataInstance.Instance().DBContext().NGUON_VAY.OrderBy(u => u.NAME); ;
             comboBoxNCC.ValueMember = "ID";
             comboBoxNCC.DisplayMember = "NAME";
 

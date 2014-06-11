@@ -19,7 +19,7 @@ namespace T_Manager.REPORT
         private void FChiTietThanhToanNCC_Load(object sender, EventArgs e)
         {
 
-            comboBoxNCC.DataSource = T_Manager.Modal.MNcc.Get();
+            comboBoxNCC.DataSource = T_Manager.Modal.MNcc.Get().OrderBy(u => u.NAME);
             comboBoxNCC.DisplayMember = "NAME";
             comboBoxNCC.ValueMember = "ID";
 

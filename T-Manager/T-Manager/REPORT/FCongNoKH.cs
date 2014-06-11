@@ -25,7 +25,7 @@ namespace T_Manager.REPORT
 
         private void FCongNoKH_Load(object sender, EventArgs e)
         {
-            comboBox1.DataSource = DataInstance.Instance().DBContext().KHACH_HANG;
+            comboBox1.DataSource = DataInstance.Instance().DBContext().KHACH_HANG.OrderBy(u => u.NAME);
             comboBox1.DisplayMember = "NAME";
             comboBox1.ValueMember = "ID";
 

@@ -20,7 +20,7 @@ namespace T_Manager.REPORT
         private void FNhapXuatTungKho_Load(object sender, EventArgs e)
         {
             dateTimePickerFROM.Value = dateTimePickerFROM.Value.AddMonths(-1);
-            comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG);
+            comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
         }

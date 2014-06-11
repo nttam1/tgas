@@ -90,22 +90,25 @@ namespace T_Manager
         private void comboBoxHANGHOA_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
-            {
-                string hh_id = comboBoxHANGHOA.SelectedValue.ToString();
-                long value = long.Parse(hh_id);
-                var dvt = dbContext.HANG_HOA.Where(u => u.ID == value).Select(u => u.UNIT);
-                labelDVT.Text = dvt.FirstOrDefault().ToString();
-
-
+            {                
                 DateTime now = dateTimePickerNGAYBAN.Value.Date;
                 long kho = long.Parse(comboBoxKho.SelectedValue.ToString());
                 long hh = long.Parse(comboBoxHANGHOA.SelectedValue.ToString());
                 long kh = long.Parse(comboBoxKHACH_HANG.SelectedValue.ToString());
+                string hh_id = comboBoxHANGHOA.SelectedValue.ToString();
+                long value = long.Parse(hh_id);
+
+                var dvt = dbContext.HANG_HOA
+                    .Where(u => u.ID == value)
+                    .Select(u => u.UNIT);
+                labelDVT.Text = dvt.FirstOrDefault().ToString();
+
                 if (checkBoxBANMAT.Checked == true)
                 {
                     kh = MXuatHang.MAKH_XUAT_MAT;
                 }
-                bs.DataSource = dbContext.XUAT_HANG.Where(u => u.NGAY_XUAT == now && u.MAKHO == kho && u.MAKH == kh && u.MAHH == hh);
+                bs.DataSource = dbContext.XUAT_HANG
+                    .Where(u => u.NGAY_XUAT == now && u.MAKHO == kho && u.MAKH == kh && u.MAHH == hh);
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].Visible = false;
                 dataGridView1.Columns[2].Visible = false;

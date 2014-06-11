@@ -39,7 +39,7 @@
             // 
             // buttonADD
             // 
-            this.buttonADD.Location = new System.Drawing.Point(421, 103);
+            this.buttonADD.Location = new System.Drawing.Point(183, 103);
             this.buttonADD.Name = "buttonADD";
             this.buttonADD.Size = new System.Drawing.Size(75, 23);
             this.buttonADD.TabIndex = 15;
@@ -49,7 +49,7 @@
             // 
             // textBoxSO
             // 
-            this.textBoxSO.Location = new System.Drawing.Point(261, 77);
+            this.textBoxSO.Location = new System.Drawing.Point(23, 77);
             this.textBoxSO.Name = "textBoxSO";
             this.textBoxSO.Size = new System.Drawing.Size(235, 20);
             this.textBoxSO.TabIndex = 14;
@@ -57,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(258, 61);
+            this.label1.Location = new System.Drawing.Point(20, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 13;
@@ -66,15 +66,16 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 132);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 364);
+            this.dataGridView1.Size = new System.Drawing.Size(480, 244);
             this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // textBoxTEN
             // 
-            this.textBoxTEN.Location = new System.Drawing.Point(258, 29);
+            this.textBoxTEN.Location = new System.Drawing.Point(20, 29);
             this.textBoxTEN.Name = "textBoxTEN";
             this.textBoxTEN.Size = new System.Drawing.Size(235, 20);
             this.textBoxTEN.TabIndex = 17;
@@ -82,7 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(255, 13);
+            this.label2.Location = new System.Drawing.Point(17, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 16;

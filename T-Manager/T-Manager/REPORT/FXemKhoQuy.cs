@@ -23,7 +23,7 @@ namespace T_Manager.REPORT
             BindingSource bs = new BindingSource();
             CrystalReportXEMKHOQUY rpt = new CrystalReportXEMKHOQUY();
             List<CXemKhoQuy> list = new List<CXemKhoQuy>();
-            var khos = (from _kho in DataInstance.Instance().DBContext().KHOes select _kho);
+            var khos = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
             foreach (KHO k in khos)
             {
                 CXemKhoQuy c = new CXemKhoQuy();

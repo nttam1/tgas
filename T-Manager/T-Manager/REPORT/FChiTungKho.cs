@@ -20,7 +20,7 @@ namespace T_Manager.REPORT
         private void FChiTungKho_Load(object sender, EventArgs e)
         {
             dateTimePickerFROM.Value = DateTime.Now.AddMonths(-1);
-            comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG);
+            comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
         }
@@ -84,6 +84,10 @@ namespace T_Manager.REPORT
                 list.Add(h);
             }
             foreach (CChiTungKho h in khac)
+            {
+                list.Add(h);
+            }
+            foreach (CChiTungKho h in chovay    )
             {
                 list.Add(h);
             }

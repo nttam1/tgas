@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using T_Manager.Modal;
 
 namespace T_Manager.Data
 {
@@ -19,7 +20,7 @@ namespace T_Manager.Data
         private BindingSource bs = new BindingSource();
         private void FTaiKhoan_Load(object sender, EventArgs e)
         {
-            bs.DataSource = DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE == 1);
+            bs.DataSource = MKho.Get(MKho.KHO_TK_NGANHANG);
             dataGridView1.DataSource = bs;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "TÊN";
@@ -38,7 +39,7 @@ namespace T_Manager.Data
                 bs.Add(new KHO()
                 {
                     NAME = textBoxTEN.Text,
-                    TYPE = 1,
+                    TYPE = MKho.KHO_TK_NGANHANG,
                     CODE = textBoxSO.Text
                 });
                 bs.EndEdit();
@@ -52,6 +53,11 @@ namespace T_Manager.Data
             {
 
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

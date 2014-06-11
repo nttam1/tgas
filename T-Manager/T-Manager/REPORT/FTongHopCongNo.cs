@@ -119,7 +119,7 @@ namespace T_Manager.REPORT
 
         private void FTongHopCongNo_Load(object sender, EventArgs e)
         {
-            comboBoxKHO.DataSource = DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE == 0);
+            comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
 
