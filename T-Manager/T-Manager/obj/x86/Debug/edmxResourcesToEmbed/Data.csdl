@@ -22,6 +22,7 @@
     <EntitySet Name="BAN_HANG" EntityType="tgasModel.BAN_HANG" />
     <EntitySet Name="CHUYEN_TIEN" EntityType="tgasModel.CHUYEN_TIEN" />
     <EntitySet Name="VAYs" EntityType="tgasModel.VAY" />
+    <EntitySet Name="HE_THONG" EntityType="tgasModel.HE_THONG" />
   </EntityContainer>
   <EntityType Name="CHI_KHAC">
     <Key>
@@ -252,5 +253,13 @@
     <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
     <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
     <Property Type="Int64" Name="MAKHO" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HE_THONG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VALUE" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
   </EntityType>
 </Schema>

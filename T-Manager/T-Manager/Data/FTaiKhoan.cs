@@ -35,6 +35,7 @@ namespace T_Manager.Data
                 if (textBoxSO.Text == "" || textBoxTEN.Text == "")
                 {
                     MessageBox.Show("Chưa nhập số tài khoản hoặc tên");
+                    return;
                 }
                 bs.Add(new KHO()
                 {

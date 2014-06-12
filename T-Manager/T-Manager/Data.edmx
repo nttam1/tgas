@@ -14,6 +14,7 @@
           <EntitySet Name="CHO_VAY" EntityType="tgasModel.Store.CHO_VAY" store:Type="Tables" />
           <EntitySet Name="CHUYEN_TIEN" EntityType="tgasModel.Store.CHUYEN_TIEN" store:Type="Tables" />
           <EntitySet Name="HANG_HOA" EntityType="tgasModel.Store.HANG_HOA" store:Type="Tables" />
+          <EntitySet Name="HE_THONG" EntityType="tgasModel.Store.HE_THONG" store:Type="Tables" />
           <EntitySet Name="KHACH_HANG" EntityType="tgasModel.Store.KHACH_HANG" store:Type="Tables" />
           <EntitySet Name="KHO" EntityType="tgasModel.Store.KHO" store:Type="Tables" />
           <EntitySet Name="NGUON_NO" EntityType="tgasModel.Store.NGUON_NO" store:Type="Tables" />
@@ -121,6 +122,14 @@
           <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="nvarchar" Nullable="false" />
           <Property Name="UNIT" Type="nvarchar" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HE_THONG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="NAME" Type="nvarchar" Nullable="false" />
+          <Property Name="VALUE" Type="nvarchar" Nullable="false" />
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="KHACH_HANG">
           <Key>
@@ -284,6 +293,7 @@
           <EntitySet Name="BAN_HANG" EntityType="tgasModel.BAN_HANG" />
           <EntitySet Name="CHUYEN_TIEN" EntityType="tgasModel.CHUYEN_TIEN" />
           <EntitySet Name="VAYs" EntityType="tgasModel.VAY" />
+          <EntitySet Name="HE_THONG" EntityType="tgasModel.HE_THONG" />
         </EntityContainer>
         <EntityType Name="CHI_KHAC">
           <Key>
@@ -514,6 +524,14 @@
           <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
           <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
           <Property Type="Int64" Name="MAKHO" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HE_THONG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="String" Name="NAME" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VALUE" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -772,6 +790,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="HE_THONG">
+            <EntityTypeMapping TypeName="tgasModel.HE_THONG">
+              <MappingFragment StoreEntitySet="HE_THONG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -792,7 +819,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Data" ZoomLevel="100">
+      <Diagram Name="Data" ZoomLevel="96">
         <EntityTypeShape EntityType="tgasModel.CHI_KHAC" Width="1.5" PointX="0.75" PointY="0.75" Height="1.9802864583333331" IsExpanded="true" />
         <EntityTypeShape EntityType="tgasModel.CHI_LUONG" Width="1.5" PointX="2.75" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" />
         <EntityTypeShape EntityType="tgasModel.CHI_TIEU_DUNG_NOI_BO" Width="1.5" PointX="4.75" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" />
@@ -814,6 +841,7 @@
         <EntityTypeShape EntityType="tgasModel.BAN_HANG" Width="1.5" PointX="11.375" PointY="12.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="tgasModel.CHUYEN_TIEN" Width="1.5" PointX="0.75" PointY="13.75" Height="1.9802864583333282" />
         <EntityTypeShape EntityType="tgasModel.VAY" Width="1.5" PointX="13.375" PointY="0.75" Height="2.7494921875000067" />
+        <EntityTypeShape EntityType="tgasModel.HE_THONG" Width="1.5" PointX="13.375" PointY="4.75" Height="1.5956835937500102" />
       </Diagram>
     </Diagrams>
   </Designer>

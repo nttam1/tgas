@@ -24,11 +24,11 @@ namespace T_Manager
 
         private void FThuNo_Load(object sender, EventArgs e)
         {
-            comboBoxKHO.DataSource = DataInstance.Instance().DBContext().KHOes;
+            comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
 
-            comboBoxKHACHHANG.DataSource = DataInstance.Instance().DBContext().KHACH_HANG;
+            comboBoxKHACHHANG.DataSource = DataInstance.Instance().DBContext().KHACH_HANG.OrderBy(u => u.NAME);
             comboBoxKHACHHANG.DisplayMember = "NAME";
             comboBoxKHACHHANG.ValueMember = "ID";
 

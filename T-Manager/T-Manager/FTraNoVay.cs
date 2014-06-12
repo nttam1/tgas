@@ -163,7 +163,14 @@ namespace T_Manager
 
         private void checkBoxTRAXONG_CheckedChanged(object sender, EventArgs e)
         {
-            long tongno = long.Parse(textBoxTONGTIEN.ToString());
+            try
+            {
+                long tongno = long.Parse(textBoxTONGTIEN.ToString());
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

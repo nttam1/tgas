@@ -83,13 +83,13 @@ namespace T_Manager
                 bs.DataSource = DataInstance.Instance().DBContext().VAYs.Where(u => u.MA_NGUON_VAY == nguon && u.MAKHO == kho);
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].Visible = false;
-                dataGridView1.Columns[5].Visible = false;
+                dataGridView1.Columns[2].HeaderText = "Tổng tiền";
+                dataGridView1.Columns[3].HeaderText = "Lãi suất";
+                dataGridView1.Columns[4].HeaderText = "Kì hạn";
+                dataGridView1.Columns[5].HeaderText = "Ngày vay";
                 dataGridView1.Columns[6].Visible = false;
                 dataGridView1.Columns[7].Visible = false;
                 dataGridView1.Columns[8].Visible = false;
-                dataGridView1.Columns[2].HeaderText = "Tổng tiền";
-                dataGridView1.Columns[3].HeaderText = "Lãi suất";
-                dataGridView1.Columns[4].HeaderText = "Ngày vay";
             }
             catch (Exception ex)
             {

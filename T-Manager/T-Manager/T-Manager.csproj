@@ -130,6 +130,12 @@
     <Compile Include="Data\FXe.Designer.cs">
       <DependentUpon>FXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="EDIT\FXuatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EDIT\FXuatHang.Designer.cs">
+      <DependentUpon>FXuatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="FBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,12 @@
     </Compile>
     <Compile Include="FChi.Designer.cs">
       <DependentUpon>FChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FChinhSua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FChinhSua.Designer.cs">
+      <DependentUpon>FChinhSua.cs</DependentUpon>
     </Compile>
     <Compile Include="FChoVay.cs">
       <SubType>Form</SubType>
@@ -159,6 +171,12 @@
     </Compile>
     <Compile Include="FChuyenTien.Designer.cs">
       <DependentUpon>FChuyenTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FInit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FInit.Designer.cs">
+      <DependentUpon>FInit.cs</DependentUpon>
     </Compile>
     <Compile Include="FMain.cs">
       <SubType>Form</SubType>
@@ -206,6 +224,7 @@
     <Compile Include="Modal\MChiTietThuNo.cs" />
     <Compile Include="Modal\MChoVay.cs" />
     <Compile Include="Modal\MHangHoa.cs" />
+    <Compile Include="Modal\MHeTHong.cs" />
     <Compile Include="Modal\MKhachHang.cs" />
     <Compile Include="Modal\MKho.cs" />
     <Compile Include="Modal\MNcc.cs" />
@@ -396,11 +415,17 @@
     <EmbeddedResource Include="Data\FXe.resx">
       <DependentUpon>FXe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EDIT\FXuatHang.resx">
+      <DependentUpon>FXuatHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FBanHang.resx">
       <DependentUpon>FBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FChi.resx">
       <DependentUpon>FChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FChinhSua.resx">
+      <DependentUpon>FChinhSua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FChoVay.resx">
       <DependentUpon>FChoVay.cs</DependentUpon>
@@ -410,6 +435,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FChuyenTien.resx">
       <DependentUpon>FChuyenTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FInit.resx">
+      <DependentUpon>FInit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>

@@ -397,6 +397,22 @@ namespace T_Manager
             }
         }
         private ObjectSet<VAY> _VAYs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<HE_THONG> HE_THONG
+        {
+            get
+            {
+                if ((_HE_THONG == null))
+                {
+                    _HE_THONG = base.CreateObjectSet<HE_THONG>("HE_THONG");
+                }
+                return _HE_THONG;
+            }
+        }
+        private ObjectSet<HE_THONG> _HE_THONG;
 
         #endregion
 
@@ -568,6 +584,14 @@ namespace T_Manager
         public void AddToVAYs(VAY vAY)
         {
             base.AddObject("VAYs", vAY);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the HE_THONG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToHE_THONG(HE_THONG hE_THONG)
+        {
+            base.AddObject("HE_THONG", hE_THONG);
         }
 
         #endregion
@@ -2224,6 +2248,115 @@ namespace T_Manager
         private global::System.String _UNIT;
         partial void OnUNITChanging(global::System.String value);
         partial void OnUNITChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="tgasModel", Name="HE_THONG")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class HE_THONG : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new HE_THONG object.
+        /// </summary>
+        /// <param name="nAME">Initial value of the NAME property.</param>
+        /// <param name="vALUE">Initial value of the VALUE property.</param>
+        /// <param name="id">Initial value of the ID property.</param>
+        public static HE_THONG CreateHE_THONG(global::System.String nAME, global::System.String vALUE, global::System.Int64 id)
+        {
+            HE_THONG hE_THONG = new HE_THONG();
+            hE_THONG.NAME = nAME;
+            hE_THONG.VALUE = vALUE;
+            hE_THONG.ID = id;
+            return hE_THONG;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String NAME
+        {
+            get
+            {
+                return _NAME;
+            }
+            set
+            {
+                OnNAMEChanging(value);
+                ReportPropertyChanging("NAME");
+                _NAME = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("NAME");
+                OnNAMEChanged();
+            }
+        }
+        private global::System.String _NAME;
+        partial void OnNAMEChanging(global::System.String value);
+        partial void OnNAMEChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String VALUE
+        {
+            get
+            {
+                return _VALUE;
+            }
+            set
+            {
+                OnVALUEChanging(value);
+                ReportPropertyChanging("VALUE");
+                _VALUE = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("VALUE");
+                OnVALUEChanged();
+            }
+        }
+        private global::System.String _VALUE;
+        partial void OnVALUEChanging(global::System.String value);
+        partial void OnVALUEChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
 
         #endregion
 

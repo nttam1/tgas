@@ -212,5 +212,17 @@ namespace T_Manager
             REPORT.FChiTietChuyenTien f = new REPORT.FChiTietChuyenTien();
             f.ShowDialog();
         }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            FChinhSua f = new FChinhSua();
+            f.ShowDialog();
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            EDIT.FXuatHang f = new EDIT.FXuatHang();
+            f.ShowDialog();
+        }
     }
 }

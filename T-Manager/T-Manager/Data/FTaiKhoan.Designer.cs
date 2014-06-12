@@ -39,9 +39,9 @@
             // 
             // buttonADD
             // 
-            this.buttonADD.Location = new System.Drawing.Point(183, 103);
+            this.buttonADD.Location = new System.Drawing.Point(407, 13);
             this.buttonADD.Name = "buttonADD";
-            this.buttonADD.Size = new System.Drawing.Size(75, 23);
+            this.buttonADD.Size = new System.Drawing.Size(75, 61);
             this.buttonADD.TabIndex = 15;
             this.buttonADD.Text = "THÊM";
             this.buttonADD.UseVisualStyleBackColor = true;
@@ -49,7 +49,7 @@
             // 
             // textBoxSO
             // 
-            this.textBoxSO.Location = new System.Drawing.Point(23, 77);
+            this.textBoxSO.Location = new System.Drawing.Point(132, 61);
             this.textBoxSO.Name = "textBoxSO";
             this.textBoxSO.Size = new System.Drawing.Size(235, 20);
             this.textBoxSO.TabIndex = 14;
@@ -66,16 +66,16 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 132);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 104);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(480, 244);
+            this.dataGridView1.Size = new System.Drawing.Size(480, 272);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // textBoxTEN
             // 
-            this.textBoxTEN.Location = new System.Drawing.Point(20, 29);
+            this.textBoxTEN.Location = new System.Drawing.Point(132, 10);
             this.textBoxTEN.Name = "textBoxTEN";
             this.textBoxTEN.Size = new System.Drawing.Size(235, 20);
             this.textBoxTEN.TabIndex = 17;

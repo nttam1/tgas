@@ -9,6 +9,7 @@
     <EntitySet Name="CHO_VAY" EntityType="tgasModel.Store.CHO_VAY" store:Type="Tables" />
     <EntitySet Name="CHUYEN_TIEN" EntityType="tgasModel.Store.CHUYEN_TIEN" store:Type="Tables" />
     <EntitySet Name="HANG_HOA" EntityType="tgasModel.Store.HANG_HOA" store:Type="Tables" />
+    <EntitySet Name="HE_THONG" EntityType="tgasModel.Store.HE_THONG" store:Type="Tables" />
     <EntitySet Name="KHACH_HANG" EntityType="tgasModel.Store.KHACH_HANG" store:Type="Tables" />
     <EntitySet Name="KHO" EntityType="tgasModel.Store.KHO" store:Type="Tables" />
     <EntitySet Name="NGUON_NO" EntityType="tgasModel.Store.NGUON_NO" store:Type="Tables" />
@@ -116,6 +117,14 @@
     <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="NAME" Type="nvarchar" Nullable="false" />
     <Property Name="UNIT" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HE_THONG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="NAME" Type="nvarchar" Nullable="false" />
+    <Property Name="VALUE" Type="nvarchar" Nullable="false" />
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="KHACH_HANG">
     <Key>

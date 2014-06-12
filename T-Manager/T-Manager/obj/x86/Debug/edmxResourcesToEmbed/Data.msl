@@ -252,5 +252,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="HE_THONG">
+      <EntityTypeMapping TypeName="tgasModel.HE_THONG">
+        <MappingFragment StoreEntitySet="HE_THONG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
