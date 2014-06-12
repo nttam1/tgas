@@ -105,7 +105,6 @@ namespace T_Manager.EDIT
                 textBoxLAISUAT.Text = s.Cells[7].Value.ToString();
                 textBoxTRATRUOC.Text = s.Cells[6].Value.ToString();
                 textBoxKHACHHANG.Text = s.Cells[3].Value.ToString();
-
                 dateTimePickerNGAYXUAT.Value = (DateTime)s.Cells[8].Value;
                 foreach (HANG_HOA row in comboBoxHANGHOA.Items)
                 {
@@ -164,11 +163,11 @@ namespace T_Manager.EDIT
             dbContext.SaveChanges();
 
             // CẬP NHẬT LẠI TOÀN BỘ NHẬP HÀNG XUẤT HÀNG
-            foreach (NHAP_HANG nh in dbContext.NHAP_HANG)
+            foreach (NHAP_HANG nh in dbContext.NHAP_HANG.Where( u => u.MAKHO == kho && u.MAHH == hh))
             {
                 nh.SL_CON_LAI = nh.SO_LUONG;
             }
-            foreach (XUAT_HANG xh in dbContext.XUAT_HANG)
+            foreach (XUAT_HANG xh in dbContext.XUAT_HANG.Where(u => u.MAKHO == kho && u.MAHH == hh))
             {
                 MXuatHang.Update(xh.SO_LUONG, xh);
             }

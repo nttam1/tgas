@@ -38,6 +38,28 @@ namespace T_Manager.Modal
             ele.NGAY_TRA = NGAYTRA.Date;
             DataInstance.Instance().DBContext().AddToTHU_NO(ele);
             DataInstance.Instance().DBContext().SaveChanges();
+            Update(ele);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="LOAINO"></param>
+        /// <param name="MAKHO"></param>
+        /// <param name="MAKH"></param>
+        /// <param name="TIENGOC"></param>
+        /// <param name="TIENLAI"></param>
+        /// <param name="NGAYTRA"></param>
+        /// <param name="NOIDUNG"></param>
+        public static void Update(THU_NO ele)
+        {
+            long LOAINO = ele.LOAI_NO;
+            long MAKHO  = ele.MAKHO;
+            Int64 MAKH = ele.MAKH;
+            Int64 TIENGOC = ele.TIEN_GOC;
+            Int64 TIENLAI = ele.TIEN_LAI;
+            DateTime NGAYTRA = ele.NGAY_TRA;
+            string NOIDUNG = ele.NOI_DUNG;
             /**
              * Nợ khác: Thêm vào 1 record, không tác động gì khác
              * Nợ vay và nợ HH: Cần cập nhật chi tiết nợ
@@ -58,30 +80,44 @@ namespace T_Manager.Modal
                     switch (ele.LOAI_NO)
                     {
                         case NO_HANG_HOA:
-                            XUAT_HANG _xh = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                                             where xh.MAKHO == ele.MAKHO
-                                             where xh.MAKH == ele.MAKH
-                                             where xh.ID > _start_id
-                                             where xh.TRANG_THAI == MXuatHang.CHUA_TRA_XONG
-                                             orderby xh.NGAY_XUAT ascending
-                                             select xh).First();
-                            _id = _xh.ID;
-                            _tong_no = _xh.SO_LUONG * _xh.DON_GIA_BAN - _xh.TRA_TRUOC;
-                            _ngay_no = _xh.NGAY_XUAT.Value.Date;
-                            _lai_suat = _xh.LAI_SUAT;
+                            try
+                            {
+                                XUAT_HANG _xh = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
+                                                 where xh.MAKHO == ele.MAKHO
+                                                 where xh.MAKH == ele.MAKH
+                                                 where xh.ID > _start_id
+                                                 where xh.TRANG_THAI == MXuatHang.CHUA_TRA_XONG
+                                                 orderby xh.NGAY_XUAT ascending
+                                                 select xh).First();
+                                _id = _xh.ID;
+                                _tong_no = _xh.SO_LUONG * _xh.DON_GIA_BAN - _xh.TRA_TRUOC;
+                                _ngay_no = _xh.NGAY_XUAT.Value.Date;
+                                _lai_suat = _xh.LAI_SUAT;
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
                             break;
                         case NO_VAY:
-                            CHO_VAY _cv = (from xh in DataInstance.Instance().DBContext().CHO_VAY
-                                           where xh.MAKHO == ele.MAKHO
-                                           where xh.MA_NGUON_NO == ele.MAKH
-                                           where xh.TRANG_THAI == MXuatHang.CHUA_TRA_XONG
-                                           where xh.ID > _start_id
-                                           orderby xh.NGAY_CHO_VAY ascending
-                                           select xh).First();
-                            _id = _cv.ID;
-                            _tong_no = _cv.TONG_TIEN;
-                            _ngay_no = _cv.NGAY_CHO_VAY.Date;
-                            _lai_suat = _cv.LAI_SUAT;
+                            try
+                            {
+                                CHO_VAY _cv = (from xh in DataInstance.Instance().DBContext().CHO_VAY
+                                               where xh.MAKHO == ele.MAKHO
+                                               where xh.MA_NGUON_NO == ele.MAKH
+                                               where xh.TRANG_THAI == MXuatHang.CHUA_TRA_XONG
+                                               where xh.ID > _start_id
+                                               orderby xh.NGAY_CHO_VAY ascending
+                                               select xh).First();
+                                _id = _cv.ID;
+                                _tong_no = _cv.TONG_TIEN;
+                                _ngay_no = _cv.NGAY_CHO_VAY.Date;
+                                _lai_suat = _cv.LAI_SUAT;
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
                             break;
                     }
 
@@ -90,10 +126,10 @@ namespace T_Manager.Modal
 
                     /* Lấy chi tiết những lần thanh toán trước cho record nợ này. Nếu có */
                     var _thanh_toan_s = (from tt in DataInstance.Instance().DBContext().CHI_TIET_THU_NO
-                                             where tt.LOAI_NO == ele.LOAI_NO
-                                             where tt.NO_ID == _id
-                                             orderby tt.NGAY_TRA ascending
-                                             select tt
+                                         where tt.LOAI_NO == ele.LOAI_NO
+                                         where tt.NO_ID == _id
+                                         orderby tt.NGAY_TRA ascending
+                                         select tt
                                              );
 
                     /* Tính lãi phần còn lại sau khi đã thanh toán một hay nhiều phần */
@@ -115,7 +151,7 @@ namespace T_Manager.Modal
                     _e.NO_ID = _id;
                     _e.NGAY_TRA = ele.NGAY_TRA;
                     _e.TIEN_GOC = (long)(_goc < _TIENGOC ? _goc : _TIENGOC);
-                    _e.TIEN_LAI = (long)(_lai < _TIENLAI ? _lai :  _TIENLAI); ;
+                    _e.TIEN_LAI = (long)(_lai < _TIENLAI ? _lai : _TIENLAI); ;
                     _e.CREATED_AT = DateTime.Now;
                     if (!(_e.TIEN_GOC == 0 && _e.TIEN_LAI == 0))
                     {
@@ -129,18 +165,32 @@ namespace T_Manager.Modal
                         switch (ele.LOAI_NO)
                         {
                             case NO_HANG_HOA:
-                                var _xh = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
-                                           where xh.ID == _id
-                                           select xh).First();
-                                _xh.TRANG_THAI = MXuatHang.DA_TRA_XONG;
-                                DataInstance.Instance().DBContext().SaveChanges();
+                                try
+                                {
+                                    var _xh = (from xh in DataInstance.Instance().DBContext().XUAT_HANG
+                                               where xh.ID == _id
+                                               select xh).First();
+                                    _xh.TRANG_THAI = MXuatHang.DA_TRA_XONG;
+                                    DataInstance.Instance().DBContext().SaveChanges();
+                                }
+                                catch (Exception ex)
+                                {
+
+                                }
                                 break;
                             case NO_VAY:
-                                var _nv = (from xh in DataInstance.Instance().DBContext().CHO_VAY
-                                           where xh.ID == _id
-                                           select xh).First();
-                                _nv.TRANG_THAI = MChoVay.DA_TRA_XONG;
-                                DataInstance.Instance().DBContext().SaveChanges();
+                                try
+                                {
+                                    var _nv = (from xh in DataInstance.Instance().DBContext().CHO_VAY
+                                               where xh.ID == _id
+                                               select xh).First();
+                                    _nv.TRANG_THAI = MChoVay.DA_TRA_XONG;
+                                    DataInstance.Instance().DBContext().SaveChanges();
+                                }
+                                catch (Exception ex)
+                                {
+
+                                }
                                 break;
                         }
                     }
@@ -156,7 +206,7 @@ namespace T_Manager.Modal
                         break;
                     }
                     /* Hết tiền gốc hoặc lãi để thanh toán lần xuất hàng hiện tại */
-                    if ((_TIENGOC == 0 && _TIENLAI != 0) ||(_TIENGOC != 0 && _TIENLAI == 0))
+                    if ((_TIENGOC == 0 && _TIENLAI != 0) || (_TIENGOC != 0 && _TIENLAI == 0))
                     {
                         _start_id = _id;
                     }

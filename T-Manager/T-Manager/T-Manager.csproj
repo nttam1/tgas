@@ -54,6 +54,10 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json">
@@ -130,6 +134,12 @@
     <Compile Include="Data\FXe.Designer.cs">
       <DependentUpon>FXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="EDIT\FThuNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EDIT\FThuNo.Designer.cs">
+      <DependentUpon>FThuNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="EDIT\FXuatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +181,24 @@
     </Compile>
     <Compile Include="FChuyenTien.Designer.cs">
       <DependentUpon>FChuyenTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FConfirm.Designer.cs">
+      <DependentUpon>FConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDoiMatKhau.Designer.cs">
+      <DependentUpon>FDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FImport.Designer.cs">
+      <DependentUpon>FImport.cs</DependentUpon>
     </Compile>
     <Compile Include="FInit.cs">
       <SubType>Form</SubType>
@@ -415,6 +443,9 @@
     <EmbeddedResource Include="Data\FXe.resx">
       <DependentUpon>FXe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EDIT\FThuNo.resx">
+      <DependentUpon>FThuNo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EDIT\FXuatHang.resx">
       <DependentUpon>FXuatHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -435,6 +466,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FChuyenTien.resx">
       <DependentUpon>FChuyenTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FConfirm.resx">
+      <DependentUpon>FConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDoiMatKhau.resx">
+      <DependentUpon>FDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FImport.resx">
+      <DependentUpon>FImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FInit.resx">
       <DependentUpon>FInit.cs</DependentUpon>

@@ -19,8 +19,8 @@ namespace T_Manager.REPORT
 
         private void buttonVIEW_Click(object sender, EventArgs e)
         {
-            var _from = dateTimePickerFROM.Value;
-            var _to = dateTimePickerTO.Value;
+            var _from = dateTimePickerFROM.Value.Date;
+            var _to = dateTimePickerTO.Value.Date;
 
             BindingSource bs = new BindingSource();
             var rows = (from v in DataInstance.Instance().DBContext().VAYs

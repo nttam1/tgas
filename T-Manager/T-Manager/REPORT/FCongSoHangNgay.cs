@@ -80,7 +80,7 @@ namespace T_Manager.REPORT
                 thuno = (from tn in DataInstance.Instance().DBContext().THU_NO
                          where tn.NGAY_TRA == _today
                          where tn.MAKHO == _kho
-                         where tn.LOAI_NO == MThuNo.NO_VAY
+                         where tn.LOAI_NO != MThuNo.NO_KHAC
                          select tn.TIEN_GOC + tn.TIEN_LAI
                                                 ).Sum();
             }
@@ -94,8 +94,7 @@ namespace T_Manager.REPORT
                            where tn.NGAY_TRA == _today
                            where tn.MAKHO == _kho
                            where tn.LOAI_NO == MThuNo.NO_KHAC
-                           select tn.TIEN_GOC + tn.TIEN_LAI
-                                                ).Sum();
+                           select tn.TIEN_GOC + tn.TIEN_LAI).Sum();
             }
             catch (Exception ex)
             {

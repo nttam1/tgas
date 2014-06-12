@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using T_Manager.Modal;
 
 namespace T_Manager
 {
@@ -25,6 +26,18 @@ namespace T_Manager
         private void FMain_Load(object sender, EventArgs e)
         {
             DataInstance.Instance().DBContext();
+            DateTime now = DateTime.Now;
+            DateTime last = Convert.ToDateTime(MHeTHong.Get(MHeTHong.DATE));
+            if (last.Date > now.Date)
+            {
+                FConfirm F = new FConfirm();
+                F.ShowDialog();
+            }
+            else
+            {
+                MHeTHong.Set(MHeTHong.DATE, DateTime.Now.ToShortDateString());
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -223,6 +236,22 @@ namespace T_Manager
         {
             EDIT.FXuatHang f = new EDIT.FXuatHang();
             f.ShowDialog();
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            EDIT.FThuNo f = new EDIT.FThuNo();
+            f.ShowDialog();
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            FDoiMatKhau f = new FDoiMatKhau();
+            f.ShowDialog();
+        }
+
+        private void FMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }

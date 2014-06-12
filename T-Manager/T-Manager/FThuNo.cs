@@ -162,7 +162,7 @@ namespace T_Manager
                    MAKHO = kho,
                    TIEN_GOC = tongtien,
                    NOI_DUNG = noidung,
-                   NGAY_TRA = DateTime.Now,
+                   NGAY_TRA = DateTime.Now.Date,
                    CREATED_AT = DateTime.Now
                });
                 DataInstance.Instance().DBContext().SaveChanges();

@@ -11,5 +11,17 @@ namespace T_Manager.Modal
         {
             return DataInstance.Instance().DBContext().HANG_HOA;
         }
+
+        public static long GetIDbyName(string NAME)
+        {
+            try
+            {
+                return DataInstance.Instance().DBContext().HANG_HOA.Where(u => u.NAME == NAME).First().ID;
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
     }
 }

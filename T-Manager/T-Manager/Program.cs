@@ -16,6 +16,8 @@ namespace T_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new FImport());
+            //return;
             if (MHeTHong.IsSet(MHeTHong.MATKHAU) == true)
             {
                 Application.Run(new FMain());

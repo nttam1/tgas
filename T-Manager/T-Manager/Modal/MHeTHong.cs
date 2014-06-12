@@ -8,6 +8,7 @@ namespace T_Manager.Modal
     class MHeTHong
     {
         public const string MATKHAU = "PASSWORD";
+        public const string DATE = "DATE";
 
         public static bool IsSet(string NAME)
         {

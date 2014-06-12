@@ -29,8 +29,8 @@ namespace T_Manager.REPORT
         private void buttonVIEW_Click(object sender, EventArgs e)
         {
             var _ncc = long.Parse(comboBoxNCC.SelectedValue.ToString());
-            var _from = dateTimePicker1.Value;
-            var _to = dateTimePicker2.Value;
+            var _from = dateTimePicker1.Value.Date;
+            var _to = dateTimePicker2.Value.Date;
 
             BindingSource bs = new BindingSource();
             var rows = (from v in DataInstance.Instance().DBContext().VAYs

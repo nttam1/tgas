@@ -27,6 +27,11 @@ namespace T_Manager
                 return;
             }
             MHeTHong.Set(MHeTHong.MATKHAU, pass);
+            DateTime now = new DateTime();
+            MHeTHong.Set(MHeTHong.DATE, now.ToLongDateString());
+            FImport F = new FImport();
+            F.Show();
+            this.Hide();
         }
     }
 }
