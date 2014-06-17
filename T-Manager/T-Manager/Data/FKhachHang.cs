@@ -22,6 +22,10 @@ namespace T_Manager
         {
             bs.DataSource = dbContext.KHACH_HANG;
             dataGridViewKHACHHANG.DataSource = bs;
+            dataGridViewKHACHHANG.Columns[0].Visible = false;
+            dataGridViewKHACHHANG.Columns[1].HeaderText = "TÊN KHÁCH HÀNG";
+            dataGridViewKHACHHANG.AutoResizeColumns();
+            dataGridViewKHACHHANG.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void buttonADD_Click(object sender, EventArgs e)
@@ -31,9 +35,9 @@ namespace T_Manager
                 bs.Add(new KHACH_HANG() { NAME = textBoxKHACHHANG.Text });
                 bs.EndEdit();
                 bs.ResetBindings(false);
-                textBoxKHACHHANG.Text = "";
                 dbContext.SaveChanges();
-
+                textBoxKHACHHANG.Text = "";
+                textBoxKHACHHANG.Select();
             }
             catch (Exception ex)
             {

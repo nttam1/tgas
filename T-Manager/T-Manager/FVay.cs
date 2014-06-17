@@ -37,6 +37,9 @@ namespace T_Manager
                     c.KeyPress += new KeyPressEventHandler(c_KeyPress);
                 }
             }
+
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void c_KeyPress(object sender, KeyPressEventArgs e)
         {

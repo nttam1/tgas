@@ -23,6 +23,8 @@ namespace T_Manager.Data
             dataGridView1.DataSource = bs;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Tên";
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void buttonADD_Click(object sender, EventArgs e)
@@ -46,6 +48,14 @@ namespace T_Manager.Data
             catch (Exception ex)
             {
 
+            }
+        }
+
+        private void textBoxNGUONVAY_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                this.buttonADD_Click(sender, e);
             }
         }
     }

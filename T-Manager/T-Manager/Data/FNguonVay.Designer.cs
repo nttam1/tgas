@@ -37,6 +37,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
@@ -59,6 +61,7 @@
             this.textBoxNGUONVAY.Name = "textBoxNGUONVAY";
             this.textBoxNGUONVAY.Size = new System.Drawing.Size(235, 20);
             this.textBoxNGUONVAY.TabIndex = 2;
+            this.textBoxNGUONVAY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNGUONVAY_KeyPress);
             // 
             // buttonADD
             // 

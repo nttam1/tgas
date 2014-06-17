@@ -26,6 +26,9 @@ namespace T_Manager.Data
             dataGridView1.Columns[1].HeaderText = "TÊN";
             dataGridView1.Columns[2].Visible = false;
             dataGridView1.Columns[3].HeaderText = "SỐ TÀI KHOẢN";
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            textBoxTEN.Select();
         }
 
         private void buttonADD_Click(object sender, EventArgs e)
@@ -48,7 +51,7 @@ namespace T_Manager.Data
                 DataInstance.Instance().DBContext().SaveChanges();
                 textBoxSO.Text = "";
                 textBoxTEN.Text = "";
-                textBoxSO.Select();
+                textBoxTEN.Select();
             }
             catch (Exception ex)
             {
@@ -59,6 +62,22 @@ namespace T_Manager.Data
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void textBoxTEN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void textBoxSO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                this.buttonADD_Click(sender, e);
+            }
         }
     }
 }

@@ -80,6 +80,7 @@
             this.textBoxNHANVIEN.Name = "textBoxNHANVIEN";
             this.textBoxNHANVIEN.Size = new System.Drawing.Size(200, 20);
             this.textBoxNHANVIEN.TabIndex = 4;
+            this.textBoxNHANVIEN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNHANVIEN_KeyPress);
             // 
             // buttonADD
             // 

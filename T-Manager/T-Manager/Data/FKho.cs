@@ -25,6 +25,8 @@ namespace T_Manager.Data
             dataGridViewKHACHHANG.Columns[2].Visible = false;
             dataGridViewKHACHHANG.Columns[3].Visible = false;
             dataGridViewKHACHHANG.Columns[1].HeaderText = "TÊN KHO";
+            dataGridViewKHACHHANG.AutoResizeColumns();
+            dataGridViewKHACHHANG.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void buttonADD_Click(object sender, EventArgs e)
@@ -46,6 +48,14 @@ namespace T_Manager.Data
             DataInstance.Instance().DBContext().SaveChanges();
             textBoxKHACHHANG.Text = "";
             textBoxKHACHHANG.Select();
+        }
+
+        private void textBoxKHACHHANG_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                this.buttonADD_Click(sender, e);
+            }
         }
     }
 }

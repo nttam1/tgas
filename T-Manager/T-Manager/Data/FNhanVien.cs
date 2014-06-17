@@ -59,5 +59,13 @@ namespace T_Manager
             textBoxNHANVIEN.Text = "";
             textBoxNHANVIEN.Select();
         }
+
+        private void textBoxNHANVIEN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                this.buttonADD_Click(sender, e);
+            }
+        }
     }
 }

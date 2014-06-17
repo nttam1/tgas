@@ -52,7 +52,8 @@
             this.textBoxSO.Location = new System.Drawing.Point(132, 61);
             this.textBoxSO.Name = "textBoxSO";
             this.textBoxSO.Size = new System.Drawing.Size(235, 20);
-            this.textBoxSO.TabIndex = 14;
+            this.textBoxSO.TabIndex = 18;
+            this.textBoxSO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSO_KeyPress);
             // 
             // label1
             // 
@@ -65,6 +66,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 104);
             this.dataGridView1.Name = "dataGridView1";
@@ -79,6 +82,7 @@
             this.textBoxTEN.Name = "textBoxTEN";
             this.textBoxTEN.Size = new System.Drawing.Size(235, 20);
             this.textBoxTEN.TabIndex = 17;
+            this.textBoxTEN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTEN_KeyPress);
             // 
             // label2
             // 

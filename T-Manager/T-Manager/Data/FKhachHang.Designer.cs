@@ -37,9 +37,13 @@
             // 
             // dataGridViewKHACHHANG
             // 
+            this.dataGridViewKHACHHANG.AllowUserToAddRows = false;
+            this.dataGridViewKHACHHANG.AllowUserToDeleteRows = false;
             this.dataGridViewKHACHHANG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewKHACHHANG.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewKHACHHANG.Name = "dataGridViewKHACHHANG";
+            this.dataGridViewKHACHHANG.ReadOnly = true;
+            this.dataGridViewKHACHHANG.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewKHACHHANG.Size = new System.Drawing.Size(278, 306);
             this.dataGridViewKHACHHANG.TabIndex = 0;
             // 

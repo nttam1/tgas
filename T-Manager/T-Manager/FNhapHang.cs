@@ -37,6 +37,8 @@ namespace T_Manager
             comboBoxHANGHOA.ValueMember = "ID";
             dataGridView1.DataSource = bs;
             comboBoxHANGHOA_SelectedIndexChanged(sender, e);
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void dataGridViewNhapHang_CellContentClick(object sender, DataGridViewCellEventArgs e)

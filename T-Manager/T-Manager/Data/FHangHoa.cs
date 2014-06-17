@@ -24,6 +24,8 @@ namespace T_Manager.Data
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "TÊN";
             dataGridView1.Columns[2].HeaderText = "ĐƠN VỊ TÍNH";
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void buttonADD_Click(object sender, EventArgs e)
@@ -33,6 +35,7 @@ namespace T_Manager.Data
                 if (textBoxSO.Text == "" || textBoxTEN.Text == "")
                 {
                     MessageBox.Show("Chưa nhập tên hàng hóa hoặc đơn vị tính");
+                    return;
                 }
                 bs.Add(new HANG_HOA()
                 {
@@ -44,11 +47,27 @@ namespace T_Manager.Data
                 DataInstance.Instance().DBContext().SaveChanges();
                 textBoxSO.Text = "";
                 textBoxTEN.Text = "";
-                textBoxSO.Select();
+                textBoxTEN.Select();
             }
             catch (Exception ex)
             {
 
+            }
+        }
+
+        private void textBoxTEN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void textBoxSO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                buttonADD_Click(sender, e);
             }
         }
     }

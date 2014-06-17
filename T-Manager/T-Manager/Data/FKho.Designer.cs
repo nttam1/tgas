@@ -51,6 +51,7 @@
             this.textBoxKHACHHANG.Name = "textBoxKHACHHANG";
             this.textBoxKHACHHANG.Size = new System.Drawing.Size(219, 20);
             this.textBoxKHACHHANG.TabIndex = 6;
+            this.textBoxKHACHHANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxKHACHHANG_KeyPress);
             // 
             // label1
             // 

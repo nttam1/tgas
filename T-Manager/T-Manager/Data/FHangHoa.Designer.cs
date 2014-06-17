@@ -42,7 +42,8 @@
             this.textBoxTEN.Location = new System.Drawing.Point(258, 29);
             this.textBoxTEN.Name = "textBoxTEN";
             this.textBoxTEN.Size = new System.Drawing.Size(235, 20);
-            this.textBoxTEN.TabIndex = 23;
+            this.textBoxTEN.TabIndex = 1;
+            this.textBoxTEN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTEN_KeyPress);
             // 
             // label2
             // 
@@ -58,7 +59,7 @@
             this.buttonADD.Location = new System.Drawing.Point(421, 103);
             this.buttonADD.Name = "buttonADD";
             this.buttonADD.Size = new System.Drawing.Size(75, 23);
-            this.buttonADD.TabIndex = 21;
+            this.buttonADD.TabIndex = 3;
             this.buttonADD.Text = "THÊM";
             this.buttonADD.UseVisualStyleBackColor = true;
             this.buttonADD.Click += new System.EventHandler(this.buttonADD_Click);
@@ -68,7 +69,8 @@
             this.textBoxSO.Location = new System.Drawing.Point(261, 77);
             this.textBoxSO.Name = "textBoxSO";
             this.textBoxSO.Size = new System.Drawing.Size(232, 20);
-            this.textBoxSO.TabIndex = 20;
+            this.textBoxSO.TabIndex = 2;
+            this.textBoxSO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSO_KeyPress);
             // 
             // label1
             // 

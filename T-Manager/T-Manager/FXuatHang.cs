@@ -112,6 +112,9 @@ namespace T_Manager
             comboBoxHANGHOA.ValueMember = "ID";
             dataGridView1.DataSource = bs;
             comboBoxHANGHOA_SelectedIndexChanged(sender, e);
+
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void comboBoxHANGHOA_SelectedIndexChanged(object sender, EventArgs e)
