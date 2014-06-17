@@ -40,17 +40,47 @@ namespace T_Manager.REPORT
                            MAKH = g.Key.MAKH,
                            KHACHHANG = g.Key.NAME,
                            TRATRUOC = g.Sum(u => u.TRA_TRUOC),
-                           THANHTIEN = g.Sum(u => u.SO_LUONG * u.DON_GIA_BAN),
+                           THANHTIEN = g.Sum(u => u.THANH_TIEN),
                            DATRA = 0,
-                           CONNO = g.Sum(u => u.SO_LUONG * u.DON_GIA_BAN - u.TRA_TRUOC)
+                           CONNO = g.Sum(u => u.THANH_TIEN - u.TRA_TRUOC)
                        }
                        );
 
             int STT = 1;
-            if (include_THUNO == true)
+            if (include_THUNO == false)
             {
-                note = "ĐÃ BAO GỒM THU NỢ";
+                note = "KHÔNG TÍNH TIỀN LÃI";
                 /* Có sử dụng dữ liệu thu nợ */
+                /* Tính tổng lãi cho từng KH */
+                foreach (CTongHopCongNo row in _xh)
+                {
+                    double lai = 0;
+                    double datra = 0;
+                    /* Tính lãi cho tất cả những lần xuất hàng cho KH */
+                    foreach (XUAT_HANG _row in (from _xh_ in DataInstance.Instance().DBContext().XUAT_HANG
+                                                where _xh_.MAKHO == kho
+                                                where _xh_.MAKH == row.MAKH
+                                                select _xh_))
+                    {
+                        /* Không sử dụng dữ liệu từ thu nợ */
+                        lai += MXuatHang.GetLaiPhatSinh((int)_row.ID);
+                        datra += MChiTietThuNo.TraGocHH((int)_row.ID);
+                    }
+                    _datasource.Add(new CTongHopCongNo()
+                    {
+                        STT = STT++,
+                        KHACHHANG = row.KHACHHANG,
+                        TRATRUOC = row.TRATRUOC,
+                        THANHTIEN = row.THANHTIEN ,
+                        DATRA = (long)datra,
+                        CONNO = row.CONNO - (long)datra - row.TRATRUOC
+                    });
+                }
+            }
+            else
+            {
+                note = "BAO GỒM TIỀN LÃI";
+                /* Không sử dụng dữ liệu thu nợ*/
                 /* Tính tổng lãi cho từng KH */
                 foreach (CTongHopCongNo row in _xh)
                 {
@@ -73,35 +103,7 @@ namespace T_Manager.REPORT
                         TRATRUOC = row.TRATRUOC,
                         THANHTIEN = row.THANHTIEN + (long)lai,
                         DATRA = (long)datra,
-                        CONNO = row.CONNO + (long)lai - (long)datra
-                    });
-                }
-            }
-            else
-            {
-                note = "KHÔNG BAO GỒM THU NỢ";
-                /* Không sử dụng dữ liệu thu nợ*/
-                /* Tính tổng lãi cho từng KH */
-                foreach (CTongHopCongNo row in _xh)
-                {
-                    double lai = 0;
-                    /* Tính lãi cho tất cả những lần xuất hàng cho KH */                    
-                    foreach (XUAT_HANG _row in (from _xh_ in DataInstance.Instance().DBContext().XUAT_HANG
-                                                where _xh_.MAKHO == kho
-                                                where _xh_.MAKH == row.MAKH
-                                                select _xh_))
-                    {
-                        /* Không sử dụng dữ liệu từ thu nợ */
-                        lai += MXuatHang.GetLaiPhatSinh((int)_row.ID, false);
-                    }
-                    _datasource.Add(new CTongHopCongNo()
-                    {
-                        STT = STT++,
-                        KHACHHANG = row.KHACHHANG,
-                        TRATRUOC = row.TRATRUOC,
-                        THANHTIEN = row.THANHTIEN + (long)lai,
-                        DATRA = 0,
-                        CONNO = row.CONNO + (long)lai
+                        CONNO = row.CONNO - (long)datra - row.TRATRUOC - (long)lai
                     });
                 }
             }
