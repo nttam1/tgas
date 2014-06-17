@@ -71,6 +71,7 @@
             this.checkBoxTHUNO.TabIndex = 12;
             this.checkBoxTHUNO.Text = "TÍNH CẢ LÃI";
             this.checkBoxTHUNO.UseVisualStyleBackColor = true;
+            this.checkBoxTHUNO.Visible = false;
             // 
             // label3
             // 

@@ -54,7 +54,7 @@ namespace T_Manager.REPORT
                 /* Tính tổng lãi cho từng KH */
                 foreach (CTongHopCongNo row in _xh)
                 {
-                    double lai = 0;
+                    //double lai = 0;
                     double datra = 0;
                     /* Tính lãi cho tất cả những lần xuất hàng cho KH */
                     foreach (XUAT_HANG _row in (from _xh_ in DataInstance.Instance().DBContext().XUAT_HANG
@@ -63,7 +63,7 @@ namespace T_Manager.REPORT
                                                 select _xh_))
                     {
                         /* Không sử dụng dữ liệu từ thu nợ */
-                        lai += MXuatHang.GetLaiPhatSinh((int)_row.ID);
+                        //lai += MXuatHang.GetLaiPhatSinh((int)_row.ID, _to);
                         datra += MChiTietThuNo.TraGocHH((int)_row.ID);
                     }
                     _datasource.Add(new CTongHopCongNo()
@@ -73,7 +73,7 @@ namespace T_Manager.REPORT
                         TRATRUOC = row.TRATRUOC,
                         THANHTIEN = row.THANHTIEN ,
                         DATRA = (long)datra,
-                        CONNO = row.CONNO - (long)datra - row.TRATRUOC
+                        CONNO = row.THANHTIEN- (long)datra - row.TRATRUOC
                     });
                 }
             }
@@ -86,14 +86,12 @@ namespace T_Manager.REPORT
                 {
                     double lai = 0;
                     double datra = 0;
-                    /* Tính lãi cho tất cả những lần xuất hàng cho KH */
                     foreach (XUAT_HANG _row in (from _xh_ in DataInstance.Instance().DBContext().XUAT_HANG
                                                 where _xh_.MAKHO == kho
                                                 where _xh_.MAKH == row.MAKH
                                                 select _xh_))
                     {
-                        /* Không sử dụng dữ liệu từ thu nợ */
-                        lai += MXuatHang.GetLaiPhatSinh((int)_row.ID);
+                        lai += MXuatHang.GetLai((int)_row.ID, _to);
                         datra += MChiTietThuNo.DaTraHH((int)_row.ID);
                     }
                     _datasource.Add(new CTongHopCongNo()
@@ -103,7 +101,7 @@ namespace T_Manager.REPORT
                         TRATRUOC = row.TRATRUOC,
                         THANHTIEN = row.THANHTIEN + (long)lai,
                         DATRA = (long)datra,
-                        CONNO = row.CONNO - (long)datra - row.TRATRUOC - (long)lai
+                        CONNO = row.THANHTIEN - (long)datra - row.TRATRUOC + (long)lai
                     });
                 }
             }

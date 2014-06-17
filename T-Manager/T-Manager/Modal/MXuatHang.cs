@@ -61,7 +61,7 @@ namespace T_Manager.Modal
         /// <param name="id"></param>
         /// <param name="include_THUNO"></param>
         /// <returns></returns>
-        public static double GetLai(int id, bool include_THUNO = true)
+        public static double GetLai(int id, DateTime TO, bool include_THUNO = true)
         {
             double value = 0;
             XUAT_HANG xh = (from _xh in DataInstance.Instance().DBContext().XUAT_HANG
@@ -72,13 +72,13 @@ namespace T_Manager.Modal
             {
                 /* Những lần khách hàng đã trả cho phần nợ xuất hàng này */
                 var thu_no_s = MChiTietThuNo.BelongTo(xh);
-                value = Utility.LaiKep((DateTime)xh.NGAY_XUAT, xh.LAI_SUAT, xh.SO_LUONG * xh.DON_GIA_BAN, thu_no_s);
+                value = Utility.LaiKep((DateTime)xh.NGAY_XUAT, TO, xh.LAI_SUAT, xh.THANH_TIEN, thu_no_s);
 
             }
             /* Không sử dụng chi tiết thu nợ */
             else
-            {               
-                value = Utility.Lai(xh.NGAY_XUAT.Value, xh.LAI_SUAT, xh.SO_LUONG * xh.DON_GIA_BAN);
+            {
+                value = Utility.Lai(xh.NGAY_XUAT.Value, TO, xh.LAI_SUAT, xh.THANH_TIEN);
             }
             return value;
         }
@@ -89,7 +89,7 @@ namespace T_Manager.Modal
         /// <param name="id"></param>
         /// <param name="include_THUNO"></param>
         /// <returns></returns>
-        public static double GetLaiPhatSinh(int id, bool include_THUNO = true)
+        public static double GetLaiPhatSinh(int id, DateTime TO, bool include_THUNO = true)
         {
             double value = 0;
             XUAT_HANG xh = (from _xh in DataInstance.Instance().DBContext().XUAT_HANG
@@ -100,13 +100,13 @@ namespace T_Manager.Modal
             {
                 /* Những lần khách hàng đã trả cho phần nợ xuất hàng này */
                 var thu_no_s = MChiTietThuNo.BelongTo(xh);
-                value = Utility.LaiKep((DateTime)xh.NGAY_XUAT, xh.LAI_SUAT, xh.SO_LUONG * xh.DON_GIA_BAN, thu_no_s, false);
+                value = Utility.LaiKep((DateTime)xh.NGAY_XUAT, TO , xh.LAI_SUAT, xh.THANH_TIEN, thu_no_s, false);
 
             }
             /* Không sử dụng chi tiết thu nợ */
             else
             {
-                value = Utility.Lai(xh.NGAY_XUAT.Value, xh.LAI_SUAT, xh.SO_LUONG * xh.DON_GIA_BAN);
+                value = Utility.Lai(xh.NGAY_XUAT.Value, TO, xh.LAI_SUAT, xh.THANH_TIEN);
             }
             return value;
         }
