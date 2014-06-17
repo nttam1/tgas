@@ -96,6 +96,7 @@
             this.comboBoxHANGHOA.Size = new System.Drawing.Size(206, 21);
             this.comboBoxHANGHOA.TabIndex = 21;
             this.comboBoxHANGHOA.SelectedIndexChanged += new System.EventHandler(this.comboBoxHANGHOA_SelectedIndexChanged);
+            this.comboBoxHANGHOA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxHANGHOA_KeyPress);
             // 
             // buttonCLEAR
             // 
@@ -163,11 +164,13 @@
             // 
             // dateTimePickerNGAYBAN
             // 
+            this.dateTimePickerNGAYBAN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerNGAYBAN.Location = new System.Drawing.Point(236, 198);
             this.dateTimePickerNGAYBAN.Name = "dateTimePickerNGAYBAN";
             this.dateTimePickerNGAYBAN.Size = new System.Drawing.Size(206, 20);
             this.dateTimePickerNGAYBAN.TabIndex = 24;
             this.dateTimePickerNGAYBAN.ValueChanged += new System.EventHandler(this.dateTimePickerNGAYBAN_ValueChanged);
+            this.dateTimePickerNGAYBAN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerNGAYBAN_KeyPress);
             // 
             // textBoxDONGIA
             // 
@@ -177,6 +180,7 @@
             this.textBoxDONGIA.TabIndex = 22;
             this.textBoxDONGIA.Text = "0";
             this.textBoxDONGIA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxDONGIA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDONGIA_KeyPress);
             // 
             // textBoxSOLUONG
             // 
@@ -186,6 +190,7 @@
             this.textBoxSOLUONG.TabIndex = 23;
             this.textBoxSOLUONG.Text = "0";
             this.textBoxSOLUONG.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxSOLUONG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSOLUONG_KeyPress);
             // 
             // comboBoxKHACH_HANG
             // 
@@ -196,6 +201,7 @@
             this.comboBoxKHACH_HANG.Size = new System.Drawing.Size(128, 21);
             this.comboBoxKHACH_HANG.TabIndex = 20;
             this.comboBoxKHACH_HANG.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHACH_HANG_SelectedIndexChanged);
+            this.comboBoxKHACH_HANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHACH_HANG_KeyPress);
             // 
             // comboBoxKho
             // 
@@ -206,6 +212,7 @@
             this.comboBoxKho.Size = new System.Drawing.Size(206, 21);
             this.comboBoxKho.TabIndex = 19;
             this.comboBoxKho.SelectedIndexChanged += new System.EventHandler(this.comboBoxKho_SelectedIndexChanged);
+            this.comboBoxKho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKho_KeyPress);
             // 
             // dataGridView1
             // 
@@ -241,6 +248,7 @@
             this.textBoxDUATRUOC.TabIndex = 35;
             this.textBoxDUATRUOC.Text = "0";
             this.textBoxDUATRUOC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxDUATRUOC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDUATRUOC_KeyPress);
             // 
             // textBoxLAISUAT
             // 
@@ -250,6 +258,7 @@
             this.textBoxLAISUAT.TabIndex = 36;
             this.textBoxLAISUAT.Text = "0";
             this.textBoxLAISUAT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxLAISUAT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLAISUAT_KeyPress);
             // 
             // label11
             // 

@@ -12,6 +12,25 @@ namespace T_Manager.Modal
         public const int NO_VAY = 1;
         public const int NO_HANG_HOA = 2;
 
+        public static long TongGocDauKi(long MAKH, DateTime TO)
+        {
+            TO = TO.Date;
+            long value = 0;
+            try
+            {
+                value = DataInstance.Instance().DBContext().THU_NO
+                    .Where(u => u.MAKH == MAKH)
+                    .Where(u => u.NGAY_TRA < TO)
+                    .Select(u => u.TIEN_GOC)
+                    .Sum();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return value;
+        }
+
         /// <summary>
         /// Khách hàng trả nợ, bao gồm lãi và gốc hoặc nợ khác (Nợ phát sinh, không lãi, có lý do)
         /// Loại nợ: Nợ hàng hóa hoặc nợ vay

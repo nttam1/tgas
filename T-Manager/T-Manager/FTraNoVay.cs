@@ -42,6 +42,7 @@ namespace T_Manager
 
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            comboBoxNGUONVAY.Select();
         }
         private void c_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -65,9 +66,10 @@ namespace T_Manager
                 dataGridView1.Columns[1].Visible = false;
                 dataGridView1.Columns[6].Visible = false;
                 dataGridView1.Columns[7].Visible = false;
+                dataGridView1.Columns[8].Visible = false;
                 dataGridView1.Columns[2].HeaderText = "TỔNG TIỀN";
                 dataGridView1.Columns[3].HeaderText = "LÃI SUẤT";
-                dataGridView1.Columns[4].HeaderText = "KÌ HẠN";
+                dataGridView1.Columns[4].Visible = false;
                 dataGridView1.Columns[5].HeaderText = "NGÀY VAY";
                 dataGridView1.Select();
             }
@@ -87,9 +89,12 @@ namespace T_Manager
                 var goc = Convert.ToInt32(textBoxTONGTIEN.Text);
                 var lai = Convert.ToInt32(textBoxTIENLAI.Text);
                 var ngay = dateTimePicker1.Value.Date;
-                bool traxong = checkBoxTRAXONG.Checked == true;
-                /*LAYT VAY_ID */    
-                VAY _v = (VAY)bs.List[_SelectedRow];
+                if (goc < 0 || lai < 0)
+                {
+                    MessageBox.Show("Tiền nhập vào không được nhỏ hơn 0");
+                    return;
+                }
+                /*LAYT VAY_ID */
                 DataInstance.Instance().DBContext().AddToTRA_NO_VAY(new TRA_NO_VAY()
                 {
                     MAKHO = kho,
@@ -98,17 +103,8 @@ namespace T_Manager
                     TIEN_LAI = lai,
                     NGAY_TRA = ngay,
                     CREATED_AT = DateTime.Now,
-                    VAY_ID = _v.ID,
+                    VAY_ID = 0
                 });
-                /* Cập nhật trạng thái cho vay */
-                if (traxong == true)
-                {
-                    foreach (VAY __v in (from _vayy in DataInstance.Instance().DBContext().VAYs
-                        where _vayy.ID == _v.ID select _vayy))
-                    {
-                        __v.TRANG_THAI = MVay.DA_TRA_XONG;
-                    }
-                }
                 DataInstance.Instance().DBContext().SaveChanges();
                 comboBoxNGUONVAY_SelectedIndexChanged(sender, e);
                 textBoxTONGTIEN.Text = "0";
@@ -117,7 +113,7 @@ namespace T_Manager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Dữ liệu nhập sai");
             }
 
 
@@ -130,35 +126,6 @@ namespace T_Manager
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            _SelectedRow = e.RowIndex;
-            long vay = long.Parse(comboBoxNGUONVAY.SelectedValue.ToString());
-            VAY _v = (VAY)bs.List[e.RowIndex];
-            textBoxNGAYVAY.Text = _v.NGAY_VAY.Date.ToShortDateString();
-            textBoxTIENGOC.Text = Utility.StringToVND(_v.TONG_TIEN.ToString());
-            textBoxLAISUAT.Text = (_v.LAI_SUAT * 100).ToString() + " %";
-            textBoxKYHAN.Text = (_v.KY_HAN.ToString()) + " Tháng";
-            try
-            {
-                textBoxLAIDATRA.Text = Utility.StringToVND(
-                    (from tn in DataInstance.Instance().DBContext().TRA_NO_VAY
-                     where tn.VAY_ID == _v.ID
-                     select tn.TIEN_LAI).Sum().ToString());
-            }
-            catch (Exception ex)
-            {
-                textBoxLAIDATRA.Text = Utility.StringToVND("0");
-            }
-            try
-            {
-                textBoxGOCDATRA.Text = Utility.StringToVND(
-                    (from tn in DataInstance.Instance().DBContext().TRA_NO_VAY
-                     where tn.VAY_ID == _v.ID
-                     select tn.TIEN_GOC).Sum().ToString());
-            }
-            catch (Exception ex)
-            {
-                textBoxGOCDATRA.Text = Utility.StringToVND("0");
-            }
         }
 
         private void checkBoxTRAXONG_CheckedChanged(object sender, EventArgs e)
@@ -170,6 +137,22 @@ namespace T_Manager
             catch (Exception ex)
             {
 
+            }
+        }
+
+        private void comboBoxNGUONVAY_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void textBoxTIENLAI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                button1_Click(sender, e);
             }
         }
     }

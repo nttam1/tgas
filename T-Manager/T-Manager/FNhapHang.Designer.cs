@@ -59,6 +59,7 @@
             this.comboBoxKho.Size = new System.Drawing.Size(206, 21);
             this.comboBoxKho.TabIndex = 0;
             this.comboBoxKho.SelectedIndexChanged += new System.EventHandler(this.comboBoxKho_SelectedIndexChanged);
+            this.comboBoxKho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKho_KeyPress);
             // 
             // comboBoxNCC
             // 
@@ -69,13 +70,14 @@
             this.comboBoxNCC.Size = new System.Drawing.Size(206, 21);
             this.comboBoxNCC.TabIndex = 1;
             this.comboBoxNCC.SelectedIndexChanged += new System.EventHandler(this.comboBoxNCC_SelectedIndexChanged);
+            this.comboBoxNCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKho_KeyPress);
             // 
             // textBoxSOLUONG
             // 
-            this.textBoxSOLUONG.Location = new System.Drawing.Point(501, 155);
+            this.textBoxSOLUONG.Location = new System.Drawing.Point(501, 200);
             this.textBoxSOLUONG.Name = "textBoxSOLUONG";
             this.textBoxSOLUONG.Size = new System.Drawing.Size(155, 20);
-            this.textBoxSOLUONG.TabIndex = 4;
+            this.textBoxSOLUONG.TabIndex = 5;
             this.textBoxSOLUONG.Text = "0";
             this.textBoxSOLUONG.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxSOLUONG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSOLUONG_KeyPress);
@@ -83,22 +85,23 @@
             // textBoxDONGIA
             // 
             this.textBoxDONGIA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDONGIA.Location = new System.Drawing.Point(501, 111);
+            this.textBoxDONGIA.Location = new System.Drawing.Point(501, 156);
             this.textBoxDONGIA.Name = "textBoxDONGIA";
             this.textBoxDONGIA.Size = new System.Drawing.Size(155, 20);
-            this.textBoxDONGIA.TabIndex = 3;
+            this.textBoxDONGIA.TabIndex = 4;
             this.textBoxDONGIA.Text = "0";
             this.textBoxDONGIA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxDONGIA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDONGIA_KeyPress);
+            this.textBoxDONGIA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKho_KeyPress);
             // 
             // dateTimePickerNGAYNHAP
             // 
             this.dateTimePickerNGAYNHAP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNGAYNHAP.Location = new System.Drawing.Point(501, 205);
+            this.dateTimePickerNGAYNHAP.Location = new System.Drawing.Point(501, 106);
             this.dateTimePickerNGAYNHAP.Name = "dateTimePickerNGAYNHAP";
             this.dateTimePickerNGAYNHAP.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerNGAYNHAP.TabIndex = 5;
+            this.dateTimePickerNGAYNHAP.TabIndex = 3;
             this.dateTimePickerNGAYNHAP.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePickerNGAYNHAP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKho_KeyPress);
             // 
             // label1
             // 
@@ -122,7 +125,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(392, 158);
+            this.label3.Location = new System.Drawing.Point(392, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 8;
@@ -131,7 +134,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(394, 114);
+            this.label4.Location = new System.Drawing.Point(394, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 13);
             this.label4.TabIndex = 9;
@@ -140,7 +143,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(394, 212);
+            this.label6.Location = new System.Drawing.Point(394, 113);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 11;
@@ -195,6 +198,7 @@
             this.comboBoxHANGHOA.TabIndex = 2;
             this.comboBoxHANGHOA.SelectedIndexChanged += new System.EventHandler(this.comboBoxHANGHOA_SelectedIndexChanged);
             this.comboBoxHANGHOA.SelectedValueChanged += new System.EventHandler(this.comboBoxHANGHOA_SelectedValueChanged);
+            this.comboBoxHANGHOA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKho_KeyPress);
             // 
             // dataGridView1
             // 
@@ -217,7 +221,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(662, 114);
+            this.label9.Location = new System.Drawing.Point(662, 159);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(30, 13);
             this.label9.TabIndex = 19;
@@ -226,7 +230,7 @@
             // labelDONVITINH
             // 
             this.labelDONVITINH.AutoSize = true;
-            this.labelDONVITINH.Location = new System.Drawing.Point(662, 158);
+            this.labelDONVITINH.Location = new System.Drawing.Point(662, 203);
             this.labelDONVITINH.Name = "labelDONVITINH";
             this.labelDONVITINH.Size = new System.Drawing.Size(60, 13);
             this.labelDONVITINH.TabIndex = 20;

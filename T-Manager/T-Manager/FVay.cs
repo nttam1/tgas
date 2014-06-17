@@ -37,9 +37,6 @@ namespace T_Manager
                     c.KeyPress += new KeyPressEventHandler(c_KeyPress);
                 }
             }
-            comboBoxTHOIGIAN.DataSource = MVay.ThoiDoan();
-            comboBoxTHOIGIAN.DisplayMember = "NAME";
-            comboBoxTHOIGIAN.ValueMember = "VALUE";
         }
         private void c_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -48,25 +45,37 @@ namespace T_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var nguon = Int32.Parse(comboBoxNGUONVAY.SelectedValue.ToString());
-            var tien = Int32.Parse(textBoxTONGTIEN.Text);
-            var laisuat = double.Parse(textBoxLAISUAT.Text);
-            long kho = long.Parse(comboBoxKHO.SelectedValue.ToString());
-            var ngayvay = dateTimePicker1.Value.Date;
-            bs.Add(new VAY()
+            try
             {
-                MA_NGUON_VAY = nguon,
-                MAKHO = kho,
-                TONG_TIEN = tien,
-                LAI_SUAT = laisuat / 100,
-                NGAY_VAY = ngayvay,
-                CREATED_AT = DateTime.Now,
-                KY_HAN = long.Parse(comboBoxTHOIGIAN.SelectedValue.ToString()),
-                TRANG_THAI = MVay.CHUA_TRA_XONG
-            });
-            bs.EndEdit();
-            bs.ResetBindings(false);
-            DataInstance.Instance().DBContext().SaveChanges();
+                var nguon = Int32.Parse(comboBoxNGUONVAY.SelectedValue.ToString());
+                var tien = Int32.Parse(textBoxTONGTIEN.Text);
+                var laisuat = double.Parse(textBoxLAISUAT.Text);
+                long kho = long.Parse(comboBoxKHO.SelectedValue.ToString());
+                var ngayvay = dateTimePicker1.Value.Date;
+                if (tien <= 0 || laisuat < 0)
+                {
+                    MessageBox.Show("Tổng tiền hoặc lãi suất không được nhỏ hơn 0");
+                    return;
+                }
+                bs.Add(new VAY()
+                {
+                    MA_NGUON_VAY = nguon,
+                    MAKHO = kho,
+                    TONG_TIEN = tien,
+                    LAI_SUAT = laisuat / 100,
+                    NGAY_VAY = ngayvay,
+                    CREATED_AT = DateTime.Now,
+                    KY_HAN = 0,
+                    TRANG_THAI = MVay.CHUA_TRA_XONG
+                });
+                bs.EndEdit();
+                bs.ResetBindings(false);
+                DataInstance.Instance().DBContext().SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Dữ liệu nhập vào không đúng");
+            }
         }
 
         private void comboBoxNGUONVAY_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,7 +94,7 @@ namespace T_Manager
                 dataGridView1.Columns[1].Visible = false;
                 dataGridView1.Columns[2].HeaderText = "Tổng tiền";
                 dataGridView1.Columns[3].HeaderText = "Lãi suất";
-                dataGridView1.Columns[4].HeaderText = "Kì hạn";
+                dataGridView1.Columns[4].Visible = false;
                 dataGridView1.Columns[5].HeaderText = "Ngày vay";
                 dataGridView1.Columns[6].Visible = false;
                 dataGridView1.Columns[7].Visible = false;
@@ -94,6 +103,27 @@ namespace T_Manager
             catch (Exception ex)
             {
             }
+        }
+
+        private void comboBoxNGUONVAY_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void textBoxTONGTIEN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                button1_Click(sender, e);
+            }
+        }
+
+        private void textBoxTONGTIEN_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

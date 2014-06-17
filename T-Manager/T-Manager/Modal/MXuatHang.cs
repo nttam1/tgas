@@ -110,9 +110,23 @@ namespace T_Manager.Modal
             }
             return value;
         }
-        public static double GetNo(int id, bool include_THUNO = true)
+
+        public static long TongNoDauKi(long MAKH, DateTime TO)
         {
-            double value = 0;
+            TO = TO.Date;
+            long value = 0;
+            try
+            {
+                value = DataInstance.Instance().DBContext().XUAT_HANG
+                    .Where(u => u.MAKH == MAKH)
+                    .Where(u => u.NGAY_XUAT < TO)
+                    .Select(u => u.THANH_TIEN - u.TRA_TRUOC)
+                    .Sum();
+            }
+            catch (Exception ex)
+            {
+
+            }
             return value;
         }
     }

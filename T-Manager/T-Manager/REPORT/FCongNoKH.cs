@@ -78,7 +78,8 @@ namespace T_Manager.REPORT
                 });
             }
             var datasource = _datasource.OrderBy(u => u.NGAY);
-            long no = 0;
+            long no = MXuatHang.TongNoDauKi(MAKH, FROM) - MThuNo.TongGocDauKi(MAKH, FROM);
+            long nodauki = no;
             foreach (CCongNoNew c in datasource)
             {
                 c.CONNO = no + c.THANHTIEN - c.TRATRUOC - c.TRAGOC;
@@ -92,6 +93,7 @@ namespace T_Manager.REPORT
             rpt.SetParameterValue("FROM", dateTimePickerFROM.Value);
             rpt.SetParameterValue("TO", dateTimePickerTO.Value);
             rpt.SetParameterValue("COMP", ConstClass.COMPANY_NAME);
+            rpt.SetParameterValue("NODAUKI", nodauki);
             crystalReportViewer1.ReportSource = rpt;
             crystalReportViewer1.Zoom(150);
         }

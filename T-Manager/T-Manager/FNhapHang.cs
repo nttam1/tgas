@@ -50,7 +50,10 @@ namespace T_Manager
 
         private void textBoxSOLUONG_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = (!char.IsDigit(e.KeyChar)) && (!char.IsControl(e.KeyChar));
+            if (e.KeyChar == (char)13)
+            {
+                buttonADD_Click(sender, e);
+            }
         }
 
         private void buttonADD_Click(object sender, EventArgs e)
@@ -66,19 +69,25 @@ namespace T_Manager
                 ele.SL_CON_LAI = Convert.ToInt32(textBoxSOLUONG.Text);
                 ele.DON_GIA_MUA = Convert.ToInt32(textBoxDONGIA.Text);
                 ele.MAHH = Convert.ToInt32(comboBoxHANGHOA.SelectedValue.ToString());
-                if (ele.SO_LUONG == 0 || ele.DON_GIA_MUA == 0)
+                if (ele.SO_LUONG == 0 && ele.DON_GIA_MUA == 0)
                 {
-                    MessageBox.Show("Chưa nhập số lượng hoặc đơn giá");
+                    MessageBox.Show("Chưa nhập số lượng và đơn giá");
+                    textBoxDONGIA.Select();
+                    textBoxDONGIA.SelectAll();
                     return;
                 }
-                else
+                if (ele.SO_LUONG < 0 || ele.DON_GIA_MUA < 0)
                 {
-                    bs.Add(ele);
-                    bs.EndEdit();
-                    bs.ResetBindings(false);
-                    dbContext.SaveChanges();
-                    textBoxDONGIA.Select();
+                    MessageBox.Show("Số lượng và đơn giá không được nhỏ hơn 0");
+                    return;
                 }
+                bs.Add(ele);
+                bs.EndEdit();
+                bs.ResetBindings(false);
+                dbContext.SaveChanges();
+                textBoxDONGIA.Text = "0";
+                textBoxSOLUONG.Text = "0";
+                textBoxDONGIA.Select();
             }
             catch (Exception ex)
             {
@@ -113,7 +122,7 @@ namespace T_Manager
 
         private void textBoxDONGIA_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = (!char.IsDigit(e.KeyChar)) && (!char.IsControl(e.KeyChar));
+
         }
 
         private void comboBoxHANGHOA_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,6 +157,14 @@ namespace T_Manager
         private void comboBoxKho_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxHANGHOA_SelectedIndexChanged(sender, e);
+        }
+
+        private void comboBoxKho_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

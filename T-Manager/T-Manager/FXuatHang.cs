@@ -44,15 +44,35 @@ namespace T_Manager
                 ele.MAHH = Convert.ToInt32(comboBoxHANGHOA.SelectedValue.ToString());
                 ele.TRANG_THAI = MXuatHang.CHUA_TRA_XONG;
                 ele.THANH_TIEN = ele.SO_LUONG * ele.DON_GIA_BAN;
-                if (ele.DON_GIA_BAN == 0 || ele.SO_LUONG == 0)
+
+                if (ele.DON_GIA_BAN < 0 || ele.TRA_TRUOC == 0 || ele.LAI_SUAT < 0)
                 {
-                    MessageBox.Show("Chưa nhập số lượng hoặc đơn giá bán");
+                    MessageBox.Show("Đơn giá, trả trước, lãi suất không được nhỏ hơn 0");
+                    return;
+
+                }
+                if (ele.DON_GIA_BAN == 0 && ele.SO_LUONG == 0)
+                {
+                    if (ele.TRA_TRUOC == 0)
+                    {
+                        MessageBox.Show("Dữ liệu nhập vào không hợp lệ");
+                        textBoxDUATRUOC.Select();
+                        textBoxDUATRUOC.SelectAll();
+                        return;
+                    }
+                }
+                if (ele.DON_GIA_BAN < ConstClass.DON_GIA_BASE && ele.SO_LUONG > 0)
+                {
+                    MessageBox.Show("Đơn giá không hợp lệ"); 
+                    textBoxDONGIA.Select();
+                    textBoxDONGIA.SelectAll();
                     return;
                 }
                 long lton = MKho.Ton(ele.MAKHO, ele.MAHH);
                 if (ele.SO_LUONG > lton)
                 {
                     MessageBox.Show("Số lượng bán hàng lớn hơn số lượng tồn.\nCòn tồn: " + lton.ToString(), "Lỗi số lượng!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    comboBoxHANGHOA.Select();
                     return;
                 }
 
@@ -63,12 +83,18 @@ namespace T_Manager
                 MXuatHang.Update(ele.SO_LUONG, ele);
                 dbContext.SaveChanges();
                 textBoxDONGIA.SelectAll();
-                dataGridView1.Rows.Add(comboBoxKho.Text, comboBoxKHACH_HANG.Text, comboBoxHANGHOA.Text, ele.DON_GIA_BAN, ele.SO_LUONG, ele.TRA_TRUOC, ele.LAI_SUAT, ele.NGAY_XUAT);
+
+                textBoxLAISUAT.Text = "0";
+                textBoxDUATRUOC.Text = "0";
+                textBoxDONGIA.Text = "0";
+                textBoxSOLUONG.Text = "0";
             }
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Dữ liệu nhập vào phải là số");
             }
+            comboBoxHANGHOA.Select();
         }
 
         private void XuatHang_Load(object sender, EventArgs e)
@@ -127,7 +153,7 @@ namespace T_Manager
             }
             catch (Exception ex)
             {
-               // MessageBox.Show(ex.Message);
+               //MessageBox.Show("Dữ liệu nhập vào phải là số");
             }
         }
 
@@ -161,6 +187,74 @@ namespace T_Manager
         private void comboBoxKHACH_HANG_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxHANGHOA_SelectedIndexChanged(sender, e);
+        }
+
+        private void comboBoxKho_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                comboBoxKHACH_HANG.Select();
+            }
+        }
+
+        private void comboBoxKHACH_HANG_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                comboBoxHANGHOA.Select();
+            }
+        }
+
+        private void dateTimePickerNGAYBAN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                textBoxDONGIA.Select();
+                textBoxDONGIA.SelectAll();
+            }
+        }
+
+        private void comboBoxHANGHOA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dateTimePickerNGAYBAN.Select();
+            }
+        }
+
+        private void textBoxDONGIA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                textBoxSOLUONG.Select();
+                textBoxSOLUONG.SelectAll();
+            }
+        }
+
+        private void textBoxSOLUONG_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                textBoxDUATRUOC.Select();
+                textBoxDUATRUOC.SelectAll();
+            }
+        }
+
+        private void textBoxDUATRUOC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                textBoxLAISUAT.Select();
+                textBoxLAISUAT.SelectAll();
+            }
+        }
+
+        private void textBoxLAISUAT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                buttonADD_Click(sender, e);
+            }
         }
     }
 }

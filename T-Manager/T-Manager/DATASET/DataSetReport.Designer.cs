@@ -4696,7 +4696,7 @@ namespace T_Manager.DATASET {
             
             private global::System.Data.DataColumn columnSOLUONG;
             
-            private global::System.Data.DataColumn columnDONVITINH;
+            private global::System.Data.DataColumn columnTRATRUOC;
             
             private global::System.Data.DataColumn columnDONGIA;
             
@@ -4775,9 +4775,9 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DONVITINHColumn {
+            public global::System.Data.DataColumn TRATRUOCColumn {
                 get {
-                    return this.columnDONVITINH;
+                    return this.columnTRATRUOC;
                 }
             }
             
@@ -4858,14 +4858,14 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CONGNONEWRow AddCONGNONEWRow(System.DateTime NGAY, string TRANO, string HANGHOA, long SOLUONG, string DONVITINH, long DONGIA, long THANHTIEN, long TRAGOC, long TRALAI, long CONNO) {
+            public CONGNONEWRow AddCONGNONEWRow(System.DateTime NGAY, string TRANO, string HANGHOA, long SOLUONG, long TRATRUOC, long DONGIA, long THANHTIEN, long TRAGOC, long TRALAI, long CONNO) {
                 CONGNONEWRow rowCONGNONEWRow = ((CONGNONEWRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NGAY,
                         TRANO,
                         HANGHOA,
                         SOLUONG,
-                        DONVITINH,
+                        TRATRUOC,
                         DONGIA,
                         THANHTIEN,
                         TRAGOC,
@@ -4897,7 +4897,7 @@ namespace T_Manager.DATASET {
                 this.columnTRANO = base.Columns["TRANO"];
                 this.columnHANGHOA = base.Columns["HANGHOA"];
                 this.columnSOLUONG = base.Columns["SOLUONG"];
-                this.columnDONVITINH = base.Columns["DONVITINH"];
+                this.columnTRATRUOC = base.Columns["TRATRUOC"];
                 this.columnDONGIA = base.Columns["DONGIA"];
                 this.columnTHANHTIEN = base.Columns["THANHTIEN"];
                 this.columnTRAGOC = base.Columns["TRAGOC"];
@@ -4916,8 +4916,8 @@ namespace T_Manager.DATASET {
                 base.Columns.Add(this.columnHANGHOA);
                 this.columnSOLUONG = new global::System.Data.DataColumn("SOLUONG", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSOLUONG);
-                this.columnDONVITINH = new global::System.Data.DataColumn("DONVITINH", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDONVITINH);
+                this.columnTRATRUOC = new global::System.Data.DataColumn("TRATRUOC", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTRATRUOC);
                 this.columnDONGIA = new global::System.Data.DataColumn("DONGIA", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDONGIA);
                 this.columnTHANHTIEN = new global::System.Data.DataColumn("THANHTIEN", typeof(long), null, global::System.Data.MappingType.Element);
@@ -7177,17 +7177,17 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DONVITINH {
+            public long TRATRUOC {
                 get {
                     try {
-                        return ((string)(this[this.tableCONGNONEW.DONVITINHColumn]));
+                        return ((long)(this[this.tableCONGNONEW.TRATRUOCColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DONVITINH\' in table \'CONGNONEW\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TRATRUOC\' in table \'CONGNONEW\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCONGNONEW.DONVITINHColumn] = value;
+                    this[this.tableCONGNONEW.TRATRUOCColumn] = value;
                 }
             }
             
@@ -7321,14 +7321,14 @@ namespace T_Manager.DATASET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDONVITINHNull() {
-                return this.IsNull(this.tableCONGNONEW.DONVITINHColumn);
+            public bool IsTRATRUOCNull() {
+                return this.IsNull(this.tableCONGNONEW.TRATRUOCColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDONVITINHNull() {
-                this[this.tableCONGNONEW.DONVITINHColumn] = global::System.Convert.DBNull;
+            public void SetTRATRUOCNull() {
+                this[this.tableCONGNONEW.TRATRUOCColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
