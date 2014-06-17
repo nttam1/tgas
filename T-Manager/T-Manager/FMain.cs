@@ -137,7 +137,7 @@ namespace T_Manager
 
         private void button16_Click(object sender, EventArgs e)
         {
-            REPORT.FCongNoKH f = new REPORT.FCongNoKH();
+            REPORT.FChiTietLaiKH f = new REPORT.FChiTietLaiKH();
             f.ShowDialog();
         }
 
@@ -252,6 +252,12 @@ namespace T_Manager
 
         private void FMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            REPORT.FCongNoKH f = new REPORT.FCongNoKH();
+            f.ShowDialog();
         }
     }
 }

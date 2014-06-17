@@ -259,7 +259,7 @@
           <Property Name="MAKH" Type="integer" Nullable="false" />
           <Property Name="SO_LUONG" Type="integer" Nullable="false" />
           <Property Name="DON_GIA_BAN" Type="integer" Nullable="false" />
-          <Property Name="THANH_TOAN_XUAT" Type="integer" Nullable="false" />
+          <Property Name="THANH_TIEN" Type="integer" Nullable="false" />
           <Property Name="LAI_SUAT" Type="float" Nullable="false" />
           <Property Name="TRA_TRUOC" Type="integer" Nullable="false" />
           <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
@@ -525,7 +525,7 @@
           <Property Type="Int64" Name="MAKH" Nullable="false" />
           <Property Type="Int64" Name="SO_LUONG" Nullable="false" />
           <Property Type="Int64" Name="DON_GIA_BAN" Nullable="false" />
-          <Property Type="Int64" Name="THANH_TOAN_XUAT" Nullable="false" />
+          <Property Type="Int64" Name="THANH_TIEN" Nullable="false" />
           <Property Type="Double" Name="LAI_SUAT" Nullable="false" />
           <Property Type="Int64" Name="TRA_TRUOC" Nullable="false" />
           <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
@@ -789,7 +789,7 @@
                 <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
                 <ScalarProperty Name="TRA_TRUOC" ColumnName="TRA_TRUOC" />
                 <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
-                <ScalarProperty Name="THANH_TOAN_XUAT" ColumnName="THANH_TOAN_XUAT" />
+                <ScalarProperty Name="THANH_TIEN" ColumnName="THANH_TIEN" />
                 <ScalarProperty Name="DON_GIA_BAN" ColumnName="DON_GIA_BAN" />
                 <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
                 <ScalarProperty Name="MAKH" ColumnName="MAKH" />
@@ -815,7 +815,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
@@ -838,11 +838,11 @@
         <EntityTypeShape EntityType="tgasModel.NHAN_VIEN" Width="1.5" PointX="10.75" PointY="0.75" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="tgasModel.NHAP_HANG" Width="1.5" PointX="10.75" PointY="3.75" Height="2.7494921874999818" />
         <EntityTypeShape EntityType="tgasModel.THU_NO" Width="1.5" PointX="4.75" PointY="10.75" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="tgasModel.TRA_NO_NCC" Width="1.5" PointX="10.75" PointY="7.75" Height="2.1725878906249818" />
-        <EntityTypeShape EntityType="tgasModel.TRA_NO_VAY" Width="1.5" PointX="10.75" PointY="10.75" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="tgasModel.TRA_NO_NCC" Width="1.5" PointX="10.75" PointY="7.75" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="tgasModel.TRA_NO_VAY" Width="1.5" PointX="10.75" PointY="10.75" Height="2.5571907552083388" />
         <EntityTypeShape EntityType="tgasModel.VAY" Width="1.5" PointX="0.75" PointY="11.75" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="tgasModel.XE" Width="1.5" PointX="12.75" PointY="0.75" Height="1.4033821614583246" />
-        <EntityTypeShape EntityType="tgasModel.XUAT_HANG" Width="1.5" PointX="12.75" PointY="3.75" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="tgasModel.XE" Width="1.5" PointX="12.75" PointY="0.75" Height="1.403382161458353" />
+        <EntityTypeShape EntityType="tgasModel.XUAT_HANG" Width="1.5" PointX="7.375" PointY="12.75" Height="3.5186979166666674" />
       </Diagram>
     </Diagrams>
   </Designer>

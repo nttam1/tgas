@@ -60,16 +60,8 @@ namespace T_Manager
                 // Hien thi tong no, tong la
                 try
                 {
-                    if (radioButtonNOHH.Checked == true)
-                    {
-                        TONGNO_LB.Text = Utility.StringToVND(mKH.NoHHHienTai().ToString());
-                        TONGLAI_LB.Text = Utility.StringToVND(mKH.LaiHHHienTai().ToString());
-                    }
-                    else
-                    {
-                        TONGNO_LB.Text = Utility.StringToVND(mKH.NoVayHienTai().ToString());
-                        TONGLAI_LB.Text = Utility.StringToVND(mKH.LaiVayHienTai().ToString());
-                    }
+                    TONGNO_LB.Text = Utility.StringToVND(mKH.NoHHHienTai().ToString());
+                    TONGLAI_LB.Text = Utility.StringToVND(mKH.LaiHHHienTai().ToString());
                 }
                 catch (Exception ex)
                 {
@@ -95,7 +87,7 @@ namespace T_Manager
                 var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
                 var goc = Int64.Parse(textBoxTIENGOC.Text);
                 var lai = Int64.Parse(textBoxTIENLAI.Text);
-                var loai_no = radioButtonNOHH.Checked == true ? MThuNo.NO_HANG_HOA : MThuNo.NO_VAY;
+                var loai_no = MThuNo.NO_HANG_HOA;
                 var cur_lai = LaiVay + LaiHH;
                 var cur_no = NoHH + NoVay;
                 DateTime date = dateTimePickerDATE.Value.Date;

@@ -251,7 +251,7 @@
           <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
           <ScalarProperty Name="TRA_TRUOC" ColumnName="TRA_TRUOC" />
           <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
-          <ScalarProperty Name="THANH_TOAN_XUAT" ColumnName="THANH_TOAN_XUAT" />
+          <ScalarProperty Name="THANH_TIEN" ColumnName="THANH_TIEN" />
           <ScalarProperty Name="DON_GIA_BAN" ColumnName="DON_GIA_BAN" />
           <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
           <ScalarProperty Name="MAKH" ColumnName="MAKH" />

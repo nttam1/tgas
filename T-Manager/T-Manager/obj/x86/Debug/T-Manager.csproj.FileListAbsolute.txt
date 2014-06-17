@@ -98,7 +98,6 @@ F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FChi
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FChiTietNoVay.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FChiTietThanhToanNCC.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FChiTungKho.resources
-F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FCongNoKH.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FCongSoHangNgay.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FLaiLoTungKho.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FNhapXuatTungKho.resources
@@ -107,3 +106,11 @@ F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FTon
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FTongHopNoVay.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FXemKhoQuy.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csproj.GenerateResource.Cache
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe.config
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.pdb
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.dll
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.xml
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.exe
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.pdb
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FChiTietLaiKH.resources

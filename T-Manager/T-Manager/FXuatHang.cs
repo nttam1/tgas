@@ -43,6 +43,7 @@ namespace T_Manager
                 ele.DON_GIA_BAN = Convert.ToInt32(textBoxDONGIA.Text);
                 ele.MAHH = Convert.ToInt32(comboBoxHANGHOA.SelectedValue.ToString());
                 ele.TRANG_THAI = MXuatHang.CHUA_TRA_XONG;
+                ele.THANH_TIEN = ele.SO_LUONG * ele.DON_GIA_BAN;
                 if (ele.DON_GIA_BAN == 0 || ele.SO_LUONG == 0)
                 {
                     MessageBox.Show("Chưa nhập số lượng hoặc đơn giá bán");

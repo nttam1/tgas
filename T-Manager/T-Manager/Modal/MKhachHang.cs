@@ -68,7 +68,7 @@ namespace T_Manager.Modal
                     {
 
                     }
-                    value += row.SO_LUONG * row.DON_GIA_BAN - da_thanh_toan;
+                    value += row.THANH_TIEN - da_thanh_toan;
 
                 }
 
@@ -81,7 +81,7 @@ namespace T_Manager.Modal
                                        where xh.MAKHO >= _MA_FROM && xh.MAKHO <= _MA_TO
                                        where xh.MAKH == MAKH
                                        orderby xh.NGAY_XUAT ascending
-                                       select xh.SO_LUONG * xh.DON_GIA_BAN).Sum();
+                                       select xh.THANH_TIEN).Sum();
                     value = _tong_no;
                 }
                 catch (Exception ex)
@@ -118,7 +118,7 @@ namespace T_Manager.Modal
                                          where cttn.NO_ID == row.ID
                                          select cttn);
                     DateTime _ngay_no = row.NGAY_XUAT.Value;
-                    double _tong_tien_hien_tai = row.SO_LUONG * row.DON_GIA_BAN;
+                    double _tong_tien_hien_tai = row.THANH_TIEN;
                     foreach (CHI_TIET_THU_NO tn in da_thanh_toan)
                     {
                         value += Utility.Lai(_ngay_no, tn.NGAY_TRA, row.LAI_SUAT, _tong_tien_hien_tai) - tn.TIEN_LAI;
@@ -142,7 +142,7 @@ namespace T_Manager.Modal
                 double _tong_lai_no = 0;
                 foreach (XUAT_HANG row in _xh)
                 {
-                    _tong_lai_no += Utility.Lai(row.NGAY_XUAT.Value, row.LAI_SUAT, row.SO_LUONG * row.DON_GIA_BAN);
+                    _tong_lai_no += Utility.Lai(row.NGAY_XUAT.Value, row.LAI_SUAT, row.THANH_TIEN);
                 }
                 value = _tong_lai_no;
             }

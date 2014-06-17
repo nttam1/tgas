@@ -55,7 +55,7 @@ namespace T_Manager.Modal
         {
             long LOAINO = ele.LOAI_NO;
             long MAKHO  = ele.MAKHO;
-            Int64 MAKH = ele.MAKH;
+            long MAKH = ele.MAKH.Value;
             Int64 TIENGOC = ele.TIEN_GOC;
             Int64 TIENLAI = ele.TIEN_LAI;
             DateTime NGAYTRA = ele.NGAY_TRA;

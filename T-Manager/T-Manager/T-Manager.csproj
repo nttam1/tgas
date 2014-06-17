@@ -93,7 +93,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Data.edmx</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="DataInstance.cs" />
     <Compile Include="DATASET\DataSetReport.cs">
@@ -305,6 +304,12 @@
       <DependentUpon>CrystalReportCHITIETLAIKHACHHANG.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REPORT\CrystalReportCONGNOKHACHHANG.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportCONGNOKHACHHANG.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\CrystalReportCONGOSHANGNGAT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -382,6 +387,12 @@
     </Compile>
     <Compile Include="REPORT\FChiTungKho.Designer.cs">
       <DependentUpon>FChiTungKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT\FChiTietLai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\FChiTietLai.Designer.cs">
+      <DependentUpon>FChiTietLai.cs</DependentUpon>
     </Compile>
     <Compile Include="REPORT\FCongNoKH.cs">
       <SubType>Form</SubType>
@@ -540,6 +551,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportCHITIETLAIKHACHHANG.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\CrystalReportCONGNOKHACHHANG.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportCONGNOKHACHHANG.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\CrystalReportCONGOSHANGNGAT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportCONGOSHANGNGAT.cs</LastGenOutput>
@@ -588,7 +603,7 @@
       <DependentUpon>FChiTungKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FCongNoKH.resx">
-      <DependentUpon>FCongNoKH.cs</DependentUpon>
+      <DependentUpon>FChiTietLai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FCongSoHangNgay.resx">
       <DependentUpon>FCongSoHangNgay.cs</DependentUpon>
@@ -615,7 +630,6 @@
     <EntityDeploy Include="Data.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Data.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EntityDeploy>
     <None Include="DATASET\DataSetReport.xsc">
       <DependentUpon>DataSetReport.xsd</DependentUpon>

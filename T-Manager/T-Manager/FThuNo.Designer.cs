@@ -33,14 +33,13 @@
             this.comboBoxKHO = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePickerDATE = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TONGLAI_LB = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.TONGNO_LB = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonNOVAY = new System.Windows.Forms.RadioButton();
-            this.radioButtonNOHH = new System.Windows.Forms.RadioButton();
             this.buttonADD = new System.Windows.Forms.Button();
             this.textBoxTIENLAI = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,19 +48,16 @@
             this.comboBoxKHACHHANG = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dateTimePickerNGAYKHAC = new System.Windows.Forms.DateTimePicker();
             this.richTextBoxNOIDUNG = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxTONGTIEN = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePickerDATE = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePickerNGAYKHAC = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,7 +107,6 @@
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.dateTimePickerDATE);
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.buttonADD);
             this.tabPage1.Controls.Add(this.textBoxTIENLAI);
             this.tabPage1.Controls.Add(this.label4);
@@ -126,6 +121,24 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "THU NỢ KHÁCH HÀNG";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label6.Location = new System.Drawing.Point(459, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "NGÀY THU";
+            // 
+            // dateTimePickerDATE
+            // 
+            this.dateTimePickerDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDATE.Location = new System.Drawing.Point(462, 88);
+            this.dateTimePickerDATE.Name = "dateTimePickerDATE";
+            this.dateTimePickerDATE.Size = new System.Drawing.Size(149, 20);
+            this.dateTimePickerDATE.TabIndex = 39;
             // 
             // groupBox2
             // 
@@ -178,42 +191,6 @@
             this.TONGNO_LB.TabIndex = 35;
             this.TONGNO_LB.Text = "0";
             this.TONGNO_LB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButtonNOVAY);
-            this.groupBox1.Controls.Add(this.radioButtonNOHH);
-            this.groupBox1.Location = new System.Drawing.Point(522, 159);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(112, 77);
-            this.groupBox1.TabIndex = 37;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "TRẢ NỢ CHO";
-            // 
-            // radioButtonNOVAY
-            // 
-            this.radioButtonNOVAY.AutoSize = true;
-            this.radioButtonNOVAY.Location = new System.Drawing.Point(7, 54);
-            this.radioButtonNOVAY.Name = "radioButtonNOVAY";
-            this.radioButtonNOVAY.Size = new System.Drawing.Size(65, 17);
-            this.radioButtonNOVAY.TabIndex = 1;
-            this.radioButtonNOVAY.TabStop = true;
-            this.radioButtonNOVAY.Text = "NỢ VAY";
-            this.radioButtonNOVAY.UseVisualStyleBackColor = true;
-            this.radioButtonNOVAY.CheckedChanged += new System.EventHandler(this.radioButtonNOVAY_CheckedChanged);
-            // 
-            // radioButtonNOHH
-            // 
-            this.radioButtonNOHH.AutoSize = true;
-            this.radioButtonNOHH.Checked = true;
-            this.radioButtonNOHH.Location = new System.Drawing.Point(7, 20);
-            this.radioButtonNOHH.Name = "radioButtonNOHH";
-            this.radioButtonNOHH.Size = new System.Drawing.Size(101, 17);
-            this.radioButtonNOHH.TabIndex = 0;
-            this.radioButtonNOHH.TabStop = true;
-            this.radioButtonNOHH.Text = "NỢ HÀNG HÓA";
-            this.radioButtonNOHH.UseVisualStyleBackColor = true;
-            this.radioButtonNOHH.CheckedChanged += new System.EventHandler(this.radioButtonNOHH_CheckedChanged);
             // 
             // buttonADD
             // 
@@ -296,6 +273,24 @@
             this.tabPage2.Text = "THU NỢ KHÁC";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label9.Location = new System.Drawing.Point(425, 30);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 13);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "NGÀY THU";
+            // 
+            // dateTimePickerNGAYKHAC
+            // 
+            this.dateTimePickerNGAYKHAC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerNGAYKHAC.Location = new System.Drawing.Point(428, 56);
+            this.dateTimePickerNGAYKHAC.Name = "dateTimePickerNGAYKHAC";
+            this.dateTimePickerNGAYKHAC.Size = new System.Drawing.Size(149, 20);
+            this.dateTimePickerNGAYKHAC.TabIndex = 45;
+            // 
             // richTextBoxNOIDUNG
             // 
             this.richTextBoxNOIDUNG.Location = new System.Drawing.Point(221, 115);
@@ -342,42 +337,6 @@
             this.label12.Text = "TỔNG TIỀN";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // dateTimePickerDATE
-            // 
-            this.dateTimePickerDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDATE.Location = new System.Drawing.Point(462, 88);
-            this.dateTimePickerDATE.Name = "dateTimePickerDATE";
-            this.dateTimePickerDATE.Size = new System.Drawing.Size(149, 20);
-            this.dateTimePickerDATE.TabIndex = 39;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.Location = new System.Drawing.Point(459, 62);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "NGÀY THU";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(425, 30);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 13);
-            this.label9.TabIndex = 46;
-            this.label9.Text = "NGÀY THU";
-            // 
-            // dateTimePickerNGAYKHAC
-            // 
-            this.dateTimePickerNGAYKHAC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNGAYKHAC.Location = new System.Drawing.Point(428, 56);
-            this.dateTimePickerNGAYKHAC.Name = "dateTimePickerNGAYKHAC";
-            this.dateTimePickerNGAYKHAC.Size = new System.Drawing.Size(149, 20);
-            this.dateTimePickerNGAYKHAC.TabIndex = 45;
-            // 
             // FThuNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,8 +358,6 @@
             this.tabPage1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
@@ -432,9 +389,6 @@
         private System.Windows.Forms.TextBox textBoxTONGTIEN;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RichTextBox richTextBoxNOIDUNG;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButtonNOVAY;
-        private System.Windows.Forms.RadioButton radioButtonNOHH;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dateTimePickerDATE;
         private System.Windows.Forms.Label label6;

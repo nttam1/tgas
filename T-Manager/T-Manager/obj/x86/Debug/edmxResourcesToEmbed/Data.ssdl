@@ -254,7 +254,7 @@
     <Property Name="MAKH" Type="integer" Nullable="false" />
     <Property Name="SO_LUONG" Type="integer" Nullable="false" />
     <Property Name="DON_GIA_BAN" Type="integer" Nullable="false" />
-    <Property Name="THANH_TOAN_XUAT" Type="integer" Nullable="false" />
+    <Property Name="THANH_TIEN" Type="integer" Nullable="false" />
     <Property Name="LAI_SUAT" Type="float" Nullable="false" />
     <Property Name="TRA_TRUOC" Type="integer" Nullable="false" />
     <Property Name="CREATED_AT" Type="datetime" Nullable="false" />

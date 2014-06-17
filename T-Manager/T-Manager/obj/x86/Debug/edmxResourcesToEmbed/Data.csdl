@@ -254,7 +254,7 @@
     <Property Type="Int64" Name="MAKH" Nullable="false" />
     <Property Type="Int64" Name="SO_LUONG" Nullable="false" />
     <Property Type="Int64" Name="DON_GIA_BAN" Nullable="false" />
-    <Property Type="Int64" Name="THANH_TOAN_XUAT" Nullable="false" />
+    <Property Type="Int64" Name="THANH_TIEN" Nullable="false" />
     <Property Type="Double" Name="LAI_SUAT" Nullable="false" />
     <Property Type="Int64" Name="TRA_TRUOC" Nullable="false" />
     <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />

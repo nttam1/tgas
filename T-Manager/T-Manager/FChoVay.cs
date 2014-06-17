@@ -17,6 +17,8 @@ namespace T_Manager
             InitializeComponent();
         }
 
+        tgasEntities db = DataInstance.Instance().DBContext();
+
         private void FChoVay_Load(object sender, EventArgs e)
         {
             comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
@@ -24,7 +26,8 @@ namespace T_Manager
             comboBoxKHO.ValueMember = "ID";
             comboBoxKHACHHANG.DataSource = DataInstance.Instance().DBContext().KHACH_HANG.OrderBy(u => u.NAME);
             comboBoxKHACHHANG.DisplayMember = "NAME";
-            comboBoxKHACHHANG.ValueMember = "ID";
+            comboBoxKHACHHANG.ValueMember = "ID"; 
+            dataGridViewCHOVAY.DataSource = bs;
             comboBoxKHACHHANG_SelectedIndexChanged(sender, e);
         }
 
@@ -36,17 +39,21 @@ namespace T_Manager
             {
                 var kh = Int32.Parse(comboBoxKHACHHANG.SelectedValue.ToString());
                 var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
-                bs.DataSource = DataInstance.Instance().DBContext().CHO_VAY.Where(u => u.MAKHO == kho)
-                    .Where(u => u.MA_NGUON_NO == kh);
-                dataGridViewCHOVAY.DataSource = bs;
+                bs.DataSource = db.XUAT_HANG.Where(u => u.SO_LUONG == 0 && u.DON_GIA_BAN == 0 && u.THANH_TIEN > 0 && u.MAKH ==  kh && u.MAKHO == kho);
+
                 dataGridViewCHOVAY.Columns[0].Visible = false;
                 dataGridViewCHOVAY.Columns[1].Visible = false;
                 dataGridViewCHOVAY.Columns[2].Visible = false;
-                dataGridViewCHOVAY.Columns[6].Visible = false;
-                dataGridViewCHOVAY.Columns[7].Visible = false;
-                dataGridViewCHOVAY.Columns[3].HeaderText = "Tổng tiền";
-                dataGridViewCHOVAY.Columns[4].HeaderText = "Lãi suất";
-                dataGridViewCHOVAY.Columns[5].HeaderText = "Ngày cho vay";
+                dataGridViewCHOVAY.Columns[3].Visible = false;
+                dataGridViewCHOVAY.Columns[4].Visible = false;
+                dataGridViewCHOVAY.Columns[5].Visible = false;
+                dataGridViewCHOVAY.Columns[6].HeaderText = "Tổng tiền";
+                dataGridViewCHOVAY.Columns[7].HeaderText = "Lãi suất";
+                dataGridViewCHOVAY.Columns[8].Visible = false;
+                dataGridViewCHOVAY.Columns[9].Visible = false;
+                dataGridViewCHOVAY.Columns[10].HeaderText = "NGÀY CHO VAY";
+                dataGridViewCHOVAY.Columns[11].Visible = false;
+                dataGridViewCHOVAY.Columns[12].Visible = false;
             }
             catch (Exception ex)
             {
@@ -86,13 +93,24 @@ namespace T_Manager
                 var kh = Int32.Parse(comboBoxKHACHHANG.SelectedValue.ToString());
                 var tien = Int32.Parse(textBoxTONGTIEN.Text);
                 var lai = double.Parse(textBoxLAISUAT.Text) / 100;
-                bs.Add(new CHO_VAY()
+                if (tien == 0)
+                {
+                    MessageBox.Show("Tiền xuất phải lớn hơn 0");
+                    return;
+                }
+                bs.Add(new XUAT_HANG()
                 {
                     MAKHO = kho,
-                    MA_NGUON_NO = kh,
-                    TONG_TIEN = tien,
+                    MAKH = kh,
+                    THANH_TIEN = tien,
                     LAI_SUAT = lai,
-                    NGAY_CHO_VAY = dateTimePickerCHOVAY.Value.Date,
+                    NGAY_XUAT = dateTimePickerCHOVAY.Value.Date,
+                    SO_LUONG= 0,
+                    DON_GIA_BAN = 0,
+                    TRA_TRUOC = 0,
+                    TRANG_THAI = MXuatHang.CHUA_TRA_XONG,
+                    CHI_TIET_XUAT_HANG = "",
+                    MAHH = MXuatHang.MAHH_CHO_VAY,
                     CREATED_AT = DateTime.Now,         
                 });
                 bs.EndEdit();
