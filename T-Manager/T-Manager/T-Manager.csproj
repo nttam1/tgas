@@ -12,6 +12,8 @@
     <AssemblyName>T-Manager</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,10 +26,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -47,6 +47,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>T_Manager.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mpg-icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -87,6 +93,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Data.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="DataInstance.cs" />
     <Compile Include="DATASET\DataSetReport.cs">
@@ -292,10 +299,10 @@
       <DependentUpon>CrystalReportCHITUNGKHO.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="REPORT\CrystalReportCongNoKhachHang.cs">
+    <Compile Include="REPORT\CrystalReportCHITIETLAIKHACHHANG.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReportCongNoKhachHang.rpt</DependentUpon>
+      <DependentUpon>CrystalReportCHITIETLAIKHACHHANG.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="REPORT\CrystalReportCONGOSHANGNGAT.cs">
@@ -529,9 +536,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportCHITUNGKHO.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="REPORT\CrystalReportCongNoKhachHang.rpt">
+    <EmbeddedResource Include="REPORT\CrystalReportCHITIETLAIKHACHHANG.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReportCongNoKhachHang.cs</LastGenOutput>
+      <LastGenOutput>CrystalReportCHITIETLAIKHACHHANG.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\CrystalReportCONGOSHANGNGAT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -608,6 +615,7 @@
     <EntityDeploy Include="Data.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Data.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EntityDeploy>
     <None Include="DATASET\DataSetReport.xsc">
       <DependentUpon>DataSetReport.xsd</DependentUpon>
@@ -654,7 +662,9 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="mpg-icon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

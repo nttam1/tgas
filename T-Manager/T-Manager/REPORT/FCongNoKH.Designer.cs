@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBoxTHUNO = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
@@ -96,7 +95,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBoxTHUNO);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.dateTimePickerFROM);
@@ -112,19 +110,6 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "XEM CÔNG NỢ TỪ NGÀY ĐẾN NGÀY";
-            // 
-            // checkBoxTHUNO
-            // 
-            this.checkBoxTHUNO.AutoSize = true;
-            this.checkBoxTHUNO.Checked = true;
-            this.checkBoxTHUNO.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTHUNO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTHUNO.Location = new System.Drawing.Point(425, 38);
-            this.checkBoxTHUNO.Name = "checkBoxTHUNO";
-            this.checkBoxTHUNO.Size = new System.Drawing.Size(155, 24);
-            this.checkBoxTHUNO.TabIndex = 11;
-            this.checkBoxTHUNO.Text = "TÍNH CẢ THU NỢ";
-            this.checkBoxTHUNO.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -143,7 +128,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(134, 36);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(285, 28);
+            this.comboBox1.Size = new System.Drawing.Size(428, 28);
             this.comboBox1.TabIndex = 9;
             // 
             // crystalReportViewer1
@@ -191,6 +176,5 @@
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.CheckBox checkBoxTHUNO;
     }
 }

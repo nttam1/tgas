@@ -1,10 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="tgasModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
   <EntityContainer Name="tgasEntities">
+    <EntitySet Name="BAN_HANG" EntityType="tgasModel.BAN_HANG" />
     <EntitySet Name="CHI_KHAC" EntityType="tgasModel.CHI_KHAC" />
     <EntitySet Name="CHI_LUONG" EntityType="tgasModel.CHI_LUONG" />
+    <EntitySet Name="CHI_TIET_THU_NO" EntityType="tgasModel.CHI_TIET_THU_NO" />
     <EntitySet Name="CHI_TIEU_DUNG_NOI_BO" EntityType="tgasModel.CHI_TIEU_DUNG_NOI_BO" />
+    <EntitySet Name="CHO_VAY" EntityType="tgasModel.CHO_VAY" />
+    <EntitySet Name="CHUYEN_TIEN" EntityType="tgasModel.CHUYEN_TIEN" />
     <EntitySet Name="HANG_HOA" EntityType="tgasModel.HANG_HOA" />
+    <EntitySet Name="HE_THONG" EntityType="tgasModel.HE_THONG" />
     <EntitySet Name="KHACH_HANG" EntityType="tgasModel.KHACH_HANG" />
     <EntitySet Name="KHOes" EntityType="tgasModel.KHO" />
     <EntitySet Name="NGUON_NO" EntityType="tgasModel.NGUON_NO" />
@@ -12,165 +17,48 @@
     <EntitySet Name="NHA_CUNG_CAP" EntityType="tgasModel.NHA_CUNG_CAP" />
     <EntitySet Name="NHAN_VIEN" EntityType="tgasModel.NHAN_VIEN" />
     <EntitySet Name="NHAP_HANG" EntityType="tgasModel.NHAP_HANG" />
-    <EntitySet Name="XEs" EntityType="tgasModel.XE" />
     <EntitySet Name="THU_NO" EntityType="tgasModel.THU_NO" />
-    <EntitySet Name="TRA_NO_VAY" EntityType="tgasModel.TRA_NO_VAY" />
     <EntitySet Name="TRA_NO_NCC" EntityType="tgasModel.TRA_NO_NCC" />
-    <EntitySet Name="CHI_TIET_THU_NO" EntityType="tgasModel.CHI_TIET_THU_NO" />
-    <EntitySet Name="CHO_VAY" EntityType="tgasModel.CHO_VAY" />
-    <EntitySet Name="XUAT_HANG" EntityType="tgasModel.XUAT_HANG" />
-    <EntitySet Name="BAN_HANG" EntityType="tgasModel.BAN_HANG" />
-    <EntitySet Name="CHUYEN_TIEN" EntityType="tgasModel.CHUYEN_TIEN" />
+    <EntitySet Name="TRA_NO_VAY" EntityType="tgasModel.TRA_NO_VAY" />
     <EntitySet Name="VAYs" EntityType="tgasModel.VAY" />
-    <EntitySet Name="HE_THONG" EntityType="tgasModel.HE_THONG" />
+    <EntitySet Name="XEs" EntityType="tgasModel.XE" />
+    <EntitySet Name="XUAT_HANG" EntityType="tgasModel.XUAT_HANG" />
   </EntityContainer>
+  <EntityType Name="BAN_HANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="MAKHO" Nullable="false" />
+    <Property Type="Int64" Name="MAHH" Nullable="false" />
+    <Property Type="Int64" Name="SO_LUONG" Nullable="false" />
+    <Property Type="Int64" Name="DON_GIA_BAN" Nullable="false" />
+    <Property Type="DateTime" Name="NGAY_BAN" Nullable="false" />
+    <Property Type="DateTime" Name="CREATED_TIME" Nullable="false" />
+    <Property Type="String" Name="CHI_TIET_BAN_HANG" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="CHI_KHAC">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="MAKHO" Type="Int64" Nullable="false" />
-    <Property Name="NOI_DUNG" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-    <Property Name="TONG_TIEN" Type="Int64" Nullable="false" />
-    <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="MAKHO" Nullable="false" />
+    <Property Type="String" Name="NOI_DUNG" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="TONG_TIEN" Nullable="false" />
+    <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
     <Property Type="DateTime" Name="NGAY_CHI" Nullable="false" />
   </EntityType>
   <EntityType Name="CHI_LUONG">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="MAKHO" Type="Int64" Nullable="false" />
-    <Property Name="MANV" Type="Int64" Nullable="false" />
-    <Property Name="LUONG_THANG" Type="Int64" Nullable="false" />
-    <Property Name="NGAY_CHI" Type="DateTime" Nullable="false" />
-    <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
-    <Property Name="TONG_TIEN" Type="Int64" Nullable="false" />
-  </EntityType>
-  <EntityType Name="CHI_TIEU_DUNG_NOI_BO">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="MAKHO" Type="Int64" Nullable="false" />
-    <Property Name="MAHH" Type="Int64" Nullable="false" />
-    <Property Name="SO_LUONG" Type="Int64" Nullable="false" />
-    <Property Name="DON_GIA_BAN" Type="Int64" Nullable="false" />
-    <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
-    <Property Type="Int64" Name="MAXE" Nullable="false" />
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="MAKHO" Nullable="false" />
+    <Property Type="Int64" Name="MANV" Nullable="false" />
+    <Property Type="Int64" Name="LUONG_THANG" Nullable="false" />
     <Property Type="DateTime" Name="NGAY_CHI" Nullable="false" />
-  </EntityType>
-  <EntityType Name="HANG_HOA">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-    <Property Name="UNIT" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="KHACH_HANG">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="KHO">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-    <Property Name="TYPE" Type="Int64" Nullable="false" />
-    <Property Name="CODE" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="NGUON_NO">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" />
-    <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="NGUON_VAY">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="NHA_CUNG_CAP">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="NHAN_VIEN">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Name="NAME" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-    <Property Type="Int64" Name="MAKHO" Nullable="false" />
-  </EntityType>
-  <EntityType Name="NHAP_HANG">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Name="MAKHO" Type="Int64" Nullable="false" />
-    <Property Name="MANCC" Type="Int64" Nullable="false" />
-    <Property Name="MAHH" Type="Int64" Nullable="false" />
-    <Property Name="SO_LUONG" Type="Int64" Nullable="false" />
-    <Property Name="SL_CON_LAI" Type="Int64" Nullable="false" />
-    <Property Name="DON_GIA_MUA" Type="Int64" Nullable="false" />
-    <Property Name="NGAY_NHAP" Type="DateTime" Nullable="false" />
-    <Property Name="CREATED_AT" Type="DateTime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="XE">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="String" Name="BIEN_SO" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="THU_NO">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="Int64" Name="MAKH" Nullable="false" />
-    <Property Type="Int64" Name="MAKHO" Nullable="false" />
-    <Property Type="Int64" Name="TIEN_GOC" Nullable="false" />
-    <Property Type="Int64" Name="TIEN_LAI" Nullable="false" />
-    <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
-    <Property Type="String" Name="NOI_DUNG" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <Property Type="DateTime" Name="CREATED_AT" />
-    <Property Type="Int64" Name="LOAI_NO" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TRA_NO_VAY">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="Int64" Name="MA_NGUON_VAY" Nullable="false" />
-    <Property Type="Int64" Name="MAKHO" Nullable="false" />
-    <Property Type="Int64" Name="TIEN_GOC" Nullable="false" />
-    <Property Type="Int64" Name="TIEN_LAI" Nullable="false" />
-    <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
     <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
-    <Property Type="Int64" Name="VAY_ID" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TRA_NO_NCC">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="Int64" Name="MANCC" Nullable="false" />
     <Property Type="Int64" Name="TONG_TIEN" Nullable="false" />
-    <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
-    <Property Type="Int64" Name="MAKHO" Nullable="false" />
-    <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
   </EntityType>
   <EntityType Name="CHI_TIET_THU_NO">
     <Key>
@@ -186,6 +74,19 @@
     <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
     <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
   </EntityType>
+  <EntityType Name="CHI_TIEU_DUNG_NOI_BO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="MAKHO" Nullable="false" />
+    <Property Type="Int64" Name="MAHH" Nullable="false" />
+    <Property Type="Int64" Name="MAXE" Nullable="false" />
+    <Property Type="Int64" Name="SO_LUONG" Nullable="false" />
+    <Property Type="Int64" Name="DON_GIA_BAN" Nullable="false" />
+    <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
+    <Property Type="DateTime" Name="NGAY_CHI" Nullable="false" />
+  </EntityType>
   <EntityType Name="CHO_VAY">
     <Key>
       <PropertyRef Name="ID" />
@@ -198,6 +99,150 @@
     <Property Type="DateTime" Name="NGAY_CHO_VAY" Nullable="false" />
     <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
     <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CHUYEN_TIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="ID_TAI_KHOAN" Nullable="false" />
+    <Property Type="Int64" Name="TONG_TIEN" Nullable="false" />
+    <Property Type="DateTime" Name="NGAY_CHUYEN" Nullable="false" />
+    <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HANG_HOA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UNIT" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HE_THONG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VALUE" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+  </EntityType>
+  <EntityType Name="KHACH_HANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="KHO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="TYPE" Nullable="false" />
+    <Property Type="String" Name="CODE" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NGUON_NO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NGUON_VAY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NHA_CUNG_CAP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NHAN_VIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="MAKHO" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NHAP_HANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="MAKHO" Nullable="false" />
+    <Property Type="Int64" Name="MANCC" Nullable="false" />
+    <Property Type="Int64" Name="MAHH" Nullable="false" />
+    <Property Type="Int64" Name="SO_LUONG" Nullable="false" />
+    <Property Type="Int64" Name="SL_CON_LAI" Nullable="false" />
+    <Property Type="Int64" Name="DON_GIA_MUA" Nullable="false" />
+    <Property Type="DateTime" Name="NGAY_NHAP" Nullable="false" />
+    <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
+  </EntityType>
+  <EntityType Name="THU_NO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="MAKH" />
+    <Property Type="Int64" Name="MAKHO" Nullable="false" />
+    <Property Type="Int64" Name="TIEN_GOC" Nullable="false" />
+    <Property Type="Int64" Name="TIEN_LAI" Nullable="false" />
+    <Property Type="String" Name="NOI_DUNG" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
+    <Property Type="DateTime" Name="CREATED_AT" />
+    <Property Type="Int64" Name="LOAI_NO" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TRA_NO_NCC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="MANCC" Nullable="false" />
+    <Property Type="Int64" Name="TONG_TIEN" Nullable="false" />
+    <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
+    <Property Type="Int64" Name="MAKHO" Nullable="false" />
+    <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TRA_NO_VAY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="MA_NGUON_VAY" Nullable="false" />
+    <Property Type="Int64" Name="MAKHO" Nullable="false" />
+    <Property Type="Int64" Name="TIEN_GOC" Nullable="false" />
+    <Property Type="Int64" Name="TIEN_LAI" Nullable="false" />
+    <Property Type="DateTime" Name="NGAY_TRA" Nullable="false" />
+    <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
+    <Property Type="Int64" Name="VAY_ID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VAY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="MA_NGUON_VAY" Nullable="false" />
+    <Property Type="Int64" Name="TONG_TIEN" Nullable="false" />
+    <Property Type="Double" Name="LAI_SUAT" Nullable="false" />
+    <Property Type="Int64" Name="KY_HAN" Nullable="false" />
+    <Property Type="DateTime" Name="NGAY_VAY" Nullable="false" />
+    <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
+    <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
+    <Property Type="Int64" Name="MAKHO" Nullable="false" />
+  </EntityType>
+  <EntityType Name="XE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="BIEN_SO" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="XUAT_HANG">
     <Key>
@@ -216,50 +261,5 @@
     <Property Type="DateTime" Name="NGAY_XUAT" />
     <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
     <Property Type="String" Name="CHI_TIET_XUAT_HANG" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="BAN_HANG">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="Int64" Name="MAKHO" Nullable="false" />
-    <Property Type="Int64" Name="MAHH" Nullable="false" />
-    <Property Type="Int64" Name="SO_LUONG" Nullable="false" />
-    <Property Type="Int64" Name="DON_GIA_BAN" Nullable="false" />
-    <Property Type="DateTime" Name="NGAY_BAN" Nullable="false" />
-    <Property Type="DateTime" Name="CREATED_TIME" Nullable="false" />
-    <Property Type="String" Name="CHI_TIET_BAN_HANG" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="CHUYEN_TIEN">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="Int64" Name="ID_TAI_KHOAN" Nullable="false" />
-    <Property Type="Int64" Name="TONG_TIEN" Nullable="false" />
-    <Property Type="DateTime" Name="NGAY_CHUYEN" Nullable="false" />
-    <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
-  </EntityType>
-  <EntityType Name="VAY">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="Int64" Name="MA_NGUON_VAY" Nullable="false" />
-    <Property Type="Int64" Name="TONG_TIEN" Nullable="false" />
-    <Property Type="Double" Name="LAI_SUAT" Nullable="false" />
-    <Property Type="Int64" Name="KY_HAN" Nullable="false" />
-    <Property Type="DateTime" Name="NGAY_VAY" Nullable="false" />
-    <Property Type="DateTime" Name="CREATED_AT" Nullable="false" />
-    <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
-    <Property Type="Int64" Name="MAKHO" Nullable="false" />
-  </EntityType>
-  <EntityType Name="HE_THONG">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="String" Name="NAME" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="VALUE" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
   </EntityType>
 </Schema>

@@ -67,9 +67,9 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button33 = new System.Windows.Forms.Button();
             this.button32 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -366,7 +366,7 @@
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(171, 23);
             this.button16.TabIndex = 0;
-            this.button16.Text = "CÔNG NỢ KHÁCH HÀNG";
+            this.button16.Text = "CHI TIẾT LÃI KHÁCH HÀNG";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
@@ -497,6 +497,16 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "CHỈNH SỬA DỮ LIỆU";
             // 
+            // button33
+            // 
+            this.button33.Location = new System.Drawing.Point(6, 118);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(171, 23);
+            this.button33.TabIndex = 17;
+            this.button33.Text = "ĐỔI MẬT KHẨU";
+            this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
+            // 
             // button32
             // 
             this.button32.Location = new System.Drawing.Point(6, 87);
@@ -516,16 +526,6 @@
             this.button31.Text = "XUẤT HÀNG";
             this.button31.UseVisualStyleBackColor = true;
             this.button31.Click += new System.EventHandler(this.button31_Click);
-            // 
-            // button33
-            // 
-            this.button33.Location = new System.Drawing.Point(6, 118);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(171, 23);
-            this.button33.TabIndex = 17;
-            this.button33.Text = "ĐỔI MẬT KHẨU";
-            this.button33.UseVisualStyleBackColor = true;
-            this.button33.Click += new System.EventHandler(this.button33_Click);
             // 
             // FMain
             // 

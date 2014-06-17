@@ -186,7 +186,7 @@
             this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.label6);
             this.tabPageCHITIEUDUNGNOIOBO.Location = new System.Drawing.Point(4, 22);
             this.tabPageCHITIEUDUNGNOIOBO.Name = "tabPageCHITIEUDUNGNOIOBO";
-            this.tabPageCHITIEUDUNGNOIOBO.Size = new System.Drawing.Size(644, 288);
+            this.tabPageCHITIEUDUNGNOIOBO.Size = new System.Drawing.Size(644, 324);
             this.tabPageCHITIEUDUNGNOIOBO.TabIndex = 2;
             this.tabPageCHITIEUDUNGNOIOBO.Text = "TIÊU DÙNG NỘI BỘ";
             this.tabPageCHITIEUDUNGNOIOBO.UseVisualStyleBackColor = true;
@@ -296,7 +296,7 @@
             this.tabPageCHIKHAC.Location = new System.Drawing.Point(4, 22);
             this.tabPageCHIKHAC.Name = "tabPageCHIKHAC";
             this.tabPageCHIKHAC.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCHIKHAC.Size = new System.Drawing.Size(644, 288);
+            this.tabPageCHIKHAC.Size = new System.Drawing.Size(644, 324);
             this.tabPageCHIKHAC.TabIndex = 1;
             this.tabPageCHIKHAC.Text = "CHI KHÁC";
             this.tabPageCHIKHAC.UseVisualStyleBackColor = true;
@@ -362,7 +362,7 @@
             this.comboBoxKHO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKHO.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKHO.FormattingEnabled = true;
-            this.comboBoxKHO.Location = new System.Drawing.Point(238, 27);
+            this.comboBoxKHO.Location = new System.Drawing.Point(255, 16);
             this.comboBoxKHO.Name = "comboBoxKHO";
             this.comboBoxKHO.Size = new System.Drawing.Size(251, 33);
             this.comboBoxKHO.TabIndex = 1;
@@ -372,7 +372,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(171, 30);
+            this.label10.Location = new System.Drawing.Point(181, 19);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 25);
             this.label10.TabIndex = 2;
@@ -380,18 +380,20 @@
             // 
             // dateTimePickerdATE
             // 
+            this.dateTimePickerdATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerdATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerdATE.Location = new System.Drawing.Point(300, 80);
+            this.dateTimePickerdATE.Location = new System.Drawing.Point(255, 70);
             this.dateTimePickerdATE.Name = "dateTimePickerdATE";
-            this.dateTimePickerdATE.Size = new System.Drawing.Size(140, 20);
+            this.dateTimePickerdATE.Size = new System.Drawing.Size(251, 30);
             this.dateTimePickerdATE.TabIndex = 3;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(228, 86);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(181, 75);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 13);
+            this.label11.Size = new System.Drawing.Size(68, 25);
             this.label11.TabIndex = 8;
             this.label11.Text = "NGÀY";
             // 

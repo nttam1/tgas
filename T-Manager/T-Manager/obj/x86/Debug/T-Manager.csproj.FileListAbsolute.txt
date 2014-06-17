@@ -65,11 +65,7 @@ C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FC
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FXemKhoQuy.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FCongSoHangNgay.resources
 C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FChuyenTien.resources
-F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe.config
-F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe
-F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.pdb
-F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.dll
-F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.xml
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csprojResolveAssemblyReference.cache
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FHangHoa.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FKho.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FNCC.resources
@@ -84,6 +80,7 @@ F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FChinhSua.r
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FChoVay.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FKhachHang.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FChuyenTien.resources
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FConfirm.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FDoiMatKhau.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FImport.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FInit.resources
@@ -110,6 +107,3 @@ F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FTon
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FTongHopNoVay.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FXemKhoQuy.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csproj.GenerateResource.Cache
-F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.exe
-F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.pdb
-F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FConfirm.resources

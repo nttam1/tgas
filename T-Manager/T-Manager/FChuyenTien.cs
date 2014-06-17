@@ -58,9 +58,10 @@ namespace T_Manager
                 MessageBox.Show("Số tiền chuyển phải lớn hơn 0");
                 return;
             }
+            DateTime now = dateTimePickerNGAY.Value.Date;
             CHUYEN_TIEN c = new CHUYEN_TIEN();
             c.TONG_TIEN = tien;
-            c.NGAY_CHUYEN = DateTime.Now.Date;
+            c.NGAY_CHUYEN = now;
             c.ID_TAI_KHOAN = taikhoan;
             c.CREATED_AT = DateTime.Now;
             DataInstance.Instance().DBContext().AddToCHUYEN_TIEN(c);

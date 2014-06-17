@@ -98,9 +98,10 @@ namespace T_Manager
                 var loai_no = radioButtonNOHH.Checked == true ? MThuNo.NO_HANG_HOA : MThuNo.NO_VAY;
                 var cur_lai = LaiVay + LaiHH;
                 var cur_no = NoHH + NoVay;
+                DateTime date = dateTimePickerDATE.Value.Date;
                 try
                 {
-                    MThuNo.Create(loai_no, kho, kh, goc, lai, DateTime.Now);
+                    MThuNo.Create(loai_no, kho, kh, goc, lai, date);
                 }
                 catch (Exception ex)
                 {
@@ -157,12 +158,13 @@ namespace T_Manager
                 var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
                 var tongtien = Int32.Parse(textBoxTONGTIEN.Text);
                 var noidung = richTextBoxNOIDUNG.Text;
+                DateTime date = dateTimePickerNGAYKHAC.Value.Date;
                 DataInstance.Instance().DBContext().AddToTHU_NO(new THU_NO()
                {
                    MAKHO = kho,
                    TIEN_GOC = tongtien,
                    NOI_DUNG = noidung,
-                   NGAY_TRA = DateTime.Now.Date,
+                   NGAY_TRA = date,
                    CREATED_AT = DateTime.Now
                });
                 DataInstance.Instance().DBContext().SaveChanges();

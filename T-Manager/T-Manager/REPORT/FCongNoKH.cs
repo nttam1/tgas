@@ -46,7 +46,6 @@ namespace T_Manager.REPORT
         {
             List<CCongNoKhachHang> _datasource = new List<CCongNoKhachHang>();
             string note = "";
-            var include_THUNO = checkBoxTHUNO.Checked;
             BindingSource bs = new BindingSource();
             long MAKH = long.Parse(comboBox1.SelectedValue.ToString());
             DateTime FROM = dateTimePickerFROM.Value.Date;
@@ -77,40 +76,41 @@ namespace T_Manager.REPORT
                                                           CONNO = 0
                                                       });
 
-            if (include_THUNO == true)
-            {
-                note = "ĐÃ BAO GỒM THU NỢ";
-                /* Có sử dụng dữ liệu từ thu nợ */
-                foreach (CCongNoKhachHang row in xuat_hang)
-                {
-                    double lai = MXuatHang.GetLaiPhatSinh(row.ID);
-                    long tragoc = (long)MChiTietThuNo.TraGocHH(row.ID) ;
-                    long tralai = (long)MChiTietThuNo.TraLaiHH(row.ID);
-                    _datasource.Add(new CCongNoKhachHang()
-                    {
-                        NGAY = row.NGAY,
-                        KHO = row.KHO,
-                        HANGHOA = row.HANGHOA,
-                        SOLUONG = row.SOLUONG,
-                        DONGIABAN = row.DONGIABAN,
-                        THANHTIEN = row.THANHTIEN,
-                        TRATRUOC = row.TRATRUOC,
-                        LAISUAT = row.LAISUAT * 100,
-                        /* Cần tính lãi */
-                        LAI = lai,
-                        TRAGOC = tragoc,
-                        TRALAI = tralai,
-                        CONNO = row.THANHTIEN + (long)lai - row.TRATRUOC - tragoc - tralai
-                    });
-                }
-            }
-            else
-            {
-                note = "KHÔNG BAO GỒM THU NỢ";
+            //if (include_THUNO == true)
+            //{
+            //    note = "ĐÃ BAO GỒM THU NỢ";
+            //    /* Có sử dụng dữ liệu từ thu nợ */
+            //    foreach (CCongNoKhachHang row in xuat_hang)
+            //    {
+            //        double lai = MXuatHang.GetLaiPhatSinh(row.ID);
+            //        long tragoc = (long)MChiTietThuNo.TraGocHH(row.ID) ;
+            //        long tralai = (long)MChiTietThuNo.TraLaiHH(row.ID);
+            //        _datasource.Add(new CCongNoKhachHang()
+            //        {
+            //            NGAY = row.NGAY,
+            //            KHO = row.KHO,
+            //            HANGHOA = row.HANGHOA,
+            //            SOLUONG = row.SOLUONG,
+            //            DONGIABAN = row.DONGIABAN,
+            //            THANHTIEN = row.THANHTIEN,
+            //            TRATRUOC = row.TRATRUOC,
+            //            LAISUAT = row.LAISUAT * 100,
+            //            /* Cần tính lãi */
+            //            LAI = lai,
+            //            TRAGOC = tragoc,
+            //            TRALAI = tralai,
+            //            CONNO = row.THANHTIEN + (long)lai - row.TRATRUOC - tragoc - tralai
+            //        });
+            //    }
+            //}
+            //else
+            //{
+            note = "KHÔNG BAO GỒM THU NỢ";
+            DateTime now = dateTimePickerTO.Value.Date;
                 /* Không sử dụng dữ liệu từ thu nợ */
                 foreach (CCongNoKhachHang row in xuat_hang)
                 {
-                    double lai = Utility.Lai(row.NGAY, row.LAISUAT, row.THANHTIEN - row.TRATRUOC);
+                    double lai = Utility.Lai(row.NGAY, now, row.LAISUAT, row.THANHTIEN - row.TRATRUOC);
                     _datasource.Add(new CCongNoKhachHang()
                     {
                         NGAY = row.NGAY,
@@ -128,9 +128,9 @@ namespace T_Manager.REPORT
                         CONNO = row.THANHTIEN + (long)lai - row.TRATRUOC
                     });
                 }
-            }
+            //}
             bs.DataSource = _datasource;
-            CrystalReportCongNoKhachHang rpt = new CrystalReportCongNoKhachHang();
+            CrystalReportCHITIETLAIKHACHHANG rpt = new CrystalReportCHITIETLAIKHACHHANG();
             rpt.SetDataSource(bs);
             rpt.SetParameterValue("KH", comboBox1.Text);
             rpt.SetParameterValue("FROM", dateTimePickerFROM.Value);
