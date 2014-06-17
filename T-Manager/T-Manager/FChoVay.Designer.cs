@@ -37,11 +37,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxLAISUAT = new System.Windows.Forms.TextBox();
             this.buttonADD = new System.Windows.Forms.Button();
-            this.dataGridViewCHOVAY = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePickerCHOVAY = new System.Windows.Forms.DateTimePicker();
+            this.dataGridViewCHOVAY = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCHOVAY)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             this.comboBoxKHO.Size = new System.Drawing.Size(353, 37);
             this.comboBoxKHO.TabIndex = 0;
             this.comboBoxKHO.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHO_SelectedIndexChanged);
+            this.comboBoxKHO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // label1
             // 
@@ -83,14 +84,15 @@
             this.comboBoxKHACHHANG.Location = new System.Drawing.Point(25, 105);
             this.comboBoxKHACHHANG.Name = "comboBoxKHACHHANG";
             this.comboBoxKHACHHANG.Size = new System.Drawing.Size(207, 21);
-            this.comboBoxKHACHHANG.TabIndex = 3;
+            this.comboBoxKHACHHANG.TabIndex = 1;
             this.comboBoxKHACHHANG.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHACHHANG_SelectedIndexChanged);
+            this.comboBoxKHACHHANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(239, 78);
+            this.label3.Location = new System.Drawing.Point(518, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 4;
@@ -98,10 +100,10 @@
             // 
             // textBoxTONGTIEN
             // 
-            this.textBoxTONGTIEN.Location = new System.Drawing.Point(242, 105);
+            this.textBoxTONGTIEN.Location = new System.Drawing.Point(521, 105);
             this.textBoxTONGTIEN.Name = "textBoxTONGTIEN";
             this.textBoxTONGTIEN.Size = new System.Drawing.Size(166, 20);
-            this.textBoxTONGTIEN.TabIndex = 5;
+            this.textBoxTONGTIEN.TabIndex = 4;
             this.textBoxTONGTIEN.TextChanged += new System.EventHandler(this.textBoxTONGTIEN_TextChanged);
             this.textBoxTONGTIEN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTONGTIEN_KeyPress);
             // 
@@ -109,7 +111,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(422, 78);
+            this.label4.Location = new System.Drawing.Point(399, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 6;
@@ -117,11 +119,11 @@
             // 
             // textBoxLAISUAT
             // 
-            this.textBoxLAISUAT.Location = new System.Drawing.Point(425, 105);
+            this.textBoxLAISUAT.Location = new System.Drawing.Point(402, 105);
             this.textBoxLAISUAT.Name = "textBoxLAISUAT";
             this.textBoxLAISUAT.Size = new System.Drawing.Size(85, 20);
-            this.textBoxLAISUAT.TabIndex = 7;
-            this.textBoxLAISUAT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLAISUAT_KeyPress);
+            this.textBoxLAISUAT.TabIndex = 3;
+            this.textBoxLAISUAT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // buttonADD
             // 
@@ -133,28 +135,20 @@
             this.buttonADD.UseVisualStyleBackColor = true;
             this.buttonADD.Click += new System.EventHandler(this.buttonADD_Click);
             // 
-            // dataGridViewCHOVAY
-            // 
-            this.dataGridViewCHOVAY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCHOVAY.Location = new System.Drawing.Point(12, 153);
-            this.dataGridViewCHOVAY.Name = "dataGridViewCHOVAY";
-            this.dataGridViewCHOVAY.Size = new System.Drawing.Size(768, 277);
-            this.dataGridViewCHOVAY.TabIndex = 9;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label5.Location = new System.Drawing.Point(10, 137);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(251, 13);
+            this.label5.Size = new System.Drawing.Size(151, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "NHỮNG LẦN VAY KHÁC CỦA KHÁCH HÀNG NÀY";
+            this.label5.Text = "CHI TIẾT VAY TRONG NGÀY";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(512, 108);
+            this.label6.Location = new System.Drawing.Point(489, 108);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 13);
             this.label6.TabIndex = 11;
@@ -164,7 +158,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label7.Location = new System.Drawing.Point(540, 78);
+            this.label7.Location = new System.Drawing.Point(245, 78);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 13);
             this.label7.TabIndex = 12;
@@ -173,21 +167,31 @@
             // dateTimePickerCHOVAY
             // 
             this.dateTimePickerCHOVAY.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerCHOVAY.Location = new System.Drawing.Point(552, 105);
+            this.dateTimePickerCHOVAY.Location = new System.Drawing.Point(257, 105);
             this.dateTimePickerCHOVAY.Name = "dateTimePickerCHOVAY";
             this.dateTimePickerCHOVAY.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePickerCHOVAY.TabIndex = 13;
+            this.dateTimePickerCHOVAY.TabIndex = 2;
+            this.dateTimePickerCHOVAY.ValueChanged += new System.EventHandler(this.dateTimePickerCHOVAY_ValueChanged);
+            this.dateTimePickerCHOVAY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
+            // 
+            // dataGridViewCHOVAY
+            // 
+            this.dataGridViewCHOVAY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCHOVAY.Location = new System.Drawing.Point(15, 153);
+            this.dataGridViewCHOVAY.Name = "dataGridViewCHOVAY";
+            this.dataGridViewCHOVAY.Size = new System.Drawing.Size(768, 277);
+            this.dataGridViewCHOVAY.TabIndex = 14;
             // 
             // FChoVay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 442);
+            this.Controls.Add(this.dataGridViewCHOVAY);
             this.Controls.Add(this.dateTimePickerCHOVAY);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridViewCHOVAY);
             this.Controls.Add(this.buttonADD);
             this.Controls.Add(this.textBoxLAISUAT);
             this.Controls.Add(this.label4);
@@ -221,10 +225,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxLAISUAT;
         private System.Windows.Forms.Button buttonADD;
-        private System.Windows.Forms.DataGridView dataGridViewCHOVAY;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePickerCHOVAY;
+        private System.Windows.Forms.DataGridView dataGridViewCHOVAY;
     }
 }

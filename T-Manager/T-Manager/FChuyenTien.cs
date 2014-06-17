@@ -24,11 +24,15 @@ namespace T_Manager
             listBoxTAIKHOAN.ValueMember = "ID";
 
             textBoxTIENTON.Text = Utility.StringToVND(MKho.Tong_Tien_Hien_Tai(DateTime.Now).ToString());
+            dateTimePickerNGAY.Select();
         }
 
         private void textBoxTONGTIEN_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = (!char.IsDigit(e.KeyChar)) && (!char.IsControl(e.KeyChar));
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void buttonCHUYEN_Click(object sender, EventArgs e)
@@ -67,8 +71,25 @@ namespace T_Manager
             DataInstance.Instance().DBContext().AddToCHUYEN_TIEN(c);
             DataInstance.Instance().DBContext().SaveChanges();
             textBoxTIENTON.Text = Utility.StringToVND(MKho.Tong_Tien_Hien_Tai(DateTime.Now).ToString());
-            textBoxTONGTIEN.Text = "";
+            textBoxTONGTIEN.Text = "0";
             textBoxTONGTIEN.Select();
+            textBoxTONGTIEN.SelectAll();
+        }
+
+        private void dateTimePickerNGAY_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void listBoxTAIKHOAN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                buttonCHUYEN_Click(sender, e);
+            }
         }
     }
 }

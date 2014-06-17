@@ -60,13 +60,14 @@
             this.comboBoxKHO.Location = new System.Drawing.Point(354, 22);
             this.comboBoxKHO.Name = "comboBoxKHO";
             this.comboBoxKHO.Size = new System.Drawing.Size(337, 37);
-            this.comboBoxKHO.TabIndex = 37;
+            this.comboBoxKHO.TabIndex = 0;
             this.comboBoxKHO.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHO_SelectedIndexChanged);
+            this.comboBoxKHO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(480, 99);
+            this.label6.Location = new System.Drawing.Point(219, 93);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 13);
             this.label6.TabIndex = 36;
@@ -75,10 +76,12 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(483, 115);
+            this.dateTimePicker1.Location = new System.Drawing.Point(222, 110);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(114, 20);
-            this.dateTimePicker1.TabIndex = 35;
+            this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePicker1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // dataGridView1
             // 
@@ -110,15 +113,18 @@
             // 
             // textBoxTONGTIEN
             // 
-            this.textBoxTONGTIEN.Location = new System.Drawing.Point(217, 114);
+            this.textBoxTONGTIEN.Location = new System.Drawing.Point(366, 110);
             this.textBoxTONGTIEN.Name = "textBoxTONGTIEN";
-            this.textBoxTONGTIEN.Size = new System.Drawing.Size(260, 20);
-            this.textBoxTONGTIEN.TabIndex = 29;
+            this.textBoxTONGTIEN.Size = new System.Drawing.Size(220, 20);
+            this.textBoxTONGTIEN.TabIndex = 3;
+            this.textBoxTONGTIEN.Text = "0";
+            this.textBoxTONGTIEN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxTONGTIEN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTONGTIEN_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(214, 97);
+            this.label3.Location = new System.Drawing.Point(363, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 28;
@@ -131,8 +137,9 @@
             this.comboBoxNCC.Location = new System.Drawing.Point(8, 111);
             this.comboBoxNCC.Name = "comboBoxNCC";
             this.comboBoxNCC.Size = new System.Drawing.Size(185, 21);
-            this.comboBoxNCC.TabIndex = 27;
+            this.comboBoxNCC.TabIndex = 1;
             this.comboBoxNCC.SelectedIndexChanged += new System.EventHandler(this.comboBoxNCC_SelectedIndexChanged);
+            this.comboBoxNCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // label2
             // 

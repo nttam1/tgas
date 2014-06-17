@@ -55,6 +55,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.checkBoxBANMAT = new System.Windows.Forms.CheckBox();
+            this.labelTON = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,9 +185,9 @@
             // 
             // textBoxSOLUONG
             // 
-            this.textBoxSOLUONG.Location = new System.Drawing.Point(587, 109);
+            this.textBoxSOLUONG.Location = new System.Drawing.Point(675, 109);
             this.textBoxSOLUONG.Name = "textBoxSOLUONG";
-            this.textBoxSOLUONG.Size = new System.Drawing.Size(182, 20);
+            this.textBoxSOLUONG.Size = new System.Drawing.Size(94, 20);
             this.textBoxSOLUONG.TabIndex = 23;
             this.textBoxSOLUONG.Text = "0";
             this.textBoxSOLUONG.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -307,11 +308,21 @@
             this.checkBoxBANMAT.UseVisualStyleBackColor = true;
             this.checkBoxBANMAT.CheckedChanged += new System.EventHandler(this.checkBoxBANMAT_CheckedChanged);
             // 
+            // labelTON
+            // 
+            this.labelTON.AutoSize = true;
+            this.labelTON.Location = new System.Drawing.Point(584, 112);
+            this.labelTON.Name = "labelTON";
+            this.labelTON.Size = new System.Drawing.Size(41, 13);
+            this.labelTON.TabIndex = 44;
+            this.labelTON.Text = "label12";
+            // 
             // FXuatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 485);
+            this.Controls.Add(this.labelTON);
             this.Controls.Add(this.checkBoxBANMAT);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -380,5 +391,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox checkBoxBANMAT;
+        private System.Windows.Forms.Label labelTON;
     }
 }

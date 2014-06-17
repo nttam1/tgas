@@ -161,6 +161,7 @@
             this.dateTimePickerTHANG.Name = "dateTimePickerTHANG";
             this.dateTimePickerTHANG.Size = new System.Drawing.Size(126, 20);
             this.dateTimePickerTHANG.TabIndex = 1;
+            this.dateTimePickerTHANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxNHANVIEN_KeyPress);
             // 
             // comboBoxNHANVIEN
             // 
@@ -171,6 +172,7 @@
             this.comboBoxNHANVIEN.Size = new System.Drawing.Size(172, 21);
             this.comboBoxNHANVIEN.TabIndex = 0;
             this.comboBoxNHANVIEN.SelectedIndexChanged += new System.EventHandler(this.comboBoxNHANVIEN_SelectedIndexChanged);
+            this.comboBoxNHANVIEN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxNHANVIEN_KeyPress);
             // 
             // tabPageCHITIEUDUNGNOIOBO
             // 
@@ -236,7 +238,7 @@
             this.textBoxNBDONGIABAN.TabIndex = 5;
             this.textBoxNBDONGIABAN.Text = "0";
             this.textBoxNBDONGIABAN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxNBDONGIABAN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNBDONGIABAN_KeyPress);
+            this.textBoxNBDONGIABAN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxNHANVIEN_KeyPress);
             // 
             // label8
             // 
@@ -255,6 +257,7 @@
             this.comboBoxNBXANGDAU.Name = "comboBoxNBXANGDAU";
             this.comboBoxNBXANGDAU.Size = new System.Drawing.Size(115, 21);
             this.comboBoxNBXANGDAU.TabIndex = 3;
+            this.comboBoxNBXANGDAU.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxNHANVIEN_KeyPress);
             // 
             // label7
             // 
@@ -275,6 +278,7 @@
             this.comboBoxNBXE.TabIndex = 1;
             this.comboBoxNBXE.TabStop = false;
             this.comboBoxNBXE.SelectedIndexChanged += new System.EventHandler(this.comboBoxNBXE_SelectedIndexChanged);
+            this.comboBoxNBXE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxNHANVIEN_KeyPress);
             // 
             // label6
             // 
@@ -355,7 +359,7 @@
             this.textBoxNDCHI.Size = new System.Drawing.Size(300, 20);
             this.textBoxNDCHI.TabIndex = 0;
             this.textBoxNDCHI.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxNDCHI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNDCHI_KeyPress);
+            this.textBoxNDCHI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxNHANVIEN_KeyPress);
             // 
             // comboBoxKHO
             // 

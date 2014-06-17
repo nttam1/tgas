@@ -109,7 +109,7 @@ namespace T_Manager.Modal
                                                  orderby xh.NGAY_XUAT ascending
                                                  select xh).First();
                                 _id = _xh.ID;
-                                _tong_no = _xh.SO_LUONG * _xh.DON_GIA_BAN - _xh.TRA_TRUOC;
+                                _tong_no = _xh.THANH_TIEN - _xh.TRA_TRUOC;
                                 _ngay_no = _xh.NGAY_XUAT.Value.Date;
                                 _lai_suat = _xh.LAI_SUAT;
                             }
@@ -197,20 +197,6 @@ namespace T_Manager.Modal
 
                                 }
                                 break;
-                            case NO_VAY:
-                                try
-                                {
-                                    var _nv = (from xh in DataInstance.Instance().DBContext().CHO_VAY
-                                               where xh.ID == _id
-                                               select xh).First();
-                                    _nv.TRANG_THAI = MChoVay.DA_TRA_XONG;
-                                    DataInstance.Instance().DBContext().SaveChanges();
-                                }
-                                catch (Exception ex)
-                                {
-
-                                }
-                                break;
                         }
                     }
 
@@ -231,6 +217,8 @@ namespace T_Manager.Modal
                     }
                 }
             }
+
+            DataInstance.Instance().DBContext().SaveChanges();
         }
     }
 }

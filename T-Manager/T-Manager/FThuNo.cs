@@ -17,11 +17,8 @@ namespace T_Manager
             InitializeComponent();
         }
 
-        Int32 NoHH = 0;
-        Int32 LaiHH = 0;
-        Int32 NoVay = 0;
-        Int32 LaiVay = 0;
-
+        private long _LAI = 0;
+        private long _GOC = 0;
         private void FThuNo_Load(object sender, EventArgs e)
         {
             comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
@@ -55,16 +52,18 @@ namespace T_Manager
             try
             {
                 kh = Int32.Parse(comboBoxKHACHHANG.SelectedValue.ToString());
-                //kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
                 MKhachHang mKH = new MKhachHang(kh);
-                // Hien thi tong no, tong la
                 try
                 {
-                    TONGNO_LB.Text = Utility.StringToVND(mKH.NoHHHienTai().ToString());
-                    TONGLAI_LB.Text = Utility.StringToVND(mKH.LaiHHHienTai().ToString());
+                    _LAI = (long)mKH.LaiHHHienTai();
+                    _GOC = (long)mKH.NoHHHienTai();
+                    TONGNO_LB.Text = Utility.StringToVND(_GOC.ToString());
+                    TONGLAI_LB.Text = Utility.StringToVND(_LAI.ToString());
                 }
                 catch (Exception ex)
                 {
+                    _LAI = 0;
+                    _GOC = 0;
                     TONGNO_LB.Text = "0 VND";
                     TONGLAI_LB.Text = "0 VND";
                 }
@@ -88,12 +87,27 @@ namespace T_Manager
                 var goc = Int64.Parse(textBoxTIENGOC.Text);
                 var lai = Int64.Parse(textBoxTIENLAI.Text);
                 var loai_no = MThuNo.NO_HANG_HOA;
-                var cur_lai = LaiVay + LaiHH;
-                var cur_no = NoHH + NoVay;
+                var cur_lai = _LAI ;
+                var cur_no = _GOC;
+                if (lai > cur_lai)
+                {
+                    MessageBox.Show("Lãi trả không được lớn hơn lãi nợ");
+                    return;
+                }
+                if (goc > cur_no)
+                {
+                    MessageBox.Show("Tiền trả không được lớn hơn tiền nợ");
+                    return;
+                }
                 DateTime date = dateTimePickerDATE.Value.Date;
                 try
                 {
                     MThuNo.Create(loai_no, kho, kh, goc, lai, date);
+                    comboBoxKHACHHANG_SelectedIndexChanged(sender, e);
+                    textBoxTIENGOC.Text = "0";
+                    textBoxTIENLAI.Text = "0";
+                    textBoxTIENGOC.Select();
+                    textBoxTIENGOC.SelectAll();
                 }
                 catch (Exception ex)
                 {
@@ -160,12 +174,13 @@ namespace T_Manager
                    CREATED_AT = DateTime.Now
                });
                 DataInstance.Instance().DBContext().SaveChanges();
-                textBoxTONGTIEN.Text = "";
+                textBoxTONGTIEN.Text = "0";
                 richTextBoxNOIDUNG.Text = "";
-                textBoxTONGTIEN.Select();
+                richTextBoxNOIDUNG.Select();
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Dữ liệu nhập vào không phù hợp");
             }
         }
 
@@ -182,6 +197,30 @@ namespace T_Manager
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBoxKHO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void textBoxTIENLAI_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                buttonADD_Click(sender, e);
+            }
+        }
+
+        private void textBoxTONGTIEN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                button1_Click(sender, e);
+            }
         }
     }
 }

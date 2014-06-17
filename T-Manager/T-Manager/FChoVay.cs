@@ -39,7 +39,8 @@ namespace T_Manager
             {
                 var kh = Int32.Parse(comboBoxKHACHHANG.SelectedValue.ToString());
                 var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
-                bs.DataSource = db.XUAT_HANG.Where(u => u.SO_LUONG == 0 && u.DON_GIA_BAN == 0 && u.THANH_TIEN > 0 && u.MAKH ==  kh && u.MAKHO == kho);
+                DateTime now = dateTimePickerCHOVAY.Value.Date;
+                bs.DataSource = db.XUAT_HANG.Where(u => u.NGAY_XUAT == now && u.SO_LUONG == 0 && u.DON_GIA_BAN == 0 && u.THANH_TIEN > 0 && u.MAKH ==  kh && u.MAKHO == kho);
 
                 dataGridViewCHOVAY.Columns[0].Visible = false;
                 dataGridViewCHOVAY.Columns[1].Visible = false;
@@ -67,7 +68,10 @@ namespace T_Manager
 
         private void textBoxTONGTIEN_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = (!char.IsDigit(e.KeyChar)) && (!char.IsControl(e.KeyChar));
+            if (e.KeyChar == (char)13)
+            {
+                buttonADD_Click(sender, e);
+            }
         }
 
         private void textBoxTONGTIEN_TextChanged(object sender, EventArgs e)
@@ -77,7 +81,7 @@ namespace T_Manager
 
         private void textBoxLAISUAT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = (!char.IsDigit(e.KeyChar)) && (!char.IsControl(e.KeyChar)) && (!(e.KeyChar == '.'));
+
         }
 
         private void buttonADD_Click(object sender, EventArgs e)
@@ -121,6 +125,19 @@ namespace T_Manager
             {
                 MessageBox.Show("Lỗi nhập liệu");
             }
+        }
+
+        private void comboBoxKHO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dateTimePickerCHOVAY_ValueChanged(object sender, EventArgs e)
+        {
+            comboBoxKHACHHANG_SelectedIndexChanged(sender, e);
         }
     }
 }

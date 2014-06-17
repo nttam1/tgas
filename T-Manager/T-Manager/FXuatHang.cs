@@ -45,7 +45,7 @@ namespace T_Manager
                 ele.TRANG_THAI = MXuatHang.CHUA_TRA_XONG;
                 ele.THANH_TIEN = ele.SO_LUONG * ele.DON_GIA_BAN;
 
-                if (ele.DON_GIA_BAN < 0 || ele.TRA_TRUOC == 0 || ele.LAI_SUAT < 0)
+                if (ele.DON_GIA_BAN < 0 || ele.TRA_TRUOC < 0 || ele.LAI_SUAT < 0)
                 {
                     MessageBox.Show("Đơn giá, trả trước, lãi suất không được nhỏ hơn 0");
                     return;
@@ -122,6 +122,9 @@ namespace T_Manager
                 long kho = long.Parse(comboBoxKho.SelectedValue.ToString());
                 long hh = long.Parse(comboBoxHANGHOA.SelectedValue.ToString());
                 long kh = long.Parse(comboBoxKHACH_HANG.SelectedValue.ToString());
+
+                long ton = MKho.Ton(kho, hh);
+                labelTON.Text = "TỒN: " + ton.ToString(); ;
                 string hh_id = comboBoxHANGHOA.SelectedValue.ToString();
                 long value = long.Parse(hh_id);
 

@@ -30,15 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePickerNGAY = new System.Windows.Forms.DateTimePicker();
             this.textBoxTONGTIEN = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxTIENTON = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listBoxTAIKHOAN = new System.Windows.Forms.ListBox();
             this.buttonCHUYEN = new System.Windows.Forms.Button();
-            this.dateTimePickerNGAY = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
+            this.listBoxTAIKHOAN = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -55,10 +55,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dateTimePickerNGAY);
             this.groupBox1.Controls.Add(this.textBoxTONGTIEN);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.dateTimePickerNGAY);
             this.groupBox1.Controls.Add(this.textBoxTIENTON);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -69,19 +69,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN KHO QUỸ";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(22, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 16);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "NGÀY CHUYỂN";
+            // 
+            // dateTimePickerNGAY
+            // 
+            this.dateTimePickerNGAY.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerNGAY.Location = new System.Drawing.Point(25, 132);
+            this.dateTimePickerNGAY.Name = "dateTimePickerNGAY";
+            this.dateTimePickerNGAY.Size = new System.Drawing.Size(232, 22);
+            this.dateTimePickerNGAY.TabIndex = 100;
+            this.dateTimePickerNGAY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerNGAY_KeyPress);
+            // 
             // textBoxTONGTIEN
             // 
-            this.textBoxTONGTIEN.Location = new System.Drawing.Point(25, 122);
+            this.textBoxTONGTIEN.Location = new System.Drawing.Point(25, 199);
             this.textBoxTONGTIEN.Name = "textBoxTONGTIEN";
             this.textBoxTONGTIEN.Size = new System.Drawing.Size(232, 22);
-            this.textBoxTONGTIEN.TabIndex = 3;
+            this.textBoxTONGTIEN.TabIndex = 101;
             this.textBoxTONGTIEN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxTONGTIEN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTONGTIEN_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 93);
+            this.label3.Location = new System.Drawing.Point(22, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 16);
             this.label3.TabIndex = 2;
@@ -116,15 +134,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DANH SÁCH TÀI KHOẢN NGÂN HÀNG";
             // 
-            // listBoxTAIKHOAN
-            // 
-            this.listBoxTAIKHOAN.FormattingEnabled = true;
-            this.listBoxTAIKHOAN.ItemHeight = 16;
-            this.listBoxTAIKHOAN.Location = new System.Drawing.Point(6, 19);
-            this.listBoxTAIKHOAN.Name = "listBoxTAIKHOAN";
-            this.listBoxTAIKHOAN.Size = new System.Drawing.Size(297, 212);
-            this.listBoxTAIKHOAN.TabIndex = 0;
-            // 
             // buttonCHUYEN
             // 
             this.buttonCHUYEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,22 +145,15 @@
             this.buttonCHUYEN.UseVisualStyleBackColor = true;
             this.buttonCHUYEN.Click += new System.EventHandler(this.buttonCHUYEN_Click);
             // 
-            // dateTimePickerNGAY
+            // listBoxTAIKHOAN
             // 
-            this.dateTimePickerNGAY.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNGAY.Location = new System.Drawing.Point(25, 197);
-            this.dateTimePickerNGAY.Name = "dateTimePickerNGAY";
-            this.dateTimePickerNGAY.Size = new System.Drawing.Size(232, 22);
-            this.dateTimePickerNGAY.TabIndex = 47;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 167);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 16);
-            this.label4.TabIndex = 48;
-            this.label4.Text = "NGÀY CHUYỂN";
+            this.listBoxTAIKHOAN.FormattingEnabled = true;
+            this.listBoxTAIKHOAN.ItemHeight = 16;
+            this.listBoxTAIKHOAN.Location = new System.Drawing.Point(6, 30);
+            this.listBoxTAIKHOAN.Name = "listBoxTAIKHOAN";
+            this.listBoxTAIKHOAN.Size = new System.Drawing.Size(297, 212);
+            this.listBoxTAIKHOAN.TabIndex = 102;
+            this.listBoxTAIKHOAN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBoxTAIKHOAN_KeyPress);
             // 
             // FChuyenTien
             // 
@@ -183,12 +185,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox listBoxTAIKHOAN;
         private System.Windows.Forms.TextBox textBoxTIENTON;
         private System.Windows.Forms.TextBox textBoxTONGTIEN;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonCHUYEN;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePickerNGAY;
+        private System.Windows.Forms.ListBox listBoxTAIKHOAN;
     }
 }

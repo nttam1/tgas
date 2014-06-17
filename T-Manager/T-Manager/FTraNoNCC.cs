@@ -49,9 +49,10 @@ namespace T_Manager
             {
                 var kho = Convert.ToInt32(comboBoxKHO.SelectedValue.ToString());
                 var ncc = Convert.ToInt32(comboBoxNCC.SelectedValue.ToString());
-
+                DateTime now = dateTimePicker1.Value.Date;
                 bs.DataSource = DataInstance.Instance().DBContext().TRA_NO_NCC.Where(u => u.MANCC == ncc)
-                    .Where(u => u.MAKHO == kho);
+                    .Where(u => u.MAKHO == kho)
+                    .Where(u => u.NGAY_TRA == now);
                 dataGridView1.DataSource = bs;
                 
                 dataGridView1.Columns[0].Visible = false;
@@ -88,16 +89,39 @@ namespace T_Manager
                 bs.EndEdit();
                 bs.ResetBindings(false);
                 DataInstance.Instance().DBContext().SaveChanges();
+                textBoxTONGTIEN.Text = "0";
+                comboBoxKHO.Select();
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Dữ liệu nhập vào không phù hợp");
             }
         }
 
         private void comboBoxKHO_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxNCC_SelectedIndexChanged(sender, e);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            comboBoxKHO_SelectedIndexChanged(sender, e);
+        }
+
+        private void comboBoxKHO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void textBoxTONGTIEN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                button1_Click(sender, e);
+            }
         }
     }
 }

@@ -97,7 +97,8 @@ namespace T_Manager
                     bs_nv.EndEdit();
                     bs_nv.ResetBindings(false);
                     dbContext.SaveChanges();
-                    textBoxTONGTIEN.Text = "";
+                    textBoxTONGTIEN.Text = "0";
+                    comboBoxNHANVIEN.Select();
                 }
             }
             else
@@ -108,7 +109,10 @@ namespace T_Manager
 
         private void textBoxTONGTIEN_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = (!char.IsDigit(e.KeyChar)) && (!char.IsControl(e.KeyChar));
+            if (e.KeyChar == (char)13)
+            {
+                buttonCKNHAP_Click(sender, e);
+            }
         }
 
         private BindingSource bs_ck = new BindingSource();
@@ -141,12 +145,15 @@ namespace T_Manager
 
         private void textBoxNBDONGIABAN_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = (!char.IsDigit(e.KeyChar)) && (!char.IsControl(e.KeyChar));
+
         }
 
         private void textBoxNBSOLUONG_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = (!char.IsDigit(e.KeyChar)) && (!char.IsControl(e.KeyChar));
+            if (e.KeyChar == (char)13)
+            {
+                buttonNBNHAP_Click(sender, e);
+            }
         }
 
         private void buttonNBNHAP_Click(object sender, EventArgs e)
@@ -205,31 +212,44 @@ namespace T_Manager
             }
         }
 
-        private void textBoxNDCHI_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
         private void textBoxCKTONGTIEN_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = (!char.IsDigit(e.KeyChar)) && (!char.IsControl(e.KeyChar));
+            if (e.KeyChar == (char)13)
+            {
+                buttonCKNHAP_Click(sender, e);
+            }
         }
 
         private void buttonCKNHAP_Click(object sender, EventArgs e)
         {
-            var chikhac = textBoxNDCHI.Text;
-            var chitien = Int32.Parse(textBoxCKTONGTIEN.Text);
-            bs_ck.Add(new CHI_KHAC()
+            try
             {
-                NOI_DUNG = chikhac,
-                TONG_TIEN = chitien,
-                CREATED_AT = DateTime.Now,
-                NGAY_CHI = dateTimePickerdATE.Value.Date,
-                MAKHO = Int32.Parse(comboBoxKHO.SelectedValue.ToString())
-            });
-            bs_ck.EndEdit();
-            bs_ck.ResetBindings(false);
-            dbContext.SaveChanges();
+                var chikhac = textBoxNDCHI.Text;
+                var chitien = Int32.Parse(textBoxCKTONGTIEN.Text);
+                bs_ck.Add(new CHI_KHAC()
+                {
+                    NOI_DUNG = chikhac,
+                    TONG_TIEN = chitien,
+                    CREATED_AT = DateTime.Now,
+                    NGAY_CHI = dateTimePickerdATE.Value.Date,
+                    MAKHO = Int32.Parse(comboBoxKHO.SelectedValue.ToString())
+                });
+                bs_ck.EndEdit();
+                bs_ck.ResetBindings(false);
+                dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Dữ liệu nhập không phù hợp");
+            }
+        }
+
+        private void comboBoxNHANVIEN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

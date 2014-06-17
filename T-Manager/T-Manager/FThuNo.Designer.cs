@@ -89,8 +89,9 @@
             this.comboBoxKHO.Location = new System.Drawing.Point(333, 71);
             this.comboBoxKHO.Name = "comboBoxKHO";
             this.comboBoxKHO.Size = new System.Drawing.Size(205, 37);
-            this.comboBoxKHO.TabIndex = 9;
+            this.comboBoxKHO.TabIndex = 0;
             this.comboBoxKHO.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHO_SelectedIndexChanged);
+            this.comboBoxKHO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // tabControl1
             // 
@@ -126,7 +127,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.Location = new System.Drawing.Point(459, 62);
+            this.label6.Location = new System.Drawing.Point(17, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 40;
@@ -135,10 +136,11 @@
             // dateTimePickerDATE
             // 
             this.dateTimePickerDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDATE.Location = new System.Drawing.Point(462, 88);
+            this.dateTimePickerDATE.Location = new System.Drawing.Point(20, 85);
             this.dateTimePickerDATE.Name = "dateTimePickerDATE";
             this.dateTimePickerDATE.Size = new System.Drawing.Size(149, 20);
-            this.dateTimePickerDATE.TabIndex = 39;
+            this.dateTimePickerDATE.TabIndex = 2;
+            this.dateTimePickerDATE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // groupBox2
             // 
@@ -194,26 +196,29 @@
             // 
             // buttonADD
             // 
-            this.buttonADD.Location = new System.Drawing.Point(627, 73);
+            this.buttonADD.Location = new System.Drawing.Point(627, 85);
             this.buttonADD.Name = "buttonADD";
-            this.buttonADD.Size = new System.Drawing.Size(75, 49);
-            this.buttonADD.TabIndex = 30;
+            this.buttonADD.Size = new System.Drawing.Size(75, 23);
+            this.buttonADD.TabIndex = 5;
             this.buttonADD.Text = "NHẬP";
             this.buttonADD.UseVisualStyleBackColor = true;
             this.buttonADD.Click += new System.EventHandler(this.buttonADD_Click);
             // 
             // textBoxTIENLAI
             // 
-            this.textBoxTIENLAI.Location = new System.Drawing.Point(224, 88);
+            this.textBoxTIENLAI.Location = new System.Drawing.Point(413, 88);
             this.textBoxTIENLAI.Name = "textBoxTIENLAI";
             this.textBoxTIENLAI.Size = new System.Drawing.Size(208, 20);
-            this.textBoxTIENLAI.TabIndex = 29;
+            this.textBoxTIENLAI.TabIndex = 4;
+            this.textBoxTIENLAI.Text = "0";
+            this.textBoxTIENLAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxTIENLAI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTIENLAI_KeyPress_1);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(221, 61);
+            this.label4.Location = new System.Drawing.Point(410, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 28;
@@ -221,16 +226,19 @@
             // 
             // textBoxTIENGOC
             // 
-            this.textBoxTIENGOC.Location = new System.Drawing.Point(11, 88);
+            this.textBoxTIENGOC.Location = new System.Drawing.Point(200, 88);
             this.textBoxTIENGOC.Name = "textBoxTIENGOC";
             this.textBoxTIENGOC.Size = new System.Drawing.Size(197, 20);
-            this.textBoxTIENGOC.TabIndex = 27;
+            this.textBoxTIENGOC.TabIndex = 3;
+            this.textBoxTIENGOC.Text = "0";
+            this.textBoxTIENGOC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxTIENGOC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(8, 62);
+            this.label3.Location = new System.Drawing.Point(197, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 26;
@@ -240,17 +248,18 @@
             // 
             this.comboBoxKHACHHANG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKHACHHANG.FormattingEnabled = true;
-            this.comboBoxKHACHHANG.Location = new System.Drawing.Point(250, 20);
+            this.comboBoxKHACHHANG.Location = new System.Drawing.Point(294, 16);
             this.comboBoxKHACHHANG.Name = "comboBoxKHACHHANG";
             this.comboBoxKHACHHANG.Size = new System.Drawing.Size(198, 21);
-            this.comboBoxKHACHHANG.TabIndex = 25;
+            this.comboBoxKHACHHANG.TabIndex = 1;
             this.comboBoxKHACHHANG.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHACHHANG_SelectedIndexChanged);
+            this.comboBoxKHACHHANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(144, 23);
+            this.label2.Location = new System.Drawing.Point(188, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 24;
@@ -277,7 +286,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(425, 30);
+            this.label9.Location = new System.Drawing.Point(98, 158);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 13);
             this.label9.TabIndex = 46;
@@ -286,25 +295,27 @@
             // dateTimePickerNGAYKHAC
             // 
             this.dateTimePickerNGAYKHAC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNGAYKHAC.Location = new System.Drawing.Point(428, 56);
+            this.dateTimePickerNGAYKHAC.Location = new System.Drawing.Point(101, 184);
             this.dateTimePickerNGAYKHAC.Name = "dateTimePickerNGAYKHAC";
             this.dateTimePickerNGAYKHAC.Size = new System.Drawing.Size(149, 20);
-            this.dateTimePickerNGAYKHAC.TabIndex = 45;
+            this.dateTimePickerNGAYKHAC.TabIndex = 7;
+            this.dateTimePickerNGAYKHAC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // richTextBoxNOIDUNG
             // 
-            this.richTextBoxNOIDUNG.Location = new System.Drawing.Point(221, 115);
+            this.richTextBoxNOIDUNG.Location = new System.Drawing.Point(232, 45);
             this.richTextBoxNOIDUNG.Name = "richTextBoxNOIDUNG";
             this.richTextBoxNOIDUNG.Size = new System.Drawing.Size(260, 96);
-            this.richTextBoxNOIDUNG.TabIndex = 44;
+            this.richTextBoxNOIDUNG.TabIndex = 6;
             this.richTextBoxNOIDUNG.Text = "";
+            this.richTextBoxNOIDUNG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(277, 236);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 23);
-            this.button1.TabIndex = 43;
+            this.button1.TabIndex = 9;
             this.button1.Text = "NHẬP";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -313,7 +324,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label11.Location = new System.Drawing.Point(221, 89);
+            this.label11.Location = new System.Drawing.Point(232, 19);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 13);
             this.label11.TabIndex = 41;
@@ -321,16 +332,19 @@
             // 
             // textBoxTONGTIEN
             // 
-            this.textBoxTONGTIEN.Location = new System.Drawing.Point(96, 56);
+            this.textBoxTONGTIEN.Location = new System.Drawing.Point(371, 187);
             this.textBoxTONGTIEN.Name = "textBoxTONGTIEN";
             this.textBoxTONGTIEN.Size = new System.Drawing.Size(260, 20);
-            this.textBoxTONGTIEN.TabIndex = 40;
+            this.textBoxTONGTIEN.TabIndex = 8;
+            this.textBoxTONGTIEN.Text = "0";
+            this.textBoxTONGTIEN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxTONGTIEN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTONGTIEN_KeyPress);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label12.Location = new System.Drawing.Point(93, 30);
+            this.label12.Location = new System.Drawing.Point(368, 161);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 13);
             this.label12.TabIndex = 39;
