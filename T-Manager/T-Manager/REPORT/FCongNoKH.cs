@@ -47,7 +47,7 @@ namespace T_Manager.REPORT
                 _datasource.Add(new CCongNoNew
                 {
                     NGAY = xh.NGAY_XUAT.Value,
-                    TRANO = "",
+                    TRANO = soluong < 0 ? "Nhập bù" : "",
                     TRATRUOC = xh.TRA_TRUOC,
                     HANGHOA = MHangHoa.GetNameByID(xh.MAHH),
                     SOLUONG = soluong,

@@ -44,9 +44,6 @@
             this.radioButtonTRANOVAY = new System.Windows.Forms.RadioButton();
             this.radioButtonVAY = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonLOGIN = new System.Windows.Forms.Button();
-            this.textBoxPASSWORD = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerDATE = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -238,9 +235,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.buttonLOGIN);
-            this.groupBox2.Controls.Add(this.textBoxPASSWORD);
-            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dateTimePickerDATE);
             this.groupBox2.Location = new System.Drawing.Point(12, 19);
@@ -250,49 +244,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CHỌN NGÀY NHẬP";
             // 
-            // buttonLOGIN
-            // 
-            this.buttonLOGIN.Location = new System.Drawing.Point(6, 101);
-            this.buttonLOGIN.Name = "buttonLOGIN";
-            this.buttonLOGIN.Size = new System.Drawing.Size(268, 23);
-            this.buttonLOGIN.TabIndex = 4;
-            this.buttonLOGIN.Text = "XÁC NHẬN";
-            this.buttonLOGIN.UseVisualStyleBackColor = true;
-            this.buttonLOGIN.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBoxPASSWORD
-            // 
-            this.textBoxPASSWORD.Location = new System.Drawing.Point(95, 69);
-            this.textBoxPASSWORD.Name = "textBoxPASSWORD";
-            this.textBoxPASSWORD.PasswordChar = '*';
-            this.textBoxPASSWORD.Size = new System.Drawing.Size(179, 20);
-            this.textBoxPASSWORD.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "MẬT KHẨU";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 34);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(106, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "NGÀY";
             // 
             // dateTimePickerDATE
             // 
-            this.dateTimePickerDATE.Enabled = false;
+            this.dateTimePickerDATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDATE.Location = new System.Drawing.Point(95, 28);
+            this.dateTimePickerDATE.Location = new System.Drawing.Point(50, 74);
             this.dateTimePickerDATE.Name = "dateTimePickerDATE";
-            this.dateTimePickerDATE.Size = new System.Drawing.Size(179, 20);
+            this.dateTimePickerDATE.Size = new System.Drawing.Size(179, 26);
             this.dateTimePickerDATE.TabIndex = 0;
             // 
             // dataGridView1
@@ -337,9 +305,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dateTimePickerDATE;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxPASSWORD;
-        private System.Windows.Forms.Button buttonLOGIN;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton radioButtonTRANOVAY;
         private System.Windows.Forms.RadioButton radioButtonVAY;

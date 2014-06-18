@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Excel=Microsoft.Office.Interop.Excel;
-using T_Manager.Modal; 
+using T_Manager.Modal;
+using System.IO;
 
 namespace T_Manager
 {
@@ -83,10 +84,22 @@ namespace T_Manager
                 }
             }
             DataInstance.Instance().DBContext().SaveChanges();
-            MessageBox.Show("Cập nhật dữ liệu thành công");
+            MessageBox.Show("Cập nhật dữ liệu thành công\nVui lòng khởi động lại chương trình");
             MyBook.Close();
             MyApp.Quit();
+
+            MHeTHong.Set(MHeTHong.DATE, DateTime.Now.ToLongDateString());
             Application.Exit();
+        }
+
+        private void FImport_Load(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            string originName = "tgas_origin";
+            string Name = "tgas";
+            string tmpName = "tgas_" + now.Date.Day.ToString() +  now.Date.Month.ToString() +now.Date.Year.ToString();
+            File.Copy(Name, tmpName, true);
+            File.Copy(originName, Name, true);
         }
     }
 }

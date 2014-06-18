@@ -19,20 +19,6 @@ namespace T_Manager
         BindingSource bs = new BindingSource();
         tgasEntities db = DataInstance.Instance().DBContext();
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string pass = MHeTHong.Get(MHeTHong.MATKHAU);
-            string _pass = textBoxPASSWORD.Text;
-            if (pass == _pass)
-            {
-                dateTimePickerDATE.Enabled = true;
-                textBoxPASSWORD.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show("Mật khẩu không đúng");
-            }
-        }
 
         private void radioButtonVAY_CheckedChanged(object sender, EventArgs e)
         {

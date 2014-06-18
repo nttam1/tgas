@@ -88,6 +88,11 @@ namespace T_Manager
                 textBoxDUATRUOC.Text = "0";
                 textBoxDONGIA.Text = "0";
                 textBoxSOLUONG.Text = "0";
+                long kho = long.Parse(comboBoxKho.SelectedValue.ToString());
+                long hh = long.Parse(comboBoxHANGHOA.SelectedValue.ToString());
+
+                long ton = MKho.Ton(kho, hh);
+                labelTON.Text = "TỒN: " + ton.ToString();
             }
             catch (Exception ex)
             {
@@ -95,6 +100,7 @@ namespace T_Manager
                 MessageBox.Show("Dữ liệu nhập vào phải là số");
             }
             comboBoxHANGHOA.Select();
+
         }
 
         private void XuatHang_Load(object sender, EventArgs e)
@@ -127,7 +133,7 @@ namespace T_Manager
                 long kh = long.Parse(comboBoxKHACH_HANG.SelectedValue.ToString());
 
                 long ton = MKho.Ton(kho, hh);
-                labelTON.Text = "TỒN: " + ton.ToString(); ;
+                labelTON.Text = "TỒN: " + ton.ToString();
                 string hh_id = comboBoxHANGHOA.SelectedValue.ToString();
                 long value = long.Parse(hh_id);
 

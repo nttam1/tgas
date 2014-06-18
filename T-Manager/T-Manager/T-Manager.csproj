@@ -655,7 +655,9 @@
     <EmbeddedResource Include="REPORT\FXemKhoQuy.resx">
       <DependentUpon>FXemKhoQuy.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <EntityDeploy Include="Data.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Data.Designer.cs</LastGenOutput>

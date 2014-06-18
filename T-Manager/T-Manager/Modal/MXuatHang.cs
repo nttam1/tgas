@@ -63,7 +63,7 @@ namespace T_Manager.Modal
                 foreach (var row in DataInstance.Instance().DBContext().NHAP_HANG
                     .Where(u => u.MAKHO == ele.MAKHO)
                     .Where(u => u.MAHH == ele.MAHH)
-                    .Where(u => u.SL_CON_LAI <= 0)
+                    .Where(u => u.SL_CON_LAI < u.SO_LUONG)
                     .OrderByDescending(u => u.NGAY_NHAP))
                 {
                     /**

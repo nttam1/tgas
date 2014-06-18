@@ -68,7 +68,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button33 = new System.Windows.Forms.Button();
             this.button32 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -498,26 +497,15 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.button33);
             this.groupBox8.Controls.Add(this.button32);
             this.groupBox8.Controls.Add(this.button31);
             this.groupBox8.Controls.Add(this.button30);
-            this.groupBox8.Location = new System.Drawing.Point(653, 15);
+            this.groupBox8.Location = new System.Drawing.Point(647, 15);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(183, 183);
+            this.groupBox8.Size = new System.Drawing.Size(183, 111);
             this.groupBox8.TabIndex = 17;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "CHỈNH SỬA DỮ LIỆU";
-            // 
-            // button33
-            // 
-            this.button33.Location = new System.Drawing.Point(6, 118);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(171, 23);
-            this.button33.TabIndex = 17;
-            this.button33.Text = "ĐỔI MẬT KHẨU";
-            this.button33.UseVisualStyleBackColor = true;
-            this.button33.Click += new System.EventHandler(this.button33_Click);
             // 
             // button32
             // 
@@ -614,7 +602,6 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button button32;
         private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button33;
         private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Button button29;
     }

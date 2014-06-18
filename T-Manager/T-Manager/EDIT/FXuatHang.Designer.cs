@@ -232,7 +232,6 @@
             // 
             // textBoxLAISUAT
             // 
-            this.textBoxLAISUAT.Enabled = false;
             this.textBoxLAISUAT.Location = new System.Drawing.Point(310, 46);
             this.textBoxLAISUAT.Name = "textBoxLAISUAT";
             this.textBoxLAISUAT.Size = new System.Drawing.Size(121, 20);

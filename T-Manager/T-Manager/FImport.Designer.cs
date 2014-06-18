@@ -91,6 +91,7 @@
             this.Name = "FImport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NHẬP DỮ LIỆU";
+            this.Load += new System.EventHandler(this.FImport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
