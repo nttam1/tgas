@@ -70,6 +70,7 @@
             this.button33 = new System.Windows.Forms.Button();
             this.button32 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -282,6 +283,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button34);
+            this.groupBox3.Controls.Add(this.button29);
             this.groupBox3.Controls.Add(this.button26);
             this.groupBox3.Controls.Add(this.button27);
             this.groupBox3.Controls.Add(this.button19);
@@ -527,6 +529,16 @@
             this.button31.UseVisualStyleBackColor = true;
             this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
+            // button29
+            // 
+            this.button29.Location = new System.Drawing.Point(183, 162);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(171, 23);
+            this.button29.TabIndex = 11;
+            this.button29.Text = "CHI DÙNG CHO XE";
+            this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click_1);
+            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,6 +616,7 @@
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button button33;
         private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Button button29;
     }
 }
 

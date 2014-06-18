@@ -259,5 +259,11 @@ namespace T_Manager
             REPORT.FCongNoKH f = new REPORT.FCongNoKH();
             f.ShowDialog();
         }
+
+        private void button29_Click_1(object sender, EventArgs e)
+        {
+            REPORT.FChiXe f = new REPORT.FChiXe();
+            f.ShowDialog();
+        }
     }
 }

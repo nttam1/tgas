@@ -39,13 +39,19 @@
             this.dateTimePickerTHANG = new System.Windows.Forms.DateTimePicker();
             this.comboBoxNHANVIEN = new System.Windows.Forms.ComboBox();
             this.tabPageCHITIEUDUNGNOIOBO = new System.Windows.Forms.TabPage();
+            this.radioButtonGUITIENXE = new System.Windows.Forms.RadioButton();
+            this.radioButtonXANGDAU = new System.Windows.Forms.RadioButton();
+            this.textBoxNBNOIDUNGCHI = new System.Windows.Forms.TextBox();
             this.dataGridViewXE = new System.Windows.Forms.DataGridView();
             this.buttonNBNHAP = new System.Windows.Forms.Button();
+            this.textBoxNBCHIXEE = new System.Windows.Forms.TextBox();
             this.textBoxNBSOLUONG = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxNBDONGIABAN = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxNBXANGDAU = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxNBXE = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -176,13 +182,19 @@
             // 
             // tabPageCHITIEUDUNGNOIOBO
             // 
+            this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.radioButtonGUITIENXE);
+            this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.radioButtonXANGDAU);
+            this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.textBoxNBNOIDUNGCHI);
             this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.dataGridViewXE);
             this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.buttonNBNHAP);
+            this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.textBoxNBCHIXEE);
             this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.textBoxNBSOLUONG);
+            this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.label13);
             this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.label9);
             this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.textBoxNBDONGIABAN);
             this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.label8);
             this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.comboBoxNBXANGDAU);
+            this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.label12);
             this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.label7);
             this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.comboBoxNBXE);
             this.tabPageCHITIEUDUNGNOIOBO.Controls.Add(this.label6);
@@ -193,27 +205,67 @@
             this.tabPageCHITIEUDUNGNOIOBO.Text = "TIÊU DÙNG NỘI BỘ";
             this.tabPageCHITIEUDUNGNOIOBO.UseVisualStyleBackColor = true;
             // 
+            // radioButtonGUITIENXE
+            // 
+            this.radioButtonGUITIENXE.AutoSize = true;
+            this.radioButtonGUITIENXE.Location = new System.Drawing.Point(96, 126);
+            this.radioButtonGUITIENXE.Name = "radioButtonGUITIENXE";
+            this.radioButtonGUITIENXE.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonGUITIENXE.TabIndex = 11;
+            this.radioButtonGUITIENXE.UseVisualStyleBackColor = true;
+            this.radioButtonGUITIENXE.CheckedChanged += new System.EventHandler(this.radioButtonGUITIENXE_CheckedChanged);
+            // 
+            // radioButtonXANGDAU
+            // 
+            this.radioButtonXANGDAU.AutoSize = true;
+            this.radioButtonXANGDAU.Checked = true;
+            this.radioButtonXANGDAU.Location = new System.Drawing.Point(96, 77);
+            this.radioButtonXANGDAU.Name = "radioButtonXANGDAU";
+            this.radioButtonXANGDAU.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonXANGDAU.TabIndex = 11;
+            this.radioButtonXANGDAU.TabStop = true;
+            this.radioButtonXANGDAU.UseVisualStyleBackColor = true;
+            this.radioButtonXANGDAU.CheckedChanged += new System.EventHandler(this.radioButtonXANGDAU_CheckedChanged);
+            // 
+            // textBoxNBNOIDUNGCHI
+            // 
+            this.textBoxNBNOIDUNGCHI.Location = new System.Drawing.Point(116, 123);
+            this.textBoxNBNOIDUNGCHI.Name = "textBoxNBNOIDUNGCHI";
+            this.textBoxNBNOIDUNGCHI.Size = new System.Drawing.Size(245, 20);
+            this.textBoxNBNOIDUNGCHI.TabIndex = 200;
+            this.textBoxNBNOIDUNGCHI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxNHANVIEN_KeyPress);
+            // 
             // dataGridViewXE
             // 
             this.dataGridViewXE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewXE.Location = new System.Drawing.Point(3, 57);
+            this.dataGridViewXE.Location = new System.Drawing.Point(3, 164);
             this.dataGridViewXE.Name = "dataGridViewXE";
-            this.dataGridViewXE.Size = new System.Drawing.Size(638, 228);
+            this.dataGridViewXE.Size = new System.Drawing.Size(638, 157);
             this.dataGridViewXE.TabIndex = 9;
             // 
             // buttonNBNHAP
             // 
-            this.buttonNBNHAP.Location = new System.Drawing.Point(554, 18);
+            this.buttonNBNHAP.Location = new System.Drawing.Point(554, 75);
             this.buttonNBNHAP.Name = "buttonNBNHAP";
-            this.buttonNBNHAP.Size = new System.Drawing.Size(75, 23);
+            this.buttonNBNHAP.Size = new System.Drawing.Size(75, 59);
             this.buttonNBNHAP.TabIndex = 8;
             this.buttonNBNHAP.Text = "NHẬP";
             this.buttonNBNHAP.UseVisualStyleBackColor = true;
             this.buttonNBNHAP.Click += new System.EventHandler(this.buttonNBNHAP_Click);
             // 
+            // textBoxNBCHIXEE
+            // 
+            this.textBoxNBCHIXEE.Location = new System.Drawing.Point(375, 123);
+            this.textBoxNBCHIXEE.Name = "textBoxNBCHIXEE";
+            this.textBoxNBCHIXEE.Size = new System.Drawing.Size(115, 20);
+            this.textBoxNBCHIXEE.TabIndex = 201;
+            this.textBoxNBCHIXEE.Text = "0";
+            this.textBoxNBCHIXEE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxNBCHIXEE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNBSOLUONG_KeyPress);
+            // 
             // textBoxNBSOLUONG
             // 
-            this.textBoxNBSOLUONG.Location = new System.Drawing.Point(403, 20);
+            this.textBoxNBSOLUONG.Location = new System.Drawing.Point(375, 75);
             this.textBoxNBSOLUONG.Name = "textBoxNBSOLUONG";
             this.textBoxNBSOLUONG.Size = new System.Drawing.Size(115, 20);
             this.textBoxNBSOLUONG.TabIndex = 7;
@@ -221,10 +273,19 @@
             this.textBoxNBSOLUONG.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxNBSOLUONG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNBSOLUONG_KeyPress);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(372, 107);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 13);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "TỔNG TIỀN";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(400, 3);
+            this.label9.Location = new System.Drawing.Point(372, 58);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 13);
             this.label9.TabIndex = 6;
@@ -232,7 +293,7 @@
             // 
             // textBoxNBDONGIABAN
             // 
-            this.textBoxNBDONGIABAN.Location = new System.Drawing.Point(268, 20);
+            this.textBoxNBDONGIABAN.Location = new System.Drawing.Point(246, 75);
             this.textBoxNBDONGIABAN.Name = "textBoxNBDONGIABAN";
             this.textBoxNBDONGIABAN.Size = new System.Drawing.Size(115, 20);
             this.textBoxNBDONGIABAN.TabIndex = 5;
@@ -243,7 +304,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(265, 3);
+            this.label8.Location = new System.Drawing.Point(243, 58);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 13);
             this.label8.TabIndex = 4;
@@ -253,16 +314,25 @@
             // 
             this.comboBoxNBXANGDAU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNBXANGDAU.FormattingEnabled = true;
-            this.comboBoxNBXANGDAU.Location = new System.Drawing.Point(144, 19);
+            this.comboBoxNBXANGDAU.Location = new System.Drawing.Point(116, 74);
             this.comboBoxNBXANGDAU.Name = "comboBoxNBXANGDAU";
             this.comboBoxNBXANGDAU.Size = new System.Drawing.Size(115, 21);
             this.comboBoxNBXANGDAU.TabIndex = 3;
             this.comboBoxNBXANGDAU.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxNHANVIEN_KeyPress);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(113, 107);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(82, 13);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "NỘI DUNG CHI";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(141, 3);
+            this.label7.Location = new System.Drawing.Point(113, 58);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 2;
@@ -272,7 +342,7 @@
             // 
             this.comboBoxNBXE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNBXE.FormattingEnabled = true;
-            this.comboBoxNBXE.Location = new System.Drawing.Point(16, 19);
+            this.comboBoxNBXE.Location = new System.Drawing.Point(263, 18);
             this.comboBoxNBXE.Name = "comboBoxNBXE";
             this.comboBoxNBXE.Size = new System.Drawing.Size(115, 21);
             this.comboBoxNBXE.TabIndex = 1;
@@ -283,7 +353,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 3);
+            this.label6.Location = new System.Drawing.Point(307, 2);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(21, 13);
             this.label6.TabIndex = 0;
@@ -467,6 +537,12 @@
         private System.Windows.Forms.DataGridView dataGridViewCHIKHAC;
         private System.Windows.Forms.DateTimePicker dateTimePickerdATE;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxNBNOIDUNGCHI;
+        private System.Windows.Forms.TextBox textBoxNBCHIXEE;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.RadioButton radioButtonGUITIENXE;
+        private System.Windows.Forms.RadioButton radioButtonXANGDAU;
 
     }
 }

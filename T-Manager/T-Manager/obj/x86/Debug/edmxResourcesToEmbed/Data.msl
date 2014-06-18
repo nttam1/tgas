@@ -58,6 +58,8 @@
     <EntitySetMapping Name="CHI_TIEU_DUNG_NOI_BO">
       <EntityTypeMapping TypeName="tgasModel.CHI_TIEU_DUNG_NOI_BO">
         <MappingFragment StoreEntitySet="CHI_TIEU_DUNG_NOI_BO">
+          <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
+          <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
           <ScalarProperty Name="NGAY_CHI" ColumnName="NGAY_CHI" />
           <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
           <ScalarProperty Name="DON_GIA_BAN" ColumnName="DON_GIA_BAN" />

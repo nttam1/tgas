@@ -1527,7 +1527,8 @@ namespace T_Manager
         /// <param name="dON_GIA_BAN">Initial value of the DON_GIA_BAN property.</param>
         /// <param name="cREATED_AT">Initial value of the CREATED_AT property.</param>
         /// <param name="nGAY_CHI">Initial value of the NGAY_CHI property.</param>
-        public static CHI_TIEU_DUNG_NOI_BO CreateCHI_TIEU_DUNG_NOI_BO(global::System.Int64 id, global::System.Int64 mAKHO, global::System.Int64 mAHH, global::System.Int64 mAXE, global::System.Int64 sO_LUONG, global::System.Int64 dON_GIA_BAN, global::System.DateTime cREATED_AT, global::System.DateTime nGAY_CHI)
+        /// <param name="tONG_TIEN">Initial value of the TONG_TIEN property.</param>
+        public static CHI_TIEU_DUNG_NOI_BO CreateCHI_TIEU_DUNG_NOI_BO(global::System.Int64 id, global::System.Int64 mAKHO, global::System.Int64 mAHH, global::System.Int64 mAXE, global::System.Int64 sO_LUONG, global::System.Int64 dON_GIA_BAN, global::System.DateTime cREATED_AT, global::System.DateTime nGAY_CHI, global::System.Int64 tONG_TIEN)
         {
             CHI_TIEU_DUNG_NOI_BO cHI_TIEU_DUNG_NOI_BO = new CHI_TIEU_DUNG_NOI_BO();
             cHI_TIEU_DUNG_NOI_BO.ID = id;
@@ -1538,6 +1539,7 @@ namespace T_Manager
             cHI_TIEU_DUNG_NOI_BO.DON_GIA_BAN = dON_GIA_BAN;
             cHI_TIEU_DUNG_NOI_BO.CREATED_AT = cREATED_AT;
             cHI_TIEU_DUNG_NOI_BO.NGAY_CHI = nGAY_CHI;
+            cHI_TIEU_DUNG_NOI_BO.TONG_TIEN = tONG_TIEN;
             return cHI_TIEU_DUNG_NOI_BO;
         }
 
@@ -1739,6 +1741,54 @@ namespace T_Manager
         private global::System.DateTime _NGAY_CHI;
         partial void OnNGAY_CHIChanging(global::System.DateTime value);
         partial void OnNGAY_CHIChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String NOI_DUNG
+        {
+            get
+            {
+                return _NOI_DUNG;
+            }
+            set
+            {
+                OnNOI_DUNGChanging(value);
+                ReportPropertyChanging("NOI_DUNG");
+                _NOI_DUNG = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("NOI_DUNG");
+                OnNOI_DUNGChanged();
+            }
+        }
+        private global::System.String _NOI_DUNG;
+        partial void OnNOI_DUNGChanging(global::System.String value);
+        partial void OnNOI_DUNGChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 TONG_TIEN
+        {
+            get
+            {
+                return _TONG_TIEN;
+            }
+            set
+            {
+                OnTONG_TIENChanging(value);
+                ReportPropertyChanging("TONG_TIEN");
+                _TONG_TIEN = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TONG_TIEN");
+                OnTONG_TIENChanged();
+            }
+        }
+        private global::System.Int64 _TONG_TIEN;
+        partial void OnTONG_TIENChanging(global::System.Int64 value);
+        partial void OnTONG_TIENChanged();
 
         #endregion
 

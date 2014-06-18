@@ -86,6 +86,8 @@
     <Property Name="DON_GIA_BAN" Type="integer" Nullable="false" />
     <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
     <Property Name="NGAY_CHI" Type="datetime" Nullable="false" />
+    <Property Name="NOI_DUNG" Type="nvarchar" />
+    <Property Name="TONG_TIEN" Type="integer" Nullable="false" />
   </EntityType>
   <EntityType Name="CHO_VAY">
     <Key>

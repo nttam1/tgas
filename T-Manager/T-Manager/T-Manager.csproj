@@ -274,6 +274,12 @@
     <Compile Include="FXuatHang.Designer.cs">
       <DependentUpon>FXuatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="REPORT\CrystalReportCHIDUNGCHOXE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportCHIDUNGCHOXE.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\CrystalReportCHITIETNONCC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -399,6 +405,12 @@
     </Compile>
     <Compile Include="REPORT\FChiTietLai.Designer.cs">
       <DependentUpon>FChiTietLai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT\FChiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\FChiXe.Designer.cs">
+      <DependentUpon>FChiXe.cs</DependentUpon>
     </Compile>
     <Compile Include="REPORT\FCongNoKH.cs">
       <SubType>Form</SubType>
@@ -537,6 +549,10 @@
     <EmbeddedResource Include="FXuatHang.resx">
       <DependentUpon>FXuatHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\CrystalReportCHIDUNGCHOXE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportCHIDUNGCHOXE.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\CrystalReportCHITIETNONCC.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportCHITIETNONCC.cs</LastGenOutput>
@@ -611,6 +627,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FChiTungKho.resx">
       <DependentUpon>FChiTungKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\FChiXe.resx">
+      <DependentUpon>FChiXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FCongNoKH.resx">
       <DependentUpon>FChiTietLai.cs</DependentUpon>

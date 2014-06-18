@@ -46,6 +46,7 @@ namespace T_Manager
             var kho_id = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
             comboBoxKHO_SelectedIndexChanged(sender, e);
             comboBoxNHANVIEN_SelectedIndexChanged(sender, e);
+            radioButtonXANGDAU_CheckedChanged(sender, e);
 
         }
 
@@ -166,28 +167,60 @@ namespace T_Manager
             {
                 var dongia = Int32.Parse(textBoxNBDONGIABAN.Text);
                 var soluong = Int32.Parse(textBoxNBSOLUONG.Text);
-                if (dongia == 0 || soluong == 0)
+                string ndchi = textBoxNBNOIDUNGCHI.Text;
+                long tongtien = long.Parse(textBoxNBCHIXEE.Text);
+                if (radioButtonXANGDAU.Checked == true)
                 {
-                    MessageBox.Show("Chưa nhập đơn giá hoặc số lượng");
-                    return;
+                    if (dongia == 0 || soluong == 0)
+                    {
+                        MessageBox.Show("Chưa nhập đơn giá hoặc số lượng");
+                        return;
+                    }
+                    var xe = Int32.Parse(comboBoxNBXE.SelectedValue.ToString());
+                    var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
+                    var hh = Int32.Parse(comboBoxNBXANGDAU.SelectedValue.ToString());
+                    dbContext.AddToCHI_TIEU_DUNG_NOI_BO(new CHI_TIEU_DUNG_NOI_BO()
+                    {
+                        MAKHO = kho,
+                        MAXE = xe,
+                        MAHH = hh,
+                        SO_LUONG = soluong,
+                        DON_GIA_BAN = dongia,
+                        NGAY_CHI = dateTimePickerdATE.Value.Date,
+                        CREATED_AT = DateTime.Now,
+                        TONG_TIEN = soluong * dongia,
+                        NOI_DUNG = ""
+                    });
                 }
-                var xe = Int32.Parse(comboBoxNBXE.SelectedValue.ToString());
-                var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
-                var hh = Int32.Parse(comboBoxNBXANGDAU.SelectedValue.ToString());
-                dbContext.AddToCHI_TIEU_DUNG_NOI_BO(new CHI_TIEU_DUNG_NOI_BO()
-                { 
-                    MAKHO = kho,
-                    MAXE = xe,
-                    MAHH = hh,
-                    SO_LUONG = soluong,
-                    DON_GIA_BAN = dongia,
-                    NGAY_CHI = dateTimePickerdATE.Value.Date,
-                    CREATED_AT = DateTime.Now
-                });
+                if (radioButtonGUITIENXE.Checked == true)
+                {
+                    if (ndchi == "" || tongtien == 0)
+                    {
+                        MessageBox.Show("Nội dung chi và tiền chi không được để trống");
+                        return;
+                    }
+                    var xe = Int32.Parse(comboBoxNBXE.SelectedValue.ToString());
+                    var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
+                    var hh = Int32.Parse(comboBoxNBXANGDAU.SelectedValue.ToString());
+                    dbContext.AddToCHI_TIEU_DUNG_NOI_BO(new CHI_TIEU_DUNG_NOI_BO()
+                    {
+                        MAKHO = kho,
+                        MAXE = xe,
+                        MAHH = -1,
+                        SO_LUONG = 0,
+                        DON_GIA_BAN = 0,
+                        NGAY_CHI = dateTimePickerdATE.Value.Date,
+                        CREATED_AT = DateTime.Now,
+                        TONG_TIEN = tongtien,
+                        NOI_DUNG = ndchi
+                    });
+                }
                 dbContext.SaveChanges();
                 comboBoxNBXE_SelectedIndexChanged(sender, e);
                 textBoxNBDONGIABAN.Text = "0";
                 textBoxNBSOLUONG.Text = "0";
+                textBoxNBNOIDUNGCHI.Text = "";
+                textBoxNBCHIXEE.Text = "0";
             }
         }
 
@@ -198,14 +231,31 @@ namespace T_Manager
             {
                 var xe = Int32.Parse(comboBoxNBXE.SelectedValue.ToString());
                 var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
-                bs_noibo.DataSource = dbContext.CHI_TIEU_DUNG_NOI_BO.Where(u => u.MAXE == xe)
+                DateTime now = dateTimePickerdATE.Value.Date;
+                var lst = dbContext.CHI_TIEU_DUNG_NOI_BO.Where(u => u.MAXE == xe)
                     .Where(u => u.MAKHO == kho)
-                    .Join(dbContext.HANG_HOA, c => c.MAHH, h => h.ID, (c, h) => new {h.NAME, c.SO_LUONG, c.DON_GIA_BAN, c.CREATED_AT });
+                    .Where(u => u.NGAY_CHI == now);
+                List<object> list = new List<object>();
+                foreach (CHI_TIEU_DUNG_NOI_BO nb in lst)
+                {
+                    list.Add(new
+                    {
+                        NGAY = nb.NGAY_CHI,
+                        NOIDUNG = nb.NOI_DUNG,
+                        HANGHOA = nb.MAHH == -1 ? "" : MHangHoa.GetNameByID(nb.MAHH),
+                        SOLUONG = nb.SO_LUONG,
+                        DONGIA = nb.DON_GIA_BAN,
+                        THANHTIEN = nb.TONG_TIEN,
+                    });
+                }
+                bs_noibo.DataSource = list;
                 dataGridViewXE.DataSource = bs_noibo;
-                dataGridViewXE.Columns[0].HeaderText = "HÀNG HÓA";
-                dataGridViewXE.Columns[1].HeaderText = "SỐ LƯỢNG";
-                dataGridViewXE.Columns[2].HeaderText = "ĐƠN GIÁ BÁN";
-                dataGridViewXE.Columns[3].HeaderText = "NGÀY NHẬP";
+                dataGridViewXE.Columns[0].HeaderText = "NGÀY";
+                dataGridViewXE.Columns[1].HeaderText = "NỘI DUNG CHI";
+                dataGridViewXE.Columns[2].HeaderText = "HÀNG HÓA";
+                dataGridViewXE.Columns[3].HeaderText = "SỐ LƯỢNG";
+                dataGridViewXE.Columns[4].HeaderText = "ĐƠN GIÁ";
+                dataGridViewXE.Columns[5].HeaderText = "THÀNH TIỀN";
             }
             catch (Exception ex)
             {
@@ -251,5 +301,38 @@ namespace T_Manager
                 SendKeys.Send("{TAB}");
             }
         }
+
+        private void radioButtonXANGDAU_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonXANGDAU.Checked == true)
+            {
+                comboBoxNBXANGDAU.Enabled = true;
+                textBoxNBDONGIABAN.Enabled = true;
+                textBoxNBSOLUONG.Enabled = true;
+                textBoxNBNOIDUNGCHI.Enabled = false;
+                textBoxNBCHIXEE.Enabled = false;
+            }
+        }
+
+        private void radioButtonGUITIENXE_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonGUITIENXE.Checked == true)
+            {
+                comboBoxNBXANGDAU.Enabled = false;
+                textBoxNBDONGIABAN.Enabled = false;
+                textBoxNBSOLUONG.Enabled = false;
+                textBoxNBNOIDUNGCHI.Enabled = true;
+                textBoxNBCHIXEE.Enabled = true;
+            }
+        }
+    }
+    class CChiXe
+    {
+        public DateTime NGAY;
+        public string HANGHOA;
+        public string NOIDUNG;
+        public long DONGIA;
+        public long SOLUONG;
+        public long THANHTIEN;
     }
 }
