@@ -44,7 +44,7 @@ namespace T_Manager.REPORT
                     c.HANGHOA = h.NAME;
                     c.SOLUONG = bh.SO_LUONG;
                     c.DONGIA = bh.DON_GIA_BAN;
-                    c.THANHTIEN = bh.SO_LUONG * bh.DON_GIA_BAN;
+                    c.THANHTIEN = bh.THANH_TIEN;
                     list.Add(c);
                 }
             }
@@ -138,10 +138,25 @@ namespace T_Manager.REPORT
             }
             try
             {
-                no = (from tn in DataInstance.Instance().DBContext().VAYs
-                      where tn.NGAY_VAY == _today
+                no = (from tn in DataInstance.Instance().DBContext().TRA_NO_VAY
+                      where tn.NGAY_TRA == _today
                       where tn.MAKHO == _kho
-                      select tn.TONG_TIEN
+                      select tn.TIEN_GOC + tn.TIEN_LAI
+                                                ).Sum();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            long kh_no = 0;
+            try
+            {
+                kh_no = (from tn in DataInstance.Instance().DBContext().XUAT_HANG
+                         where tn.NGAY_XUAT == _today
+                         where tn.MAKH != MXuatHang.MAKH_XUAT_MAT
+                         where tn.MAKHO == _kho
+                         select tn.THANH_TIEN - tn.TRA_TRUOC
                                                 ).Sum();
             }
             catch (Exception ex)
@@ -154,7 +169,8 @@ namespace T_Manager.REPORT
             rpt.SetParameterValue("CHILUONG", chiluong);
             rpt.SetParameterValue("CHITRANCC", chincc);
             rpt.SetParameterValue("CHIKHAC", chikhac);
-            rpt.SetParameterValue("NO", no);
+            rpt.SetParameterValue("TRANO", no);
+            rpt.SetParameterValue("KHNO", kh_no);
 
             crystalReportViewer1.ReportSource = rpt;
         }

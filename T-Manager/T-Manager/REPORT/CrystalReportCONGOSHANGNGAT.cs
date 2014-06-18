@@ -146,9 +146,17 @@ namespace T_Manager.REPORT {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_NO {
+        public CrystalDecisions.Shared.IParameterField Parameter_TRANO {
             get {
                 return this.DataDefinition.ParameterFields[7];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_KHNO {
+            get {
+                return this.DataDefinition.ParameterFields[8];
             }
         }
     }
