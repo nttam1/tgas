@@ -37,11 +37,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonVIEW = new System.Windows.Forms.Button();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.checkBoxTRANO = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxTRANO);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBoxNCC);
             this.groupBox1.Controls.Add(this.dateTimePickerFROM);
@@ -119,9 +121,9 @@
             // buttonVIEW
             // 
             this.buttonVIEW.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVIEW.Location = new System.Drawing.Point(283, 75);
+            this.buttonVIEW.Location = new System.Drawing.Point(520, 29);
             this.buttonVIEW.Name = "buttonVIEW";
-            this.buttonVIEW.Size = new System.Drawing.Size(224, 48);
+            this.buttonVIEW.Size = new System.Drawing.Size(135, 89);
             this.buttonVIEW.TabIndex = 6;
             this.buttonVIEW.Text = "Xem";
             this.buttonVIEW.UseVisualStyleBackColor = true;
@@ -138,6 +140,16 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(789, 327);
             this.crystalReportViewer1.TabIndex = 11;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // checkBoxTRANO
+            // 
+            this.checkBoxTRANO.AutoSize = true;
+            this.checkBoxTRANO.Location = new System.Drawing.Point(314, 85);
+            this.checkBoxTRANO.Name = "checkBoxTRANO";
+            this.checkBoxTRANO.Size = new System.Drawing.Size(167, 24);
+            this.checkBoxTRANO.TabIndex = 11;
+            this.checkBoxTRANO.Text = "BAO GỒM TRẢ NỢ";
+            this.checkBoxTRANO.UseVisualStyleBackColor = true;
             // 
             // FChiTietNoNCC
             // 
@@ -170,5 +182,6 @@
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxNCC;
+        private System.Windows.Forms.CheckBox checkBoxTRANO;
     }
 }

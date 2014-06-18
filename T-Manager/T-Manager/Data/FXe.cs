@@ -34,6 +34,7 @@ namespace T_Manager.Data
                 if (textBoxNGUONVAY.Text == "")
                 {
                     MessageBox.Show("Chưa nhập biển số xe");
+                    return;
                 }
                 bs.Add(new XE()
                 {

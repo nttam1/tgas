@@ -334,6 +334,12 @@
       <DependentUpon>CrystalReportNHAPXUATTUNGKHO.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REPORT\CrystalReportTHANHTOANNCC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportTHANHTOANNCC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\CrystalReportTONGHOPCONGNO.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -570,6 +576,10 @@
     <EmbeddedResource Include="REPORT\CrystalReportNHAPXUATTUNGKHO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportNHAPXUATTUNGKHO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\CrystalReportTHANHTOANNCC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportTHANHTOANNCC.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\CrystalReportTONGHOPCONGNO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

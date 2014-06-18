@@ -64,6 +64,8 @@
             // checkBoxTHUNO
             // 
             this.checkBoxTHUNO.AutoSize = true;
+            this.checkBoxTHUNO.Checked = true;
+            this.checkBoxTHUNO.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxTHUNO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxTHUNO.Location = new System.Drawing.Point(390, 31);
             this.checkBoxTHUNO.Name = "checkBoxTHUNO";
@@ -71,7 +73,6 @@
             this.checkBoxTHUNO.TabIndex = 12;
             this.checkBoxTHUNO.Text = "TÍNH CẢ LÃI";
             this.checkBoxTHUNO.UseVisualStyleBackColor = true;
-            this.checkBoxTHUNO.Visible = false;
             // 
             // label3
             // 

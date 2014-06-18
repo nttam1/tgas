@@ -34,6 +34,7 @@ namespace T_Manager.Data
                 if (textBoxNGUONVAY.Text == "")
                 {
                     MessageBox.Show("Chưa nhập tên nhà cung cấp");
+                    return;
                 }
                 bs.Add(new NHA_CUNG_CAP()
                 {

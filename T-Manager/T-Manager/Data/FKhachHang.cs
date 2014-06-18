@@ -30,6 +30,11 @@ namespace T_Manager
 
         private void buttonADD_Click(object sender, EventArgs e)
         {
+            if (textBoxKHACHHANG.Text == "")
+            {
+                MessageBox.Show("Chưa nhập tên khách hàng");
+                return;
+            }
             try
             {
                 bs.Add(new KHACH_HANG() { NAME = textBoxKHACHHANG.Text });

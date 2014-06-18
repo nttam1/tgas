@@ -78,7 +78,7 @@ namespace T_Manager.REPORT
                 });
             }
             var datasource = _datasource.OrderBy(u => u.NGAY);
-            long no = MXuatHang.TongNoDauKi(MAKH, FROM) - MThuNo.TongGocDauKi(MAKH, FROM);
+            long no = checkBoxNODAUKI.Checked == true ? MXuatHang.TongNoDauKi(MAKH, FROM) - MThuNo.TongGocDauKi(MAKH, FROM) : 0;
             long nodauki = no;
             foreach (CCongNoNew c in datasource)
             {

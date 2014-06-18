@@ -33,22 +33,33 @@ namespace T_Manager.Modal
         public static CThanhToan THANHTOAN(long Ma_Nguon_Vay, DateTime From, DateTime To)
         {
             CThanhToan result = new CThanhToan();
+            long goc = 0;
+            long lai = 0;
             try
             {
-                result = (from _tt in DataInstance.Instance().DBContext().TRA_NO_VAY
-                          join _vay in DataInstance.Instance().DBContext().VAYs on _tt.VAY_ID equals _vay.ID
-                          where _vay.MA_NGUON_VAY == Ma_Nguon_Vay && _vay.NGAY_VAY >= From && _vay.NGAY_VAY <= To
-                          group _tt by _vay.MA_NGUON_VAY into g
-                          select new CThanhToan
-                          {
-                              GOC = g.Sum(u => u.TIEN_GOC),
-                              LAI = g.Sum(u => u.TIEN_LAI)
-                          }).First();
+                goc = (from _tt in DataInstance.Instance().DBContext().TRA_NO_VAY
+                            where _tt.MA_NGUON_VAY == Ma_Nguon_Vay && _tt.NGAY_TRA >= From && _tt.NGAY_TRA <= To
+                            select _tt.TIEN_GOC).Sum();
+
             }
             catch (Exception ex)
             {
 
             }
+
+            try
+            {
+                lai = (from _tt in DataInstance.Instance().DBContext().TRA_NO_VAY
+                       where _tt.MA_NGUON_VAY == Ma_Nguon_Vay && _tt.NGAY_TRA >= From && _tt.NGAY_TRA <= To
+                       select _tt.TIEN_LAI).Sum();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            result.GOC = goc;
+            result.LAI = lai;
             return result;
         }
 

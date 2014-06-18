@@ -62,11 +62,13 @@ namespace T_Manager.Modal
             return value;
         }
 
-        public static IQueryable<CHI_TIET_THU_NO> BelongTo(XUAT_HANG xh)
+        public static IQueryable<CHI_TIET_THU_NO> BelongTo(XUAT_HANG xh, DateTime TO)
         {
+            TO = TO.Date;
             return (from cttn in DataInstance.Instance().DBContext().CHI_TIET_THU_NO
                     where cttn.LOAI_NO == MThuNo.NO_HANG_HOA
                     where cttn.NO_ID == xh.ID
+                    where cttn.NGAY_TRA <= TO
                     select cttn);
         }
 

@@ -76,12 +76,13 @@ namespace T_Manager.REPORT
                                                           TRALAI = 0,
                                                           CONNO = 0
                                                       });
-            note = "KHÔNG BAO GỒM THU NỢ";
+            note = "CHI TIẾT LÃI KHÁCH HÀNG";
             DateTime now = dateTimePickerTO.Value.Date;
                 /* Không sử dụng dữ liệu từ thu nợ */
                 foreach (CCongNoKhachHang row in xuat_hang)
                 {
-                    double lai = Utility.Lai(row.NGAY, now, row.LAISUAT, row.THANHTIEN - row.TRATRUOC);
+                    //double lai = Utility.Lai(row.NGAY, now, row.LAISUAT, row.THANHTIEN - row.TRATRUOC);
+                    double lai = MXuatHang.GetLai(row.ID, now);
                     string HangHoa = MHangHoa.GetNameByID(row.HANGHOAID);
                     _datasource.Add(new CCongNoKhachHang()
                     {

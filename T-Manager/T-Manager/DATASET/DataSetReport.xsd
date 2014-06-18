@@ -172,6 +172,21 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="THANHTOANNCC" msprop:Generator_TableClassName="THANHTOANNCCDataTable" msprop:Generator_TableVarName="tableTHANHTOANNCC" msprop:Generator_RowChangedName="THANHTOANNCCRowChanged" msprop:Generator_TablePropName="THANHTOANNCC" msprop:Generator_RowDeletingName="THANHTOANNCCRowDeleting" msprop:Generator_RowChangingName="THANHTOANNCCRowChanging" msprop:Generator_RowEvHandlerName="THANHTOANNCCRowChangeEventHandler" msprop:Generator_RowDeletedName="THANHTOANNCCRowDeleted" msprop:Generator_RowClassName="THANHTOANNCCRow" msprop:Generator_UserTableName="THANHTOANNCC" msprop:Generator_RowEvArgName="THANHTOANNCCRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NGAY" msprop:Generator_ColumnVarNameInTable="columnNGAY" msprop:Generator_ColumnPropNameInRow="NGAY" msprop:Generator_ColumnPropNameInTable="NGAYColumn" msprop:Generator_UserColumnName="NGAY" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="KHO" msprop:Generator_ColumnVarNameInTable="columnKHO" msprop:Generator_ColumnPropNameInRow="KHO" msprop:Generator_ColumnPropNameInTable="KHOColumn" msprop:Generator_UserColumnName="KHO" type="xs:string" minOccurs="0" />
+              <xs:element name="THANHTOAN" msprop:Generator_ColumnVarNameInTable="columnTHANHTOAN" msprop:Generator_ColumnPropNameInRow="THANHTOAN" msprop:Generator_ColumnPropNameInTable="THANHTOANColumn" msprop:Generator_UserColumnName="THANHTOAN" type="xs:string" minOccurs="0" />
+              <xs:element name="HANGHOA" msprop:Generator_ColumnVarNameInTable="columnHANGHOA" msprop:Generator_ColumnPropNameInRow="HANGHOA" msprop:Generator_ColumnPropNameInTable="HANGHOAColumn" msprop:Generator_UserColumnName="HANGHOA" type="xs:string" minOccurs="0" />
+              <xs:element name="DONGIA" msprop:Generator_ColumnVarNameInTable="columnDONGIA" msprop:Generator_ColumnPropNameInRow="DONGIA" msprop:Generator_ColumnPropNameInTable="DONGIAColumn" msprop:Generator_UserColumnName="DONGIA" type="xs:long" minOccurs="0" />
+              <xs:element name="SOLUONG" msprop:Generator_ColumnVarNameInTable="columnSOLUONG" msprop:Generator_ColumnPropNameInRow="SOLUONG" msprop:Generator_ColumnPropNameInTable="SOLUONGColumn" msprop:Generator_UserColumnName="SOLUONG" type="xs:long" minOccurs="0" />
+              <xs:element name="TIENTHANHTOAN" msprop:Generator_ColumnVarNameInTable="columnTIENTHANHTOAN" msprop:Generator_ColumnPropNameInRow="TIENTHANHTOAN" msprop:Generator_ColumnPropNameInTable="TIENTHANHTOANColumn" msprop:Generator_UserColumnName="TIENTHANHTOAN" type="xs:long" minOccurs="0" />
+              <xs:element name="CONNO" msprop:Generator_ColumnVarNameInTable="columnCONNO" msprop:Generator_ColumnPropNameInRow="CONNO" msprop:Generator_ColumnPropNameInTable="CONNOColumn" msprop:Generator_UserColumnName="CONNO" type="xs:long" minOccurs="0" />
+              <xs:element name="THANHTIEN" msprop:Generator_ColumnVarNameInTable="columnTHANHTIEN" msprop:Generator_ColumnPropNameInRow="THANHTIEN" msprop:Generator_ColumnPropNameInTable="THANHTIENColumn" msprop:Generator_UserColumnName="THANHTIEN" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

@@ -34,6 +34,7 @@ namespace T_Manager.Data
                 if (textBoxNGUONVAY.Text == "")
                 {
                     MessageBox.Show("Chưa nhập tên nguồn cung cấp");
+                    return;
                 }
                 bs.Add(new NGUON_VAY()
                 {

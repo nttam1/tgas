@@ -13,6 +13,18 @@ namespace T_Manager.Modal
         public const int KHO_TK_NGANHANG = 1;
         public const int KHO_QUY = 2;
 
+        public static string GetNamebyID(long ID)
+        {
+            try
+            {
+                return DataInstance.Instance().DBContext().KHOes.Where(u => u.ID == ID).First().NAME;
+            }
+            catch (Exception ex)
+            {
+                return "Không tồn tại";
+            }
+        }
+
         public static long GetIDbyName(string NAME)
         {
             try

@@ -37,11 +37,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonVIEW = new System.Windows.Forms.Button();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.checkBoxTHANHTOAN = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxTHANHTOAN);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBoxNCC);
             this.groupBox1.Controls.Add(this.dateTimePickerFROM);
@@ -75,7 +77,7 @@
             this.comboBoxNCC.FormattingEnabled = true;
             this.comboBoxNCC.Location = new System.Drawing.Point(140, 29);
             this.comboBoxNCC.Name = "comboBoxNCC";
-            this.comboBoxNCC.Size = new System.Drawing.Size(361, 28);
+            this.comboBoxNCC.Size = new System.Drawing.Size(234, 28);
             this.comboBoxNCC.TabIndex = 9;
             // 
             // dateTimePickerFROM
@@ -84,7 +86,7 @@
             this.dateTimePickerFROM.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerFROM.Location = new System.Drawing.Point(140, 69);
             this.dateTimePickerFROM.Name = "dateTimePickerFROM";
-            this.dateTimePickerFROM.Size = new System.Drawing.Size(137, 26);
+            this.dateTimePickerFROM.Size = new System.Drawing.Size(234, 26);
             this.dateTimePickerFROM.TabIndex = 4;
             // 
             // label2
@@ -103,7 +105,7 @@
             this.dateTimePickerTO.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerTO.Location = new System.Drawing.Point(140, 112);
             this.dateTimePickerTO.Name = "dateTimePickerTO";
-            this.dateTimePickerTO.Size = new System.Drawing.Size(137, 26);
+            this.dateTimePickerTO.Size = new System.Drawing.Size(234, 26);
             this.dateTimePickerTO.TabIndex = 5;
             // 
             // label1
@@ -119,7 +121,7 @@
             // buttonVIEW
             // 
             this.buttonVIEW.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVIEW.Location = new System.Drawing.Point(283, 69);
+            this.buttonVIEW.Location = new System.Drawing.Point(381, 70);
             this.buttonVIEW.Name = "buttonVIEW";
             this.buttonVIEW.Size = new System.Drawing.Size(218, 68);
             this.buttonVIEW.TabIndex = 6;
@@ -138,6 +140,16 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(791, 317);
             this.crystalReportViewer1.TabIndex = 12;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // checkBoxTHANHTOAN
+            // 
+            this.checkBoxTHANHTOAN.AutoSize = true;
+            this.checkBoxTHANHTOAN.Location = new System.Drawing.Point(389, 34);
+            this.checkBoxTHANHTOAN.Name = "checkBoxTHANHTOAN";
+            this.checkBoxTHANHTOAN.Size = new System.Drawing.Size(210, 24);
+            this.checkBoxTHANHTOAN.TabIndex = 11;
+            this.checkBoxTHANHTOAN.Text = "BAO GỒM THANH TOÁN";
+            this.checkBoxTHANHTOAN.UseVisualStyleBackColor = true;
             // 
             // FChiTietThanhToanNCC
             // 
@@ -171,5 +183,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonVIEW;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.CheckBox checkBoxTHANHTOAN;
     }
 }

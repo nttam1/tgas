@@ -71,7 +71,7 @@ namespace T_Manager.Modal
             if (include_THUNO == true)
             {
                 /* Những lần khách hàng đã trả cho phần nợ xuất hàng này */
-                var thu_no_s = MChiTietThuNo.BelongTo(xh);
+                var thu_no_s = MChiTietThuNo.BelongTo(xh, TO);
                 value = Utility.LaiKep((DateTime)xh.NGAY_XUAT, TO, xh.LAI_SUAT, xh.THANH_TIEN, thu_no_s);
 
             }
@@ -99,7 +99,7 @@ namespace T_Manager.Modal
             if (include_THUNO == true)
             {
                 /* Những lần khách hàng đã trả cho phần nợ xuất hàng này */
-                var thu_no_s = MChiTietThuNo.BelongTo(xh);
+                var thu_no_s = MChiTietThuNo.BelongTo(xh, TO);
                 value = Utility.LaiKep((DateTime)xh.NGAY_XUAT, TO , xh.LAI_SUAT, xh.THANH_TIEN, thu_no_s, false);
 
             }

@@ -42,15 +42,27 @@ namespace T_Manager.REPORT
             List<CChiTietNoVay> l = new List<CChiTietNoVay>();
             foreach (VAY _r in rows)
             {
-                CThanhToan _thanhtoan = MVay.THANHTOAN(_r);
                 l.Add(new CChiTietNoVay
                 {
                     NGAYVAY = _r.NGAY_VAY.Date,
                     TONGTIEN = _r.TONG_TIEN,
                     LAISUAT = _r.LAI_SUAT * 100,
-                    THOIDOAN = _r.KY_HAN.ToString() + " Tháng",
-                    TRAGOC = _thanhtoan.GOC,
-                    TRALAI = _thanhtoan.LAI
+                    THOIDOAN = "Vay",
+                    TRAGOC = 0,
+                    TRALAI = 0
+                });
+            }
+            foreach (TRA_NO_VAY _r in DataInstance.Instance().DBContext().TRA_NO_VAY
+                .Where( u=> u.MA_NGUON_VAY == _ncc && u.NGAY_TRA >= _from && u.NGAY_TRA <= _to))
+            {
+                l.Add(new CChiTietNoVay
+                {
+                    NGAYVAY = _r.NGAY_TRA.Date,
+                    TONGTIEN = 0,
+                    LAISUAT = 0,
+                    THOIDOAN = "Trả nợ vay",
+                    TRAGOC = _r.TIEN_GOC,
+                    TRALAI = _r.TIEN_LAI
                 });
             }
             bs.DataSource = l;
