@@ -120,6 +120,9 @@ namespace T_Manager
                 bs.EndEdit();
                 bs.ResetBindings(false);
                 DataInstance.Instance().DBContext().SaveChanges();
+                textBoxTONGTIEN.Text = "0";
+                textBoxTONGTIEN.Select();
+                textBoxTONGTIEN.SelectAll();
             }
             catch (Exception ex)
             {

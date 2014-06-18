@@ -42,9 +42,6 @@
             this.textBoxTIENGOC = new System.Windows.Forms.TextBox();
             this.comboBoxKHACHHANG = new System.Windows.Forms.ComboBox();
             this.comboBoxKHO = new System.Windows.Forms.ComboBox();
-            this.buttonLOGIN = new System.Windows.Forms.Button();
-            this.textBoxPASS = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerDATE = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -72,9 +69,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.buttonLOGIN);
-            this.groupBox1.Controls.Add(this.textBoxPASS);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dateTimePickerDATE);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -84,6 +78,7 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "XUẤT HÀNG";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
@@ -163,6 +158,7 @@
             // 
             // textBoxTIENLAI
             // 
+            this.textBoxTIENLAI.Enabled = false;
             this.textBoxTIENLAI.Location = new System.Drawing.Point(310, 46);
             this.textBoxTIENLAI.Name = "textBoxTIENLAI";
             this.textBoxTIENLAI.Size = new System.Drawing.Size(121, 20);
@@ -170,6 +166,7 @@
             // 
             // textBoxTIENGOC
             // 
+            this.textBoxTIENGOC.Enabled = false;
             this.textBoxTIENGOC.Location = new System.Drawing.Point(310, 20);
             this.textBoxTIENGOC.Name = "textBoxTIENGOC";
             this.textBoxTIENGOC.Size = new System.Drawing.Size(121, 20);
@@ -195,49 +192,23 @@
             this.comboBoxKHO.TabIndex = 0;
             this.comboBoxKHO.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHO_SelectedIndexChanged);
             // 
-            // buttonLOGIN
-            // 
-            this.buttonLOGIN.Location = new System.Drawing.Point(18, 98);
-            this.buttonLOGIN.Name = "buttonLOGIN";
-            this.buttonLOGIN.Size = new System.Drawing.Size(217, 23);
-            this.buttonLOGIN.TabIndex = 4;
-            this.buttonLOGIN.Text = "XÁC NHẬN";
-            this.buttonLOGIN.UseVisualStyleBackColor = true;
-            this.buttonLOGIN.Click += new System.EventHandler(this.buttonLOGIN_Click);
-            // 
-            // textBoxPASS
-            // 
-            this.textBoxPASS.Location = new System.Drawing.Point(97, 63);
-            this.textBoxPASS.Name = "textBoxPASS";
-            this.textBoxPASS.PasswordChar = '*';
-            this.textBoxPASS.Size = new System.Drawing.Size(138, 20);
-            this.textBoxPASS.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "MẬT KHẨU";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 38);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(69, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.Size = new System.Drawing.Size(102, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "NGÀY XUẤT";
             // 
             // dateTimePickerDATE
             // 
-            this.dateTimePickerDATE.Enabled = false;
+            this.dateTimePickerDATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDATE.Location = new System.Drawing.Point(97, 32);
+            this.dateTimePickerDATE.Location = new System.Drawing.Point(51, 84);
             this.dateTimePickerDATE.Name = "dateTimePickerDATE";
-            this.dateTimePickerDATE.Size = new System.Drawing.Size(138, 20);
+            this.dateTimePickerDATE.Size = new System.Drawing.Size(138, 26);
             this.dateTimePickerDATE.TabIndex = 0;
             this.dateTimePickerDATE.ValueChanged += new System.EventHandler(this.dateTimePickerDATE_ValueChanged);
             // 
@@ -292,9 +263,6 @@
         private System.Windows.Forms.TextBox textBoxTIENGOC;
         private System.Windows.Forms.ComboBox comboBoxKHACHHANG;
         private System.Windows.Forms.ComboBox comboBoxKHO;
-        private System.Windows.Forms.Button buttonLOGIN;
-        private System.Windows.Forms.TextBox textBoxPASS;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePickerDATE;
         private System.Windows.Forms.DataGridView dataGridView1;

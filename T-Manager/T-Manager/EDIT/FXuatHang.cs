@@ -162,6 +162,7 @@ namespace T_Manager.EDIT
             }
             dbContext.SaveChanges();
 
+            /**
             // CẬP NHẬT LẠI TOÀN BỘ NHẬP HÀNG XUẤT HÀNG
             foreach (NHAP_HANG nh in dbContext.NHAP_HANG.Where( u => u.MAKHO == kho && u.MAHH == hh))
             {
@@ -172,24 +173,11 @@ namespace T_Manager.EDIT
                 MXuatHang.Update(xh.SO_LUONG, xh);
             }
             dbContext.SaveChanges();
-
+            */
             MessageBox.Show("ĐÃ CẬP NHẬT");
+            dateTimePickerDATE_ValueChanged(sender, e);
         }
 
-        private void buttonLOGIN_Click(object sender, EventArgs e)
-        {
-            string pass = MHeTHong.Get(MHeTHong.MATKHAU);
-            string _pass = textBoxPASS.Text;
-            if (pass == _pass)
-            {
-                dateTimePickerDATE.Enabled = true;
-                textBoxPASS.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show("Mật khẩu không đúng");
-            }
-        }
     }
 
     class CXUATHANG

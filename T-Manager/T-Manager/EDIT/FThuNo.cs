@@ -37,21 +37,6 @@ namespace T_Manager.EDIT
 
         }
 
-        private void buttonLOGIN_Click(object sender, EventArgs e)
-        {
-            string pass = MHeTHong.Get(MHeTHong.MATKHAU);
-            string _pass = textBoxPASS.Text;
-            if (pass == _pass)
-            {
-                dateTimePickerDATE.Enabled = true;
-                textBoxPASS.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show("Mật khẩu không đúng");
-            }
-        }
-
         private void dateTimePickerDATE_ValueChanged(object sender, EventArgs e)
         {
             DateTime now = dateTimePickerDATE.Value.Date;
@@ -135,12 +120,13 @@ namespace T_Manager.EDIT
             {
                 r.MAKHO = kho;
                 r.MAKH = kh;
-                r.TIEN_LAI = tl;
-                r.TIEN_GOC = tg;
+                r.TIEN_LAI = r.TIEN_LAI;
+                r.TIEN_GOC = r.TIEN_GOC;
                 r.NGAY_TRA = nt;
                 loaino = r.LOAI_NO;
             }
             db.SaveChanges();
+            /**
             // XÓA TOÀN BỘ CHI TIẾT THU NƠ
             if (loaino == MThuNo.NO_VAY)
             {
@@ -172,7 +158,14 @@ namespace T_Manager.EDIT
             {
                 MThuNo.Update(tn);
             }
+             * */
             MessageBox.Show("Cập nhật xong");
+            dateTimePickerDATE_ValueChanged(sender, e);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

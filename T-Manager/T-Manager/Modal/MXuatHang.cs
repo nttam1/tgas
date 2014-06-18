@@ -19,39 +19,78 @@ namespace T_Manager.Modal
         /// <param name="ele">Object Xuất hàng</param>
         public static void Update(long _SoLuong, XUAT_HANG ele)
         {
-            List<CXuatHangChiTiet> chitiet = new List<CXuatHangChiTiet>();
-            foreach (var row in DataInstance.Instance().DBContext().NHAP_HANG
-                .Where(u => u.MAKHO == ele.MAKHO)
-                .Where(u => u.MAHH == ele.MAHH)
-                .OrderBy(u => u.NGAY_NHAP))
+            if (_SoLuong > 0)
             {
-                /**
-                 * Cập nhật số lượng vào nhập hàng
-                 */
-                var sub_SL = row.SL_CON_LAI;
-                row.SL_CON_LAI = _SoLuong >= row.SL_CON_LAI ? 0 : row.SL_CON_LAI - _SoLuong;
-
-                /* Cập nhật chi tiết số lượng, đơn giá để tính lãi lỗi*/
-                long __subSL = row.SL_CON_LAI > 0 ? _SoLuong : sub_SL;
-                if (__subSL > 0)
+                List<CXuatHangChiTiet> chitiet = new List<CXuatHangChiTiet>();
+                foreach (var row in DataInstance.Instance().DBContext().NHAP_HANG
+                    .Where(u => u.MAKHO == ele.MAKHO)
+                    .Where(u => u.MAHH == ele.MAHH)
+                    .Where(u => u.SL_CON_LAI > 0)
+                    .OrderBy(u => u.NGAY_NHAP))
                 {
+                    /**
+                     * Cập nhật số lượng vào nhập hàng
+                     */
+                    var sub_SL = row.SL_CON_LAI;
+                    row.SL_CON_LAI = _SoLuong >= row.SL_CON_LAI ? 0 : row.SL_CON_LAI - _SoLuong;
+
+                    /* Cập nhật chi tiết số lượng, đơn giá để tính lãi lỗi*/
+                    long __subSL = row.SL_CON_LAI > 0 ? _SoLuong : sub_SL;
+                    if (__subSL > 0)
+                    {
+                        chitiet.Add(new CXuatHangChiTiet()
+                        {
+                            NHAPHANGID = row.ID,
+                            SOLUONG = row.SL_CON_LAI > 0 ? _SoLuong : sub_SL,
+                            DONGIA = row.DON_GIA_MUA
+                        });
+                    }
+
+                    _SoLuong = _SoLuong >= sub_SL ? _SoLuong - sub_SL : 0;
+
+                    if (_SoLuong == 0)
+                    {
+                        break;
+                    }
+                }
+                string s_chitiet = JsonConvert.SerializeObject(chitiet);
+                ele.CHI_TIET_XUAT_HANG = s_chitiet;
+            }
+            else
+            {
+                _SoLuong = -_SoLuong;
+                List<CXuatHangChiTiet> chitiet = new List<CXuatHangChiTiet>();
+                foreach (var row in DataInstance.Instance().DBContext().NHAP_HANG
+                    .Where(u => u.MAKHO == ele.MAKHO)
+                    .Where(u => u.MAHH == ele.MAHH)
+                    .Where(u => u.SL_CON_LAI <= 0)
+                    .OrderByDescending(u => u.NGAY_NHAP))
+                {
+                    /**
+                     * Cập nhật số lượng vào nhập hàng
+                     */
+                    var sub_SL = row.SL_CON_LAI;
+                    row.SL_CON_LAI = _SoLuong >= row.SO_LUONG - row.SL_CON_LAI ? row.SO_LUONG : row.SL_CON_LAI + _SoLuong;
+
+                    /* Cập nhật chi tiết số lượng, đơn giá để tính lãi lỗi*/
+                    long __subSL = row.SL_CON_LAI < row.SO_LUONG ? _SoLuong : _SoLuong - (row.SO_LUONG - row.SL_CON_LAI);
                     chitiet.Add(new CXuatHangChiTiet()
                     {
                         NHAPHANGID = row.ID,
-                        SOLUONG = row.SL_CON_LAI > 0 ? _SoLuong : sub_SL,
+                        SOLUONG = __subSL,
                         DONGIA = row.DON_GIA_MUA
                     });
+
+                    _SoLuong = _SoLuong - sub_SL;
+
+                    if (_SoLuong == 0)
+                    {
+                        break;
+                    }
                 }
-
-                _SoLuong = _SoLuong >= sub_SL ? _SoLuong - sub_SL : 0;
-
-                if (_SoLuong == 0)
-                {
-                    break;
-                }                
+                string s_chitiet = JsonConvert.SerializeObject(chitiet);
+                ele.CHI_TIET_XUAT_HANG = s_chitiet;
             }
-            string s_chitiet = JsonConvert.SerializeObject(chitiet);
-            ele.CHI_TIET_XUAT_HANG = s_chitiet;
             DataInstance.Instance().DBContext().SaveChanges();
         }
 
