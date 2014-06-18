@@ -39,6 +39,7 @@ namespace T_Manager
         {
             long tien = 0;
             long taikhoan = 0;
+            long ton = MKho.Tong_Tien_Hien_Tai(DateTime.Now);
             try
             {
                 tien = long.Parse(textBoxTONGTIEN.Text);
@@ -60,6 +61,11 @@ namespace T_Manager
             if (tien == 0 || taikhoan == 0)
             {
                 MessageBox.Show("Số tiền chuyển phải lớn hơn 0");
+                return;
+            }
+            if (tien > ton)
+            {
+                MessageBox.Show("Số tiền chuyển không được lớn hơn tiền đang có");
                 return;
             }
             DateTime now = dateTimePickerNGAY.Value.Date;

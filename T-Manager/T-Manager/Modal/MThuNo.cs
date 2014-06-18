@@ -115,7 +115,7 @@ namespace T_Manager.Modal
                             }
                             catch (Exception ex)
                             {
-
+                                break;
                             }
                             break;
                         case NO_VAY:
@@ -135,7 +135,7 @@ namespace T_Manager.Modal
                             }
                             catch (Exception ex)
                             {
-
+                                break;
                             }
                             break;
                     }
@@ -211,10 +211,10 @@ namespace T_Manager.Modal
                         break;
                     }
                     /* Hết tiền gốc hoặc lãi để thanh toán lần xuất hàng hiện tại */
-                    if ((_TIENGOC == 0 && _TIENLAI != 0) || (_TIENGOC != 0 && _TIENLAI == 0))
-                    {
-                        _start_id = _id;
-                    }
+                    //if ((_TIENGOC == 0 && _TIENLAI != 0) || (_TIENGOC != 0 && _TIENLAI == 0))
+                    // {
+                    _start_id = _id;
+                    //}
                 }
             }
 

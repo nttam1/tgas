@@ -19,7 +19,7 @@ namespace T_Manager.REPORT
 
         private void buttonVIEW_Click(object sender, EventArgs e)
         {
-            var _from = dateTimePickerFROM.Value;
+            var _from = dateTimePickerFROM.Value.Date;
             BindingSource bs = new BindingSource();
             CrystalReportXEMKHOQUY rpt = new CrystalReportXEMKHOQUY();
             List<CXemKhoQuy> list = new List<CXemKhoQuy>();

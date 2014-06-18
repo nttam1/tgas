@@ -22,7 +22,7 @@ namespace T_Manager
 
         private void FTraNoVay_Load(object sender, EventArgs e)
         {
-            comboBoxKHO.DataSource = DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE == 1);
+            comboBoxKHO.DataSource = DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE >= 0);
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
 

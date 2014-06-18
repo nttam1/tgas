@@ -68,7 +68,7 @@ namespace T_Manager.Modal
                     {
 
                     }
-                    value += row.THANH_TIEN - da_thanh_toan;
+                    value += row.THANH_TIEN - da_thanh_toan - row.TRA_TRUOC;
 
                 }
 
@@ -118,7 +118,7 @@ namespace T_Manager.Modal
                                          where cttn.NO_ID == row.ID
                                          select cttn);
                     DateTime _ngay_no = row.NGAY_XUAT.Value;
-                    double _tong_tien_hien_tai = row.THANH_TIEN;
+                    double _tong_tien_hien_tai = row.THANH_TIEN - row.TRA_TRUOC;
                     foreach (CHI_TIET_THU_NO tn in da_thanh_toan)
                     {
                         value += Utility.Lai(_ngay_no, tn.NGAY_TRA, row.LAI_SUAT, _tong_tien_hien_tai) - tn.TIEN_LAI;
@@ -142,7 +142,7 @@ namespace T_Manager.Modal
                 double _tong_lai_no = 0;
                 foreach (XUAT_HANG row in _xh)
                 {
-                    _tong_lai_no += Utility.Lai(row.NGAY_XUAT.Value, row.LAI_SUAT, row.THANH_TIEN);
+                    _tong_lai_no += Utility.Lai(row.NGAY_XUAT.Value, row.LAI_SUAT, row.THANH_TIEN - row.TRA_TRUOC);
                 }
                 value = _tong_lai_no;
             }

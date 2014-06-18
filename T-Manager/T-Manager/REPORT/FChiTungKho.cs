@@ -45,13 +45,14 @@ namespace T_Manager.REPORT
 
             var noibo = (from _chi in DataInstance.Instance().DBContext().CHI_TIEU_DUNG_NOI_BO
                          join _xe in DataInstance.Instance().DBContext().XEs on _chi.MAXE equals _xe.ID
+                         where _chi.MAHH == -1
                          where _chi.MAKHO == _kho
                          where _chi.NGAY_CHI >= _from && _chi.NGAY_CHI <= _to
                          select new CChiTungKho
                          {
                              NGAYCHI = _chi.NGAY_CHI,
                              NOIDUNG = "Xe: " + _xe.BIEN_SO + " - " + _chi.NOI_DUNG,
-                             TONGTIEN = _chi.SO_LUONG * _chi.DON_GIA_BAN + _chi.TONG_TIEN,
+                             TONGTIEN = _chi.TONG_TIEN,
                          });
             var khac = (from _luong in DataInstance.Instance().DBContext().CHI_KHAC
                         where _luong.MAKHO == _kho
@@ -62,18 +63,42 @@ namespace T_Manager.REPORT
                              NOIDUNG = _luong.NOI_DUNG,
                              TONGTIEN = _luong.TONG_TIEN,
                          });
-            var chovay = (from _luong in DataInstance.Instance().DBContext().CHO_VAY
-                          join _kh in DataInstance.Instance().DBContext().KHACH_HANG on _luong.MA_NGUON_NO equals _kh.ID
+            var chovay = (from _luong in DataInstance.Instance().DBContext().XUAT_HANG
+                          join _kh in DataInstance.Instance().DBContext().KHACH_HANG on _luong.MAKH equals _kh.ID
                           where _luong.MAKHO == _kho
-                          where _luong.NGAY_CHO_VAY >= _from && _luong.NGAY_CHO_VAY <= _to
+                          where _luong.MAHH == -1
+                          where _luong.NGAY_XUAT >= _from && _luong.NGAY_XUAT <= _to
                           select new CChiTungKho
                           {
-                              NGAYCHI = _luong.NGAY_CHO_VAY,
+                              NGAYCHI = _luong.NGAY_XUAT.Value,
                               NOIDUNG = "Cho vay: " + _kh.NAME,
+                              TONGTIEN = _luong.THANH_TIEN,
+                          });
+            var trancc = (from _luong in DataInstance.Instance().DBContext().TRA_NO_NCC
+                          join ncc in DataInstance.Instance().DBContext().NHA_CUNG_CAP on _luong.MANCC equals ncc.ID
+                          where _luong.MAKHO == _kho
+                          where _luong.NGAY_TRA >= _from && _luong.NGAY_TRA <= _to
+                          select new CChiTungKho
+                          {
+                              NGAYCHI = _luong.NGAY_TRA,
+                              NOIDUNG = "Trả nợ: " + ncc.NAME,
                               TONGTIEN = _luong.TONG_TIEN,
                           });
+            var travay = (from _luong in DataInstance.Instance().DBContext().TRA_NO_VAY
+                          join no in DataInstance.Instance().DBContext().NGUON_VAY on _luong.MA_NGUON_VAY equals no.ID
+                          where _luong.MAKHO == _kho
+                          where _luong.NGAY_TRA >= _from && _luong.NGAY_TRA <= _to
+                          select new CChiTungKho
+                          {
+                              NGAYCHI = _luong.NGAY_TRA,
+                              NOIDUNG = "Trả nợ: " + no.NAME,
+                              TONGTIEN = _luong.TIEN_GOC + _luong.TIEN_LAI,
+                          });
 
-
+            foreach (CChiTungKho h in trancc)
+            {
+                list.Add(h);
+            }
             /*CHI LUONG*/
             foreach (CChiTungKho h in luong)
             {

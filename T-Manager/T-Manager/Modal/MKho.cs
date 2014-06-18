@@ -78,9 +78,11 @@ namespace T_Manager.Modal
             DateTime FROM = new DateTime(1991, 12, 25);
 
             /* THU - CHI CỦA TẤT CẢ CÁC KHO */
-            foreach (KHO kho in (from _kho in DataInstance.Instance().DBContext().KHOes select _kho))
+            foreach (KHO kho in MKho.Get(MKho.KHO_HANG))
             {
-                value += Total_Thu(kho.ID, FROM, TO) + Total_Chi(kho.ID, FROM, TO);
+                //long thu = Total_Thu(kho.ID, FROM, TO);
+                //long chi = Total_Chi(kho.ID, FROM, TO);
+                value += Total_Thu(kho.ID, FROM, TO) - Total_Chi(kho.ID, FROM, TO);
             }
             /* TRỪ TỔNG TIỀN ĐÃ CHUYỂN VÀO TÀI KHOẢN */
 
@@ -103,7 +105,7 @@ namespace T_Manager.Modal
 
         /// <summary>
         /// TỔNG TIỀN KHO THU VÀO
-        /// + TIỀN BÁN HÀNG, XUẤT HÀNG
+        /// + XUẤT HÀNG - Tiền thực nhận vào khi xuất hàng
         /// + TIỀN THU NỢ - đã bao gồm thu nợ và thu khác
         /// </summary>
         /// <param name="MAKHO"></param>
@@ -112,27 +114,28 @@ namespace T_Manager.Modal
         /// <returns></returns>
         public static long Total_Thu(long MAKHO, DateTime FROM, DateTime TO)
         {
-            long banhang = 0;
             long xuathang = 0;
             long thuno = 0;
+            long vay = 0;
             FROM = FROM.Date;
             TO = TO.Date;
 
             try
             {
-                banhang = (from _luong in DataInstance.Instance().DBContext().BAN_HANG
-                           where _luong.MAKHO == MAKHO
-                           where _luong.NGAY_BAN >= FROM && _luong.NGAY_BAN <= TO
-                           select _luong.SO_LUONG * _luong.DON_GIA_BAN).Sum();
-            }
-            catch (Exception ex) { }
-
-            try
-            {
                 xuathang = (from _luong in DataInstance.Instance().DBContext().XUAT_HANG
                            where _luong.MAKHO == MAKHO
+                           where _luong.MAKH == -1
                            where _luong.NGAY_XUAT >= FROM && _luong.NGAY_XUAT <= TO
-                           select _luong.SO_LUONG * _luong.DON_GIA_BAN).Sum();
+                           select _luong.THANH_TIEN).Sum();
+            }
+            catch (Exception ex) { }
+            try
+            {
+                xuathang += (from _luong in DataInstance.Instance().DBContext().XUAT_HANG
+                            where _luong.MAKHO == MAKHO
+                            where _luong.MAKH != -1
+                            where _luong.NGAY_XUAT >= FROM && _luong.NGAY_XUAT <= TO
+                            select _luong.TRA_TRUOC).Sum();
             }
             catch (Exception ex) { }
 
@@ -144,7 +147,16 @@ namespace T_Manager.Modal
                             select _luong.TIEN_GOC +  _luong.TIEN_LAI).Sum();
             }
             catch (Exception ex) { }
-            return xuathang + banhang + thuno;
+
+            try
+            {
+                vay = (from _luong in DataInstance.Instance().DBContext().VAYs
+                         where _luong.MAKHO == MAKHO
+                         where _luong.NGAY_VAY >= FROM && _luong.NGAY_VAY <= TO
+                         select _luong.TONG_TIEN).Sum();
+            }
+            catch (Exception ex) { }
+            return xuathang + thuno + vay;
         }
 
 
@@ -156,6 +168,8 @@ namespace T_Manager.Modal
         /// + CHI NỘI BỘ
         /// + CHO VAY
         /// + CHI KHÁC
+        /// + TRẢ NỢ NCC
+        /// + TRẢ NỢ VAY
         /// </summary>
         /// <param name="MAKHO"></param>
         /// <param name="FROM"></param>
@@ -171,7 +185,8 @@ namespace T_Manager.Modal
             long khac = 0;
             long chovay = 0;
             long chikhac = 0;
-
+            long trancc = 0;
+            long travay = 0;
             try
             {
                 luong = (from _luong in DataInstance.Instance().DBContext().CHI_LUONG
@@ -185,10 +200,10 @@ namespace T_Manager.Modal
             try
             {
                 noibo = (from _chi in DataInstance.Instance().DBContext().CHI_TIEU_DUNG_NOI_BO
-                         join _xe in DataInstance.Instance().DBContext().XEs on _chi.MAXE equals _xe.ID
+                         where _chi.MAHH == -1
                          where _chi.MAKHO == _kho
                          where _chi.NGAY_CHI >= _from && _chi.NGAY_CHI <= _to
-                         select _chi.SO_LUONG * _chi.DON_GIA_BAN + _chi.TONG_TIEN).Sum();
+                         select _chi.TONG_TIEN).Sum();
             }
             catch (Exception ex) { }
 
@@ -203,10 +218,11 @@ namespace T_Manager.Modal
 
             try
             {
-                chovay = (from _luong in DataInstance.Instance().DBContext().CHO_VAY
-                          where _luong.MAKHO == _kho
-                          where _luong.NGAY_CHO_VAY >= _from && _luong.NGAY_CHO_VAY <= _to
-                          select _luong.TONG_TIEN).Sum();
+                chovay = (from _luong in DataInstance.Instance().DBContext().XUAT_HANG
+                          where _luong.MAKHO == MAKHO
+                          where _luong.MAHH == -1
+                          where _luong.NGAY_XUAT >= FROM && _luong.NGAY_XUAT <= TO
+                          select _luong.THANH_TIEN).Sum();
             }
             catch (Exception ex)
             {
@@ -223,7 +239,29 @@ namespace T_Manager.Modal
             {
             }
 
-            return luong + noibo + khac + chovay;
+            try
+            {
+                trancc = (from _luong in DataInstance.Instance().DBContext().TRA_NO_NCC
+                           where _luong.MAKHO == _kho
+                           where _luong.NGAY_TRA >= _from && _luong.NGAY_TRA <= _to
+                           select _luong.TONG_TIEN).Sum();
+            }
+            catch (Exception ex)
+            {
+            }
+
+            try
+            {
+                travay = (from _luong in DataInstance.Instance().DBContext().TRA_NO_VAY
+                          where _luong.MAKHO == _kho
+                          where _luong.NGAY_TRA >= _from && _luong.NGAY_TRA <= _to
+                          select _luong.TIEN_LAI + _luong.TIEN_GOC).Sum();
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return luong + noibo + khac + chovay + trancc + travay;
         }
 
         public static long Total_Nhap_To(long KHO_ID, DateTime TO, bool INCLUDE_TODAY = false, long MAHH = 0)

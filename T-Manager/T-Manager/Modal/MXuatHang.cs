@@ -72,13 +72,13 @@ namespace T_Manager.Modal
             {
                 /* Những lần khách hàng đã trả cho phần nợ xuất hàng này */
                 var thu_no_s = MChiTietThuNo.BelongTo(xh, TO);
-                value = Utility.LaiKep((DateTime)xh.NGAY_XUAT, TO, xh.LAI_SUAT, xh.THANH_TIEN, thu_no_s);
+                value = Utility.LaiKep((DateTime)xh.NGAY_XUAT, TO, xh.LAI_SUAT, xh.THANH_TIEN - xh.TRA_TRUOC, thu_no_s);
 
             }
             /* Không sử dụng chi tiết thu nợ */
             else
             {
-                value = Utility.Lai(xh.NGAY_XUAT.Value, TO, xh.LAI_SUAT, xh.THANH_TIEN);
+                value = Utility.Lai(xh.NGAY_XUAT.Value, TO, xh.LAI_SUAT, xh.THANH_TIEN - xh.TRA_TRUOC);
             }
             return value;
         }
@@ -100,13 +100,13 @@ namespace T_Manager.Modal
             {
                 /* Những lần khách hàng đã trả cho phần nợ xuất hàng này */
                 var thu_no_s = MChiTietThuNo.BelongTo(xh, TO);
-                value = Utility.LaiKep((DateTime)xh.NGAY_XUAT, TO , xh.LAI_SUAT, xh.THANH_TIEN, thu_no_s, false);
+                value = Utility.LaiKep((DateTime)xh.NGAY_XUAT, TO, xh.LAI_SUAT, xh.THANH_TIEN - xh.TRA_TRUOC, thu_no_s, false);
 
             }
             /* Không sử dụng chi tiết thu nợ */
             else
             {
-                value = Utility.Lai(xh.NGAY_XUAT.Value, TO, xh.LAI_SUAT, xh.THANH_TIEN);
+                value = Utility.Lai(xh.NGAY_XUAT.Value, TO, xh.LAI_SUAT, xh.THANH_TIEN - xh.TRA_TRUOC);
             }
             return value;
         }
