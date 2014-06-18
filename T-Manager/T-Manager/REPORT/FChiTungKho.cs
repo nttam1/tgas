@@ -50,8 +50,8 @@ namespace T_Manager.REPORT
                          select new CChiTungKho
                          {
                              NGAYCHI = _chi.NGAY_CHI,
-                             NOIDUNG = "Xe: " + _xe.BIEN_SO,
-                             TONGTIEN = _chi.SO_LUONG * _chi.DON_GIA_BAN,
+                             NOIDUNG = "Xe: " + _xe.BIEN_SO + " - " + _chi.NOI_DUNG,
+                             TONGTIEN = _chi.SO_LUONG * _chi.DON_GIA_BAN + _chi.TONG_TIEN,
                          });
             var khac = (from _luong in DataInstance.Instance().DBContext().CHI_KHAC
                         where _luong.MAKHO == _kho

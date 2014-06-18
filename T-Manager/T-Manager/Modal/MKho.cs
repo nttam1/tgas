@@ -188,7 +188,7 @@ namespace T_Manager.Modal
                          join _xe in DataInstance.Instance().DBContext().XEs on _chi.MAXE equals _xe.ID
                          where _chi.MAKHO == _kho
                          where _chi.NGAY_CHI >= _from && _chi.NGAY_CHI <= _to
-                         select _chi.SO_LUONG * _chi.DON_GIA_BAN).Sum();
+                         select _chi.SO_LUONG * _chi.DON_GIA_BAN + _chi.TONG_TIEN).Sum();
             }
             catch (Exception ex) { }
 

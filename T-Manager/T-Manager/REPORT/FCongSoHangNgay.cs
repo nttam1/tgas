@@ -164,11 +164,27 @@ namespace T_Manager.REPORT
 
             }
 
+            long chi_xe = 0;
+
+            try
+            {
+                chi_xe = (from tn in DataInstance.Instance().DBContext().CHI_TIEU_DUNG_NOI_BO
+                         where tn.NGAY_CHI == _today
+                         where tn.MAKHO == _kho
+                         where tn.MAHH == -1
+                         select tn.TONG_TIEN
+                                                ).Sum();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
             rpt.SetParameterValue("THUNO", thuno);
             rpt.SetParameterValue("THUKHAC", thukhac);
             rpt.SetParameterValue("CHILUONG", chiluong);
             rpt.SetParameterValue("CHITRANCC", chincc);
-            rpt.SetParameterValue("CHIKHAC", chikhac);
+            rpt.SetParameterValue("CHIKHAC", chikhac + chi_xe);
             rpt.SetParameterValue("TRANO", no);
             rpt.SetParameterValue("KHNO", kh_no);
 
