@@ -88,6 +88,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Id2Name.cs" />
     <Compile Include="ConstClass.cs" />
     <Compile Include="Data.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -400,11 +401,11 @@
     <Compile Include="REPORT\FChiTungKho.Designer.cs">
       <DependentUpon>FChiTungKho.cs</DependentUpon>
     </Compile>
-    <Compile Include="REPORT\FChiTietLai.cs">
+    <Compile Include="REPORT\FChiTietLaiKH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="REPORT\FChiTietLai.Designer.cs">
-      <DependentUpon>FChiTietLai.cs</DependentUpon>
+    <Compile Include="REPORT\FChiTietLaiKH.Designer.cs">
+      <DependentUpon>FChiTietLaiKH.cs</DependentUpon>
     </Compile>
     <Compile Include="REPORT\FChiXe.cs">
       <SubType>Form</SubType>
@@ -616,6 +617,9 @@
     <EmbeddedResource Include="REPORT\FChiTietChuyenTien.resx">
       <DependentUpon>FChiTietChuyenTien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\FChiTietLaiKH.resx">
+      <DependentUpon>FChiTietLaiKH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FChiTietNoNCC.resx">
       <DependentUpon>FChiTietNoNCC.cs</DependentUpon>
     </EmbeddedResource>
@@ -632,7 +636,7 @@
       <DependentUpon>FChiXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FCongNoKH.resx">
-      <DependentUpon>FChiTietLai.cs</DependentUpon>
+      <DependentUpon>FCongNoKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\FCongSoHangNgay.resx">
       <DependentUpon>FCongSoHangNgay.cs</DependentUpon>

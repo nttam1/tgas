@@ -105,6 +105,10 @@ namespace T_Manager
 
         private void XuatHang_Load(object sender, EventArgs e)
         {
+            var i2nKHO = new Id2Name(textBoxMAKHO, comboBoxKho);
+            var i2nKH = new Id2Name(textBoxKHACHHANG, comboBoxKHACH_HANG);
+            var i2nHH = new Id2Name(textBoxHANGHOA, comboBoxHANGHOA);
+
             comboBoxKho.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
             comboBoxKho.DisplayMember = "NAME";
             comboBoxKho.ValueMember = "ID";
@@ -121,6 +125,8 @@ namespace T_Manager
 
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            textBoxMAKHO.Select();
+            textBoxMAKHO.SelectAll();
         }
 
         private void comboBoxHANGHOA_SelectedIndexChanged(object sender, EventArgs e)
@@ -174,12 +180,14 @@ namespace T_Manager
             if (checkBoxBANMAT.Checked == true)
             {
                 comboBoxKHACH_HANG.Enabled = false;
+                textBoxKHACHHANG.Enabled = false ;
                 textBoxDUATRUOC.Enabled = false;
                 textBoxLAISUAT.Enabled = false;
             }
             else
             {
                 comboBoxKHACH_HANG.Enabled = true;
+                textBoxKHACHHANG.Enabled = true;
                 textBoxDUATRUOC.Enabled = true;
                 textBoxLAISUAT.Enabled = true;
             }
@@ -266,6 +274,14 @@ namespace T_Manager
             if (e.KeyChar == (char)13)
             {
                 buttonADD_Click(sender, e);
+            }
+        }
+
+        private void textBoxMAKHO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
             }
         }
     }

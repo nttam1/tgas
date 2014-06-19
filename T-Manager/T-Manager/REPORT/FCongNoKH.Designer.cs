@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxKHACHHANG = new System.Windows.Forms.TextBox();
+            this.checkBoxNODAUKI = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePickerFROM = new System.Windows.Forms.DateTimePicker();
@@ -37,12 +39,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.checkBoxNODAUKI = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxKHACHHANG);
             this.groupBox1.Controls.Add(this.checkBoxNODAUKI);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -60,6 +62,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CÔNG NỢ KHÁCH HÀNG";
             // 
+            // textBoxKHACHHANG
+            // 
+            this.textBoxKHACHHANG.Location = new System.Drawing.Point(134, 35);
+            this.textBoxKHACHHANG.Name = "textBoxKHACHHANG";
+            this.textBoxKHACHHANG.Size = new System.Drawing.Size(67, 29);
+            this.textBoxKHACHHANG.TabIndex = 12;
+            this.textBoxKHACHHANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxKHACHHANG_KeyPress);
+            // 
+            // checkBoxNODAUKI
+            // 
+            this.checkBoxNODAUKI.AutoSize = true;
+            this.checkBoxNODAUKI.Location = new System.Drawing.Point(450, 35);
+            this.checkBoxNODAUKI.Name = "checkBoxNODAUKI";
+            this.checkBoxNODAUKI.Size = new System.Drawing.Size(123, 28);
+            this.checkBoxNODAUKI.TabIndex = 11;
+            this.checkBoxNODAUKI.Text = "NỢ ĐẦU KÌ";
+            this.checkBoxNODAUKI.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -75,9 +95,9 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(134, 36);
+            this.comboBox1.Location = new System.Drawing.Point(207, 36);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(291, 28);
+            this.comboBox1.Size = new System.Drawing.Size(218, 28);
             this.comboBox1.TabIndex = 9;
             // 
             // dateTimePickerFROM
@@ -141,16 +161,6 @@
             this.crystalReportViewer1.TabIndex = 11;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // checkBoxNODAUKI
-            // 
-            this.checkBoxNODAUKI.AutoSize = true;
-            this.checkBoxNODAUKI.Location = new System.Drawing.Point(450, 35);
-            this.checkBoxNODAUKI.Name = "checkBoxNODAUKI";
-            this.checkBoxNODAUKI.Size = new System.Drawing.Size(123, 28);
-            this.checkBoxNODAUKI.TabIndex = 11;
-            this.checkBoxNODAUKI.Text = "NỢ ĐẦU KÌ";
-            this.checkBoxNODAUKI.UseVisualStyleBackColor = true;
-            // 
             // FCongNoKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,5 +194,6 @@
         private System.Windows.Forms.Button button1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private System.Windows.Forms.CheckBox checkBoxNODAUKI;
+        private System.Windows.Forms.TextBox textBoxKHACHHANG;
     }
 }

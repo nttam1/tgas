@@ -39,16 +39,16 @@
             // 
             // textBoxTEN
             // 
-            this.textBoxTEN.Location = new System.Drawing.Point(258, 29);
+            this.textBoxTEN.Location = new System.Drawing.Point(364, 29);
             this.textBoxTEN.Name = "textBoxTEN";
-            this.textBoxTEN.Size = new System.Drawing.Size(235, 20);
+            this.textBoxTEN.Size = new System.Drawing.Size(129, 20);
             this.textBoxTEN.TabIndex = 1;
             this.textBoxTEN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTEN_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(255, 13);
+            this.label2.Location = new System.Drawing.Point(361, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 22;
@@ -66,16 +66,16 @@
             // 
             // textBoxSO
             // 
-            this.textBoxSO.Location = new System.Drawing.Point(261, 77);
+            this.textBoxSO.Location = new System.Drawing.Point(364, 77);
             this.textBoxSO.Name = "textBoxSO";
-            this.textBoxSO.Size = new System.Drawing.Size(232, 20);
+            this.textBoxSO.Size = new System.Drawing.Size(129, 20);
             this.textBoxSO.TabIndex = 2;
             this.textBoxSO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSO_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(258, 61);
+            this.label1.Location = new System.Drawing.Point(361, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 19;
@@ -87,7 +87,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 364);
+            this.dataGridView1.Size = new System.Drawing.Size(346, 364);
             this.dataGridView1.TabIndex = 18;
             // 
             // FHangHoa

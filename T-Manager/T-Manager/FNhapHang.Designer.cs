@@ -47,6 +47,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelDONVITINH = new System.Windows.Forms.Label();
+            this.textBoxMAKHO = new System.Windows.Forms.TextBox();
+            this.textBoxNCC = new System.Windows.Forms.TextBox();
+            this.textBoxHANGHOA = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,10 +57,10 @@
             // 
             this.comboBoxKho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKho.FormattingEnabled = true;
-            this.comboBoxKho.Location = new System.Drawing.Point(163, 110);
+            this.comboBoxKho.Location = new System.Drawing.Point(207, 110);
             this.comboBoxKho.Name = "comboBoxKho";
-            this.comboBoxKho.Size = new System.Drawing.Size(206, 21);
-            this.comboBoxKho.TabIndex = 0;
+            this.comboBoxKho.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxKho.TabIndex = 30;
             this.comboBoxKho.SelectedIndexChanged += new System.EventHandler(this.comboBoxKho_SelectedIndexChanged);
             this.comboBoxKho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKho_KeyPress);
             // 
@@ -65,10 +68,10 @@
             // 
             this.comboBoxNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNCC.FormattingEnabled = true;
-            this.comboBoxNCC.Location = new System.Drawing.Point(163, 155);
+            this.comboBoxNCC.Location = new System.Drawing.Point(207, 155);
             this.comboBoxNCC.Name = "comboBoxNCC";
-            this.comboBoxNCC.Size = new System.Drawing.Size(206, 21);
-            this.comboBoxNCC.TabIndex = 1;
+            this.comboBoxNCC.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxNCC.TabIndex = 31;
             this.comboBoxNCC.SelectedIndexChanged += new System.EventHandler(this.comboBoxNCC_SelectedIndexChanged);
             this.comboBoxNCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKho_KeyPress);
             // 
@@ -192,10 +195,10 @@
             // 
             this.comboBoxHANGHOA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxHANGHOA.FormattingEnabled = true;
-            this.comboBoxHANGHOA.Location = new System.Drawing.Point(163, 204);
+            this.comboBoxHANGHOA.Location = new System.Drawing.Point(207, 204);
             this.comboBoxHANGHOA.Name = "comboBoxHANGHOA";
-            this.comboBoxHANGHOA.Size = new System.Drawing.Size(206, 21);
-            this.comboBoxHANGHOA.TabIndex = 2;
+            this.comboBoxHANGHOA.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxHANGHOA.TabIndex = 32;
             this.comboBoxHANGHOA.SelectedIndexChanged += new System.EventHandler(this.comboBoxHANGHOA_SelectedIndexChanged);
             this.comboBoxHANGHOA.SelectedValueChanged += new System.EventHandler(this.comboBoxHANGHOA_SelectedValueChanged);
             this.comboBoxHANGHOA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKho_KeyPress);
@@ -236,11 +239,38 @@
             this.labelDONVITINH.TabIndex = 20;
             this.labelDONVITINH.Text = "Đơn vị tính";
             // 
+            // textBoxMAKHO
+            // 
+            this.textBoxMAKHO.Location = new System.Drawing.Point(163, 110);
+            this.textBoxMAKHO.Name = "textBoxMAKHO";
+            this.textBoxMAKHO.Size = new System.Drawing.Size(38, 20);
+            this.textBoxMAKHO.TabIndex = 0;
+            this.textBoxMAKHO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDONGIA_KeyPress);
+            // 
+            // textBoxNCC
+            // 
+            this.textBoxNCC.Location = new System.Drawing.Point(163, 156);
+            this.textBoxNCC.Name = "textBoxNCC";
+            this.textBoxNCC.Size = new System.Drawing.Size(38, 20);
+            this.textBoxNCC.TabIndex = 1;
+            this.textBoxNCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDONGIA_KeyPress);
+            // 
+            // textBoxHANGHOA
+            // 
+            this.textBoxHANGHOA.Location = new System.Drawing.Point(163, 205);
+            this.textBoxHANGHOA.Name = "textBoxHANGHOA";
+            this.textBoxHANGHOA.Size = new System.Drawing.Size(38, 20);
+            this.textBoxHANGHOA.TabIndex = 2;
+            this.textBoxHANGHOA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDONGIA_KeyPress);
+            // 
             // FNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 474);
+            this.Controls.Add(this.textBoxHANGHOA);
+            this.Controls.Add(this.textBoxNCC);
+            this.Controls.Add(this.textBoxMAKHO);
             this.Controls.Add(this.labelDONVITINH);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -296,6 +326,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelDONVITINH;
+        private System.Windows.Forms.TextBox textBoxMAKHO;
+        private System.Windows.Forms.TextBox textBoxNCC;
+        private System.Windows.Forms.TextBox textBoxHANGHOA;
 
     }
 }

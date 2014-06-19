@@ -21,7 +21,7 @@ namespace T_Manager.Data
         {
             bs.DataSource = DataInstance.Instance().DBContext().NHA_CUNG_CAP;
             dataGridView1.DataSource = bs;
-            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[0].HeaderText = "MÃ";
             dataGridView1.Columns[1].HeaderText = "TÊN";
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

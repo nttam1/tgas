@@ -22,7 +22,7 @@ namespace T_Manager.Data
         {
             bs.DataSource = MKho.Get(MKho.KHO_TK_NGANHANG);
             dataGridView1.DataSource = bs;
-            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[0].HeaderText = "MÃ";
             dataGridView1.Columns[1].HeaderText = "TÊN";
             dataGridView1.Columns[2].Visible = false;
             dataGridView1.Columns[3].HeaderText = "SỐ TÀI KHOẢN";

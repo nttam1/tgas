@@ -56,6 +56,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.checkBoxBANMAT = new System.Windows.Forms.CheckBox();
             this.labelTON = new System.Windows.Forms.Label();
+            this.textBoxHANGHOA = new System.Windows.Forms.TextBox();
+            this.textBoxKHACHHANG = new System.Windows.Forms.TextBox();
+            this.textBoxMAKHO = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +85,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(133, 160);
+            this.label5.Location = new System.Drawing.Point(89, 160);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 32;
@@ -95,7 +98,7 @@
             this.comboBoxHANGHOA.Location = new System.Drawing.Point(236, 157);
             this.comboBoxHANGHOA.Name = "comboBoxHANGHOA";
             this.comboBoxHANGHOA.Size = new System.Drawing.Size(206, 21);
-            this.comboBoxHANGHOA.TabIndex = 21;
+            this.comboBoxHANGHOA.TabIndex = 211;
             this.comboBoxHANGHOA.SelectedIndexChanged += new System.EventHandler(this.comboBoxHANGHOA_SelectedIndexChanged);
             this.comboBoxHANGHOA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxHANGHOA_KeyPress);
             // 
@@ -121,7 +124,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(129, 205);
+            this.label6.Location = new System.Drawing.Point(91, 204);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 13);
             this.label6.TabIndex = 31;
@@ -148,7 +151,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(133, 111);
+            this.label2.Location = new System.Drawing.Point(89, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 26;
@@ -157,7 +160,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(133, 66);
+            this.label7.Location = new System.Drawing.Point(89, 66);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(30, 13);
             this.label7.TabIndex = 25;
@@ -166,9 +169,9 @@
             // dateTimePickerNGAYBAN
             // 
             this.dateTimePickerNGAYBAN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNGAYBAN.Location = new System.Drawing.Point(236, 198);
+            this.dateTimePickerNGAYBAN.Location = new System.Drawing.Point(192, 198);
             this.dateTimePickerNGAYBAN.Name = "dateTimePickerNGAYBAN";
-            this.dateTimePickerNGAYBAN.Size = new System.Drawing.Size(206, 20);
+            this.dateTimePickerNGAYBAN.Size = new System.Drawing.Size(250, 20);
             this.dateTimePickerNGAYBAN.TabIndex = 24;
             this.dateTimePickerNGAYBAN.ValueChanged += new System.EventHandler(this.dateTimePickerNGAYBAN_ValueChanged);
             this.dateTimePickerNGAYBAN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerNGAYBAN_KeyPress);
@@ -200,7 +203,7 @@
             this.comboBoxKHACH_HANG.Location = new System.Drawing.Point(236, 108);
             this.comboBoxKHACH_HANG.Name = "comboBoxKHACH_HANG";
             this.comboBoxKHACH_HANG.Size = new System.Drawing.Size(128, 21);
-            this.comboBoxKHACH_HANG.TabIndex = 20;
+            this.comboBoxKHACH_HANG.TabIndex = 210;
             this.comboBoxKHACH_HANG.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHACH_HANG_SelectedIndexChanged);
             this.comboBoxKHACH_HANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHACH_HANG_KeyPress);
             // 
@@ -211,7 +214,7 @@
             this.comboBoxKho.Location = new System.Drawing.Point(236, 63);
             this.comboBoxKho.Name = "comboBoxKho";
             this.comboBoxKho.Size = new System.Drawing.Size(206, 21);
-            this.comboBoxKho.TabIndex = 19;
+            this.comboBoxKho.TabIndex = 119;
             this.comboBoxKho.SelectedIndexChanged += new System.EventHandler(this.comboBoxKho_SelectedIndexChanged);
             this.comboBoxKho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKho_KeyPress);
             // 
@@ -317,11 +320,38 @@
             this.labelTON.TabIndex = 44;
             this.labelTON.Text = "label12";
             // 
+            // textBoxHANGHOA
+            // 
+            this.textBoxHANGHOA.Location = new System.Drawing.Point(192, 157);
+            this.textBoxHANGHOA.Name = "textBoxHANGHOA";
+            this.textBoxHANGHOA.Size = new System.Drawing.Size(38, 20);
+            this.textBoxHANGHOA.TabIndex = 21;
+            this.textBoxHANGHOA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMAKHO_KeyPress);
+            // 
+            // textBoxKHACHHANG
+            // 
+            this.textBoxKHACHHANG.Location = new System.Drawing.Point(192, 105);
+            this.textBoxKHACHHANG.Name = "textBoxKHACHHANG";
+            this.textBoxKHACHHANG.Size = new System.Drawing.Size(38, 20);
+            this.textBoxKHACHHANG.TabIndex = 20;
+            this.textBoxKHACHHANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMAKHO_KeyPress);
+            // 
+            // textBoxMAKHO
+            // 
+            this.textBoxMAKHO.Location = new System.Drawing.Point(192, 63);
+            this.textBoxMAKHO.Name = "textBoxMAKHO";
+            this.textBoxMAKHO.Size = new System.Drawing.Size(38, 20);
+            this.textBoxMAKHO.TabIndex = 19;
+            this.textBoxMAKHO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMAKHO_KeyPress);
+            // 
             // FXuatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 485);
+            this.Controls.Add(this.textBoxHANGHOA);
+            this.Controls.Add(this.textBoxKHACHHANG);
+            this.Controls.Add(this.textBoxMAKHO);
             this.Controls.Add(this.labelTON);
             this.Controls.Add(this.checkBoxBANMAT);
             this.Controls.Add(this.label14);
@@ -392,5 +422,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox checkBoxBANMAT;
         private System.Windows.Forms.Label labelTON;
+        private System.Windows.Forms.TextBox textBoxHANGHOA;
+        private System.Windows.Forms.TextBox textBoxKHACHHANG;
+        private System.Windows.Forms.TextBox textBoxMAKHO;
     }
 }

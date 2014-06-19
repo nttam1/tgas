@@ -21,6 +21,9 @@ namespace T_Manager
         private long _GOC = 0;
         private void FThuNo_Load(object sender, EventArgs e)
         {
+
+            var i2nKHO = new Id2Name(textBoxMAKHO, comboBoxKHO);
+            var i2nKH = new Id2Name(textBoxKHACHHANG, comboBoxKHACHHANG);
             comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
@@ -89,6 +92,11 @@ namespace T_Manager
                 var loai_no = MThuNo.NO_HANG_HOA;
                 var cur_lai = _LAI ;
                 var cur_no = _GOC;
+                if (lai == 0 && goc == 0)
+                {
+                    MessageBox.Show("Chưa nhập dữ liệu");
+                    return;
+                }
                 if (lai > cur_lai)
                 {
                     MessageBox.Show("Lãi trả không được lớn hơn lãi nợ");

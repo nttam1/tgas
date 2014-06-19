@@ -20,6 +20,9 @@ namespace T_Manager
         private BindingSource bs = new BindingSource();
         private void FVay_Load(object sender, EventArgs e)
         {
+
+            var i2nKHO = new Id2Name(textBoxMAKHO, comboBoxKHO); 
+            
             comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";

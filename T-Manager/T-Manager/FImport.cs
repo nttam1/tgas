@@ -94,12 +94,12 @@ namespace T_Manager
 
         private void FImport_Load(object sender, EventArgs e)
         {
-            DateTime now = DateTime.Now;
-            string originName = "tgas_origin";
-            string Name = "tgas";
-            string tmpName = "tgas_" + now.Date.Day.ToString() +  now.Date.Month.ToString() +now.Date.Year.ToString();
-            File.Copy(Name, tmpName, true);
-            File.Copy(originName, Name, true);
+            //DateTime now = DateTime.Now;
+            //string originName = "tgas_origin";
+            //string Name = "tgas";
+            //string tmpName = "tgas_" + now.Date.Day.ToString() +  now.Date.Month.ToString() +now.Date.Year.ToString();
+            //File.Copy(Name, tmpName, true);
+            //File.Copy(originName, Name, true);
         }
     }
 }

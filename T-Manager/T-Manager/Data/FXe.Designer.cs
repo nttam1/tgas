@@ -51,6 +51,7 @@
             this.textBoxNGUONVAY.Name = "textBoxNGUONVAY";
             this.textBoxNGUONVAY.Size = new System.Drawing.Size(235, 20);
             this.textBoxNGUONVAY.TabIndex = 6;
+            this.textBoxNGUONVAY.TextChanged += new System.EventHandler(this.textBoxNGUONVAY_TextChanged);
             this.textBoxNGUONVAY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNGUONVAY_KeyPress);
             // 
             // label1

@@ -21,7 +21,7 @@ namespace T_Manager.Data
         {
             bs.DataSource = DataInstance.Instance().DBContext().XEs;
             dataGridView1.DataSource = bs;
-            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[0].HeaderText = "MÃ";
             dataGridView1.Columns[1].HeaderText = "BIẾN SỐ";
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -58,6 +58,11 @@ namespace T_Manager.Data
             {
                 this.buttonADD_Click(sender, e);
             }
+        }
+
+        private void textBoxNGUONVAY_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

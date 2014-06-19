@@ -21,6 +21,10 @@ namespace T_Manager
 
         private void FChoVay_Load(object sender, EventArgs e)
         {
+
+            var i2nKHO = new Id2Name(textBoxMAKHO, comboBoxKHO);
+            var i2nKH = new Id2Name(textBoxKHACHHANG, comboBoxKHACHHANG);
+
             comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
@@ -29,6 +33,8 @@ namespace T_Manager
             comboBoxKHACHHANG.ValueMember = "ID"; 
             dataGridViewCHOVAY.DataSource = bs;
             comboBoxKHACHHANG_SelectedIndexChanged(sender, e);
+            textBoxMAKHO.Select();
+            textBoxMAKHO.SelectAll();
         }
 
         private BindingSource bs = new BindingSource();

@@ -26,6 +26,7 @@ namespace T_Manager
 
         private void FChi_Load(object sender, EventArgs e)
         {
+            var i2nKHO = new Id2Name(textBoxMAKHO, comboBoxKHO);
             comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME) ;
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
@@ -46,6 +47,7 @@ namespace T_Manager
             var kho_id = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
             comboBoxKHO_SelectedIndexChanged(sender, e);
             comboBoxNHANVIEN_SelectedIndexChanged(sender, e);
+
             radioButtonXANGDAU_CheckedChanged(sender, e);
 
         }
@@ -276,6 +278,11 @@ namespace T_Manager
             {
                 var chikhac = textBoxNDCHI.Text;
                 var chitien = Int32.Parse(textBoxCKTONGTIEN.Text);
+                if (chikhac == "" || chitien == 0)
+                {
+                    MessageBox.Show("Chưa nhập dữ liệu");
+                    return;
+                }
                 bs_ck.Add(new CHI_KHAC()
                 {
                     NOI_DUNG = chikhac,

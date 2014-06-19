@@ -42,6 +42,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePickerCHOVAY = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewCHOVAY = new System.Windows.Forms.DataGridView();
+            this.textBoxMAKHO = new System.Windows.Forms.TextBox();
+            this.textBoxKHACHHANG = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCHOVAY)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,10 +52,10 @@
             this.comboBoxKHO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKHO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKHO.FormattingEnabled = true;
-            this.comboBoxKHO.Location = new System.Drawing.Point(293, 12);
+            this.comboBoxKHO.Location = new System.Drawing.Point(392, 12);
             this.comboBoxKHO.Name = "comboBoxKHO";
-            this.comboBoxKHO.Size = new System.Drawing.Size(353, 37);
-            this.comboBoxKHO.TabIndex = 0;
+            this.comboBoxKHO.Size = new System.Drawing.Size(254, 37);
+            this.comboBoxKHO.TabIndex = 20;
             this.comboBoxKHO.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHO_SelectedIndexChanged);
             this.comboBoxKHO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
@@ -81,9 +83,9 @@
             // 
             this.comboBoxKHACHHANG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKHACHHANG.FormattingEnabled = true;
-            this.comboBoxKHACHHANG.Location = new System.Drawing.Point(25, 105);
+            this.comboBoxKHACHHANG.Location = new System.Drawing.Point(75, 105);
             this.comboBoxKHACHHANG.Name = "comboBoxKHACHHANG";
-            this.comboBoxKHACHHANG.Size = new System.Drawing.Size(207, 21);
+            this.comboBoxKHACHHANG.Size = new System.Drawing.Size(157, 21);
             this.comboBoxKHACHHANG.TabIndex = 1;
             this.comboBoxKHACHHANG.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHACHHANG_SelectedIndexChanged);
             this.comboBoxKHACHHANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
@@ -182,11 +184,30 @@
             this.dataGridViewCHOVAY.Size = new System.Drawing.Size(768, 277);
             this.dataGridViewCHOVAY.TabIndex = 14;
             // 
+            // textBoxMAKHO
+            // 
+            this.textBoxMAKHO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMAKHO.Location = new System.Drawing.Point(320, 12);
+            this.textBoxMAKHO.Name = "textBoxMAKHO";
+            this.textBoxMAKHO.Size = new System.Drawing.Size(58, 35);
+            this.textBoxMAKHO.TabIndex = 0;
+            this.textBoxMAKHO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
+            // 
+            // textBoxKHACHHANG
+            // 
+            this.textBoxKHACHHANG.Location = new System.Drawing.Point(25, 105);
+            this.textBoxKHACHHANG.Name = "textBoxKHACHHANG";
+            this.textBoxKHACHHANG.Size = new System.Drawing.Size(38, 20);
+            this.textBoxKHACHHANG.TabIndex = 1;
+            this.textBoxKHACHHANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
+            // 
             // FChoVay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 442);
+            this.Controls.Add(this.textBoxKHACHHANG);
+            this.Controls.Add(this.textBoxMAKHO);
             this.Controls.Add(this.dataGridViewCHOVAY);
             this.Controls.Add(this.dateTimePickerCHOVAY);
             this.Controls.Add(this.label7);
@@ -230,5 +251,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePickerCHOVAY;
         private System.Windows.Forms.DataGridView dataGridViewCHOVAY;
+        private System.Windows.Forms.TextBox textBoxMAKHO;
+        private System.Windows.Forms.TextBox textBoxKHACHHANG;
     }
 }

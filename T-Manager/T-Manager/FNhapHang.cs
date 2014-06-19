@@ -24,6 +24,9 @@ namespace T_Manager
 
         private void NhapHang_Load(object sender, EventArgs e)
         {
+            var i2nKHO = new Id2Name(textBoxMAKHO, comboBoxKho);
+            var i2nKH = new Id2Name(textBoxNCC, comboBoxNCC);
+            var i2nHH = new Id2Name(textBoxHANGHOA, comboBoxHANGHOA);
             comboBoxKho.DataSource = T_Manager.Modal.MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);//dbContext.KHOes.Where(u => u.TYPE == 0);
             comboBoxKho.DisplayMember = "NAME";
             comboBoxKho.ValueMember = "ID";
@@ -39,6 +42,9 @@ namespace T_Manager
             comboBoxHANGHOA_SelectedIndexChanged(sender, e);
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            textBoxMAKHO.Select();
+            textBoxMAKHO.SelectAll();
+
         }
 
         private void dataGridViewNhapHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -124,7 +130,10 @@ namespace T_Manager
 
         private void textBoxDONGIA_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void comboBoxHANGHOA_SelectedIndexChanged(object sender, EventArgs e)

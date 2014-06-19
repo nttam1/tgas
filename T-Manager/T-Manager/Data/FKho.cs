@@ -21,7 +21,7 @@ namespace T_Manager.Data
         {
             bs.DataSource = DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE == 0);
             dataGridViewKHACHHANG.DataSource = bs;
-            dataGridViewKHACHHANG.Columns[0].Visible = false;
+            dataGridViewKHACHHANG.Columns[0].HeaderText = "MÃ KHO";
             dataGridViewKHACHHANG.Columns[2].Visible = false;
             dataGridViewKHACHHANG.Columns[3].Visible = false;
             dataGridViewKHACHHANG.Columns[1].HeaderText = "TÊN KHO";

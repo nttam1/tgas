@@ -43,6 +43,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxKHO = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.textBoxMAKHO = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,10 +172,10 @@
             // 
             this.comboBoxKHO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKHO.FormattingEnabled = true;
-            this.comboBoxKHO.Location = new System.Drawing.Point(207, 100);
+            this.comboBoxKHO.Location = new System.Drawing.Point(253, 100);
             this.comboBoxKHO.Name = "comboBoxKHO";
-            this.comboBoxKHO.Size = new System.Drawing.Size(173, 21);
-            this.comboBoxKHO.TabIndex = 1;
+            this.comboBoxKHO.Size = new System.Drawing.Size(127, 21);
+            this.comboBoxKHO.TabIndex = 121;
             this.comboBoxKHO.SelectedIndexChanged += new System.EventHandler(this.comboBoxKHO_SelectedIndexChanged);
             this.comboBoxKHO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxNGUONVAY_KeyPress);
             // 
@@ -188,11 +189,19 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "KHO";
             // 
+            // textBoxMAKHO
+            // 
+            this.textBoxMAKHO.Location = new System.Drawing.Point(207, 100);
+            this.textBoxMAKHO.Name = "textBoxMAKHO";
+            this.textBoxMAKHO.Size = new System.Drawing.Size(38, 20);
+            this.textBoxMAKHO.TabIndex = 1;
+            // 
             // FVay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 473);
+            this.Controls.Add(this.textBoxMAKHO);
             this.Controls.Add(this.comboBoxKHO);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -238,5 +247,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBoxKHO;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxMAKHO;
     }
 }

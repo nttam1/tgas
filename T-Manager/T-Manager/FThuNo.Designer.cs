@@ -55,6 +55,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxTONGTIEN = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBoxKHACHHANG = new System.Windows.Forms.TextBox();
+            this.textBoxMAKHO = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -86,7 +88,7 @@
             this.comboBoxKHO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKHO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKHO.FormattingEnabled = true;
-            this.comboBoxKHO.Location = new System.Drawing.Point(333, 71);
+            this.comboBoxKHO.Location = new System.Drawing.Point(407, 71);
             this.comboBoxKHO.Name = "comboBoxKHO";
             this.comboBoxKHO.Size = new System.Drawing.Size(205, 37);
             this.comboBoxKHO.TabIndex = 0;
@@ -105,6 +107,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBoxKHACHHANG);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.dateTimePickerDATE);
             this.tabPage1.Controls.Add(this.groupBox2);
@@ -248,7 +251,7 @@
             // 
             this.comboBoxKHACHHANG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKHACHHANG.FormattingEnabled = true;
-            this.comboBoxKHACHHANG.Location = new System.Drawing.Point(294, 16);
+            this.comboBoxKHACHHANG.Location = new System.Drawing.Point(336, 16);
             this.comboBoxKHACHHANG.Name = "comboBoxKHACHHANG";
             this.comboBoxKHACHHANG.Size = new System.Drawing.Size(198, 21);
             this.comboBoxKHACHHANG.TabIndex = 1;
@@ -351,11 +354,29 @@
             this.label12.Text = "TỔNG TIỀN";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
+            // textBoxKHACHHANG
+            // 
+            this.textBoxKHACHHANG.Location = new System.Drawing.Point(290, 16);
+            this.textBoxKHACHHANG.Name = "textBoxKHACHHANG";
+            this.textBoxKHACHHANG.Size = new System.Drawing.Size(38, 20);
+            this.textBoxKHACHHANG.TabIndex = 1;
+            this.textBoxKHACHHANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
+            // 
+            // textBoxMAKHO
+            // 
+            this.textBoxMAKHO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMAKHO.Location = new System.Drawing.Point(331, 73);
+            this.textBoxMAKHO.Name = "textBoxMAKHO";
+            this.textBoxMAKHO.Size = new System.Drawing.Size(58, 35);
+            this.textBoxMAKHO.TabIndex = 0;
+            this.textBoxMAKHO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
+            // 
             // FThuNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 529);
+            this.Controls.Add(this.textBoxMAKHO);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxKHO);
@@ -408,5 +429,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateTimePickerNGAYKHAC;
+        private System.Windows.Forms.TextBox textBoxKHACHHANG;
+        private System.Windows.Forms.TextBox textBoxMAKHO;
     }
 }

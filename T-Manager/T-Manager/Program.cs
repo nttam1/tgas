@@ -18,14 +18,14 @@ namespace T_Manager
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FImport());
             //return;
-            if (MHeTHong.IsSet(MHeTHong.DATE) == true)
-            {
+            //if (MHeTHong.IsSet(MHeTHong.DATE) == true)
+            //{
                 Application.Run(new FMain());
-            }
-            else
-            {
-                Application.Run(new FImport());
-            }
+            //}
+            //else
+            //{
+            //    Application.Run(new FImport());
+            //}
         }
     }
 }

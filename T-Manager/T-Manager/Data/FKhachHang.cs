@@ -22,7 +22,7 @@ namespace T_Manager
         {
             bs.DataSource = dbContext.KHACH_HANG;
             dataGridViewKHACHHANG.DataSource = bs;
-            dataGridViewKHACHHANG.Columns[0].Visible = false;
+            dataGridViewKHACHHANG.Columns[0].HeaderText = "MÃ KHÁCH HÀNG";
             dataGridViewKHACHHANG.Columns[1].HeaderText = "TÊN KHÁCH HÀNG";
             dataGridViewKHACHHANG.AutoResizeColumns();
             dataGridViewKHACHHANG.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

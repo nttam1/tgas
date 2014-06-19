@@ -21,10 +21,10 @@ namespace T_Manager.REPORT
             InitializeComponent();
         }
 
-
-
         private void FCongNoKH_Load(object sender, EventArgs e)
         {
+
+            var i2nKH = new Id2Name(textBoxKHACHHANG, comboBox1);
             comboBox1.DataSource = DataInstance.Instance().DBContext().KHACH_HANG.OrderBy(u => u.NAME);
             comboBox1.DisplayMember = "NAME";
             comboBox1.ValueMember = "ID";
@@ -143,6 +143,14 @@ namespace T_Manager.REPORT
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxKHACHHANG_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                button1_Click(sender, e);
+            }
         }
     }
 
