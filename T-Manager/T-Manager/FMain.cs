@@ -265,5 +265,11 @@ namespace T_Manager
             REPORT.FChiXe f = new REPORT.FChiXe();
             f.ShowDialog();
         }
+
+        private void button33_Click_1(object sender, EventArgs e)
+        {
+            FTonKho f = new FTonKho();
+            f.ShowDialog();
+        }
     }
 }

@@ -115,3 +115,5 @@ F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csproj.Gene
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.exe
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.pdb
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FCongNoKH.resources
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csprojResolveAssemblyReference.cache
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FTonKho.resources

@@ -70,6 +70,7 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.button32 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -173,6 +174,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button33);
             this.groupBox2.Controls.Add(this.button15);
             this.groupBox2.Controls.Add(this.button14);
             this.groupBox2.Controls.Add(this.button13);
@@ -183,7 +185,7 @@
             this.groupBox2.Controls.Add(this.button8);
             this.groupBox2.Location = new System.Drawing.Point(414, 15);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(221, 183);
+            this.groupBox2.Size = new System.Drawing.Size(221, 213);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "NHẬP DỮ LIỆU";
@@ -527,6 +529,16 @@
             this.button31.UseVisualStyleBackColor = true;
             this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
+            // button33
+            // 
+            this.button33.Location = new System.Drawing.Point(6, 184);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(205, 23);
+            this.button33.TabIndex = 14;
+            this.button33.Text = "NHẬP TỒN KHO";
+            this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click_1);
+            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,6 +616,7 @@
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Button button33;
     }
 }
 

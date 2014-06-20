@@ -88,6 +88,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTonKho.Designer.cs">
+      <DependentUpon>FTonKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Id2Name.cs" />
     <Compile Include="ConstClass.cs" />
     <Compile Include="Data.Designer.cs">
@@ -527,6 +533,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FThuNo.resx">
       <DependentUpon>FThuNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTonKho.resx">
+      <DependentUpon>FTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FTraNoNCC.resx">
       <DependentUpon>FTraNoNCC.cs</DependentUpon>
