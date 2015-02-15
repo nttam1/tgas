@@ -22,6 +22,12 @@ namespace T_Manager
 
         private void FTraNoVay_Load(object sender, EventArgs e)
         {
+            if (MKho.Get(MKho.KHO_HANG).Count() == 0 || DataInstance.Instance().DBContext().NGUON_VAY.Count() == 0)
+            {
+                MessageBox.Show("CẦN TẠO KHO VÀ NGUỒN VAY TRƯỚC");
+                this.Close();
+                return;
+            }
             comboBoxKHO.DataSource = DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE >= 0);
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";

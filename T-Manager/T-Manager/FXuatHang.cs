@@ -109,6 +109,15 @@ namespace T_Manager
             var i2nKH = new Id2Name(textBoxKHACHHANG, comboBoxKHACH_HANG);
             var i2nHH = new Id2Name(textBoxHANGHOA, comboBoxHANGHOA);
 
+
+
+            if (MKho.Get(MKho.KHO_HANG).Count() == 0 || MHangHoa.Get().Count() == 0)
+            {
+                MessageBox.Show("CẦN TẠO KHO VÀ HÀNG HÓA TRƯỚC KHI XUẤT HÀNG");
+                this.Close();
+                return;
+            }
+
             comboBoxKho.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
             comboBoxKho.DisplayMember = "NAME";
             comboBoxKho.ValueMember = "ID";

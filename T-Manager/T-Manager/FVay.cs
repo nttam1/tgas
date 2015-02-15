@@ -20,7 +20,12 @@ namespace T_Manager
         private BindingSource bs = new BindingSource();
         private void FVay_Load(object sender, EventArgs e)
         {
-
+            if (MKho.Get(MKho.KHO_HANG).Count() == 0 || DataInstance.Instance().DBContext().NGUON_VAY.Count() == 0)
+            {
+                MessageBox.Show("CẦN TẠO KHO VÀ NGUỒN VAY TRƯỚC KHI VAY");
+                this.Close();
+                return;
+            }
             var i2nKHO = new Id2Name(textBoxMAKHO, comboBoxKHO); 
             
             comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);

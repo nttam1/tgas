@@ -21,7 +21,12 @@ namespace T_Manager
 
         private void FChoVay_Load(object sender, EventArgs e)
         {
-
+            if (MKho.Get(MKho.KHO_HANG).Count() == 0 || DataInstance.Instance().DBContext().KHACH_HANG.Count() == 0)
+            {
+                MessageBox.Show("CẦN TẠO KHO VÀ KHÁCH HÀNG TRƯỚC");
+                this.Close();
+                return;
+            }
             var i2nKHO = new Id2Name(textBoxMAKHO, comboBoxKHO);
             var i2nKH = new Id2Name(textBoxKHACHHANG, comboBoxKHACHHANG);
 

@@ -229,7 +229,6 @@
 		<row><td>DOTNETVERSION35SP1</td><td>DotNet35SP1</td></row>
 		<row><td>DOTNETVERSION40CLIENT</td><td>DotNet40Client</td></row>
 		<row><td>DOTNETVERSION40FULL</td><td>DotNet40Full</td></row>
-		<row><td>MSOFFICE2003</td><td>OFFICE2003</td></row>
 	</table>
 
 	<table name="BBControl">
@@ -344,10 +343,16 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
+		<row><td>EntityFramework.dll</td><td>{3341696A-6CFF-4594-9B9F-7DDE0F42EE6F}</td><td>INSTALLDIR</td><td>2</td><td/><td>entityframework.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{A221FBCD-0AA3-4F29-B66A-280860975CB8}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Newtonsoft.Json.dll</td><td>{6A2FD9FB-E13E-4FE6-B7EC-049DA335B67B}</td><td>INSTALLDIR</td><td>2</td><td/><td>newtonsoft.json.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>T_Manager.exe</td><td>{5CE6112F-51B8-40AA-A81F-E460AFB859B0}</td><td>INSTALLDIR</td><td>2</td><td/><td>t_manager.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>T_Manager.vshost.exe</td><td>{2C917803-E8F4-4AD5-A5B6-A6E61ADBB4D4}</td><td>INSTALLDIR</td><td>2</td><td/><td>t_manager.vshost.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Newtonsoft.Json.dll</td><td>{CEA27447-08E4-46A4-BE59-A2B54582C549}</td><td>INSTALLDIR</td><td>2</td><td/><td>newtonsoft.json.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>SQLite.Designer.dll</td><td>{3155F25C-A51F-4A7B-8873-5C83081ABD8F}</td><td>INSTALLDIR</td><td>2</td><td/><td>sqlite.designer.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>SQLite.Interop.dll</td><td>{5F5A2ED1-3CF5-4703-AC55-12B869A8BE81}</td><td>INSTALLDIR</td><td>2</td><td/><td>sqlite.interop.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>System.Data.SQLite.EF6.dll</td><td>{10348AF1-6207-4D03-8747-F883EA364382}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.data.sqlite.ef6.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>System.Data.SQLite.Linq.dll</td><td>{D9F9E6A4-357B-46E1-A433-A24D99938349}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.data.sqlite.linq.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>System.Data.SQLite.dll</td><td>{A2050C82-C8DC-4B63-9C88-38DB9A48D9CB}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.data.sqlite.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>T_Manager.exe</td><td>{622886B1-FEA3-4749-821F-62E7C05325AC}</td><td>INSTALLDIR</td><td>2</td><td/><td>t_manager.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>T_Manager.vshost.exe</td><td>{4BBDC8ED-D470-4731-B1F9-156FAA20C3EA}</td><td>INSTALLDIR</td><td>2</td><td/><td>t_manager.vshost.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1868,8 +1873,14 @@
 	<table name="FeatureComponents">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>AlwaysInstall</td><td>EntityFramework.dll</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>Newtonsoft.Json.dll</td></row>
+		<row><td>AlwaysInstall</td><td>SQLite.Designer.dll</td></row>
+		<row><td>AlwaysInstall</td><td>SQLite.Interop.dll</td></row>
+		<row><td>AlwaysInstall</td><td>System.Data.SQLite.EF6.dll</td></row>
+		<row><td>AlwaysInstall</td><td>System.Data.SQLite.Linq.dll</td></row>
+		<row><td>AlwaysInstall</td><td>System.Data.SQLite.dll</td></row>
 		<row><td>AlwaysInstall</td><td>T_Manager.exe</td></row>
 		<row><td>AlwaysInstall</td><td>T_Manager.vshost.exe</td></row>
 	</table>
@@ -1886,8 +1897,14 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>entityframework.dll</td><td>EntityFramework.dll</td><td>ENTITY~1.DLL|EntityFramework.dll</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\EntityFramework.dll</td><td>1</td><td/></row>
 		<row><td>newtonsoft.json.dll</td><td>Newtonsoft.Json.dll</td><td>NEWTON~1.DLL|Newtonsoft.Json.dll</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\Newtonsoft.Json.dll</td><td>1</td><td/></row>
 		<row><td>newtonsoft.json.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>NEWTON~1.XML|Newtonsoft.Json.xml</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\Newtonsoft.Json.xml</td><td>1</td><td/></row>
+		<row><td>sqlite.designer.dll</td><td>SQLite.Designer.dll</td><td>SQLITE~1.DLL|SQLite.Designer.dll</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\SQLite.Designer.dll</td><td>1</td><td/></row>
+		<row><td>sqlite.interop.dll</td><td>SQLite.Interop.dll</td><td>SQLITE~1.DLL|SQLite.Interop.dll</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\SQLite.Interop.dll</td><td>1</td><td/></row>
+		<row><td>system.data.sqlite.dll</td><td>System.Data.SQLite.dll</td><td>SYSTEM~1.DLL|System.Data.SQLite.dll</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\System.Data.SQLite.dll</td><td>1</td><td/></row>
+		<row><td>system.data.sqlite.ef6.dll</td><td>System.Data.SQLite.EF6.dll</td><td>SYSTEM~1.DLL|System.Data.SQLite.EF6.dll</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\System.Data.SQLite.EF6.dll</td><td>1</td><td/></row>
+		<row><td>system.data.sqlite.linq.dll</td><td>System.Data.SQLite.Linq.dll</td><td>SYSTEM~1.DLL|System.Data.SQLite.Linq.dll</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\System.Data.SQLite.Linq.dll</td><td>1</td><td/></row>
 		<row><td>t_manager.exe</td><td>T_Manager.exe</td><td>T-MANA~1.EXE|T-Manager.exe</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\T-Manager.exe</td><td>1</td><td/></row>
 		<row><td>t_manager.exe.config</td><td>ISX_DEFAULTCOMPONENT</td><td>T-MANA~1.CON|T-Manager.exe.config</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\T-Manager.exe.config</td><td>1</td><td/></row>
 		<row><td>t_manager.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>T-MANA~1.PDB|T-Manager.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\T-Manager.pdb</td><td>1</td><td/></row>
@@ -1895,7 +1912,7 @@
 		<row><td>t_manager.vshost.exe.config</td><td>ISX_DEFAULTCOMPONENT</td><td>T-MANA~1.CON|T-Manager.vshost.exe.config</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\T-Manager.vshost.exe.config</td><td>1</td><td/></row>
 		<row><td>t_manager.vshost.exe.manifes</td><td>ISX_DEFAULTCOMPONENT</td><td>T-MANA~1.MAN|T-Manager.vshost.exe.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\T-Manager.vshost.exe.manifest</td><td>1</td><td/></row>
 		<row><td>tgas</td><td>ISX_DEFAULTCOMPONENT</td><td>tgas</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\tgas</td><td>1</td><td/></row>
-		<row><td>tgas_origin</td><td>ISX_DEFAULTCOMPONENT</td><td>TGAS_O~1|tgas_origin</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\tgas_origin</td><td>1</td><td/></row>
+		<row><td>tgas_1862014</td><td>ISX_DEFAULTCOMPONENT</td><td>TGAS_1~1|tgas_1862014</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Release\tgas_1862014</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2039,10 +2056,16 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
+		<row><td>EntityFramework.dll</td><td/><td/><td>_0AFD854B_EE6C_4598_935E_A42BA5013919_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_A18B62A2_3EC8_4CBF_830D_1BA85D963457_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Newtonsoft.Json.dll</td><td/><td/><td>_1E504078_C7E0_45A9_9E2E_EDFC8D139535_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>T_Manager.exe</td><td/><td/><td>_C0F3F5C9_56E1_4504_AFFD_6CE0C26E2D79_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>T_Manager.vshost.exe</td><td/><td/><td>_5CA6797F_6B58_4A9B_9AB5_EFF750860250_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Newtonsoft.Json.dll</td><td/><td/><td>_DF020E38_FD9A_4059_BECD_CA27B4194F53_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>SQLite.Designer.dll</td><td/><td/><td>_61D4C31C_8CB0_4023_9EF1_0981BD47D05D_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>SQLite.Interop.dll</td><td/><td/><td>_5DA691EF_50F7_448D_B1B9_7417BF657332_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>System.Data.SQLite.EF6.dll</td><td/><td/><td>_2224402D_EEAC_4B30_8F30_5442EF0DF31A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>System.Data.SQLite.Linq.dll</td><td/><td/><td>_B3AD6E7B_11A1_4B2D_A954_5F8C227F1D45_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>System.Data.SQLite.dll</td><td/><td/><td>_D316B925_BEF5_4AC6_8D1B_E3287C3C88F7_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>T_Manager.exe</td><td/><td/><td>_95A4EEEB_49C6_4437_B761_E19E8CE118D9_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>T_Manager.vshost.exe</td><td/><td/><td>_EFBE5500_0BBC_43A9_BB29_3B0EEA7DF981_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2659,7 +2682,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>TamNguyen</td><td>0</td><td/><td>-1826459407</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>TamNguyen</td><td>0</td><td/><td>-1558025076</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>-1826461455</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>-1826461455</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION35</td><td>1033</td><td>Microsoft .NET Framework 3.5 needs to be installed for this installation to continue.</td><td>0</td><td/><td>-1826443023</td></row>
@@ -3478,6 +3501,8 @@
 		<row><td>IDS_SETUPEXE_LAUNCH_COND_E</td><td>1033</td><td>This setup was built with an evaluation version of InstallShield and can only be launched from setup.exe.</td><td>0</td><td/><td>-1826461455</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>XANG DAU NHAT LINH.exe</td><td>0</td><td/><td>-1826463471</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1033</td><td>LAUNCH~1.EXE|Launch T-Manager.vshost.exe</td><td>0</td><td/><td>-1826428687</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME3</td><td>1033</td><td>LAUNCH~1.EXE|Launch T-Manager.exe</td><td>0</td><td/><td>-1558029108</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME4</td><td>1033</td><td>LAUNCH~1.EXE|Launch T-Manager.vshost.exe</td><td>0</td><td/><td>-1558029108</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>-1826461455</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>-1826461455</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>-1826461455</td></row>
@@ -3766,8 +3791,8 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>-1826461455</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>-1826461455</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-1826461455</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.TamNguyen.com</td><td>0</td><td/><td>-1826459407</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>TamNguyen</td><td>0</td><td/><td>-1826459407</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.TamNguyen.com</td><td>0</td><td/><td>-1558025076</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>TamNguyen</td><td>0</td><td/><td>-1558025076</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>XANG DAU NHAT LINH.exe</td><td>0</td><td/><td>-1826461423</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-1826461455</td></row>
 	</table>
@@ -4011,7 +4036,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{4A62A93D-DE8D-432A-BDD6-56A9B31C5AB1}</td></row>
 		<row><td>ISUSSignature</td><td>{319B2C62-3494-41C2-A965-04474CEFE8CD}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewAppFiles</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewAppFiles,viewISToday,viewUpgradePaths</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4073,7 +4098,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>DOTNETVERSION35SP1&gt;="#1"</td><td>##IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION35SP1##</td></row>
 		<row><td>DOTNETVERSION40CLIENT&gt;="#1"</td><td>##IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION40CLIENT##</td></row>
 		<row><td>DOTNETVERSION40FULL&gt;="#1"</td><td>##IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION40FULL##</td></row>
-		<row><td>MSOFFICE2003</td><td>##IDPROP_EXPRESS_LAUNCH_CONDITION_MSOFFICE2003##</td></row>
 	</table>
 
 	<table name="ListBox">
@@ -4402,7 +4426,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION40FULL;DOTNETVERSION40CLIENT;DOTNETVERSION35SP1;DOTNETVERSION35;MSOFFICE2003</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION40FULL;DOTNETVERSION40CLIENT;DOTNETVERSION35SP1;DOTNETVERSION35</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{EECF2DF0-D033-4358-BB8F-56D39E8C880E}</td><td/></row>
@@ -4451,7 +4475,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>DotNet35SP1</td><td>2</td><td>SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5</td><td>SP</td><td>2</td></row>
 		<row><td>DotNet40Client</td><td>2</td><td>SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client</td><td>Install</td><td>2</td></row>
 		<row><td>DotNet40Full</td><td>2</td><td>SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full</td><td>Install</td><td>2</td></row>
-		<row><td>OFFICE2003</td><td>2</td><td>SOFTWARE\Microsoft\Office\11.0\Common\InstallRoot</td><td>Path</td><td>2</td></row>
 	</table>
 
 	<table name="Registry">
@@ -4470,9 +4493,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>FileKey1</td><td>T_Manager.exe</td><td/><td>tamngu_1_tamnguyen</td><td>2</td></row>
-		<row><td>FileKey2</td><td>T_Manager.exe</td><td/><td>xangda_1_xang_dau_nhat_linh</td><td>2</td></row>
-		<row><td>T_Manager.exe</td><td>T_Manager.exe</td><td/><td>xangda_1_xang_dau_nhat_linh</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4558,8 +4578,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>T_Manager.exe</td><td>xangda_1_xang_dau_nhat_linh</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>T_Manager.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>T_Manager.exe_E853603FD8554BE395BE49DD35734F07.exe</td><td>1</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>T_Manager.exe1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>T_Manager.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>T_Manager.exe1_41C8F2F97753424C9292E4D42E007482.exe</td><td>1</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

@@ -113,6 +113,7 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DỮ LIỆU CẦN SỬA";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // radioButtonCHIKHAC
             // 
@@ -262,6 +263,7 @@
             this.dateTimePickerDATE.Name = "dateTimePickerDATE";
             this.dateTimePickerDATE.Size = new System.Drawing.Size(179, 26);
             this.dateTimePickerDATE.TabIndex = 0;
+            this.dateTimePickerDATE.ValueChanged += new System.EventHandler(this.dateTimePickerDATE_ValueChanged);
             // 
             // dataGridView1
             // 

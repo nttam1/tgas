@@ -21,6 +21,12 @@ namespace T_Manager
 
         private void FTonKho_Load(object sender, EventArgs e)
         {
+            if (MKho.Get(MKho.KHO_HANG).Count() == 0 || MHangHoa.Get().Count() == 0)
+            {
+                MessageBox.Show("CẦN TẠO KHO, HÀNG HÓA TRƯỚC KHI NHẬP");
+                this.Close();
+                return;
+            }
             Reload();
         }
 
@@ -68,7 +74,8 @@ namespace T_Manager
             {
                 db.SaveChanges();
                 MessageBox.Show("ĐÃ NHẬP TỒN KHO");
-                Reload();
+                this.Close();
+                return;
             }
             else
             {

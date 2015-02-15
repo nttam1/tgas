@@ -43,8 +43,6 @@ namespace T_Manager
             comboBoxNBXANGDAU.DisplayMember = "NAME";
             comboBoxNBXANGDAU.ValueMember = "ID";
 
-            var nv_id = Int32.Parse(comboBoxNHANVIEN.SelectedValue.ToString());
-            var kho_id = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
             comboBoxKHO_SelectedIndexChanged(sender, e);
             comboBoxNHANVIEN_SelectedIndexChanged(sender, e);
 
@@ -88,20 +86,27 @@ namespace T_Manager
                 else
                 {
                     DateTime now = DateTime.Now;
-                    bs_nv.Add(new CHI_LUONG()
+                    try
                     {
-                        MAKHO = Int32.Parse(comboBoxKHO.SelectedValue.ToString()),
-                        MANV = Int32.Parse(comboBoxNHANVIEN.SelectedValue.ToString()),
-                        LUONG_THANG = Int32.Parse(dateTimePickerTHANG.Value.Month.ToString()),
-                        NGAY_CHI = dateTimePickerdATE.Value.Date,
-                        CREATED_AT = now,
-                        TONG_TIEN = Int32.Parse(textBoxTONGTIEN.Text),
-                    });
-                    bs_nv.EndEdit();
-                    bs_nv.ResetBindings(false);
-                    dbContext.SaveChanges();
-                    textBoxTONGTIEN.Text = "0";
-                    comboBoxNHANVIEN.Select();
+                        bs_nv.Add(new CHI_LUONG()
+                        {
+                            MAKHO = Int32.Parse(comboBoxKHO.SelectedValue.ToString()),
+                            MANV = Int32.Parse(comboBoxNHANVIEN.SelectedValue.ToString()),
+                            LUONG_THANG = Int32.Parse(dateTimePickerTHANG.Value.Month.ToString()),
+                            NGAY_CHI = dateTimePickerdATE.Value.Date,
+                            CREATED_AT = now,
+                            TONG_TIEN = Int32.Parse(textBoxTONGTIEN.Text),
+                        });
+                        bs_nv.EndEdit();
+                        bs_nv.ResetBindings(false);
+                        dbContext.SaveChanges();
+                        textBoxTONGTIEN.Text = "0";
+                        comboBoxNHANVIEN.Select();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Chưa có KHO hoặc NHÂN VIÊN");
+                    }
                 }
             }
             else
@@ -167,10 +172,22 @@ namespace T_Manager
             }
             else
             {
-                var dongia = Int32.Parse(textBoxNBDONGIABAN.Text);
-                var soluong = Int32.Parse(textBoxNBSOLUONG.Text);
-                string ndchi = textBoxNBNOIDUNGCHI.Text;
-                long tongtien = long.Parse(textBoxNBCHIXEE.Text);
+                Int32 dongia;
+                Int32 soluong;
+                string ndchi;
+                long tongtien;
+                try
+                {
+                    dongia = Int32.Parse(textBoxNBDONGIABAN.Text);
+                    soluong = Int32.Parse(textBoxNBSOLUONG.Text);
+                    ndchi = textBoxNBNOIDUNGCHI.Text;
+                    tongtien = long.Parse(textBoxNBCHIXEE.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("DỮ LIỆU NHẬP VÀO PHẢI LÀ SỐ");
+                    return;
+                }
                 if (radioButtonXANGDAU.Checked == true)
                 {
                     if (dongia == 0 || soluong == 0)
@@ -178,21 +195,29 @@ namespace T_Manager
                         MessageBox.Show("Chưa nhập đơn giá hoặc số lượng");
                         return;
                     }
-                    var xe = Int32.Parse(comboBoxNBXE.SelectedValue.ToString());
-                    var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
-                    var hh = Int32.Parse(comboBoxNBXANGDAU.SelectedValue.ToString());
-                    dbContext.AddToCHI_TIEU_DUNG_NOI_BO(new CHI_TIEU_DUNG_NOI_BO()
+                    try
                     {
-                        MAKHO = kho,
-                        MAXE = xe,
-                        MAHH = hh,
-                        SO_LUONG = soluong,
-                        DON_GIA_BAN = dongia,
-                        NGAY_CHI = dateTimePickerdATE.Value.Date,
-                        CREATED_AT = DateTime.Now,
-                        TONG_TIEN = soluong * dongia,
-                        NOI_DUNG = ""
-                    });
+                        var xe = Int32.Parse(comboBoxNBXE.SelectedValue.ToString());
+                        var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
+                        var hh = Int32.Parse(comboBoxNBXANGDAU.SelectedValue.ToString());
+                        dbContext.AddToCHI_TIEU_DUNG_NOI_BO(new CHI_TIEU_DUNG_NOI_BO()
+                        {
+                            MAKHO = kho,
+                            MAXE = xe,
+                            MAHH = hh,
+                            SO_LUONG = soluong,
+                            DON_GIA_BAN = dongia,
+                            NGAY_CHI = dateTimePickerdATE.Value.Date,
+                            CREATED_AT = DateTime.Now,
+                            TONG_TIEN = soluong * dongia,
+                            NOI_DUNG = ""
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Chưa có KHO hoặc XE");
+                        return;
+                    }
                 }
                 if (radioButtonGUITIENXE.Checked == true)
                 {
@@ -201,21 +226,29 @@ namespace T_Manager
                         MessageBox.Show("Nội dung chi và tiền chi không được để trống");
                         return;
                     }
-                    var xe = Int32.Parse(comboBoxNBXE.SelectedValue.ToString());
-                    var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
-                    var hh = Int32.Parse(comboBoxNBXANGDAU.SelectedValue.ToString());
-                    dbContext.AddToCHI_TIEU_DUNG_NOI_BO(new CHI_TIEU_DUNG_NOI_BO()
+                    try
                     {
-                        MAKHO = kho,
-                        MAXE = xe,
-                        MAHH = -1,
-                        SO_LUONG = 0,
-                        DON_GIA_BAN = 0,
-                        NGAY_CHI = dateTimePickerdATE.Value.Date,
-                        CREATED_AT = DateTime.Now,
-                        TONG_TIEN = tongtien,
-                        NOI_DUNG = ndchi
-                    });
+                        var xe = Int32.Parse(comboBoxNBXE.SelectedValue.ToString());
+                        var kho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
+                        var hh = Int32.Parse(comboBoxNBXANGDAU.SelectedValue.ToString());
+                        dbContext.AddToCHI_TIEU_DUNG_NOI_BO(new CHI_TIEU_DUNG_NOI_BO()
+                        {
+                            MAKHO = kho,
+                            MAXE = xe,
+                            MAHH = -1,
+                            SO_LUONG = 0,
+                            DON_GIA_BAN = 0,
+                            NGAY_CHI = dateTimePickerdATE.Value.Date,
+                            CREATED_AT = DateTime.Now,
+                            TONG_TIEN = tongtien,
+                            NOI_DUNG = ndchi
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Chưa có KHO hoặc XE");
+                        return;
+                    }
                 }
                 dbContext.SaveChanges();
                 comboBoxNBXE_SelectedIndexChanged(sender, e);

@@ -22,19 +22,21 @@ namespace T_Manager
 
         private void radioButtonVAY_CheckedChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = bs;
             if (radioButtonVAY.Checked == true)
             {
                 DateTime now = dateTimePickerDATE.Value.Date;
                 bs.DataSource = db.VAYs.Where(u => u.NGAY_VAY == now);
                 dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[1].Visible = false;
+                dataGridView1.Columns[1].HeaderText = "Mã Nguồn vay";
                 dataGridView1.Columns[2].HeaderText = "Tổng tiền";
                 dataGridView1.Columns[3].HeaderText = "Lãi suất";
                 dataGridView1.Columns[4].HeaderText = "Kì hạn";
                 dataGridView1.Columns[5].HeaderText = "Ngày vay";
                 dataGridView1.Columns[6].Visible = false;
                 dataGridView1.Columns[7].Visible = false;
-                dataGridView1.Columns[8].Visible = false;
+                dataGridView1.Columns[8].HeaderText = "Mã KHO";
             }
         }
 
@@ -55,7 +57,10 @@ namespace T_Manager
             dataGridView1.DataSource = bs;
             comboBoxDULIEU_SelectedIndexChanged(sender, e);
             radioButtonVAY_CheckedChanged(sender, e);
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
 
         private void buttonSAVE_Click(object sender, EventArgs e)
         {
@@ -174,47 +179,58 @@ namespace T_Manager
 
         private void radioButtonCHOVAY_CheckedChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = bs; 
             if (radioButtonCHOVAY.Checked == true)
             {
                 DateTime now = dateTimePickerDATE.Value.Date;
-                bs.DataSource = db.CHO_VAY.Where(u => u.NGAY_CHO_VAY == now);
+                bs.DataSource = db.XUAT_HANG.Where(u => u.NGAY_XUAT == now && u.MAHH == MXuatHang.MAHH_CHO_VAY);
                 dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[1].Visible = false;
+                dataGridView1.Columns[1].HeaderText = "MÃ KHO";
                 dataGridView1.Columns[2].Visible = false;
-                dataGridView1.Columns[6].Visible = false;
-                dataGridView1.Columns[7].Visible = false;
-                dataGridView1.Columns[3].HeaderText = "Tổng tiền";
-                dataGridView1.Columns[4].HeaderText = "Lãi suất";
-                dataGridView1.Columns[5].HeaderText = "Ngày cho vay";
+                dataGridView1.Columns[3].HeaderText = "MÃ KHÁCH HÀNG";
+                dataGridView1.Columns[4].Visible = false;
+                dataGridView1.Columns[5].Visible = false;
+                dataGridView1.Columns[6].HeaderText = "TỔNG TIỀN";
+                dataGridView1.Columns[7].HeaderText = "LÃI SUẤT";
+                dataGridView1.Columns[8].Visible = false;
+                dataGridView1.Columns[9].Visible = false;
+                dataGridView1.Columns[10].HeaderText = "NGÀY CHO VAY";
+                dataGridView1.Columns[11].Visible = false;
+                dataGridView1.Columns[12].Visible = false;
             }
         }
 
         private void radioButtonNHAPHANG_CheckedChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = bs;
             if (radioButtonNHAPHANG.Checked == true)
             {
                 DateTime now = dateTimePickerDATE.Value.Date;
-                bs.DataSource = db.NHAP_HANG.Where(u => u.NGAY_NHAP == now && u.SL_CON_LAI > 0);
+                bs.DataSource = db.NHAP_HANG.Where(u => u.NGAY_NHAP == now && u.SL_CON_LAI > 0 && u.MANCC != -1);
                 dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[1].Visible = false;
-                dataGridView1.Columns[2].Visible = false;
-                dataGridView1.Columns[3].Visible = false;
-                dataGridView1.Columns[8].Visible = false;
+                dataGridView1.Columns[1].HeaderText = "MÃ KHO";
+                dataGridView1.Columns[2].HeaderText = "MÃ NHÀ CUNG CẤP";
+                dataGridView1.Columns[3].HeaderText = "MÃ HÀNG HÓA";
                 dataGridView1.Columns[4].HeaderText = "SỐ LƯỢNG";
                 dataGridView1.Columns[5].Visible = false;
-                dataGridView1.Columns[6].HeaderText = "ĐƠN GIÁ";
-                dataGridView1.Columns[7].Visible = false;
+                dataGridView1.Columns[6].HeaderText = "ĐƠN GIÁ MUA";
+                dataGridView1.Columns[7].HeaderText = "NGÀY NHẬP";
+                dataGridView1.Columns[8].Visible = false;
             }
         }
 
         private void radioButtonCHUYENTIEN_CheckedChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = bs;
             if (radioButtonCHUYENTIEN.Checked == true)
             {
                 DateTime now = dateTimePickerDATE.Value.Date;
                 bs.DataSource = db.CHUYEN_TIEN.Where(u => u.NGAY_CHUYEN == now);
                 dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[1].HeaderText = "TÀI KHOẢN";
+                dataGridView1.Columns[1].HeaderText = "MÃ TÀI KHOẢN";
                 dataGridView1.Columns[2].HeaderText = "TỔNG TIỀN";
                 dataGridView1.Columns[3].HeaderText = "NGÀY CHUYỂN";
                 dataGridView1.Columns[4].Visible = false;
@@ -223,12 +239,14 @@ namespace T_Manager
 
         private void radioButtonTRANOVAY_CheckedChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = bs;
             if (radioButtonTRANOVAY.Checked == true)
             {
                 DateTime now = dateTimePickerDATE.Value.Date;
                 bs.DataSource = db.TRA_NO_VAY.Where(u => u.NGAY_TRA == now);
                 dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[1].HeaderText = "NGUỒN VAY";
+                dataGridView1.Columns[1].HeaderText = "MÃ NGUỒN VAY";
                 dataGridView1.Columns[2].HeaderText = "MÃ KHO";
                 dataGridView1.Columns[3].HeaderText = "TIỀN GỐC";
                 dataGridView1.Columns[4].HeaderText = "TIỀN LÃI";
@@ -240,12 +258,14 @@ namespace T_Manager
 
         private void radioButtonTRANONCC_CheckedChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = bs;
             if (radioButtonTRANONCC.Checked == true)
             {
                 DateTime now = dateTimePickerDATE.Value.Date;
                 bs.DataSource = db.TRA_NO_NCC.Where(u => u.NGAY_TRA == now);
                 dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[1].HeaderText = "NHÀ CUNG CẤP";
+                dataGridView1.Columns[1].HeaderText = "MÃ NHÀ CUNG CẤP";
                 dataGridView1.Columns[2].HeaderText = "TỔNG TIỀN";
                 dataGridView1.Columns[3].HeaderText = "NGÀY TRẢ";
                 dataGridView1.Columns[4].HeaderText = "MÃ KHO";
@@ -255,6 +275,8 @@ namespace T_Manager
 
         private void radioButtonCHILUONG_CheckedChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = bs;
             if (radioButtonCHILUONG.Checked == true)
             {
                 DateTime now = dateTimePickerDATE.Value.Date;
@@ -271,6 +293,8 @@ namespace T_Manager
 
         private void radioButtonCHINOIBO_CheckedChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = bs;
             if (radioButtonCHINOIBO.Checked == true)
             {
                 DateTime now = dateTimePickerDATE.Value.Date;
@@ -283,11 +307,15 @@ namespace T_Manager
                 dataGridView1.Columns[5].HeaderText = "ĐƠN GIÁ";
                 dataGridView1.Columns[6].Visible = false;
                 dataGridView1.Columns[7].HeaderText = "NGÀY CHI";
+                dataGridView1.Columns[8].HeaderText = "NỘI DUNG";
+                dataGridView1.Columns[9].HeaderText = "TỔNG TIỀN";
             }
         }
 
         private void radioButtonCHIKHAC_CheckedChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = bs;
             if (radioButtonCHIKHAC.Checked == true)
             {
                 DateTime now = dateTimePickerDATE.Value.Date;
@@ -299,6 +327,24 @@ namespace T_Manager
                 dataGridView1.Columns[4].Visible = false;
                 dataGridView1.Columns[5].HeaderText = "NGÀY CHI";
             }
+        }
+
+        private void dateTimePickerDATE_ValueChanged(object sender, EventArgs e)
+        {
+            radioButtonCHILUONG_CheckedChanged(sender, e);
+            radioButtonCHIKHAC_CheckedChanged(sender, e);
+            radioButtonCHINOIBO_CheckedChanged(sender, e);
+            radioButtonCHUYENTIEN_CheckedChanged(sender, e);
+            radioButtonNHAPHANG_CheckedChanged(sender, e);
+            radioButtonTRANONCC_CheckedChanged(sender, e);
+            radioButtonTRANOVAY_CheckedChanged(sender, e);
+            radioButtonVAY_CheckedChanged(sender, e);
+            radioButtonCHOVAY_CheckedChanged(sender, e);
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

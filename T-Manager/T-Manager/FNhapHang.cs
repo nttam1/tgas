@@ -24,6 +24,13 @@ namespace T_Manager
 
         private void NhapHang_Load(object sender, EventArgs e)
         {
+            if (MKho.Get(MKho.KHO_HANG).Count() == 0 || MHangHoa.Get().Count() == 0 || MNcc.Get().Count() == 0)
+            {
+                MessageBox.Show("CẦN TẠO KHO, HÀNG HÓA VÀ NHÀ CUNG CẤP TRƯỚC KHI NHẬP HÀNG");
+                this.Close();
+                return;
+            }
+
             var i2nKHO = new Id2Name(textBoxMAKHO, comboBoxKho);
             var i2nKH = new Id2Name(textBoxNCC, comboBoxNCC);
             var i2nHH = new Id2Name(textBoxHANGHOA, comboBoxHANGHOA);

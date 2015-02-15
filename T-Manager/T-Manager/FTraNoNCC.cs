@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using T_Manager.Modal;
 
 namespace T_Manager
 {
@@ -20,6 +21,12 @@ namespace T_Manager
 
         private void FTraNoNCC_Load(object sender, EventArgs e)
         {
+            if (MKho.Get(MKho.KHO_HANG).Count() == 0 || MNcc.Get().Count() == 0)
+            {
+                MessageBox.Show("CẦN TẠO KHO VÀ NHÀ CUNG CẤP TRƯỚC");
+                this.Close();
+                return;
+            }
             comboBoxKHO.DataSource = DataInstance.Instance().DBContext().KHOes.Where(u => u.TYPE <= 1).OrderBy(u => u.NAME);
             comboBoxKHO.DisplayMember = "NAME";
             comboBoxKHO.ValueMember = "ID";
@@ -43,7 +50,6 @@ namespace T_Manager
         }
         private void c_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = (!char.IsDigit(e.KeyChar)) && (!char.IsControl(e.KeyChar));
         }
 
         private void comboBoxNCC_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,6 +87,11 @@ namespace T_Manager
                 var ncc = Convert.ToInt32(comboBoxNCC.SelectedValue.ToString());
                 var tien = Int32.Parse(textBoxTONGTIEN.Text);
                 var ngay = dateTimePicker1.Value.Date;
+                if (tien == 0)
+                {
+                    MessageBox.Show("TIỀN TRẢ KHÔNG ĐƯỢC BẰNG 0");
+                    return;
+                }
                 bs.Add(new TRA_NO_NCC()
                 {
                     MANCC = ncc,

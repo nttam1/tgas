@@ -21,7 +21,12 @@ namespace T_Manager
         private long _GOC = 0;
         private void FThuNo_Load(object sender, EventArgs e)
         {
-
+            if (MKho.Get(MKho.KHO_HANG).Count() == 0)
+            {
+                MessageBox.Show("CẦN TẠO KHO TRƯỚC");
+                this.Close();
+                return;
+            }
             var i2nKHO = new Id2Name(textBoxMAKHO, comboBoxKHO);
             var i2nKH = new Id2Name(textBoxKHACHHANG, comboBoxKHACHHANG);
             comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);

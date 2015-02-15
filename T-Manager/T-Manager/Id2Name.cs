@@ -53,29 +53,36 @@ namespace T_Manager
 
         private void cb_SelectedValueChanged(object sender, EventArgs e)
         {
-            var ob = cb.SelectedItem;
-            if (ob.GetType().Name == "KHO")
+            try
             {
-                KHO _e = (KHO)cb.SelectedItem;
-                txt.Text = _e.ID.ToString();
+                var ob = cb.SelectedItem;
+                if (ob.GetType().Name == "KHO")
+                {
+                    KHO _e = (KHO)cb.SelectedItem;
+                    txt.Text = _e.ID.ToString();
+                }
+                if (ob.GetType().Name == "NHA_CUNG_CAP")
+                {
+                    NHA_CUNG_CAP _e = (NHA_CUNG_CAP)cb.SelectedItem;
+                    txt.Text = _e.ID.ToString();
+                }
+                if (ob.GetType().Name == "KHACH_HANG")
+                {
+                    KHACH_HANG _e = (KHACH_HANG)cb.SelectedItem;
+                    txt.Text = _e.ID.ToString();
+                }
+                if (ob.GetType().Name == "HANG_HOA")
+                {
+                    HANG_HOA _e = (HANG_HOA)cb.SelectedItem;
+                    txt.Text = _e.ID.ToString();
+                }
+                txt.Select();
+                txt.SelectAll();
             }
-            if (ob.GetType().Name == "NHA_CUNG_CAP")
+            catch (Exception ex)
             {
-                NHA_CUNG_CAP _e = (NHA_CUNG_CAP)cb.SelectedItem;
-                txt.Text = _e.ID.ToString();
+
             }
-            if (ob.GetType().Name == "KHACH_HANG")
-            {
-                KHACH_HANG _e = (KHACH_HANG)cb.SelectedItem;
-                txt.Text = _e.ID.ToString();
-            }
-            if (ob.GetType().Name == "HANG_HOA")
-            {
-                HANG_HOA _e = (HANG_HOA)cb.SelectedItem;
-                txt.Text = _e.ID.ToString();
-            }
-            txt.Select();
-            txt.SelectAll();
         }
     }
 }
