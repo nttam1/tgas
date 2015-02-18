@@ -34,6 +34,7 @@ namespace T_Manager
             {
                 var makho = long.Parse(comboBoxKHO.SelectedValue.ToString());
                 bs.DataSource = dbContext.NHAN_VIEN.Where(u => u.MAKHO == makho);
+                bs.ResetBindings(false);
                 listBoxNHANVIEN.DataSource = bs;
                 listBoxNHANVIEN.DisplayMember = "NAME";
                 listBoxNHANVIEN.ValueMember = "ID";
@@ -52,10 +53,9 @@ namespace T_Manager
                 return;
             }
             var makho = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
-            bs.Add(new NHAN_VIEN() { NAME = textBoxNHANVIEN.Text, MAKHO = makho});
-            bs.EndEdit();
-            bs.ResetBindings(false);
-            dbContext.SaveChanges(false);
+            dbContext.NHAN_VIEN.AddObject(new NHAN_VIEN() { NAME = textBoxNHANVIEN.Text, MAKHO = makho });
+            dbContext.SaveChanges(System.Data.Objects.SaveOptions.AcceptAllChangesAfterSave);
+            comboBoxKHO_SelectedIndexChanged(sender, e);
             textBoxNHANVIEN.Text = "";
             textBoxNHANVIEN.Select();
         }
