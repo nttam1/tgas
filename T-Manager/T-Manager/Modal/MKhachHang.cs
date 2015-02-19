@@ -96,7 +96,7 @@ namespace T_Manager.Modal
         /// </summary>
         /// <param name="include_THUNO"></param>
         /// <returns></returns>
-        public double LaiHHHienTai(bool include_THUNO = true)
+        public double LaiHHHienTai(DateTime date = new DateTime(), bool include_THUNO = true)
         {
             double value = 0;
             IQueryable<XUAT_HANG> _rows;
@@ -125,7 +125,7 @@ namespace T_Manager.Modal
                         _ngay_no = tn.NGAY_TRA;
                         _tong_tien_hien_tai -= tn.TIEN_GOC;
                     }
-                    value += Utility.Lai(_ngay_no, row.LAI_SUAT, _tong_tien_hien_tai);
+                    value += Utility.Lai(_ngay_no, date, row.LAI_SUAT, _tong_tien_hien_tai);
 
                 }
 
@@ -142,7 +142,7 @@ namespace T_Manager.Modal
                 double _tong_lai_no = 0;
                 foreach (XUAT_HANG row in _xh)
                 {
-                    _tong_lai_no += Utility.Lai(row.NGAY_XUAT.Value, row.LAI_SUAT, row.THANH_TIEN - row.TRA_TRUOC);
+                    _tong_lai_no += Utility.Lai(row.NGAY_XUAT.Value, date, row.LAI_SUAT, row.THANH_TIEN - row.TRA_TRUOC);
                 }
                 value = _tong_lai_no;
             }

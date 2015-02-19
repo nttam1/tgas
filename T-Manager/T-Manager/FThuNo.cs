@@ -63,7 +63,7 @@ namespace T_Manager
                 MKhachHang mKH = new MKhachHang(kh);
                 try
                 {
-                    _LAI = (long)mKH.LaiHHHienTai();
+                    _LAI = (long)mKH.LaiHHHienTai(dateTimePickerDATE.Value);
                     _GOC = (long)mKH.NoHHHienTai();
                     TONGNO_LB.Text = Utility.StringToVND(_GOC.ToString());
                     TONGLAI_LB.Text = Utility.StringToVND(_LAI.ToString());
@@ -233,6 +233,31 @@ namespace T_Manager
             if (e.KeyChar == (char)13)
             {
                 button1_Click(sender, e);
+            }
+        }
+
+        private void dateTimePickerDATE_ValueChanged(object sender, EventArgs e)
+        {
+            Int32 kh = -1;
+            try
+            {
+                kh = Int32.Parse(comboBoxKHACHHANG.SelectedValue.ToString());
+                MKhachHang mKH = new MKhachHang(kh);
+                try
+                {
+                    _LAI = (long)mKH.LaiHHHienTai(dateTimePickerDATE.Value);
+                    TONGLAI_LB.Text = Utility.StringToVND(_LAI.ToString());
+                }
+                catch (Exception ex)
+                {
+                    _LAI = 0;
+                    _GOC = 0;
+                    TONGNO_LB.Text = "0 VND";
+                    TONGLAI_LB.Text = "0 VND";
+                }
+            }
+            catch (Exception ex)
+            {
             }
         }
     }
