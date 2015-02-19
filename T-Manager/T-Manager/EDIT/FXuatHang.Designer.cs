@@ -32,6 +32,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.listBoxKHACHHANG = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxKHO = new System.Windows.Forms.TextBox();
+            this.textBoxHH = new System.Windows.Forms.TextBox();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.textBoxKHACHHANG = new System.Windows.Forms.TextBox();
             this.dateTimePickerNGAYXUAT = new System.Windows.Forms.DateTimePicker();
@@ -48,8 +50,6 @@
             this.textBoxLAISUAT = new System.Windows.Forms.TextBox();
             this.textBoxDONGIA = new System.Windows.Forms.TextBox();
             this.textBoxSOLUONG = new System.Windows.Forms.TextBox();
-            this.comboBoxHANGHOA = new System.Windows.Forms.ComboBox();
-            this.comboBoxKHO = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerDATE = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -92,6 +92,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBoxKHO);
+            this.groupBox2.Controls.Add(this.textBoxHH);
             this.groupBox2.Controls.Add(this.textBoxID);
             this.groupBox2.Controls.Add(this.textBoxKHACHHANG);
             this.groupBox2.Controls.Add(this.dateTimePickerNGAYXUAT);
@@ -108,14 +110,27 @@
             this.groupBox2.Controls.Add(this.textBoxLAISUAT);
             this.groupBox2.Controls.Add(this.textBoxDONGIA);
             this.groupBox2.Controls.Add(this.textBoxSOLUONG);
-            this.groupBox2.Controls.Add(this.comboBoxHANGHOA);
-            this.groupBox2.Controls.Add(this.comboBoxKHO);
             this.groupBox2.Location = new System.Drawing.Point(493, 9);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(558, 138);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CHI TIẾT";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // textBoxKHO
+            // 
+            this.textBoxKHO.Location = new System.Drawing.Point(92, 19);
+            this.textBoxKHO.Name = "textBoxKHO";
+            this.textBoxKHO.Size = new System.Drawing.Size(121, 20);
+            this.textBoxKHO.TabIndex = 20;
+            // 
+            // textBoxHH
+            // 
+            this.textBoxHH.Location = new System.Drawing.Point(92, 46);
+            this.textBoxHH.Name = "textBoxHH";
+            this.textBoxHH.Size = new System.Drawing.Size(121, 20);
+            this.textBoxHH.TabIndex = 19;
             // 
             // textBoxID
             // 
@@ -134,6 +149,7 @@
             // 
             // dateTimePickerNGAYXUAT
             // 
+            this.dateTimePickerNGAYXUAT.Enabled = false;
             this.dateTimePickerNGAYXUAT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerNGAYXUAT.Location = new System.Drawing.Point(92, 99);
             this.dateTimePickerNGAYXUAT.Name = "dateTimePickerNGAYXUAT";
@@ -224,7 +240,6 @@
             // 
             // textBoxTRATRUOC
             // 
-            this.textBoxTRATRUOC.Enabled = false;
             this.textBoxTRATRUOC.Location = new System.Drawing.Point(310, 74);
             this.textBoxTRATRUOC.Name = "textBoxTRATRUOC";
             this.textBoxTRATRUOC.Size = new System.Drawing.Size(121, 20);
@@ -239,7 +254,6 @@
             // 
             // textBoxDONGIA
             // 
-            this.textBoxDONGIA.Enabled = false;
             this.textBoxDONGIA.Location = new System.Drawing.Point(310, 20);
             this.textBoxDONGIA.Name = "textBoxDONGIA";
             this.textBoxDONGIA.Size = new System.Drawing.Size(121, 20);
@@ -247,29 +261,10 @@
             // 
             // textBoxSOLUONG
             // 
-            this.textBoxSOLUONG.Enabled = false;
             this.textBoxSOLUONG.Location = new System.Drawing.Point(310, 102);
             this.textBoxSOLUONG.Name = "textBoxSOLUONG";
             this.textBoxSOLUONG.Size = new System.Drawing.Size(121, 20);
             this.textBoxSOLUONG.TabIndex = 3;
-            // 
-            // comboBoxHANGHOA
-            // 
-            this.comboBoxHANGHOA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxHANGHOA.FormattingEnabled = true;
-            this.comboBoxHANGHOA.Location = new System.Drawing.Point(92, 46);
-            this.comboBoxHANGHOA.Name = "comboBoxHANGHOA";
-            this.comboBoxHANGHOA.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxHANGHOA.TabIndex = 1;
-            // 
-            // comboBoxKHO
-            // 
-            this.comboBoxKHO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKHO.FormattingEnabled = true;
-            this.comboBoxKHO.Location = new System.Drawing.Point(92, 19);
-            this.comboBoxKHO.Name = "comboBoxKHO";
-            this.comboBoxKHO.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxKHO.TabIndex = 0;
             // 
             // label1
             // 
@@ -283,6 +278,7 @@
             // 
             // dateTimePickerDATE
             // 
+            this.dateTimePickerDATE.Enabled = false;
             this.dateTimePickerDATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDATE.Location = new System.Drawing.Point(12, 79);
@@ -341,8 +337,6 @@
         private System.Windows.Forms.TextBox textBoxLAISUAT;
         private System.Windows.Forms.TextBox textBoxDONGIA;
         private System.Windows.Forms.TextBox textBoxSOLUONG;
-        private System.Windows.Forms.ComboBox comboBoxHANGHOA;
-        private System.Windows.Forms.ComboBox comboBoxKHO;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
@@ -356,5 +350,7 @@
         private System.Windows.Forms.ListBox listBoxKHACHHANG;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.TextBox textBoxKHO;
+        private System.Windows.Forms.TextBox textBoxHH;
     }
 }

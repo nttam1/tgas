@@ -109,24 +109,20 @@ namespace T_Manager.EDIT
             // CẬP NHẬT DỮ LIỆU
             long ID = long.Parse(textBoxID.Text);
             long loaino = -1;
-            var R = db.THU_NO.Where(u => u.ID == ID);
+            var R = db.THU_NO.Where(u => u.ID == ID).First();
 
             long kho = ((KHO)comboBoxKHO.SelectedItem).ID;
             long kh = ((KHACH_HANG)comboBoxKHACHHANG.SelectedItem).ID;
             long tg = long.Parse(textBoxTIENGOC.Text);
             long tl = long.Parse(textBoxTIENLAI.Text);
             DateTime nt = dateTimePickerNGAYXUAT.Value.Date;
-            foreach (THU_NO r in R)
-            {
-                r.MAKHO = kho;
-                r.MAKH = kh;
-                r.TIEN_LAI = r.TIEN_LAI;
-                r.TIEN_GOC = r.TIEN_GOC;
-                r.NGAY_TRA = nt;
-                loaino = r.LOAI_NO;
-            }
+                R.MAKHO = kho;
+                R.MAKH = kh;
+                R.TIEN_LAI = tl;
+                R.TIEN_GOC = tg;
+                R.NGAY_TRA = nt;
+                loaino = R.LOAI_NO;
             db.SaveChanges();
-            /**
             // XÓA TOÀN BỘ CHI TIẾT THU NƠ
             if (loaino == MThuNo.NO_VAY)
             {
@@ -158,7 +154,6 @@ namespace T_Manager.EDIT
             {
                 MThuNo.Update(tn);
             }
-             * */
             MessageBox.Show("Cập nhật xong");
             dateTimePickerDATE_ValueChanged(sender, e);
         }
