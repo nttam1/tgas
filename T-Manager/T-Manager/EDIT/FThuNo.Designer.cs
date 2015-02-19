@@ -60,6 +60,7 @@
             // 
             // dateTimePickerNGAYXUAT
             // 
+            this.dateTimePickerNGAYXUAT.Enabled = false;
             this.dateTimePickerNGAYXUAT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerNGAYXUAT.Location = new System.Drawing.Point(224, 72);
             this.dateTimePickerNGAYXUAT.Name = "dateTimePickerNGAYXUAT";
@@ -158,7 +159,6 @@
             // 
             // textBoxTIENLAI
             // 
-            this.textBoxTIENLAI.Enabled = false;
             this.textBoxTIENLAI.Location = new System.Drawing.Point(310, 46);
             this.textBoxTIENLAI.Name = "textBoxTIENLAI";
             this.textBoxTIENLAI.Size = new System.Drawing.Size(121, 20);
@@ -166,7 +166,6 @@
             // 
             // textBoxTIENGOC
             // 
-            this.textBoxTIENGOC.Enabled = false;
             this.textBoxTIENGOC.Location = new System.Drawing.Point(310, 20);
             this.textBoxTIENGOC.Name = "textBoxTIENGOC";
             this.textBoxTIENGOC.Size = new System.Drawing.Size(121, 20);
@@ -204,6 +203,7 @@
             // 
             // dateTimePickerDATE
             // 
+            this.dateTimePickerDATE.Enabled = false;
             this.dateTimePickerDATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDATE.Location = new System.Drawing.Point(51, 84);

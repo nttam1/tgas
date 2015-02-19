@@ -246,6 +246,7 @@
             this.textBoxMAKHO.Size = new System.Drawing.Size(38, 20);
             this.textBoxMAKHO.TabIndex = 0;
             this.textBoxMAKHO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDONGIA_KeyPress);
+            this.textBoxMAKHO.Leave += new System.EventHandler(this.textBoxMAKHO_Leave);
             // 
             // textBoxNCC
             // 
@@ -254,6 +255,7 @@
             this.textBoxNCC.Size = new System.Drawing.Size(38, 20);
             this.textBoxNCC.TabIndex = 1;
             this.textBoxNCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDONGIA_KeyPress);
+            this.textBoxNCC.Leave += new System.EventHandler(this.textBoxNCC_Leave);
             // 
             // textBoxHANGHOA
             // 
@@ -262,6 +264,7 @@
             this.textBoxHANGHOA.Size = new System.Drawing.Size(38, 20);
             this.textBoxHANGHOA.TabIndex = 2;
             this.textBoxHANGHOA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDONGIA_KeyPress);
+            this.textBoxHANGHOA.Leave += new System.EventHandler(this.textBoxHANGHOA_Leave);
             // 
             // FNhapHang
             // 

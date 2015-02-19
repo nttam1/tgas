@@ -19,6 +19,7 @@ namespace T_Manager.EDIT
 
         BindingSource bs = new BindingSource();
         tgasEntities dbContext = DataInstance.Instance().DBContext();
+        long oldSoluong = 0;
 
         private void dateTimePickerDATE_ValueChanged(object sender, EventArgs e)
         {
@@ -31,8 +32,8 @@ namespace T_Manager.EDIT
                              select new
                              {
                                  ID = xh.ID,
-                                 KHO = kho.NAME,
-                                 HANGHOA = hh.NAME,
+                                 KHO = kho.ID,
+                                 HANGHOA = hh.ID,
                                  KHACHHANG = xh.MAKH, //kh.NAME,
                                  SOLUONG = xh.SO_LUONG,
                                  DONGIA = xh.DON_GIA_BAN,
@@ -59,14 +60,6 @@ namespace T_Manager.EDIT
             dateTimePickerDATE_ValueChanged(sender, e);
 
             groupBox2.Enabled = false;
-
-            comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);
-            comboBoxKHO.DisplayMember = "NAME";
-            comboBoxKHO.ValueMember = "ID";
-
-            comboBoxHANGHOA.DataSource = dbContext.HANG_HOA.OrderBy(u => u.NAME);
-            comboBoxHANGHOA.DisplayMember = "NAME";
-            comboBoxHANGHOA.ValueMember = "ID";
 
             var lst = dbContext.KHACH_HANG.OrderBy(u => u.ID);
             List<object> ls = new List<object>();
@@ -105,22 +98,11 @@ namespace T_Manager.EDIT
                 textBoxLAISUAT.Text = s.Cells[7].Value.ToString();
                 textBoxTRATRUOC.Text = s.Cells[6].Value.ToString();
                 textBoxKHACHHANG.Text = s.Cells[3].Value.ToString();
+                textBoxKHO.Text = s.Cells[1].Value.ToString();
+                textBoxHH.Text = s.Cells[2].Value.ToString();
                 dateTimePickerNGAYXUAT.Value = (DateTime)s.Cells[8].Value;
-                foreach (HANG_HOA row in comboBoxHANGHOA.Items)
-                {
-                    if (row.NAME == s.Cells[2].Value.ToString())
-                    {
-                        comboBoxHANGHOA.SelectedIndex = comboBoxHANGHOA.Items.IndexOf(row);
-                    }
-                }
-                foreach (KHO row in comboBoxKHO.Items)
-                {
-                    if (row.NAME == s.Cells[1].Value.ToString())
-                    {
-                        comboBoxKHO.SelectedIndex = comboBoxKHO.Items.IndexOf(row);
-                    }
-                }
                 textBoxID.Text = s.Cells[0].Value.ToString();
+                oldSoluong = long.Parse(textBoxSOLUONG.Text);
             }
             catch (Exception ex)
             {
@@ -132,12 +114,12 @@ namespace T_Manager.EDIT
         {
             long ID = long.Parse(textBoxID.Text);
             var R = dbContext.XUAT_HANG.Where(u => u.ID == ID);
-            long kho = ((KHO)comboBoxKHO.SelectedItem).ID;
-            long hh = ((HANG_HOA)comboBoxHANGHOA.SelectedItem).ID;
+            long kho = long.Parse(textBoxKHO.Text);
+            long hh = long.Parse(textBoxHH.Text);
             long kh = long.Parse(textBoxKHACHHANG.Text);
             long sl = long.Parse(textBoxSOLUONG.Text);
             long dg = long.Parse(textBoxDONGIA.Text);
-            long ls = long.Parse(textBoxLAISUAT.Text);
+            double ls = double.Parse(textBoxLAISUAT.Text);
             long trt = long.Parse(textBoxTRATRUOC.Text);
             DateTime nx = dateTimePickerNGAYXUAT.Value.Date;
             try
@@ -149,6 +131,34 @@ namespace T_Manager.EDIT
                 MessageBox.Show("Sai mã khách hàng");
                 return;
             }
+            try
+            {
+                dbContext.HANG_HOA.Where(u => u.ID == hh).First();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sai mã hàng");
+                return;
+            }
+            try
+            {
+                dbContext.KHOes.Where(u => u.ID == kho).First();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sai mã KHO");
+                return;
+            }
+
+            // Kiem tra so luong ton
+            long ton = MKho.Ton(kho, hh);
+            if (sl - oldSoluong > ton)
+            {
+                MessageBox.Show("Số lượng tồn không đủ. Tồn: " + ton.ToString());
+                return;
+            }
+
+
             foreach (XUAT_HANG r in R)
             {
                 r.MAKHO = kho;
@@ -162,7 +172,6 @@ namespace T_Manager.EDIT
             }
             dbContext.SaveChanges();
 
-            /**
             // CẬP NHẬT LẠI TOÀN BỘ NHẬP HÀNG XUẤT HÀNG
             foreach (NHAP_HANG nh in dbContext.NHAP_HANG.Where( u => u.MAKHO == kho && u.MAHH == hh))
             {
@@ -173,9 +182,14 @@ namespace T_Manager.EDIT
                 MXuatHang.Update(xh.SO_LUONG, xh);
             }
             dbContext.SaveChanges();
-            */
+
             MessageBox.Show("ĐÃ CẬP NHẬT");
             dateTimePickerDATE_ValueChanged(sender, e);
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
 
     }
