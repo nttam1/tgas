@@ -24,7 +24,7 @@ namespace T_Manager
             try
             {
                 var ele = new XUAT_HANG();
-                ele.MAKHO = Convert.ToInt32(comboBoxKho.SelectedValue.ToString());
+                ele.MAKHO = Convert.ToInt32(textBoxMAKHO.Text);
                 if (checkBoxBANMAT.Checked == true)
                 {
                     ele.MAKH = MXuatHang.MAKH_XUAT_MAT;
@@ -33,7 +33,7 @@ namespace T_Manager
                 }
                 else
                 {
-                    ele.MAKH = Convert.ToInt32(comboBoxKHACH_HANG.SelectedValue.ToString());
+                    ele.MAKH = Convert.ToInt32(textBoxKHACHHANG.Text);
                     ele.TRA_TRUOC = Convert.ToInt32(textBoxDUATRUOC.Text);
                     ele.LAI_SUAT = Convert.ToDouble(textBoxLAISUAT.Text) / 100;
                 }
@@ -41,13 +41,20 @@ namespace T_Manager
                 ele.CREATED_AT = DateTime.Now;
                 ele.SO_LUONG = Convert.ToInt32(textBoxSOLUONG.Text);
                 ele.DON_GIA_BAN = Convert.ToInt32(textBoxDONGIA.Text);
-                ele.MAHH = Convert.ToInt32(comboBoxHANGHOA.SelectedValue.ToString());
+                ele.MAHH = Convert.ToInt32(textBoxHANGHOA.Text);
                 ele.TRANG_THAI = MXuatHang.CHUA_TRA_XONG;
                 ele.THANH_TIEN = ele.SO_LUONG * ele.DON_GIA_BAN;
+
+                /* Check MAKHO MAHH MAKH */
+                var checkMAKHO = dbContext.KHOes.Where(u => u.ID == ele.MAKHO).First();
+                var checkMAHH = dbContext.HANG_HOA.Where(u => u.ID == ele.MAHH).First();
+                var checkMAKH = dbContext.KHACH_HANG.Where(u => u.ID == ele.MAKH).First();
 
                 if (ele.DON_GIA_BAN < 0 || ele.TRA_TRUOC < 0 || ele.LAI_SUAT < 0)
                 {
                     MessageBox.Show("Đơn giá, trả trước, lãi suất không được nhỏ hơn 0");
+                    textBoxDONGIA.Select();
+                    textBoxDONGIA.SelectAll();
                     return;
 
                 }
@@ -56,8 +63,8 @@ namespace T_Manager
                     if (ele.TRA_TRUOC == 0)
                     {
                         MessageBox.Show("Dữ liệu nhập vào không hợp lệ");
-                        textBoxDUATRUOC.Select();
-                        textBoxDUATRUOC.SelectAll();
+                        textBoxDONGIA.Select();
+                        textBoxDONGIA.SelectAll();
                         return;
                     }
                 }
@@ -72,10 +79,12 @@ namespace T_Manager
                 if (ele.SO_LUONG > lton)
                 {
                     MessageBox.Show("Số lượng bán hàng lớn hơn số lượng tồn.\nCòn tồn: " + lton.ToString(), "Lỗi số lượng!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    comboBoxHANGHOA.Select();
+                    textBoxSOLUONG.Select();
+                    textBoxSOLUONG.SelectAll();
+
                     return;
                 }
-
+                
                 bs.Add(ele);
                 bs.EndEdit();
                 bs.ResetBindings(false);
@@ -99,7 +108,8 @@ namespace T_Manager
                 //MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show("Dữ liệu nhập vào phải là số");
             }
-            comboBoxHANGHOA.Select();
+            textBoxHANGHOA.Select();
+            textBoxHANGHOA.SelectAll();
 
         }
 
@@ -240,8 +250,8 @@ namespace T_Manager
         {
             if (e.KeyChar == (char)13)
             {
-                textBoxDONGIA.Select();
-                textBoxDONGIA.SelectAll();
+                textBoxHANGHOA.Select();
+                textBoxHANGHOA.SelectAll();
             }
         }
 
@@ -266,8 +276,15 @@ namespace T_Manager
         {
             if (e.KeyChar == (char)13)
             {
-                textBoxDUATRUOC.Select();
-                textBoxDUATRUOC.SelectAll();
+                if (checkBoxBANMAT.Checked == true)
+                {
+                    buttonADD_Click(sender, e);
+                }
+                else
+                {
+                    textBoxDUATRUOC.Select();
+                    textBoxDUATRUOC.SelectAll();
+                }
             }
         }
 
@@ -293,6 +310,54 @@ namespace T_Manager
             if (e.KeyChar == (char)13)
             {
                 SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void textBoxMAKHO_Leave(object sender, EventArgs e)
+        {
+            /* Check MAKHO MAHH MAKH */
+            long id = long.Parse(textBoxMAKHO.Text);
+            try
+            {
+                var checkMAKHO = dbContext.KHOes.Where(u => u.ID == id).First();
+            }
+            catch (Exception ex)
+            {
+                textBoxMAKHO.Select();
+                textBoxMAKHO.SelectAll();
+                MessageBox.Show("Mã KHO không tồn tại");
+            }
+        }
+
+        private void textBoxKHACHHANG_Leave(object sender, EventArgs e)
+        {
+            /* Check MAKHO MAHH MAKH */
+            long id = long.Parse(textBoxKHACHHANG.Text);
+            try
+            {
+                var checkMAKHO = dbContext.KHACH_HANG.Where(u => u.ID == id).First();
+            }
+            catch (Exception ex)
+            {
+                textBoxKHACHHANG.Select();
+                textBoxKHACHHANG.SelectAll();
+                MessageBox.Show("Mã KHÁCH HÀNG không tồn tại");
+            }
+        }
+
+        private void textBoxHANGHOA_Leave(object sender, EventArgs e)
+        {
+            /* Check MAKHO MAHH MAKH */
+            long id = long.Parse(textBoxHANGHOA.Text);
+            try
+            {
+                var checkMAKHO = dbContext.HANG_HOA.Where(u => u.ID == id).First();
+            }
+            catch (Exception ex)
+            {
+                textBoxHANGHOA.Select();
+                textBoxHANGHOA.SelectAll();
+                MessageBox.Show("Mã HÀNG HÓA không tồn tại");
             }
         }
     }

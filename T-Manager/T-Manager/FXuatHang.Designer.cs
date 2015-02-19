@@ -85,7 +85,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(89, 160);
+            this.label5.Location = new System.Drawing.Point(324, 163);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 32;
@@ -95,9 +95,9 @@
             // 
             this.comboBoxHANGHOA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxHANGHOA.FormattingEnabled = true;
-            this.comboBoxHANGHOA.Location = new System.Drawing.Point(236, 157);
+            this.comboBoxHANGHOA.Location = new System.Drawing.Point(455, 160);
             this.comboBoxHANGHOA.Name = "comboBoxHANGHOA";
-            this.comboBoxHANGHOA.Size = new System.Drawing.Size(206, 21);
+            this.comboBoxHANGHOA.Size = new System.Drawing.Size(130, 21);
             this.comboBoxHANGHOA.TabIndex = 211;
             this.comboBoxHANGHOA.SelectedIndexChanged += new System.EventHandler(this.comboBoxHANGHOA_SelectedIndexChanged);
             this.comboBoxHANGHOA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxHANGHOA_KeyPress);
@@ -116,7 +116,7 @@
             this.buttonADD.Location = new System.Drawing.Point(367, 234);
             this.buttonADD.Name = "buttonADD";
             this.buttonADD.Size = new System.Drawing.Size(75, 23);
-            this.buttonADD.TabIndex = 27;
+            this.buttonADD.TabIndex = 8;
             this.buttonADD.Text = "NHẬP";
             this.buttonADD.UseVisualStyleBackColor = true;
             this.buttonADD.Click += new System.EventHandler(this.buttonADD_Click);
@@ -124,7 +124,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(91, 204);
+            this.label6.Location = new System.Drawing.Point(18, 166);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 13);
             this.label6.TabIndex = 31;
@@ -133,7 +133,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(480, 68);
+            this.label4.Location = new System.Drawing.Point(614, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 13);
             this.label4.TabIndex = 30;
@@ -142,7 +142,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(478, 112);
+            this.label3.Location = new System.Drawing.Point(20, 199);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 29;
@@ -151,7 +151,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 111);
+            this.label2.Location = new System.Drawing.Point(484, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 26;
@@ -169,29 +169,29 @@
             // dateTimePickerNGAYBAN
             // 
             this.dateTimePickerNGAYBAN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNGAYBAN.Location = new System.Drawing.Point(192, 198);
+            this.dateTimePickerNGAYBAN.Location = new System.Drawing.Point(95, 159);
             this.dateTimePickerNGAYBAN.Name = "dateTimePickerNGAYBAN";
-            this.dateTimePickerNGAYBAN.Size = new System.Drawing.Size(250, 20);
-            this.dateTimePickerNGAYBAN.TabIndex = 24;
+            this.dateTimePickerNGAYBAN.Size = new System.Drawing.Size(174, 20);
+            this.dateTimePickerNGAYBAN.TabIndex = 2;
             this.dateTimePickerNGAYBAN.ValueChanged += new System.EventHandler(this.dateTimePickerNGAYBAN_ValueChanged);
             this.dateTimePickerNGAYBAN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerNGAYBAN_KeyPress);
             // 
             // textBoxDONGIA
             // 
-            this.textBoxDONGIA.Location = new System.Drawing.Point(587, 65);
+            this.textBoxDONGIA.Location = new System.Drawing.Point(697, 157);
             this.textBoxDONGIA.Name = "textBoxDONGIA";
-            this.textBoxDONGIA.Size = new System.Drawing.Size(182, 20);
-            this.textBoxDONGIA.TabIndex = 22;
+            this.textBoxDONGIA.Size = new System.Drawing.Size(130, 20);
+            this.textBoxDONGIA.TabIndex = 4;
             this.textBoxDONGIA.Text = "0";
             this.textBoxDONGIA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxDONGIA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDONGIA_KeyPress);
             // 
             // textBoxSOLUONG
             // 
-            this.textBoxSOLUONG.Location = new System.Drawing.Point(675, 109);
+            this.textBoxSOLUONG.Location = new System.Drawing.Point(96, 195);
             this.textBoxSOLUONG.Name = "textBoxSOLUONG";
-            this.textBoxSOLUONG.Size = new System.Drawing.Size(94, 20);
-            this.textBoxSOLUONG.TabIndex = 23;
+            this.textBoxSOLUONG.Size = new System.Drawing.Size(103, 20);
+            this.textBoxSOLUONG.TabIndex = 5;
             this.textBoxSOLUONG.Text = "0";
             this.textBoxSOLUONG.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxSOLUONG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSOLUONG_KeyPress);
@@ -200,7 +200,7 @@
             // 
             this.comboBoxKHACH_HANG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKHACH_HANG.FormattingEnabled = true;
-            this.comboBoxKHACH_HANG.Location = new System.Drawing.Point(236, 108);
+            this.comboBoxKHACH_HANG.Location = new System.Drawing.Point(618, 63);
             this.comboBoxKHACH_HANG.Name = "comboBoxKHACH_HANG";
             this.comboBoxKHACH_HANG.Size = new System.Drawing.Size(128, 21);
             this.comboBoxKHACH_HANG.TabIndex = 210;
@@ -229,7 +229,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(480, 160);
+            this.label9.Location = new System.Drawing.Point(328, 199);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 13);
             this.label9.TabIndex = 38;
@@ -238,7 +238,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(478, 204);
+            this.label10.Location = new System.Drawing.Point(615, 202);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 13);
             this.label10.TabIndex = 37;
@@ -246,20 +246,20 @@
             // 
             // textBoxDUATRUOC
             // 
-            this.textBoxDUATRUOC.Location = new System.Drawing.Point(587, 157);
+            this.textBoxDUATRUOC.Location = new System.Drawing.Point(411, 196);
             this.textBoxDUATRUOC.Name = "textBoxDUATRUOC";
-            this.textBoxDUATRUOC.Size = new System.Drawing.Size(182, 20);
-            this.textBoxDUATRUOC.TabIndex = 35;
+            this.textBoxDUATRUOC.Size = new System.Drawing.Size(130, 20);
+            this.textBoxDUATRUOC.TabIndex = 6;
             this.textBoxDUATRUOC.Text = "0";
             this.textBoxDUATRUOC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxDUATRUOC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDUATRUOC_KeyPress);
             // 
             // textBoxLAISUAT
             // 
-            this.textBoxLAISUAT.Location = new System.Drawing.Point(587, 201);
+            this.textBoxLAISUAT.Location = new System.Drawing.Point(697, 199);
             this.textBoxLAISUAT.Name = "textBoxLAISUAT";
-            this.textBoxLAISUAT.Size = new System.Drawing.Size(182, 20);
-            this.textBoxLAISUAT.TabIndex = 36;
+            this.textBoxLAISUAT.Size = new System.Drawing.Size(67, 20);
+            this.textBoxLAISUAT.TabIndex = 7;
             this.textBoxLAISUAT.Text = "0";
             this.textBoxLAISUAT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxLAISUAT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLAISUAT_KeyPress);
@@ -267,7 +267,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(775, 68);
+            this.label11.Location = new System.Drawing.Point(835, 160);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 13);
             this.label11.TabIndex = 40;
@@ -276,7 +276,7 @@
             // labelDVT
             // 
             this.labelDVT.AutoSize = true;
-            this.labelDVT.Location = new System.Drawing.Point(775, 112);
+            this.labelDVT.Location = new System.Drawing.Point(207, 198);
             this.labelDVT.Name = "labelDVT";
             this.labelDVT.Size = new System.Drawing.Size(73, 13);
             this.labelDVT.TabIndex = 41;
@@ -285,7 +285,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(775, 160);
+            this.label13.Location = new System.Drawing.Point(549, 199);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(30, 13);
             this.label13.TabIndex = 42;
@@ -294,7 +294,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(775, 205);
+            this.label14.Location = new System.Drawing.Point(776, 202);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 13);
             this.label14.TabIndex = 42;
@@ -303,10 +303,10 @@
             // checkBoxBANMAT
             // 
             this.checkBoxBANMAT.AutoSize = true;
-            this.checkBoxBANMAT.Location = new System.Drawing.Point(370, 111);
+            this.checkBoxBANMAT.Location = new System.Drawing.Point(422, 107);
             this.checkBoxBANMAT.Name = "checkBoxBANMAT";
             this.checkBoxBANMAT.Size = new System.Drawing.Size(74, 17);
-            this.checkBoxBANMAT.TabIndex = 43;
+            this.checkBoxBANMAT.TabIndex = 1;
             this.checkBoxBANMAT.Text = "BÁN MẶT";
             this.checkBoxBANMAT.UseVisualStyleBackColor = true;
             this.checkBoxBANMAT.CheckedChanged += new System.EventHandler(this.checkBoxBANMAT_CheckedChanged);
@@ -314,7 +314,7 @@
             // labelTON
             // 
             this.labelTON.AutoSize = true;
-            this.labelTON.Location = new System.Drawing.Point(584, 112);
+            this.labelTON.Location = new System.Drawing.Point(93, 218);
             this.labelTON.Name = "labelTON";
             this.labelTON.Size = new System.Drawing.Size(41, 13);
             this.labelTON.TabIndex = 44;
@@ -322,27 +322,30 @@
             // 
             // textBoxHANGHOA
             // 
-            this.textBoxHANGHOA.Location = new System.Drawing.Point(192, 157);
+            this.textBoxHANGHOA.Location = new System.Drawing.Point(411, 159);
             this.textBoxHANGHOA.Name = "textBoxHANGHOA";
             this.textBoxHANGHOA.Size = new System.Drawing.Size(38, 20);
-            this.textBoxHANGHOA.TabIndex = 21;
+            this.textBoxHANGHOA.TabIndex = 3;
             this.textBoxHANGHOA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMAKHO_KeyPress);
+            this.textBoxHANGHOA.Leave += new System.EventHandler(this.textBoxHANGHOA_Leave);
             // 
             // textBoxKHACHHANG
             // 
-            this.textBoxKHACHHANG.Location = new System.Drawing.Point(192, 105);
+            this.textBoxKHACHHANG.Location = new System.Drawing.Point(574, 63);
             this.textBoxKHACHHANG.Name = "textBoxKHACHHANG";
             this.textBoxKHACHHANG.Size = new System.Drawing.Size(38, 20);
-            this.textBoxKHACHHANG.TabIndex = 20;
+            this.textBoxKHACHHANG.TabIndex = 1;
             this.textBoxKHACHHANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMAKHO_KeyPress);
+            this.textBoxKHACHHANG.Leave += new System.EventHandler(this.textBoxKHACHHANG_Leave);
             // 
             // textBoxMAKHO
             // 
             this.textBoxMAKHO.Location = new System.Drawing.Point(192, 63);
             this.textBoxMAKHO.Name = "textBoxMAKHO";
             this.textBoxMAKHO.Size = new System.Drawing.Size(38, 20);
-            this.textBoxMAKHO.TabIndex = 19;
+            this.textBoxMAKHO.TabIndex = 0;
             this.textBoxMAKHO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMAKHO_KeyPress);
+            this.textBoxMAKHO.Leave += new System.EventHandler(this.textBoxMAKHO_Leave);
             // 
             // FXuatHang
             // 
