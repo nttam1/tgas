@@ -67,6 +67,7 @@ namespace T_Manager
             bs.EndEdit();
             bs.ResetBindings(false);
             db.SaveChanges();
+            MessageBox.Show("Đã lưu");
         }
 
         private void comboBoxDULIEU_SelectedIndexChanged(object sender, EventArgs e)

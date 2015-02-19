@@ -102,7 +102,8 @@ namespace T_Manager
                 dbContext.SaveChanges();
                 textBoxDONGIA.Text = "0";
                 textBoxSOLUONG.Text = "0";
-                textBoxDONGIA.Select();
+                textBoxHANGHOA.Select();
+                textBoxHANGHOA.SelectAll();
             }
             catch (Exception ex)
             {
@@ -182,6 +183,54 @@ namespace T_Manager
             if (e.KeyChar == (char)13)
             {
                 SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void textBoxMAKHO_Leave(object sender, EventArgs e)
+        {
+            /* Check MAKHO MAHH MAKH */
+            long id = long.Parse(textBoxMAKHO.Text);
+            try
+            {
+                var checkMAKHO = dbContext.KHOes.Where(u => u.ID == id).First();
+            }
+            catch (Exception ex)
+            {
+                textBoxMAKHO.Select();
+                textBoxMAKHO.SelectAll();
+                MessageBox.Show("Mã KHO không tồn tại");
+            }
+        }
+
+        private void textBoxNCC_Leave(object sender, EventArgs e)
+        {
+            /* Check MAKHO MAHH MAKH */
+            long id = long.Parse(textBoxNCC.Text);
+            try
+            {
+                var checkMAKHO = dbContext.NHA_CUNG_CAP.Where(u => u.ID == id).First();
+            }
+            catch (Exception ex)
+            {
+                textBoxNCC.Select();
+                textBoxNCC.SelectAll();
+                MessageBox.Show("Mã NHÀ CUNG CẤP không tồn tại");
+            }
+        }
+
+        private void textBoxHANGHOA_Leave(object sender, EventArgs e)
+        {
+            /* Check MAKHO MAHH MAKH */
+            long id = long.Parse(textBoxHANGHOA.Text);
+            try
+            {
+                var checkMAKHO = dbContext.HANG_HOA.Where(u => u.ID == id).First();
+            }
+            catch (Exception ex)
+            {
+                textBoxHANGHOA.Select();
+                textBoxHANGHOA.SelectAll();
+                MessageBox.Show("Mã HÀNG HÓA không tồn tại");
             }
         }
     }

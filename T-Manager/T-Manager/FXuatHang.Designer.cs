@@ -33,7 +33,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxHANGHOA = new System.Windows.Forms.ComboBox();
-            this.buttonCLEAR = new System.Windows.Forms.Button();
             this.buttonADD = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -85,7 +84,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(324, 163);
+            this.label5.Location = new System.Drawing.Point(306, 163);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 32;
@@ -95,27 +94,18 @@
             // 
             this.comboBoxHANGHOA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxHANGHOA.FormattingEnabled = true;
-            this.comboBoxHANGHOA.Location = new System.Drawing.Point(455, 160);
+            this.comboBoxHANGHOA.Location = new System.Drawing.Point(432, 160);
             this.comboBoxHANGHOA.Name = "comboBoxHANGHOA";
-            this.comboBoxHANGHOA.Size = new System.Drawing.Size(130, 21);
+            this.comboBoxHANGHOA.Size = new System.Drawing.Size(147, 21);
             this.comboBoxHANGHOA.TabIndex = 211;
             this.comboBoxHANGHOA.SelectedIndexChanged += new System.EventHandler(this.comboBoxHANGHOA_SelectedIndexChanged);
             this.comboBoxHANGHOA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxHANGHOA_KeyPress);
             // 
-            // buttonCLEAR
-            // 
-            this.buttonCLEAR.Location = new System.Drawing.Point(494, 234);
-            this.buttonCLEAR.Name = "buttonCLEAR";
-            this.buttonCLEAR.Size = new System.Drawing.Size(75, 23);
-            this.buttonCLEAR.TabIndex = 28;
-            this.buttonCLEAR.Text = "XÓA";
-            this.buttonCLEAR.UseVisualStyleBackColor = true;
-            // 
             // buttonADD
             // 
-            this.buttonADD.Location = new System.Drawing.Point(367, 234);
+            this.buttonADD.Location = new System.Drawing.Point(421, 235);
             this.buttonADD.Name = "buttonADD";
-            this.buttonADD.Size = new System.Drawing.Size(75, 23);
+            this.buttonADD.Size = new System.Drawing.Size(75, 41);
             this.buttonADD.TabIndex = 8;
             this.buttonADD.Text = "NHẬP";
             this.buttonADD.UseVisualStyleBackColor = true;
@@ -171,7 +161,7 @@
             this.dateTimePickerNGAYBAN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerNGAYBAN.Location = new System.Drawing.Point(95, 159);
             this.dateTimePickerNGAYBAN.Name = "dateTimePickerNGAYBAN";
-            this.dateTimePickerNGAYBAN.Size = new System.Drawing.Size(174, 20);
+            this.dateTimePickerNGAYBAN.Size = new System.Drawing.Size(104, 20);
             this.dateTimePickerNGAYBAN.TabIndex = 2;
             this.dateTimePickerNGAYBAN.ValueChanged += new System.EventHandler(this.dateTimePickerNGAYBAN_ValueChanged);
             this.dateTimePickerNGAYBAN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerNGAYBAN_KeyPress);
@@ -180,7 +170,7 @@
             // 
             this.textBoxDONGIA.Location = new System.Drawing.Point(697, 157);
             this.textBoxDONGIA.Name = "textBoxDONGIA";
-            this.textBoxDONGIA.Size = new System.Drawing.Size(130, 20);
+            this.textBoxDONGIA.Size = new System.Drawing.Size(94, 20);
             this.textBoxDONGIA.TabIndex = 4;
             this.textBoxDONGIA.Text = "0";
             this.textBoxDONGIA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -229,7 +219,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(328, 199);
+            this.label9.Location = new System.Drawing.Point(306, 199);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 13);
             this.label9.TabIndex = 38;
@@ -246,9 +236,9 @@
             // 
             // textBoxDUATRUOC
             // 
-            this.textBoxDUATRUOC.Location = new System.Drawing.Point(411, 196);
+            this.textBoxDUATRUOC.Location = new System.Drawing.Point(388, 195);
             this.textBoxDUATRUOC.Name = "textBoxDUATRUOC";
-            this.textBoxDUATRUOC.Size = new System.Drawing.Size(130, 20);
+            this.textBoxDUATRUOC.Size = new System.Drawing.Size(155, 20);
             this.textBoxDUATRUOC.TabIndex = 6;
             this.textBoxDUATRUOC.Text = "0";
             this.textBoxDUATRUOC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -258,7 +248,7 @@
             // 
             this.textBoxLAISUAT.Location = new System.Drawing.Point(697, 199);
             this.textBoxLAISUAT.Name = "textBoxLAISUAT";
-            this.textBoxLAISUAT.Size = new System.Drawing.Size(67, 20);
+            this.textBoxLAISUAT.Size = new System.Drawing.Size(94, 20);
             this.textBoxLAISUAT.TabIndex = 7;
             this.textBoxLAISUAT.Text = "0";
             this.textBoxLAISUAT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -267,7 +257,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(835, 160);
+            this.label11.Location = new System.Drawing.Point(797, 159);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 13);
             this.label11.TabIndex = 40;
@@ -294,7 +284,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(776, 202);
+            this.label14.Location = new System.Drawing.Point(795, 202);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 13);
             this.label14.TabIndex = 42;
@@ -322,7 +312,7 @@
             // 
             // textBoxHANGHOA
             // 
-            this.textBoxHANGHOA.Location = new System.Drawing.Point(411, 159);
+            this.textBoxHANGHOA.Location = new System.Drawing.Point(388, 159);
             this.textBoxHANGHOA.Name = "textBoxHANGHOA";
             this.textBoxHANGHOA.Size = new System.Drawing.Size(38, 20);
             this.textBoxHANGHOA.TabIndex = 3;
@@ -369,7 +359,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxHANGHOA);
-            this.Controls.Add(this.buttonCLEAR);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -402,7 +391,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBoxHANGHOA;
-        private System.Windows.Forms.Button buttonCLEAR;
         private System.Windows.Forms.Button buttonADD;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
