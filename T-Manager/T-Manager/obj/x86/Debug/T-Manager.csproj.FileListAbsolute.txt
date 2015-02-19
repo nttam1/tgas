@@ -69,7 +69,6 @@ F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe.config
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.pdb
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.dll
-F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.xml
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FHangHoa.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FKho.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FNCC.resources

@@ -33,6 +33,7 @@
             this.comboBoxKHO = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBoxKHACHHANG = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePickerDATE = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -55,7 +56,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxTONGTIEN = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBoxKHACHHANG = new System.Windows.Forms.TextBox();
             this.textBoxMAKHO = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -126,6 +126,14 @@
             this.tabPage1.Text = "THU NỢ KHÁCH HÀNG";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // textBoxKHACHHANG
+            // 
+            this.textBoxKHACHHANG.Location = new System.Drawing.Point(290, 16);
+            this.textBoxKHACHHANG.Name = "textBoxKHACHHANG";
+            this.textBoxKHACHHANG.Size = new System.Drawing.Size(38, 20);
+            this.textBoxKHACHHANG.TabIndex = 1;
+            this.textBoxKHACHHANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -143,6 +151,7 @@
             this.dateTimePickerDATE.Name = "dateTimePickerDATE";
             this.dateTimePickerDATE.Size = new System.Drawing.Size(149, 20);
             this.dateTimePickerDATE.TabIndex = 2;
+            this.dateTimePickerDATE.ValueChanged += new System.EventHandler(this.dateTimePickerDATE_ValueChanged);
             this.dateTimePickerDATE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // groupBox2
@@ -353,14 +362,6 @@
             this.label12.TabIndex = 39;
             this.label12.Text = "TỔNG TIỀN";
             this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // textBoxKHACHHANG
-            // 
-            this.textBoxKHACHHANG.Location = new System.Drawing.Point(290, 16);
-            this.textBoxKHACHHANG.Name = "textBoxKHACHHANG";
-            this.textBoxKHACHHANG.Size = new System.Drawing.Size(38, 20);
-            this.textBoxKHACHHANG.TabIndex = 1;
-            this.textBoxKHACHHANG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxKHO_KeyPress);
             // 
             // textBoxMAKHO
             // 

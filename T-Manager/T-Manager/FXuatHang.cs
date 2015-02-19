@@ -129,11 +129,13 @@ namespace T_Manager
             comboBoxHANGHOA.DataSource = dbContext.HANG_HOA.OrderBy(u => u.NAME);
             comboBoxHANGHOA.DisplayMember = "NAME";
             comboBoxHANGHOA.ValueMember = "ID";
+
             dataGridView1.DataSource = bs;
             comboBoxHANGHOA_SelectedIndexChanged(sender, e);
 
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             textBoxMAKHO.Select();
             textBoxMAKHO.SelectAll();
         }
