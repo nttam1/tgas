@@ -56,8 +56,10 @@ namespace T_Manager
             {
                 var nv_id = Int32.Parse(comboBoxNHANVIEN.SelectedValue.ToString());
                 var kho_id = Int32.Parse(comboBoxKHO.SelectedValue.ToString());
+                var ngay_chi = dateTimePickerdATE.Value.Date;
                 bs_nv.DataSource = dbContext.CHI_LUONG.Where(u => u.MANV == nv_id)
-                 .Where(u => u.MAKHO == kho_id);
+                 .Where(u => u.MAKHO == kho_id)
+                 .Where(u => u.NGAY_CHI == ngay_chi);
                 dataGridViewLuong.DataSource = bs_nv;
 
                 dataGridViewLuong.Columns[0].Visible = false;
@@ -117,10 +119,6 @@ namespace T_Manager
 
         private void textBoxTONGTIEN_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-                buttonCKNHAP_Click(sender, e);
-            }
         }
 
         private BindingSource bs_ck = new BindingSource();
@@ -130,13 +128,15 @@ namespace T_Manager
             {
                 /* Load NHANVIEN COMBOBOX */
                 var makho = long.Parse(comboBoxKHO.SelectedValue.ToString());
+                var ngay_chi = dateTimePickerdATE.Value.Date;
                 comboBoxNHANVIEN.DataSource = dbContext.NHAN_VIEN.Where(u => u.MAKHO == makho);
                 comboBoxNHANVIEN.DisplayMember = "NAME";
                 comboBoxNHANVIEN.ValueMember = "ID";
                 /* Change XE belogn to KHO */
                 comboBoxNBXE_SelectedIndexChanged(sender, e);
                 /* LOAD CHI KHAC belong to KHO */
-                bs_ck.DataSource = dbContext.CHI_KHAC.Where(u => u.MAKHO == makho);
+                bs_ck.DataSource = dbContext.CHI_KHAC.Where(u => u.MAKHO == makho)
+                .Where(u => u.NGAY_CHI == ngay_chi);
                 dataGridViewCHIKHAC.DataSource = bs_ck;
                 dataGridViewCHIKHAC.Columns[0].Visible = false;
                 dataGridViewCHIKHAC.Columns[1].Visible = false;
@@ -364,6 +364,17 @@ namespace T_Manager
                 textBoxNBNOIDUNGCHI.Enabled = true;
                 textBoxNBCHIXEE.Enabled = true;
             }
+        }
+
+        private void textBoxTONGTIEN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePickerdATE_ValueChanged(object sender, EventArgs e)
+        {
+            //comboBoxNHANVIEN_SelectedIndexChanged(sender, e);
+            comboBoxKHO_SelectedIndexChanged(sender, e);
         }
     }
     class CChiXe

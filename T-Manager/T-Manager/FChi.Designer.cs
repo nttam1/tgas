@@ -158,6 +158,7 @@
             this.textBoxTONGTIEN.TabIndex = 2;
             this.textBoxTONGTIEN.Text = "0";
             this.textBoxTONGTIEN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxTONGTIEN.TextChanged += new System.EventHandler(this.textBoxTONGTIEN_TextChanged);
             this.textBoxTONGTIEN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTONGTIEN_KeyPress);
             // 
             // dateTimePickerTHANG
@@ -461,6 +462,7 @@
             this.dateTimePickerdATE.Name = "dateTimePickerdATE";
             this.dateTimePickerdATE.Size = new System.Drawing.Size(343, 30);
             this.dateTimePickerdATE.TabIndex = 3;
+            this.dateTimePickerdATE.ValueChanged += new System.EventHandler(this.dateTimePickerdATE_ValueChanged);
             // 
             // label11
             // 

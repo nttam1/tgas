@@ -20,8 +20,8 @@ namespace T_Manager.REPORT
         private void buttonVIEW_Click(object sender, EventArgs e)
         {
             var _ncc = long.Parse(comboBoxNCC.SelectedValue.ToString());
-            var _from = dateTimePickerFROM.Value;
-            var _to = dateTimePickerTO.Value;
+            var _from = dateTimePickerFROM.Value.Date;
+            var _to = dateTimePickerTO.Value.Date;
             string note = "";
             BindingSource bs = new BindingSource();
             if (checkBoxTRANO.Checked == false)
@@ -92,7 +92,20 @@ namespace T_Manager.REPORT
                     c.CONNO = nodauki - c.TIENTHANHTOAN + c.THANHTIEN;
                     nodauki = c.CONNO;
                 }
-                bs.DataSource = lst;
+                if (lst.Count() == 0)
+                {
+                    lst.Add(new CThanhToanNCC
+                    {
+                        NGAY = DateTime.Now,
+                        KHO = "-",
+                        HANGHOA = "-",
+                        SOLUONG = 0,
+                        DONGIA = 0,
+                        THANHTIEN = 0,
+                        CONNO = nodauki, 
+                    });
+                }
+                bs.DataSource = datasource;
                 CrystalReportTHANHTOANNCC rpt = new CrystalReportTHANHTOANNCC();
                 rpt.SetDataSource(bs);
                 rpt.SetParameterValue("NCC", comboBoxNCC.Text);

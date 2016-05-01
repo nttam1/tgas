@@ -334,6 +334,7 @@
             this.textBoxMAKHO.Name = "textBoxMAKHO";
             this.textBoxMAKHO.Size = new System.Drawing.Size(38, 20);
             this.textBoxMAKHO.TabIndex = 0;
+            this.textBoxMAKHO.TextChanged += new System.EventHandler(this.textBoxMAKHO_TextChanged);
             this.textBoxMAKHO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMAKHO_KeyPress);
             this.textBoxMAKHO.Leave += new System.EventHandler(this.textBoxMAKHO_Leave);
             // 

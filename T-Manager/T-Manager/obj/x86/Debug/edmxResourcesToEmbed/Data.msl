@@ -263,5 +263,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="EDIT_XUAT_HANG">
+      <EntityTypeMapping TypeName="tgasModel.EDIT_XUAT_HANG">
+        <MappingFragment StoreEntitySet="EDIT_XUAT_HANG">
+          <ScalarProperty Name="XUAT_HANG_ID" ColumnName="XUAT_HANG_ID" />
+          <ScalarProperty Name="CONFIRMED" ColumnName="CONFIRMED" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="TRA_TRUOC" ColumnName="TRA_TRUOC" />
+          <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
+          <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
+          <ScalarProperty Name="DON_GIA" ColumnName="DON_GIA" />
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+          <ScalarProperty Name="MAHH" ColumnName="MAHH" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

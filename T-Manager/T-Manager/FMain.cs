@@ -26,23 +26,23 @@ namespace T_Manager
         private void FMain_Load(object sender, EventArgs e)
         {
             DataInstance.Instance().DBContext();
-            DateTime now = DateTime.Now;
-            DateTime last = Convert.ToDateTime(MHeTHong.Get(MHeTHong.DATE));
-            if (last.Date > now.Date)
-            {
-                FConfirm F = new FConfirm();
-                F.ShowDialog();
-            }
-            else
-            {
-                MHeTHong.Set(MHeTHong.DATE, DateTime.Now.ToShortDateString());
-            }
+            //DateTime now = DateTime.Now;
+            //DateTime last = Convert.ToDateTime(MHeTHong.Get(MHeTHong.DATE));
+            //if (last.Date > now.Date)
+            //{
+            //FConfirm F = new FConfirm();
+            //F.ShowDialog();
+            //}
+            //else
+            //{
+            //    MHeTHong.Set(MHeTHong.DATE, DateTime.Now.ToShortDateString());
+            //}
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FXuatHang f = new FXuatHang();
+            FXUATHANGNEW f = new FXUATHANGNEW();
             f.ShowDialog();
         }
 
@@ -269,6 +269,18 @@ namespace T_Manager
         private void button33_Click_1(object sender, EventArgs e)
         {
             FTonKho f = new FTonKho();
+            f.ShowDialog();
+        }
+
+        private void button32_Click_1(object sender, EventArgs e)
+        {
+            FConfirmEdit f = new FConfirmEdit();
+            f.ShowDialog();
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+            FXuatHang f = new FXuatHang();
             f.ShowDialog();
         }
     }

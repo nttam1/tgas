@@ -13,7 +13,8 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -35,9 +36,11 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -54,6 +57,7 @@
   <PropertyGroup>
     <ApplicationIcon>mpg-icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -66,13 +70,26 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLite.Designer, Version=1.0.37.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\new\SQLite.Designer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86" />
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.92.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Tam\Desktop\new\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=2.0.38.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\SQLite.NET\bin\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceProcess" />
@@ -88,11 +105,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FAdminConfirmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAdminConfirmDialog.Designer.cs">
+      <DependentUpon>FAdminConfirmDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FConfirmEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FConfirmEdit.Designer.cs">
+      <DependentUpon>FConfirmEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FTonKho.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FTonKho.Designer.cs">
       <DependentUpon>FTonKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FXUATHANGNEW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FXUATHANGNEW.Designer.cs">
+      <DependentUpon>FXUATHANGNEW.cs</DependentUpon>
     </Compile>
     <Compile Include="Id2Name.cs" />
     <Compile Include="ConstClass.cs" />
@@ -492,6 +527,9 @@
     <EmbeddedResource Include="EDIT\FXuatHang.resx">
       <DependentUpon>FXuatHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FAdminConfirmDialog.resx">
+      <DependentUpon>FAdminConfirmDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FBanHang.resx">
       <DependentUpon>FBanHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -512,6 +550,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FConfirm.resx">
       <DependentUpon>FConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FConfirmEdit.resx">
+      <DependentUpon>FConfirmEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FDoiMatKhau.resx">
       <DependentUpon>FDoiMatKhau.cs</DependentUpon>
@@ -545,6 +586,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FVay.resx">
       <DependentUpon>FVay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FXUATHANGNEW.resx">
+      <DependentUpon>FXUATHANGNEW.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -722,6 +766,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mpg-icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

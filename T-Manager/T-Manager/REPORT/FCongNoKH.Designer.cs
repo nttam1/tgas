@@ -73,12 +73,15 @@
             // checkBoxNODAUKI
             // 
             this.checkBoxNODAUKI.AutoSize = true;
+            this.checkBoxNODAUKI.Checked = true;
+            this.checkBoxNODAUKI.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxNODAUKI.Location = new System.Drawing.Point(450, 35);
             this.checkBoxNODAUKI.Name = "checkBoxNODAUKI";
             this.checkBoxNODAUKI.Size = new System.Drawing.Size(123, 28);
             this.checkBoxNODAUKI.TabIndex = 11;
             this.checkBoxNODAUKI.Text = "NỢ ĐẦU KÌ";
             this.checkBoxNODAUKI.UseVisualStyleBackColor = true;
+            this.checkBoxNODAUKI.Visible = false;
             // 
             // label3
             // 

@@ -13,6 +13,7 @@
           <EntitySet Name="CHI_TIEU_DUNG_NOI_BO" EntityType="tgasModel.Store.CHI_TIEU_DUNG_NOI_BO" store:Type="Tables" />
           <EntitySet Name="CHO_VAY" EntityType="tgasModel.Store.CHO_VAY" store:Type="Tables" />
           <EntitySet Name="CHUYEN_TIEN" EntityType="tgasModel.Store.CHUYEN_TIEN" store:Type="Tables" />
+          <EntitySet Name="EDIT_XUAT_HANG" EntityType="tgasModel.Store.EDIT_XUAT_HANG" store:Type="Tables" />
           <EntitySet Name="HANG_HOA" EntityType="tgasModel.Store.HANG_HOA" store:Type="Tables" />
           <EntitySet Name="HE_THONG" EntityType="tgasModel.Store.HE_THONG" store:Type="Tables" />
           <EntitySet Name="KHACH_HANG" EntityType="tgasModel.Store.KHACH_HANG" store:Type="Tables" />
@@ -116,6 +117,21 @@
           <Property Name="TONG_TIEN" Type="integer" Nullable="false" />
           <Property Name="NGAY_CHUYEN" Type="datetime" Nullable="false" />
           <Property Name="CREATED_AT" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EDIT_XUAT_HANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MAHH" Type="integer" />
+          <Property Name="MAKH" Type="integer" />
+          <Property Name="DON_GIA" Type="integer" />
+          <Property Name="SO_LUONG" Type="integer" />
+          <Property Name="LAI_SUAT" Type="float" />
+          <Property Name="TRA_TRUOC" Type="integer" />
+          <Property Name="CREATED_AT" Type="datetime" />
+          <Property Name="CONFIRMED" Type="bit" />
+          <Property Name="XUAT_HANG_ID" Type="integer" />
         </EntityType>
         <EntityType Name="HANG_HOA">
           <Key>
@@ -296,6 +312,7 @@
           <EntitySet Name="VAYs" EntityType="tgasModel.VAY" />
           <EntitySet Name="XEs" EntityType="tgasModel.XE" />
           <EntitySet Name="XUAT_HANG" EntityType="tgasModel.XUAT_HANG" />
+          <EntitySet Name="EDIT_XUAT_HANG" EntityType="tgasModel.EDIT_XUAT_HANG" />
         </EntityContainer>
         <EntityType Name="BAN_HANG">
           <Key>
@@ -536,6 +553,21 @@
           <Property Type="DateTime" Name="NGAY_XUAT" />
           <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
           <Property Type="String" Name="CHI_TIET_XUAT_HANG" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EDIT_XUAT_HANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int64" Name="MAHH" />
+          <Property Type="Int64" Name="MAKH" />
+          <Property Type="Int64" Name="DON_GIA" />
+          <Property Type="Int64" Name="SO_LUONG" />
+          <Property Type="Double" Name="LAI_SUAT" />
+          <Property Type="Int64" Name="TRA_TRUOC" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="Boolean" Name="CONFIRMED" />
+          <Property Type="Int64" Name="XUAT_HANG_ID" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -805,6 +837,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="EDIT_XUAT_HANG">
+            <EntityTypeMapping TypeName="tgasModel.EDIT_XUAT_HANG">
+              <MappingFragment StoreEntitySet="EDIT_XUAT_HANG">
+                <ScalarProperty Name="XUAT_HANG_ID" ColumnName="XUAT_HANG_ID" />
+                <ScalarProperty Name="CONFIRMED" ColumnName="CONFIRMED" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="TRA_TRUOC" ColumnName="TRA_TRUOC" />
+                <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
+                <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
+                <ScalarProperty Name="DON_GIA" ColumnName="DON_GIA" />
+                <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+                <ScalarProperty Name="MAHH" ColumnName="MAHH" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -849,6 +897,7 @@
         <EntityTypeShape EntityType="tgasModel.VAY" Width="1.5" PointX="0.75" PointY="11.75" Height="2.7494921874999818" />
         <EntityTypeShape EntityType="tgasModel.XE" Width="1.5" PointX="12.75" PointY="0.75" Height="1.403382161458353" />
         <EntityTypeShape EntityType="tgasModel.XUAT_HANG" Width="1.5" PointX="7.375" PointY="12.75" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="tgasModel.EDIT_XUAT_HANG" Width="1.5" PointX="13.375" PointY="3.75" Height="2.9417936197916674" />
       </Diagram>
     </Diagrams>
   </Designer>

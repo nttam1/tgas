@@ -81,10 +81,30 @@ namespace T_Manager.REPORT
             var datasource = _datasource.OrderBy(u => u.NGAY);
             long no = checkBoxNODAUKI.Checked == true ? MXuatHang.TongNoDauKi(MAKH, FROM) - MThuNo.TongGocDauKi(MAKH, FROM) : 0;
             long nodauki = no;
-            foreach (CCongNoNew c in datasource)
+            if (datasource.Count() == 0)
             {
-                c.CONNO = no + c.THANHTIEN - c.TRATRUOC - c.TRAGOC;
-                no = c.CONNO;
+                _datasource.Add(new CCongNoNew
+                {
+                    NGAY = DateTime.Now,
+                    TRATRUOC = 0,
+                    TRANO = "Nợ đầu kì",
+                    HANGHOA = "",
+                    SOLUONG = 0,
+                    DONVITINH = "",
+                    DONGIA = 0,
+                    THANHTIEN = 0,
+                    TRAGOC = 0,
+                    TRALAI = 0,
+                    CONNO = no
+                });
+            }
+            else
+            {
+                foreach (CCongNoNew c in datasource)
+                {
+                    c.CONNO = no + c.THANHTIEN - c.TRATRUOC - c.TRAGOC;
+                    no = c.CONNO;
+                }
             }
 
             bs.DataSource = datasource;

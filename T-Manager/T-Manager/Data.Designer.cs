@@ -413,6 +413,22 @@ namespace T_Manager
             }
         }
         private ObjectSet<XUAT_HANG> _XUAT_HANG;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<EDIT_XUAT_HANG> EDIT_XUAT_HANG
+        {
+            get
+            {
+                if ((_EDIT_XUAT_HANG == null))
+                {
+                    _EDIT_XUAT_HANG = base.CreateObjectSet<EDIT_XUAT_HANG>("EDIT_XUAT_HANG");
+                }
+                return _EDIT_XUAT_HANG;
+            }
+        }
+        private ObjectSet<EDIT_XUAT_HANG> _EDIT_XUAT_HANG;
 
         #endregion
 
@@ -592,6 +608,14 @@ namespace T_Manager
         public void AddToXUAT_HANG(XUAT_HANG xUAT_HANG)
         {
             base.AddObject("XUAT_HANG", xUAT_HANG);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the EDIT_XUAT_HANG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToEDIT_XUAT_HANG(EDIT_XUAT_HANG eDIT_XUAT_HANG)
+        {
+            base.AddObject("EDIT_XUAT_HANG", eDIT_XUAT_HANG);
         }
 
         #endregion
@@ -2189,6 +2213,279 @@ namespace T_Manager
         private global::System.DateTime _CREATED_AT;
         partial void OnCREATED_ATChanging(global::System.DateTime value);
         partial void OnCREATED_ATChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="tgasModel", Name="EDIT_XUAT_HANG")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class EDIT_XUAT_HANG : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new EDIT_XUAT_HANG object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        public static EDIT_XUAT_HANG CreateEDIT_XUAT_HANG(global::System.Int64 id)
+        {
+            EDIT_XUAT_HANG eDIT_XUAT_HANG = new EDIT_XUAT_HANG();
+            eDIT_XUAT_HANG.ID = id;
+            return eDIT_XUAT_HANG;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> MAHH
+        {
+            get
+            {
+                return _MAHH;
+            }
+            set
+            {
+                OnMAHHChanging(value);
+                ReportPropertyChanging("MAHH");
+                _MAHH = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MAHH");
+                OnMAHHChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _MAHH;
+        partial void OnMAHHChanging(Nullable<global::System.Int64> value);
+        partial void OnMAHHChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> MAKH
+        {
+            get
+            {
+                return _MAKH;
+            }
+            set
+            {
+                OnMAKHChanging(value);
+                ReportPropertyChanging("MAKH");
+                _MAKH = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MAKH");
+                OnMAKHChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _MAKH;
+        partial void OnMAKHChanging(Nullable<global::System.Int64> value);
+        partial void OnMAKHChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> DON_GIA
+        {
+            get
+            {
+                return _DON_GIA;
+            }
+            set
+            {
+                OnDON_GIAChanging(value);
+                ReportPropertyChanging("DON_GIA");
+                _DON_GIA = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DON_GIA");
+                OnDON_GIAChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _DON_GIA;
+        partial void OnDON_GIAChanging(Nullable<global::System.Int64> value);
+        partial void OnDON_GIAChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> SO_LUONG
+        {
+            get
+            {
+                return _SO_LUONG;
+            }
+            set
+            {
+                OnSO_LUONGChanging(value);
+                ReportPropertyChanging("SO_LUONG");
+                _SO_LUONG = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SO_LUONG");
+                OnSO_LUONGChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _SO_LUONG;
+        partial void OnSO_LUONGChanging(Nullable<global::System.Int64> value);
+        partial void OnSO_LUONGChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> LAI_SUAT
+        {
+            get
+            {
+                return _LAI_SUAT;
+            }
+            set
+            {
+                OnLAI_SUATChanging(value);
+                ReportPropertyChanging("LAI_SUAT");
+                _LAI_SUAT = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LAI_SUAT");
+                OnLAI_SUATChanged();
+            }
+        }
+        private Nullable<global::System.Double> _LAI_SUAT;
+        partial void OnLAI_SUATChanging(Nullable<global::System.Double> value);
+        partial void OnLAI_SUATChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> TRA_TRUOC
+        {
+            get
+            {
+                return _TRA_TRUOC;
+            }
+            set
+            {
+                OnTRA_TRUOCChanging(value);
+                ReportPropertyChanging("TRA_TRUOC");
+                _TRA_TRUOC = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TRA_TRUOC");
+                OnTRA_TRUOCChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _TRA_TRUOC;
+        partial void OnTRA_TRUOCChanging(Nullable<global::System.Int64> value);
+        partial void OnTRA_TRUOCChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CREATED_AT
+        {
+            get
+            {
+                return _CREATED_AT;
+            }
+            set
+            {
+                OnCREATED_ATChanging(value);
+                ReportPropertyChanging("CREATED_AT");
+                _CREATED_AT = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CREATED_AT");
+                OnCREATED_ATChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CREATED_AT;
+        partial void OnCREATED_ATChanging(Nullable<global::System.DateTime> value);
+        partial void OnCREATED_ATChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> CONFIRMED
+        {
+            get
+            {
+                return _CONFIRMED;
+            }
+            set
+            {
+                OnCONFIRMEDChanging(value);
+                ReportPropertyChanging("CONFIRMED");
+                _CONFIRMED = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CONFIRMED");
+                OnCONFIRMEDChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _CONFIRMED;
+        partial void OnCONFIRMEDChanging(Nullable<global::System.Boolean> value);
+        partial void OnCONFIRMEDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> XUAT_HANG_ID
+        {
+            get
+            {
+                return _XUAT_HANG_ID;
+            }
+            set
+            {
+                OnXUAT_HANG_IDChanging(value);
+                ReportPropertyChanging("XUAT_HANG_ID");
+                _XUAT_HANG_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("XUAT_HANG_ID");
+                OnXUAT_HANG_IDChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _XUAT_HANG_ID;
+        partial void OnXUAT_HANG_IDChanging(Nullable<global::System.Int64> value);
+        partial void OnXUAT_HANG_IDChanged();
 
         #endregion
 

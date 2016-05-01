@@ -66,14 +66,16 @@ namespace T_Manager.REPORT
                         //lai += MXuatHang.GetLaiPhatSinh((int)_row.ID, _to);
                         datra += MChiTietThuNo.TraGocHH((int)_row.ID);
                     }
+                    Int64 nodauki = MXuatHang.TongNoDauKi(row.MAKH, _from);
                     _datasource.Add(new CTongHopCongNo()
                     {
                         STT = STT++,
+                        NODAUKI = nodauki,
                         KHACHHANG = row.KHACHHANG,
                         TRATRUOC = row.TRATRUOC,
-                        THANHTIEN = row.THANHTIEN ,
+                        THANHTIEN = row.THANHTIEN,
                         DATRA = (long)datra,
-                        CONNO = row.THANHTIEN- (long)datra - row.TRATRUOC
+                        CONNO = row.THANHTIEN - (long)datra - row.TRATRUOC + nodauki,
                     });
                 }
             }
@@ -137,6 +139,7 @@ namespace T_Manager.REPORT
         public long STT;
         public long MAKH;
         public string KHACHHANG;
+        public Int64 NODAUKI;
         public Int64 TRATRUOC;
         public Int64 THANHTIEN;
         public Int64 DATRA;

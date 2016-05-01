@@ -146,7 +146,7 @@ namespace T_Manager.Modal
                 }
                 value = _tong_lai_no;
             }
-            return value;
+            return value >= 0 ? value : 0;
         }
         #endregion
 

@@ -27,6 +27,7 @@ namespace T_Manager
                 this.Close();
                 return;
             }
+            dateTimePickerDATE.MaxDate = DateTime.Now;
             var i2nKHO = new Id2Name(textBoxMAKHO, comboBoxKHO);
             var i2nKH = new Id2Name(textBoxKHACHHANG, comboBoxKHACHHANG);
             comboBoxKHO.DataSource = MKho.Get(MKho.KHO_HANG).OrderBy(u => u.NAME);

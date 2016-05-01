@@ -48,7 +48,10 @@ namespace T_Manager
                 /* Check MAKHO MAHH MAKH */
                 var checkMAKHO = dbContext.KHOes.Where(u => u.ID == ele.MAKHO).First();
                 var checkMAHH = dbContext.HANG_HOA.Where(u => u.ID == ele.MAHH).First();
-                var checkMAKH = dbContext.KHACH_HANG.Where(u => u.ID == ele.MAKH).First();
+                if (ele.MAKH != MXuatHang.MAKH_XUAT_MAT)
+                {
+                    var checkMAKH = dbContext.KHACH_HANG.Where(u => u.ID == ele.MAKH).First();
+                }
 
                 if (ele.DON_GIA_BAN < 0 || ele.TRA_TRUOC < 0 || ele.LAI_SUAT < 0)
                 {
@@ -106,7 +109,7 @@ namespace T_Manager
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show("Dữ liệu nhập vào phải là số");
+                MessageBox.Show("Dữ liệu nhập vào không phù hợp");
             }
             textBoxHANGHOA.Select();
             textBoxHANGHOA.SelectAll();
@@ -115,6 +118,7 @@ namespace T_Manager
 
         private void XuatHang_Load(object sender, EventArgs e)
         {
+
             var i2nKHO = new Id2Name(textBoxMAKHO, comboBoxKho);
             var i2nKH = new Id2Name(textBoxKHACHHANG, comboBoxKHACH_HANG);
             var i2nHH = new Id2Name(textBoxHANGHOA, comboBoxHANGHOA);
@@ -359,6 +363,11 @@ namespace T_Manager
                 textBoxHANGHOA.SelectAll();
                 MessageBox.Show("Mã HÀNG HÓA không tồn tại");
             }
+        }
+
+        private void textBoxMAKHO_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

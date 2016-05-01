@@ -9,6 +9,6 @@ namespace T_Manager
     {
         public const string COMPANY_NAME = "XĂNG DẦU NHẬT LINH";
         public const int NGAY_TINH_LAI = 30;
-        public const long DON_GIA_BASE = 10000;
+        public const long DON_GIA_BASE = 5000;
     }
 }

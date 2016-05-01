@@ -68,7 +68,6 @@ C:\Users\Tam\SkyDrive\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FChuyenTi
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe.config
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.exe
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\T-Manager.pdb
-F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.dll
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FHangHoa.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FKho.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.Data.FNCC.resources
@@ -116,3 +115,10 @@ F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.pdb
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.REPORT.FCongNoKH.resources
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T-Manager.csprojResolveAssemblyReference.cache
 F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FTonKho.resources
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FConfirmEdit.resources
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FXUATHANGNEW.resources
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.dll
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\Newtonsoft.Json.xml
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\System.Data.SQLite.EF6.dll
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\bin\Debug\EntityFramework.dll
+F:\Projects\CFmaily\tgas\T-Manager\T-Manager\obj\x86\Debug\T_Manager.FAdminConfirmDialog.resources

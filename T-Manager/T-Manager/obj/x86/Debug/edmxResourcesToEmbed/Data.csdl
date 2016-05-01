@@ -23,6 +23,7 @@
     <EntitySet Name="VAYs" EntityType="tgasModel.VAY" />
     <EntitySet Name="XEs" EntityType="tgasModel.XE" />
     <EntitySet Name="XUAT_HANG" EntityType="tgasModel.XUAT_HANG" />
+    <EntitySet Name="EDIT_XUAT_HANG" EntityType="tgasModel.EDIT_XUAT_HANG" />
   </EntityContainer>
   <EntityType Name="BAN_HANG">
     <Key>
@@ -263,5 +264,20 @@
     <Property Type="DateTime" Name="NGAY_XUAT" />
     <Property Type="Int64" Name="TRANG_THAI" Nullable="false" />
     <Property Type="String" Name="CHI_TIET_XUAT_HANG" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EDIT_XUAT_HANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="MAHH" />
+    <Property Type="Int64" Name="MAKH" />
+    <Property Type="Int64" Name="DON_GIA" />
+    <Property Type="Int64" Name="SO_LUONG" />
+    <Property Type="Double" Name="LAI_SUAT" />
+    <Property Type="Int64" Name="TRA_TRUOC" />
+    <Property Type="DateTime" Name="CREATED_AT" />
+    <Property Type="Boolean" Name="CONFIRMED" />
+    <Property Type="Int64" Name="XUAT_HANG_ID" />
   </EntityType>
 </Schema>

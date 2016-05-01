@@ -19,6 +19,7 @@ namespace T_Manager
 
         private void buttonCONFIRM_Click(object sender, EventArgs e)
         {
+            String eee = MHeTHong.Get(MHeTHong.MATKHAU);
             if (MHeTHong.Get(MHeTHong.MATKHAU) == textBox1.Text)
             {
                 MHeTHong.Set(MHeTHong.DATE, DateTime.Now.ToShortDateString());
